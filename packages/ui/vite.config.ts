@@ -82,12 +82,16 @@ export default defineConfig({
 			tsconfigPath: "tsconfig.build.json",
 			beforeWriteFile: (filePath, content) => {
 				const { dir, base } = path.parse(filePath)
+				// Only component files should be transformed into folder structure
+				const isComponentFile = /[/\\]components[/\\]/.test(filePath)
 
 				// Handle .d.ts files
 				if (filePath.endsWith(".d.ts")) {
 					const fileNameWithoutExt = base.replace(/\.d\.ts$/, "")
 
+					// Skip transformation for non-component files, index files, vite-env, and node_modules
 					if (
+						!isComponentFile ||
 						fileNameWithoutExt === "index" ||
 						fileNameWithoutExt === "vite-env" ||
 						filePath.includes("node_modules")
@@ -133,7 +137,9 @@ export default defineConfig({
 				if (filePath.endsWith(".d.ts.map")) {
 					const fileNameWithoutExt = base.replace(/\.d\.ts\.map$/, "")
 
+					// Skip transformation for non-component files, index files, vite-env, and node_modules
 					if (
+						!isComponentFile ||
 						fileNameWithoutExt === "index" ||
 						fileNameWithoutExt === "vite-env" ||
 						filePath.includes("node_modules")
@@ -241,8 +247,13 @@ export default defineConfig({
 				chunkFileNames: "chunks/[name]-[hash].js",
 				// CSS assets path
 				assetFileNames: "assets/css/[name][extname]",
-				// Each entry becomes a directory with index.js
-				entryFileNames: "[name]/index.js",
+				// Only components get their own directory with index.js
+				entryFileNames: (chunkInfo) => {
+					if (chunkInfo.name.startsWith("components/")) {
+						return "[name]/index.js"
+					}
+					return "[name].js"
+				},
 				// Preserve export names for better debugging
 				exports: "named",
 				// Globals for UMD builds (if ever needed)
