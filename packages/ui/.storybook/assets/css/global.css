@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 @import "../../../src/assets/css/index.css";
 
 :root:where(.dark, .dark *) {
