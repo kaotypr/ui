@@ -5,14 +5,16 @@
     "rules": {
       "suspicious": {
         "noConsole": "off"
+      },
+      "style": {
+        "useImportType": "off"
       }
     }
   },
   "assist": {
-    "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": "off"
       }
     }
   }
