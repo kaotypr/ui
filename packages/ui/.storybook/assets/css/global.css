@@ -1,0 +1,11 @@
+@import "../../../src/assets/css/index.css";
+
+:root:where(.dark, .dark *) {
+  --background: oklch(0.2265 0.0186 266.1546);
+  --foreground: oklch(0.9219 0 0);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
