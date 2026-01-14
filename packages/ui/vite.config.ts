@@ -30,14 +30,16 @@ const EXTERNAL_DEPS = [
 	// Utility libraries that consumers likely already have
 	/^class-variance-authority$/,
 	/^clsx$/,
+	/^lucide-react$/,
 	/^tailwind-merge$/,
 	// Optional peer dependencies
+	/^@tanstack\/react-table$/,
 	/^date-fns/,
-	/^lucide-react$/,
+	/^embla-carousel-react$/,
 	/^react-day-picker$/,
 	/^react-hook-form$/,
+	/^recharts$/,
 	/^sonner$/,
-	/^@tanstack\/react-table$/,
 ]
 
 /**
