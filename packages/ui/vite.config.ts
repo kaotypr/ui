@@ -226,7 +226,7 @@ export default defineConfig({
 			// Note: This is overridden by rollupOptions.input below,
 			// but kept for Vite's library mode detection
 			entry: resolve(dirname, "src/lib/utils.ts"),
-			name: "@gezit/ui",
+			name: "@kaotypr/ui",
 			formats: ["es"],
 		},
 		rollupOptions: {
