@@ -37,6 +37,7 @@ const EXTERNAL_DEPS = [
 	/^@tanstack\/react-table$/,
 	/^date-fns/,
 	/^embla-carousel-react$/,
+	/^input-otp$/,
 	/^react-day-picker$/,
 	/^react-hook-form$/,
 	/^recharts$/,
