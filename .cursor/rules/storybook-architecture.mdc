@@ -1,0 +1,347 @@
+---
+description: Rules and conventions for generating Storybook stories of @kaotypr/ui components
+alwaysApply: false
+---
+# Overview
+
+This documentation provides comprehensive rules for creating Storybook stories for `@kaotypr/ui` components.
+
+## Component Categories
+
+There are two main categories of components, each with different story conventions:
+
+| Category | Source Path | Story Path | Story Title Prefix | Description |
+|----------|-------------|------------|-------------------|-------------|
+| **UI Components** | `components/ui/` | `stories/ui/` | `UI/` | Primitive, reusable building blocks (buttons, inputs, dialogs, etc.) |
+| **Block Components** | `components/blocks/` | `stories/blocks/` | `Blocks/` | Composed components combining multiple UI components for specific use cases |
+
+### Key Differences
+
+| Aspect | UI Components | Block Components |
+|--------|---------------|------------------|
+| **Purpose** | Low-level primitives | Higher-level compositions |
+| **Reusability** | Highly reusable across contexts | Specific to certain use cases |
+| **Complexity** | Simple, single-purpose | Complex, multi-purpose |
+| **Dependencies** | Minimal, often built on Radix UI | Composed of multiple UI components |
+| **Story Focus** | Individual props and states | Real-world usage scenarios |
+
+## Props Documentation
+
+When documenting component props:
+
+1. **Reference Original Library / Libraries**: Always reference the original library's / libraries documentation for complete props or API
+2. **Document ALL Props**: Include all available props from the underlying library in argTypes
+3. **Include Library URL**: Add the library's URL in the component description
+4. **Prop Documentation Requirements**:
+   - Accurate description from the original library
+   - Correct default values
+   - Appropriate control types
+   - Type information
+
+> **Example**: For a component built on Radix UI, check `https://www.radix-ui.com/primitives/docs/components/[component]` for complete props
+
+## Story Metadata
+
+Every story file must include the following metadata in its Meta export:
+
+- **title**: Following the pattern based on component category:
+  - `UI/ComponentName` for UI components (from `components/ui/`)
+  - `Blocks/ComponentName` for Block components (from `components/blocks/`)
+- **component**: The actual component being documented
+- **tags**: `['autodocs']` at the root level for automatic documentation generation
+- **parameters**:
+  - `layout: 'centered'` for UI components
+  - `layout: 'fullscreen'` or `layout: 'padded'` for Block components (depending on the block's nature)
+  - `docs: { description: { component: 'Component description' } }`
+- **argTypes**: Comprehensive documentation of all component props
+
+### Example Meta Structure for UI Components
+
+```typescript
+const meta = {
+  title: 'UI/ComponentName',
+  component: Component,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Component description and attribution'
+      }
+    }
+  },
+  argTypes: { /* prop documentation */ }
+}
+```
+
+### Example Meta Structure for Block Components
+
+```typescript
+const meta = {
+  title: 'Blocks/ComponentName',
+  component: Component,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'padded', // or 'fullscreen' for full-page blocks
+    docs: {
+      description: {
+        component: 'Block description explaining its composed nature and use case'
+      }
+    }
+  },
+  argTypes: { /* prop documentation */ }
+}
+```
+
+## Import Conventions
+
+All imports in story files must use the `~/` alias for internal modules. Never use relative paths. The `~/` alias resolves to the `src/` directory.
+
+| Module Type | Import Pattern |
+|-------------|----------------|
+| UI Components | `~/components/ui/{component}` |
+| Block Components | `~/components/blocks/{component}` |
+| Hooks | `~/hooks/{hook}` |
+| Lib Utilities | `~/lib/{util}` |
+
+## Icons Usage
+
+Always use [lucide-react](https://lucide.dev/icons/) for any icon needs. Never create custom SVG icons
+
+## File Organization
+
+Story files must be organized according to their component category:
+
+### Rules
+
+1. All story files must be placed in a dedicated folder named with the component's name
+2. The folder location depends on the component category:
+   - UI components: `stories/ui/{component-name}/`
+   - Block components: `stories/blocks/{component-name}/`
+3. Story files should mirror the component file structure
+4. For component parts, stories should be in the same stories directory
+
+### Path Mapping
+
+| Component Source | Story Location |
+|------------------|----------------|
+| `components/ui/button.tsx` | `stories/ui/button/button.stories.tsx` |
+| `components/ui/select.tsx` | `stories/ui/select/select.stories.tsx` |
+| `components/blocks/login-form.tsx` | `stories/blocks/login-form/login-form.stories.tsx` |
+| `components/blocks/data-table.tsx` | `stories/blocks/data-table/data-table.stories.tsx` |
+
+### Example: UI Component File Structure
+
+```
+stories/ui/select/
+├── select.stories.tsx
+├── select-trigger.stories.tsx
+└── select-content.stories.tsx
+```
+
+### Example: Block Component File Structure
+
+```
+stories/blocks/login-form/
+├── login-form.stories.tsx
+└── login-form-field.stories.tsx (if the block has parts)
+```
+
+## Component Structure
+
+For any component that has multiple parts (sub-components):
+
+1. **ALWAYS create separate story files for each part**
+2. Each part story must be in its own file named `{component-name}-{part-name}.stories.tsx`
+3. When a component part requires a parent context (like Drawer parts needing Drawer context):
+   - Always render the part within its required parent component
+   - Include minimal but necessary sibling components to demonstrate functionality
+   - Document the context requirement in the component description
+
+### Example: Component with Parts
+
+For a Select component with SelectTrigger, SelectContent parts, create:
+- `select.stories.tsx` (main component)
+- `select-trigger.stories.tsx`
+- `select-content.stories.tsx`
+
+## Main Story Structure
+
+Use `Meta<typeof Component>` and set the component field. The component description should be concise and include:
+
+1. A single sentence describing the component's purpose
+2. Attribution if component is built on top of another library
+3. Component Parts section with brief descriptions
+
+Include comprehensive argTypes for root component props only. Set `parameters.layout = 'centered'` and `tags: ['autodocs']`.
+
+### Description Format
+
+```markdown
+A single sentence describing the component's purpose.
+
+This component is built on top of [Library Name](library-url).
+
+### Component Parts
+- [PartName](?path=/story/ui-component-partname--default): Brief description of the part's purpose.
+- [PartName2](?path=/story/ui-component-partname2--default): Brief description of the part's purpose.
+```
+
+### Description Example
+
+```markdown
+A vertically stacked set of interactive headings that each reveal an associated section of content.
+
+This component is built on top of [Radix UI Accordion](https://www.radix-ui.com/primitives/docs/components/accordion).
+
+### Component Parts
+- [AccordionItem](?path=/story/ui-accordion-accordionitem--default): Represents a single item within the accordion.
+- [AccordionTrigger](?path=/story/ui-accordion-accordiontrigger--default): The button that toggles the visibility of the item's content.
+- [AccordionContent](?path=/story/ui-accordion-accordioncontent--default): The content area that is shown or hidden when the item is toggled.
+```
+
+## Part Story Structure
+
+Use `Meta<typeof PartComponent>` and set the component field:
+
+1. Component description must specify if the part requires a parent context
+2. Include only relevant argTypes for the specific part
+3. Always render parts that require context within their parent component
+4. Include necessary sibling components to demonstrate functionality
+5. Provide at least two examples (Default and variations)
+6. Set `parameters.layout = 'centered'` and `tags: ['autodocs']`
+7. Each story must have a brief description in `parameters.docs.description.story`
+
+### Part Story Naming
+
+- File name must be `{component-name}-{part-name}.stories.tsx`, using kebab-case for both component and part names (e.g., `form-control.stories.tsx`)
+- Story title format depends on the component category:
+  - **UI components**: `UI/{ComponentName}/{PartName}`
+  - **Block components**: `Blocks/{ComponentName}/{PartName}`
+
+| Category | Example Title |
+|----------|---------------|
+| UI | `UI/Accordion/AccordionTrigger` |
+| UI | `UI/Select/SelectContent` |
+| Blocks | `Blocks/DataTable/DataTableHeader` |
+| Blocks | `Blocks/LoginForm/LoginFormField` |
+
+### Context Requirements for Parts
+
+For parts that require parent context:
+
+1. Always wrap the part in its parent component
+2. Include minimal examples of required sibling components
+3. Document the context requirement in component description
+
+**Example description**: `'The trigger element for the drawer. Must be used within a Drawer component.'`
+
+**Example structure**:
+
+```tsx
+<Drawer>
+  <DrawerTrigger {...args} />
+  <DrawerContent>Minimal content</DrawerContent>
+</Drawer>
+```
+
+## Links Format
+
+All links to part/component stories in markdown should use the format based on component category:
+
+### UI Components
+
+```
+?path=/story/ui-<component>-<part>--default
+```
+
+Example: `[SelectTrigger](?path=/story/ui-select-selecttrigger--default)`
+
+### Block Components
+
+```
+?path=/story/blocks-<component>-<part>--default
+```
+
+Example: `[DataTableHeader](?path=/story/blocks-datatable-datatableheader--default)`
+
+## Props and Controls
+
+1. Only include props in argTypes that are actually supported by the component/part
+2. For controlled stories, always show how to use `value` and `onValueChange` with React state, and call `args.onValueChange?.(v)` if present (to support Storybook actions)
+
+## Consistency Rules
+
+1. Always use the same naming and folder structure as existing stories (e.g., `UI/Select/SelectTrigger`)
+2. Use `StoryFn<typeof Component>` or `StoryObj<typeof Component>` as appropriate
+3. All stories should be self-contained and demonstrate the part/component in a realistic usage context
+
+## Documentation Rules
+
+1. Main story files should not duplicate API documentation for parts/components; instead, reference the part/component stories
+2. Each part/component story should include a concise API reference and usage notes in the docs panel
+
+---
+
+## Category-Specific Guidelines
+
+### UI Component Stories
+
+UI components are primitive building blocks. Their stories should:
+
+1. Focus on demonstrating individual props and states
+2. Show all possible variants (sizes, colors, states)
+3. Include accessibility considerations
+4. Reference the underlying library (e.g., Radix UI) for complete API documentation
+5. Use `layout: 'centered'` for focused component display
+
+### Block Component Stories
+
+Block components are compositions of multiple UI components. Their stories should:
+
+1. Focus on real-world usage scenarios and configurations
+2. Show common use cases and patterns
+3. Demonstrate how the block integrates with forms, data, or other systems
+4. Include examples with mock data to illustrate realistic usage
+5. Use `layout: 'padded'` or `layout: 'fullscreen'` depending on the block's nature
+6. Document which UI components the block is composed of in the description
+
+### Description Format for Block Components
+
+```markdown
+A composed component for [specific use case].
+
+This block combines the following UI components:
+- [Button](?path=/story/ui-button--default)
+- [Input](?path=/story/ui-input--default)
+- [Card](?path=/story/ui-card--default)
+
+### Usage
+Brief explanation of when and how to use this block.
+```
+
+---
+
+## Example: UI Component with Parts
+
+For a UI component like Drawer (at `components/ui/drawer.tsx`) with multiple parts, create the following story files under `stories/ui/drawer/`:
+
+| File | Story Title | Description |
+|------|-------------|-------------|
+| `drawer.stories.tsx` | `UI/Drawer` | Main component story |
+| `drawer-trigger.stories.tsx` | `UI/Drawer/DrawerTrigger` | Trigger part story |
+| `drawer-content.stories.tsx` | `UI/Drawer/DrawerContent` | Content part story |
+| `drawer-header.stories.tsx` | `UI/Drawer/DrawerHeader` | Header part story |
+| `drawer-footer.stories.tsx` | `UI/Drawer/DrawerFooter` | Footer part story |
+| `drawer-title.stories.tsx` | `UI/Drawer/DrawerTitle` | Title part story |
+| `drawer-description.stories.tsx` | `UI/Drawer/DrawerDescription` | Description part story |
+
+## Example: Block Component
+
+For a Block component like LoginForm (at `components/blocks/login-form.tsx`), create the following story files under `stories/blocks/login-form/`:
+
+| File | Story Title | Description |
+|------|-------------|-------------|
+| `login-form.stories.tsx` | `Blocks/LoginForm` | Main block story with various configurations |
+
+**Note**: Block components typically don't have as many parts as UI components since they are compositions themselves. If a block does have parts, follow the same naming pattern with `Blocks/` prefix.
