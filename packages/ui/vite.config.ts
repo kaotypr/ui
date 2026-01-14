@@ -42,7 +42,7 @@ const EXTERNAL_DEPS = [
 	/^react-day-picker$/, // Consumer should install if they use calendar component
 	/^react-hook-form$/, // Consumer should install if they use form component
 	/^react-resizable-panels$/, // Consumer should install if they use resizable component
-	/^recharts$/, // Consumer should install if they use chart component
+	/^recharts$/, // Consumer should install if they use chart component (v2.15.4)
 	/^sonner$/, // Consumer should install if they use sonner component
 	/^zod$/,
 ]
@@ -226,7 +226,7 @@ export default defineConfig({
 			// Note: This is overridden by rollupOptions.input below,
 			// but kept for Vite's library mode detection
 			entry: resolve(dirname, "src/lib/utils.ts"),
-			name: "@gezit/ui",
+			name: "@kaotypr/ui",
 			formats: ["es"],
 		},
 		rollupOptions: {
