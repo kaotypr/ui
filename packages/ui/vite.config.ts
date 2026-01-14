@@ -37,6 +37,7 @@ const EXTERNAL_DEPS = [
 	/^react-day-picker$/,
 	/^react-hook-form$/,
 	/^sonner$/,
+	/^@tanstack\/react-table$/,
 ]
 
 /**
