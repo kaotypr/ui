@@ -40,6 +40,7 @@ const EXTERNAL_DEPS = [
 	/^input-otp$/,
 	/^react-day-picker$/,
 	/^react-hook-form$/,
+	/^react-resizable-panels$/,
 	/^recharts$/,
 	/^sonner$/,
 	/^zod$/,
