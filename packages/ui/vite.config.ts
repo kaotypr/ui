@@ -33,16 +33,17 @@ const EXTERNAL_DEPS = [
 	/^lucide-react$/,
 	/^tailwind-merge$/,
 	// Optional peer dependencies
-	/^@hookform\/resolvers$/,
+	/^@hookform\/resolvers$/, // Consumer should install if they use form component
 	/^@tanstack\/react-table$/,
-	/^date-fns/,
-	/^embla-carousel-react$/,
-	/^input-otp$/,
-	/^react-day-picker$/,
-	/^react-hook-form$/,
-	/^react-resizable-panels$/,
-	/^recharts$/,
-	/^sonner$/,
+	/^date-fns$/,
+	/^embla-carousel-react$/, // Consumer should install if they use carousel component
+	/^input-otp$/, // Consumer should install if they use input-otp component
+	/^next-themes$/, // Consumer should install if they use sonner component
+	/^react-day-picker$/, // Consumer should install if they use calendar component
+	/^react-hook-form$/, // Consumer should install if they use form component
+	/^react-resizable-panels$/, // Consumer should install if they use resizable component
+	/^recharts$/, // Consumer should install if they use chart component
+	/^sonner$/, // Consumer should install if they use sonner component
 	/^zod$/,
 ]
 
