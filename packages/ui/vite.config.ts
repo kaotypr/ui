@@ -33,6 +33,7 @@ const EXTERNAL_DEPS = [
 	/^lucide-react$/,
 	/^tailwind-merge$/,
 	// Optional peer dependencies
+	/^@hookform\/resolvers$/,
 	/^@tanstack\/react-table$/,
 	/^date-fns/,
 	/^embla-carousel-react$/,
@@ -40,6 +41,7 @@ const EXTERNAL_DEPS = [
 	/^react-hook-form$/,
 	/^recharts$/,
 	/^sonner$/,
+	/^zod$/,
 ]
 
 /**
