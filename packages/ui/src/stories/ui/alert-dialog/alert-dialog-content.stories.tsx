@@ -45,26 +45,6 @@ const meta = {
       },
       action: "onEscapeKeyDown",
     },
-    onPointerDownOutside: {
-      description:
-        "Event handler called when a pointer event occurs outside the dialog. Can be prevented.",
-      table: {
-        type: { summary: "(event: PointerEvent) => void" },
-        defaultValue: { summary: "undefined" },
-        category: "Event Handlers",
-      },
-      action: "onPointerDownOutside",
-    },
-    onInteractOutside: {
-      description:
-        "Event handler called when an interaction happens outside the dialog. Can be prevented.",
-      table: {
-        type: { summary: "(event: Event) => void" },
-        defaultValue: { summary: "undefined" },
-        category: "Event Handlers",
-      },
-      action: "onInteractOutside",
-    },
     forceMount: {
       description:
         "Used to force mounting when more control is needed. Useful when controlling animation with React animation libraries.",
