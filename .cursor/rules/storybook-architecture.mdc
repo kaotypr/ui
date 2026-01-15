@@ -40,6 +40,206 @@ When documenting component props:
 
 > **Example**: For a component built on Radix UI, check `https://www.radix-ui.com/primitives/docs/components/[component]` for complete props
 
+## Radix UI Props Documentation
+
+Since `@kaotypr/ui` components are installed via shadcn/ui, which builds on top of Radix UI primitives, **you MUST document all Radix UI props that are passed through** from the `@kaotypr/ui` component to the underlying Radix UI component.
+
+### Workflow for Documenting Radix UI Props
+
+When creating stories for a component built on Radix UI:
+
+1. **Identify the Radix UI Primitive**: Check the component source file to identify which Radix UI primitive(s) it wraps
+2. **Consult Radix UI Documentation**: Use the indexed Radix UI documentation in Cursor to find all available props for the primitive
+3. **Check Type Definitions**: Read the Radix UI type definitions in `node_modules/@radix-ui/react-{component}/dist/index.d.mts` to get accurate prop types
+4. **Document ALL Props**: Include every prop from the Radix UI primitive in argTypes, even if shadcn/ui doesn't explicitly use them (as they are passed through via spread)
+
+### Steps to Find Radix UI Props
+
+1. **Read the component source file** at `components/ui/{component}.tsx`
+2. **Identify the Radix UI import**, e.g., `import * as AccordionPrimitive from "@radix-ui/react-accordion"`
+3. **Read the Radix UI type definitions** at `node_modules/@radix-ui/react-{component}/dist/index.d.mts`
+4. **Cross-reference with Radix UI documentation** at `https://www.radix-ui.com/primitives/docs/components/{component}`
+5. **Document each prop** with accurate description, type, default value, and appropriate Storybook control
+
+### Radix UI Props ArgTypes Structure
+
+For each Radix UI prop, document in argTypes:
+
+```typescript
+argTypes: {
+  propName: {
+    description: 'Accurate description from Radix UI documentation',
+    table: {
+      type: { summary: 'TypeScript type' },
+      defaultValue: { summary: 'default value or undefined' },
+      category: 'Radix UI Props', // Group Radix UI props separately
+    },
+    control: { type: 'appropriate-control-type' },
+  },
+}
+```
+
+### Prop Categories
+
+Organize props into categories in argTypes to distinguish between:
+
+| Category | Description |
+|----------|-------------|
+| `Props` | Custom props added by shadcn/ui or @kaotypr/ui |
+| `Radix UI Props` | Props inherited from Radix UI primitives |
+| `Styling` | className, style, and other styling-related props |
+| `Accessibility` | ARIA attributes and accessibility props |
+| `Event Handlers` | Callback functions (onValueChange, onOpenChange, etc.) |
+
+### Example: Complete ArgTypes with Radix UI Props
+
+```typescript
+argTypes: {
+  // Custom Props (from shadcn/ui or @kaotypr/ui)
+  variant: {
+    description: 'The visual variant of the component',
+    table: {
+      type: { summary: '"default" | "destructive"' },
+      defaultValue: { summary: 'default' },
+      category: 'Props',
+    },
+    control: { type: 'select' },
+    options: ['default', 'destructive'],
+  },
+
+  // Radix UI Props
+  type: {
+    description: 'Determines whether one or multiple items can be opened at the same time.',
+    table: {
+      type: { summary: '"single" | "multiple"' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'radio' },
+    options: ['single', 'multiple'],
+  },
+  value: {
+    description: 'The controlled value of the item(s) to expand. Use with onValueChange.',
+    table: {
+      type: { summary: 'string | string[]' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'text' },
+  },
+  defaultValue: {
+    description: 'The value of the item(s) to expand by default (uncontrolled).',
+    table: {
+      type: { summary: 'string | string[]' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'text' },
+  },
+  collapsible: {
+    description: 'When type is "single", allows closing content when clicking the trigger of an open item.',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'boolean' },
+  },
+  disabled: {
+    description: 'When true, prevents the user from interacting with the accordion and all its items.',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'boolean' },
+  },
+  dir: {
+    description: 'The reading direction. If omitted, inherits globally from DirectionProvider or assumes LTR.',
+    table: {
+      type: { summary: '"ltr" | "rtl"' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'radio' },
+    options: ['ltr', 'rtl'],
+  },
+  orientation: {
+    description: 'The orientation of the accordion.',
+    table: {
+      type: { summary: '"horizontal" | "vertical"' },
+      defaultValue: { summary: 'vertical' },
+      category: 'Radix UI Props',
+    },
+    control: { type: 'radio' },
+    options: ['horizontal', 'vertical'],
+  },
+
+  // Event Handlers
+  onValueChange: {
+    description: 'Event handler called when the expanded state of an item changes.',
+    table: {
+      type: { summary: '(value: string | string[]) => void' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Event Handlers',
+    },
+    action: 'onValueChange',
+  },
+
+  // Styling
+  className: {
+    description: 'Additional CSS class names to apply',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: 'undefined' },
+      category: 'Styling',
+    },
+    control: { type: 'text' },
+  },
+
+  // Accessibility
+  asChild: {
+    description: 'Change the default rendered element for the one passed as a child, merging their props and behavior.',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
+      category: 'Accessibility',
+    },
+    control: { type: 'boolean' },
+  },
+}
+```
+
+### Required Props to Document
+
+For each Radix UI primitive, always document these common props if applicable:
+
+| Prop | Description | Common In |
+|------|-------------|-----------|
+| `asChild` | Render as child element | All primitives |
+| `defaultValue` | Uncontrolled default value | Controlled components |
+| `value` | Controlled value | Controlled components |
+| `onValueChange` | Value change handler | Controlled components |
+| `defaultOpen` | Uncontrolled open state | Dialogs, Popovers, etc. |
+| `open` | Controlled open state | Dialogs, Popovers, etc. |
+| `onOpenChange` | Open state change handler | Dialogs, Popovers, etc. |
+| `disabled` | Disable interaction | Interactive components |
+| `dir` | Reading direction (ltr/rtl) | All primitives |
+| `orientation` | Horizontal/vertical orientation | Accordions, Tabs, etc. |
+| `loop` | Keyboard navigation looping | Navigable components |
+| `modal` | Modal behavior | Dialogs, Sheets, etc. |
+
+### AI Agent Instructions
+
+When generating Storybook stories for components built on Radix UI:
+
+1. **ALWAYS read the component source file first** to identify which Radix UI primitive is used
+2. **ALWAYS read the Radix UI type definitions** from `node_modules/@radix-ui/react-{component}/dist/index.d.mts`
+3. **ALWAYS consult the Radix UI documentation** for accurate prop descriptions and default values
+4. **ALWAYS include ALL Radix UI props** in argTypes, organized by category
+5. **ALWAYS document data attributes** that can be used for styling
+6. **ALWAYS include the Radix UI documentation URL** in the component description
+
 ## Story Metadata
 
 Every story file must include the following metadata in its Meta export:
