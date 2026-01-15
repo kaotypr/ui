@@ -481,6 +481,35 @@ Example: `[DataTableHeader](?path=/story/blocks-datatable-datatableheader--defau
 1. Main story files should not duplicate API documentation for parts/components; instead, reference the part/component stories
 2. Each part/component story should include a concise API reference and usage notes in the docs panel
 
+## Post-Generation Validation
+
+After generating all story files for a component, you **MUST** run TypeScript compilation check on the newly created story files.
+
+### Run TypeScript Compilation Check
+
+```bash
+# For UI components (replace {component-name} with actual component name)
+cd packages/ui && pnpm tsc --noEmit src/stories/ui/{component-name}/*.stories.tsx
+
+# For Block components (replace {component-name} with actual component name)
+cd packages/ui && pnpm tsc --noEmit src/stories/blocks/{component-name}/*.stories.tsx
+```
+
+**Important**: 
+- Do NOT skip this step
+- Do NOT run `tsc --noEmit` on the entire project - only target the specific story files you just created
+- Linter errors (from ESLint/Biome) are different from TypeScript compilation errors - you must run `tsc` explicitly
+
+### Fix TypeScript Errors
+
+If errors are reported, fix them before considering the task complete. Common fixes include:
+- Adding missing required props to story args
+- Correcting type annotations
+- Using type assertions when necessary
+- **Using `any` type is acceptable** when dealing with complex Storybook/Radix UI type inference issues
+
+Re-run `tsc --noEmit` after fixing until no errors remain in the newly created story files.
+
 ---
 
 ## Category-Specific Guidelines
