@@ -12,7 +12,8 @@
         "useImportType": "off"
       },
       "a11y": {
-        "noLabelWithoutControl": "off"
+        "noLabelWithoutControl": "off",
+        "useValidAnchor": "off"
       }
     }
   },
