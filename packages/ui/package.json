@@ -25,6 +25,10 @@
       "require": "./dist/assets/css/index.css",
       "default": "./dist/assets/css/index.css"
     },
+    "./hooks/*": {
+      "import": "./dist/hooks/*/index.js",
+      "types": "./dist/hooks/*/index.d.ts"
+    },
     "./lib/*": {
       "import": "./dist/lib/*/index.js",
       "types": "./dist/lib/*/index.d.ts"

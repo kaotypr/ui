@@ -90,8 +90,8 @@ export default defineConfig({
 			tsconfigPath: "tsconfig.build.json",
 			beforeWriteFile: (filePath, content) => {
 				const { dir, base } = path.parse(filePath)
-				// Only component files should be transformed into folder structure
-				const isComponentFile = /[/\\]components[/\\]/.test(filePath)
+				// Only component, hook, and lib files should be transformed into folder structure
+				const isComponentFile = /[/\\](components|hooks|lib)[/\\]/.test(filePath)
 
 				// Handle .d.ts files
 				if (filePath.endsWith(".d.ts")) {
@@ -255,9 +255,13 @@ export default defineConfig({
 				chunkFileNames: "chunks/[name]-[hash].js",
 				// CSS assets path
 				assetFileNames: "assets/css/[name][extname]",
-				// Only components get their own directory with index.js
+				// Only components, hooks, and lib get their own directory with index.js
 				entryFileNames: (chunkInfo) => {
-					if (chunkInfo.name.startsWith("components/")) {
+					if (
+						chunkInfo.name.startsWith("components/") ||
+						chunkInfo.name.startsWith("hooks/") ||
+						chunkInfo.name.startsWith("lib/")
+					) {
 						return "[name]/index.js"
 					}
 					return "[name].js"
