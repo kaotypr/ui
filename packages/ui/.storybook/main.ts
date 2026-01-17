@@ -9,7 +9,6 @@ import { fileURLToPath } from "node:url"
 * It is needed in projects that use Yarn PnP or are set up within a monorepo.
 */
 
-// biome-ignore lint/suspicious/noExplicitAny: getAbsolutePath is used to resolve the absolute path of a package
 function  getAbsolutePath(value: string): any {
   return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
 }
@@ -19,7 +18,6 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
-    getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-vitest'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-docs'),

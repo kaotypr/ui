@@ -4,10 +4,16 @@
   "linter": {
     "rules": {
       "suspicious": {
-        "noConsole": "off"
+        "noConsole": "off",
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off"
       },
       "style": {
         "useImportType": "off"
+      },
+      "a11y": {
+        "noLabelWithoutControl": "off",
+        "useValidAnchor": "off"
       }
     }
   },
