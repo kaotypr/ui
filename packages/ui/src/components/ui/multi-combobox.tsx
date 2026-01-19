@@ -337,7 +337,6 @@ export function MultiCombobox({
         </div>
         <div className="flex items-center ml-2 shrink-0 opacity-50">
              {clearable && value.length > 0 && (
-                // biome-ignore lint/a11y/useSemanticElements: false positive
                 <div
                     role="button"
                     tabIndex={0}

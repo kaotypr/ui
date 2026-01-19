@@ -70,7 +70,6 @@ export const WithLink: Story = {
         <EmptyTitle>No items found</EmptyTitle>
         <EmptyDescription {...args}>
           Get started by{" "}
-          {/** biome-ignore lint/a11y/useValidAnchor: "This is a storybook story" */}
           <a href="#" onClick={(e) => e.preventDefault()}>
             creating a new item
           </a>

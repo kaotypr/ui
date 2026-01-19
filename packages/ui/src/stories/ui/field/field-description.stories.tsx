@@ -65,7 +65,6 @@ export const WithLink: Story = {
         <Input id="password-desc" type="password" placeholder="••••••••" />
         <FieldDescription>
           Must be at least 8 characters.{" "}
-          {/** biome-ignore lint/a11y/useValidAnchor: "This is a storybook story" */}
           <a
             href="#"
             onClick={(e) => e.preventDefault()}

@@ -258,13 +258,11 @@ export function Combobox({
         </span>
         <div className="flex items-center ml-2 shrink-0 opacity-50">
              {clearable && value && (
-                // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-// biome-ignore lint/a11y/useSemanticElements: <explanation>
-<div
-                    role="button"
-                    tabIndex={0}
-                    onClick={handleClear}
-                    className="mr-1 hover:opacity-100 cursor-pointer"
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={handleClear}
+                  className="mr-1 hover:opacity-100 cursor-pointer"
                 >
                     <X className="h-4 w-4" />
                 </div>

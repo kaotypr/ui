@@ -200,8 +200,6 @@ export function DatePicker({
 					<CalendarIcon className="mr-2 h-4 w-4" />
 					<span className="flex-1 truncate">{displayValue}</span>
 					{clearable && dateValue && (
-						// biome-ignore lint/a11y/useKeyWithClickEvents: click handler sufficient for clear action
-						// biome-ignore lint/a11y/useSemanticElements: false positive
                         <div
 							role="button"
 							tabIndex={0}
