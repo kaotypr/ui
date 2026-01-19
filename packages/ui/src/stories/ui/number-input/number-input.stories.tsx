@@ -477,3 +477,17 @@ export const LargeValue: Story = {
     },
   },
 }
+
+export const WithClassName: Story = {
+  args: {
+    defaultValue: 0,
+    className: "w-[56px]",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "A number input with a custom class name.",
+      },
+    },
+  },
+}

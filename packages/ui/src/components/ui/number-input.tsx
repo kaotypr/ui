@@ -3,6 +3,7 @@ import { forwardRef, useCallback, useEffect, useState, useRef } from 'react';
 import { NumericFormat, NumericFormatProps } from 'react-number-format';
 import { Button } from '~/components/ui/button';
 import { Input } from '~/components/ui/input';
+import { cn } from '~/lib/utils';
 
 export interface NumberInputProps
   extends Omit<NumericFormatProps, 'value' | 'onValueChange'> {
@@ -35,6 +36,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
       suffix,
       prefix,
       value: controlledValue,
+      className,
       ...props
     },
     ref
@@ -114,7 +116,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     };
 
     return (
-      <div className="flex items-center">
+      <div className={cn("flex items-center", className)}>
         <NumericFormat
           value={value}
           onValueChange={handleChange}
