@@ -30,6 +30,7 @@ export enum AVAILABLE_UI_COMPONENTS {
     KBD = "kbd",
     LABEL = "label",
     MENUBAR = "menubar",
+    MULTI_COMBOBOX = "multi-combobox",
     NATIVE_SELECT = "native-select",
     NAVIGATION_MENU = "navigation-menu",
     PAGINATION = "pagination",
