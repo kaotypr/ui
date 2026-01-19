@@ -35,6 +35,7 @@ export enum AVAILABLE_UI_COMPONENTS {
     MULTI_COMBOBOX = "multi-combobox",
     NATIVE_SELECT = "native-select",
     NAVIGATION_MENU = "navigation-menu",
+    NUMBER_INPUT = "number-input",
     PAGINATION = "pagination",
     POPOVER = "popover",
     PROGRESS = "progress",
