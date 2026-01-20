@@ -1,14 +1,28 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon, X } from "lucide-react"
+import { CalendarIcon, Clock, X } from "lucide-react"
 import { format as formatDate, parseISO } from "date-fns"
 
 import { cn } from "~/lib/utils"
 import { Button } from "~/components/ui/button"
 import { Calendar } from "~/components/ui/calendar"
-import { Input } from "~/components/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover"
+import { TimePicker, type TimePickerProps } from "~/components/ui/time-picker"
+
+export type DatePickerTimeProps = Omit<
+	TimePickerProps,
+	| "value"
+	| "defaultValue"
+	| "onValueChange"
+	| "mode"
+	| "showHours"
+	| "showMinutes"
+	| "showSeconds"
+	| "clearable"
+	| "disabled"
+	| "placeholder"
+>
 
 export interface DatePickerProps {
 	// Value control
@@ -25,6 +39,7 @@ export interface DatePickerProps {
 	showHours?: boolean
 	showMinutes?: boolean
 	showSeconds?: boolean
+	timePickerProps?: DatePickerTimeProps
 
 	// Features
 	clearable?: boolean
@@ -57,6 +72,42 @@ function outputValue(
 	return date
 }
 
+// Helper to parse time string from TimePicker
+function parseTimeValue(value: string): { hours: number; minutes: number; seconds: number } | null {
+	const trimmed = value.trim()
+	if (!trimmed) return null
+
+	// Check for 12-hour format with AM/PM
+	const meridiemMatch = trimmed.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)$/i)
+	if (meridiemMatch?.[1] && meridiemMatch[2] && meridiemMatch[4]) {
+		let hours = Number.parseInt(meridiemMatch[1], 10)
+		const minutes = Number.parseInt(meridiemMatch[2], 10)
+		const seconds = meridiemMatch[3] ? Number.parseInt(meridiemMatch[3], 10) : 0
+		const isPM = meridiemMatch[4].toUpperCase() === "PM"
+
+		// Convert to 24-hour
+		if (isPM && hours !== 12) {
+			hours += 12
+		} else if (!isPM && hours === 12) {
+			hours = 0
+		}
+
+		return { hours, minutes, seconds }
+	}
+
+	// Check for 24-hour format
+	const match24 = trimmed.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/)
+	if (match24?.[1] && match24[2]) {
+		const hours = Number.parseInt(match24[1], 10)
+		const minutes = Number.parseInt(match24[2], 10)
+		const seconds = match24[3] ? Number.parseInt(match24[3], 10) : 0
+
+		return { hours, minutes, seconds }
+	}
+
+	return null
+}
+
 export function DatePicker({
 	value: controlledValue,
 	defaultValue,
@@ -67,6 +118,7 @@ export function DatePicker({
 	showHours = true,
 	showMinutes = true,
 	showSeconds = false,
+	timePickerProps,
 	clearable = false,
 	disabled = false,
 	calendarProps,
@@ -126,9 +178,11 @@ export function DatePicker({
 	)
 
 	const handleTimeChange = React.useCallback(
-		(field: "hours" | "minutes" | "seconds", value: string) => {
-			const numValue = Number.parseInt(value, 10)
-			if (Number.isNaN(numValue)) return
+		(value: string | undefined) => {
+			if (!value) return
+
+			const parsed = parseTimeValue(value)
+			if (!parsed) return
 
 			const newDate = dateValue ? new Date(dateValue) : new Date()
 
@@ -137,17 +191,9 @@ export function DatePicker({
 				newDate.setHours(0, 0, 0, 0)
 			}
 
-			switch (field) {
-				case "hours":
-					newDate.setHours(numValue)
-					break
-				case "minutes":
-					newDate.setMinutes(numValue)
-					break
-				case "seconds":
-					newDate.setSeconds(numValue)
-					break
-			}
+			newDate.setHours(parsed.hours)
+			newDate.setMinutes(parsed.minutes)
+			newDate.setSeconds(parsed.seconds)
 
 			handleDateChange(newDate)
 		},
@@ -171,18 +217,13 @@ export function DatePicker({
 		}
 	}, [dateValue, format, placeholder])
 
-	const hours = dateValue?.getHours().toString().padStart(2, "0") ?? "00"
-	const minutes = dateValue?.getMinutes().toString().padStart(2, "0") ?? "00"
-	const seconds = dateValue?.getSeconds().toString().padStart(2, "0") ?? "00"
-
-	// Determine which time fields to show
-	const timeFieldsToShow = showTime
-		? {
-				hours: showHours,
-				minutes: showMinutes,
-				seconds: showSeconds,
-			}
-		: { hours: false, minutes: false, seconds: false }
+	const timeValue = React.useMemo(() => {
+		if (!dateValue) return undefined
+		const h = dateValue.getHours().toString().padStart(2, "0")
+		const m = dateValue.getMinutes().toString().padStart(2, "0")
+		const s = dateValue.getSeconds().toString().padStart(2, "0")
+		return `${h}:${m}:${s}`
+	}, [dateValue])
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
@@ -197,10 +238,10 @@ export function DatePicker({
 						className
 					)}
 				>
-					<CalendarIcon className="mr-2 h-4 w-4" />
+					<CalendarIcon className="h-4 w-4" />
 					<span className="flex-1 truncate">{displayValue}</span>
 					{clearable && dateValue && (
-                        <div
+						<div
 							role="button"
 							tabIndex={0}
 							onClick={handleClear}
@@ -223,49 +264,17 @@ export function DatePicker({
 						data-slot="date-picker-time"
 						className="flex items-center justify-center gap-2 border-t p-3"
 					>
-						{timeFieldsToShow.hours && (
-							<div className="flex items-center gap-1">
-								<Input
-									type="number"
-									min={0}
-									max={23}
-									value={hours}
-									onChange={(e) => handleTimeChange("hours", e.target.value)}
-									className="w-14 text-center"
-									aria-label="Hours"
-								/>
-								{(timeFieldsToShow.minutes || timeFieldsToShow.seconds) && (
-									<span className="text-muted-foreground">:</span>
-								)}
-							</div>
-						)}
-						{timeFieldsToShow.minutes && (
-							<div className="flex items-center gap-1">
-								<Input
-									type="number"
-									min={0}
-									max={59}
-									value={minutes}
-									onChange={(e) => handleTimeChange("minutes", e.target.value)}
-									className="w-14 text-center"
-									aria-label="Minutes"
-								/>
-								{timeFieldsToShow.seconds && (
-									<span className="text-muted-foreground">:</span>
-								)}
-							</div>
-						)}
-						{timeFieldsToShow.seconds && (
-							<Input
-								type="number"
-								min={0}
-								max={59}
-								value={seconds}
-								onChange={(e) => handleTimeChange("seconds", e.target.value)}
-								className="w-14 text-center"
-								aria-label="Seconds"
-							/>
-						)}
+						<Clock className="h-4 w-4 text-muted-foreground" />
+						<TimePicker
+							mode="inline"
+							value={timeValue}
+							onValueChange={handleTimeChange}
+							showHours={showHours}
+							showMinutes={showMinutes}
+							showSeconds={showSeconds}
+							disabled={disabled}
+							{...timePickerProps}
+						/>
 					</div>
 				)}
 			</PopoverContent>

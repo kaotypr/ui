@@ -177,20 +177,40 @@ function timeToMinutes(time: ParsedTime): number {
 
 function generateHourOptions(
   meridiem: boolean,
-  step: number
+  step: number,
+  includeValue?: number
 ): { value: string; label: string }[] {
   const options: { value: string; label: string }[] = []
+  const values = new Set<number>()
 
   if (meridiem) {
-    // 12-hour format: 12, 1, 2, ..., 11
+    // 12-hour format: 0, 1, ..., 11 (display as 12, 1, ..., 11)
     for (let h = 0; h < 12; h += step) {
-      const displayHour = h === 0 ? 12 : h
-      const value = displayHour.toString().padStart(2, "0")
-      options.push({ value, label: value })
+      values.add(h)
     }
   } else {
     // 24-hour format: 00, 01, ..., 23
     for (let h = 0; h < 24; h += step) {
+      values.add(h)
+    }
+  }
+
+  if (includeValue !== undefined) {
+    if (meridiem) {
+      values.add(includeValue % 12)
+    } else {
+      values.add(includeValue)
+    }
+  }
+
+  const sortedValues = Array.from(values).sort((a, b) => a - b)
+
+  for (const h of sortedValues) {
+    if (meridiem) {
+      const displayHour = h === 0 ? 12 : h
+      const value = displayHour.toString().padStart(2, "0")
+      options.push({ value, label: value })
+    } else {
       const value = h.toString().padStart(2, "0")
       options.push({ value, label: value })
     }
@@ -199,22 +219,42 @@ function generateHourOptions(
   return options
 }
 
-function generateMinuteOptions(step: number): { value: string; label: string }[] {
-  const options: { value: string; label: string }[] = []
+function generateMinuteOptions(
+  step: number,
+  includeValue?: number
+): { value: string; label: string }[] {
+  const values = new Set<number>()
   for (let m = 0; m < 60; m += step) {
-    const value = m.toString().padStart(2, "0")
-    options.push({ value, label: value })
+    values.add(m)
   }
-  return options
+  if (includeValue !== undefined) {
+    values.add(includeValue)
+  }
+  const sortedValues = Array.from(values).sort((a, b) => a - b)
+
+  return sortedValues.map((m) => {
+    const value = m.toString().padStart(2, "0")
+    return { value, label: value }
+  })
 }
 
-function generateSecondOptions(step: number): { value: string; label: string }[] {
-  const options: { value: string; label: string }[] = []
+function generateSecondOptions(
+  step: number,
+  includeValue?: number
+): { value: string; label: string }[] {
+  const values = new Set<number>()
   for (let s = 0; s < 60; s += step) {
-    const value = s.toString().padStart(2, "0")
-    options.push({ value, label: value })
+    values.add(s)
   }
-  return options
+  if (includeValue !== undefined) {
+    values.add(includeValue)
+  }
+  const sortedValues = Array.from(values).sort((a, b) => a - b)
+
+  return sortedValues.map((s) => {
+    const value = s.toString().padStart(2, "0")
+    return { value, label: value }
+  })
 }
 
 // ============================================================================
@@ -345,9 +385,9 @@ function TimePickerContent({
   }
 
   // Generate options
-  const hourOptions = generateHourOptions(meridiem, hourStep)
-  const minuteOptions = generateMinuteOptions(minuteStep)
-  const secondOptions = generateSecondOptions(secondStep)
+  const hourOptions = generateHourOptions(meridiem, hourStep, currentHours)
+  const minuteOptions = generateMinuteOptions(minuteStep, currentMinutes)
+  const secondOptions = generateSecondOptions(secondStep, currentSeconds)
 
   return (
     <div
@@ -363,6 +403,7 @@ function TimePickerContent({
           <SelectTrigger
             data-slot="time-picker-hours"
             aria-label="Hours"
+            className="gap-0.5"
           >
             <SelectValue placeholder="HH" />
           </SelectTrigger>
@@ -405,6 +446,7 @@ function TimePickerContent({
           <SelectTrigger
             data-slot="time-picker-minutes"
             aria-label="Minutes"
+            className="gap-0.5"
           >
             <SelectValue placeholder="mm" />
           </SelectTrigger>
@@ -441,6 +483,7 @@ function TimePickerContent({
           <SelectTrigger
             data-slot="time-picker-seconds"
             aria-label="Seconds"
+            className="gap-0.5"
           >
             <SelectValue placeholder="ss" />
           </SelectTrigger>
@@ -473,6 +516,7 @@ function TimePickerContent({
           <SelectTrigger
             data-slot="time-picker-meridiem"
             aria-label="AM/PM"
+            className="gap-0.5 w-fit"
           >
             <SelectValue placeholder="AM/PM" />
           </SelectTrigger>
@@ -562,7 +606,7 @@ export function TimePicker({
   // Inline mode
   if (mode === "inline") {
     return (
-      <div data-slot="time-picker" className={cn("inline-flex items-center gap-2", className)}>
+      <div data-slot="time-picker" className={cn("inline-flex items-center gap-1", className)}>
         <TimePickerContent
           time={parsedTime}
           onTimeChange={handleTimeChange}

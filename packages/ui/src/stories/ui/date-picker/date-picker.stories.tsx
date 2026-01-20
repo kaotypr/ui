@@ -111,6 +111,15 @@ This component is built on top of [Radix UI Popover](https://www.radix-ui.com/pr
 			control: "boolean",
 		},
 
+		timePickerProps: {
+			description: "Props passed to the embedded TimePicker component.",
+			table: {
+				type: { summary: "DatePickerTimeProps" },
+				category: "Time Selection",
+			},
+			control: "object",
+		},
+
 		// Features
 		clearable: {
 			description: "Whether the selection can be cleared with a clear button.",
@@ -472,6 +481,70 @@ export const CustomWidth: Story = {
 			description: {
 				story:
 					"Use `className` to customize the trigger button width and styling.",
+			},
+		},
+	},
+}
+
+export const With12HourFormat: Story = {
+	args: {
+		defaultValue: new Date(),
+		showTime: true,
+		format: "PPP hh:mm aa",
+		placeholder: "Pick date and time (12h)",
+		timePickerProps: {
+			meridiem: true,
+		},
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.",
+			},
+		},
+	},
+}
+
+export const WithStepIntervals: Story = {
+	args: {
+		defaultValue: new Date(),
+		showTime: true,
+		showSeconds: true,
+		format: "PPP HH:mm:ss",
+		placeholder: "Pick date and time",
+		timePickerProps: {
+			hourStep: 2,
+			minuteStep: 15,
+			secondStep: 30,
+		},
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Customize step intervals for hours, minutes, and seconds using `timePickerProps`.",
+			},
+		},
+	},
+}
+
+export const WithTimeConstraints: Story = {
+	args: {
+		defaultValue: new Date(),
+		showTime: true,
+		format: "PPP HH:mm",
+		placeholder: "Business hours only",
+		timePickerProps: {
+			minTime: "09:00",
+			maxTime: "17:00",
+		},
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Restrict time selection range using `timePickerProps.minTime` and `timePickerProps.maxTime`.",
 			},
 		},
 	},
