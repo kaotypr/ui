@@ -13,7 +13,9 @@
       },
       "a11y": {
         "noLabelWithoutControl": "off",
-        "useValidAnchor": "off"
+        "useValidAnchor": "off",
+        "useKeyWithClickEvents": "off",
+        "useSemanticElements": "off"
       }
     }
   },

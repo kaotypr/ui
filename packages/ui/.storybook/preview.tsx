@@ -7,6 +7,7 @@ const preview: Preview = {
     options: {
       storySort: {
         order: ['Documentation', '*'],
+        method: 'alphabetical',
       },
     },
     controls: {
