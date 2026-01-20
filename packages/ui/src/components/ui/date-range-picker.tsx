@@ -362,39 +362,35 @@ export function DateRangePicker({
 				{showTime && (
 					<div
 						data-slot="date-range-picker-time"
-						className="flex flex-col gap-3 border-t p-3"
+						className="flex items-center justify-between gap-6 border-t p-3"
 					>
-						<div className="flex items-center justify-between gap-4">
-							<div className="flex items-center gap-2">
-								<span className="text-sm text-muted-foreground min-w-[40px]">From:</span>
-								<Clock className="h-4 w-4 text-muted-foreground" />
-								<TimePicker
-									mode="inline"
-									value={fromTimeValue}
-									onValueChange={handleFromTimeChange}
-									showHours={showHours}
-									showMinutes={showMinutes}
-									showSeconds={showSeconds}
-									disabled={disabled || !rangeValue?.from}
-									{...timePickerProps}
-								/>
-							</div>
+						<div className="flex items-center gap-2">
+							<span className="text-sm text-muted-foreground">From:</span>
+							<Clock className="h-4 w-4 text-muted-foreground" />
+							<TimePicker
+								mode="inline"
+								value={fromTimeValue}
+								onValueChange={handleFromTimeChange}
+								showHours={showHours}
+								showMinutes={showMinutes}
+								showSeconds={showSeconds}
+								disabled={disabled || !rangeValue?.from}
+								{...timePickerProps}
+							/>
 						</div>
-						<div className="flex items-center justify-between gap-4">
-							<div className="flex items-center gap-2">
-								<span className="text-sm text-muted-foreground min-w-[40px]">To:</span>
-								<Clock className="h-4 w-4 text-muted-foreground" />
-								<TimePicker
-									mode="inline"
-									value={toTimeValue}
-									onValueChange={handleToTimeChange}
-									showHours={showHours}
-									showMinutes={showMinutes}
-									showSeconds={showSeconds}
-									disabled={disabled || !rangeValue?.to}
-									{...timePickerProps}
-								/>
-							</div>
+						<div className="flex items-center gap-2">
+							<span className="text-sm text-muted-foreground">To:</span>
+							<Clock className="h-4 w-4 text-muted-foreground" />
+							<TimePicker
+								mode="inline"
+								value={toTimeValue}
+								onValueChange={handleToTimeChange}
+								showHours={showHours}
+								showMinutes={showMinutes}
+								showSeconds={showSeconds}
+								disabled={disabled || !rangeValue?.to}
+								{...timePickerProps}
+							/>
 						</div>
 					</div>
 				)}
