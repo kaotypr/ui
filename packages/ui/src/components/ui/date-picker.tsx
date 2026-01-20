@@ -119,7 +119,7 @@ export function DatePicker({
 	showMinutes = true,
 	showSeconds = false,
 	timePickerProps,
-	clearable = false,
+	clearable = true,
 	disabled = false,
 	calendarProps,
 	className,
@@ -245,7 +245,7 @@ export function DatePicker({
 							role="button"
 							tabIndex={0}
 							onClick={handleClear}
-							className="ml-2 shrink-0 opacity-50 hover:opacity-100"
+							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
 						>
 							<X className="h-4 w-4" />
 						</div>

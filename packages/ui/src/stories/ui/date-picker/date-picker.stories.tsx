@@ -125,7 +125,7 @@ This component is built on top of [Radix UI Popover](https://www.radix-ui.com/pr
 			description: "Whether the selection can be cleared with a clear button.",
 			table: {
 				type: { summary: "boolean" },
-				defaultValue: { summary: "false" },
+				defaultValue: { summary: "true" },
 				category: "Props",
 			},
 			control: "boolean",
