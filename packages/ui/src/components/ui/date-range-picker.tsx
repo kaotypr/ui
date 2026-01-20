@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon, Clock, X } from "lucide-react"
+import { CalendarIcon, Clock, Trash2, X as XIcon } from "lucide-react"
 import { format as formatDate, parseISO } from "date-fns"
 import type { DateRange } from "react-day-picker"
 
@@ -287,6 +287,14 @@ export function DateRangePicker({
 		[handleRangeChange]
 	)
 
+	const handleFooterClear = React.useCallback(() => {
+		handleRangeChange(undefined)
+	}, [handleRangeChange])
+
+	const handleClose = React.useCallback(() => {
+		setOpen(false)
+	}, [])
+
 	const displayValue = React.useMemo(() => {
 		if (!rangeValue?.from && !rangeValue?.to) return placeholder
 
@@ -346,7 +354,7 @@ export function DateRangePicker({
 							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
 							aria-label="Clear date range"
 						>
-							<X className="h-4 w-4" />
+							<XIcon className="h-4 w-4" />
 						</div>
 					)}
 				</Button>
@@ -394,6 +402,28 @@ export function DateRangePicker({
 						</div>
 					</div>
 				)}
+				<div
+					data-slot="date-range-picker-footer"
+					className="flex items-center justify-end gap-2 border-t p-3"
+				>
+					<Button
+						variant="outline"
+						size="sm"
+						onClick={handleFooterClear}
+						disabled={disabled || !hasValue}
+					>
+						<Trash2 className="h-4 w-4" />
+						Clear
+					</Button>
+					<Button
+						variant="outline"
+						size="sm"
+						onClick={handleClose}
+					>
+						<XIcon className="h-4 w-4" />
+						Close
+					</Button>
+				</div>
 			</PopoverContent>
 		</Popover>
 	)
