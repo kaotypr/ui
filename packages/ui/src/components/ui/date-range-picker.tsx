@@ -167,7 +167,7 @@ export function DateRangePicker({
 	showMinutes = true,
 	showSeconds = false,
 	timePickerProps,
-	clearable = false,
+	clearable = true,
 	disabled = false,
 	calendarProps,
 	className,
@@ -343,7 +343,7 @@ export function DateRangePicker({
 									handleClear(e as unknown as React.MouseEvent)
 								}
 							}}
-							className="ml-2 shrink-0 opacity-50 hover:opacity-100"
+							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
 							aria-label="Clear date range"
 						>
 							<X className="h-4 w-4" />
