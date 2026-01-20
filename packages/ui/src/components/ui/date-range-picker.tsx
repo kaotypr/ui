@@ -225,11 +225,6 @@ export function DateRangePicker({
 			}
 
 			handleRangeChange(newRange)
-
-			// Close popover only if not showing time and both dates are selected
-			if (!showTime && newRange.from && newRange.to) {
-				setOpen(false)
-			}
 		},
 		[rangeValue, showTime, handleRangeChange]
 	)
