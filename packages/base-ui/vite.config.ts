@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from "vite"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react-swc"
@@ -6,7 +7,8 @@ import path, { extname, relative, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import dts from "vite-plugin-dts"
 import { copyFileSync, mkdirSync, readdirSync, statSync } from "node:fs"
-
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin"
+import { playwright } from "@vitest/browser-playwright"
 const dirname =
 	typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url))
 
@@ -29,19 +31,20 @@ const EXTERNAL_DEPS = [
 	/^@phosphor-icons\/react$/,
 	/^tailwind-merge$/,
 ]
-
 const copyAssetsPlugin = (): Plugin => {
 	return {
 		name: "copy-assets",
 		closeBundle: () => {
 			const copyDir = (src: string, dest: string) => {
-				mkdirSync(dest, { recursive: true })
-				const entries = readdirSync(src, { withFileTypes: true })
-
+				mkdirSync(dest, {
+					recursive: true,
+				})
+				const entries = readdirSync(src, {
+					withFileTypes: true,
+				})
 				for (const entry of entries) {
 					const srcPath = resolve(src, entry.name)
 					const destPath = resolve(dest, entry.name)
-
 					if (entry.isDirectory()) {
 						copyDir(srcPath, destPath)
 					} else {
@@ -49,17 +52,18 @@ const copyAssetsPlugin = (): Plugin => {
 					}
 				}
 			}
-
 			const srcAssets = resolve(dirname, "src/assets")
 			const distAssets = resolve(dirname, "dist/assets")
-
-			if (statSync(srcAssets, { throwIfNoEntry: false })) {
+			if (
+				statSync(srcAssets, {
+					throwIfNoEntry: false,
+				})
+			) {
 				copyDir(srcAssets, distAssets)
 			}
 		},
 	}
 }
-
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -85,11 +89,12 @@ export default defineConfig({
 						fileNameWithoutExt === "vite-env" ||
 						filePath.includes("node_modules")
 					) {
-						return { filePath, content }
+						return {
+							filePath,
+							content,
+						}
 					}
-
 					const newFilePath = path.join(dir, fileNameWithoutExt, "index.d.ts")
-
 					let newContent = content
 					// Update imports/exports to account for the new directory depth
 					newContent = newContent.replace(
@@ -118,8 +123,10 @@ export default defineConfig({
 						/\/\/# sourceMappingURL=.+\.map$/,
 						`//# sourceMappingURL=index.d.ts.map`,
 					)
-
-					return { filePath: newFilePath, content: newContent }
+					return {
+						filePath: newFilePath,
+						content: newContent,
+					}
 				}
 
 				// Handle .d.ts.map files
@@ -133,11 +140,12 @@ export default defineConfig({
 						fileNameWithoutExt === "vite-env" ||
 						filePath.includes("node_modules")
 					) {
-						return { filePath, content }
+						return {
+							filePath,
+							content,
+						}
 					}
-
 					const newFilePath = path.join(dir, fileNameWithoutExt, "index.d.ts.map")
-
 					let newContent = content
 					try {
 						const json = JSON.parse(content)
@@ -157,11 +165,15 @@ export default defineConfig({
 					} catch {
 						console.warn("Failed to parse map file", filePath)
 					}
-
-					return { filePath: newFilePath, content: newContent }
+					return {
+						filePath: newFilePath,
+						content: newContent,
+					}
 				}
-
-				return { filePath, content }
+				return {
+					filePath,
+					content,
+				}
 			},
 		}),
 		copyAssetsPlugin(),
@@ -228,5 +240,33 @@ export default defineConfig({
 				},
 			},
 		},
+	},
+	test: {
+		projects: [
+			{
+				extends: true,
+				plugins: [
+					// The plugin will run tests for the stories defined in your Storybook config
+					// See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+					storybookTest({
+						configDir: path.join(dirname, ".storybook"),
+					}),
+				],
+				test: {
+					name: "storybook",
+					browser: {
+						enabled: true,
+						headless: true,
+						provider: playwright({}),
+						instances: [
+							{
+								browser: "chromium",
+							},
+						],
+					},
+					setupFiles: [".storybook/vitest.setup.ts"],
+				},
+			},
+		],
 	},
 })
