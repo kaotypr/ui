@@ -19,7 +19,7 @@ export default create({
 
   // UI backgrounds - derived from --background and --card
   appBg: '#1b1c1d',
-  appContentBg: '#262838',
+  appContentBg: '#2D2D2D',
   appPreviewBg: '#1b1c1d',
   appBorderColor: '#575757',
   appBorderRadius: 8,
@@ -30,9 +30,9 @@ export default create({
   textMutedColor: '#ababab',
 
   // Toolbar - dark bar with light text/icons for visibility
-  barTextColor: '#e8e8e8',
+  barTextColor: '#BBBBBB',
   barSelectedColor: '#FFF290',
-  barHoverColor: '#FFF290',
+  barHoverColor: '#FFFDED',
   barBg: '#1b1c1d',
 
   // Form colors - using --card and --border values
