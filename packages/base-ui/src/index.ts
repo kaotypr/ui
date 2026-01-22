@@ -58,3 +58,7 @@ export enum AVAILABLE_UI_COMPONENTS {
 	TOGGLE = "toggle",
 	TOOLTIP = "tooltip",
 }
+
+export enum CUSTOM_UI_COMPONENTS {
+	DATA_TABLE = "data-table",
+}
