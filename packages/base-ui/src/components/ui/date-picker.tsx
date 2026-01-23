@@ -264,7 +264,6 @@ export function DatePicker({
 						data-slot="date-picker-time"
 						className="flex items-center justify-center gap-2 border-t p-3"
 					>
-						<Clock className="h-4 w-4 text-muted-foreground" />
 						<TimePicker
 							value={timeValue}
 							onValueChange={handleTimeChange}

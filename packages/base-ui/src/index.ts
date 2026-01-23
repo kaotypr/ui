@@ -21,6 +21,7 @@ export enum AVAILABLE_UI_COMPONENTS {
 	COMMAND = "command",
 	CONTEXT_MENU = "context-menu",
 	DATA_TABLE = "data-table",
+	DATE_PICKER = "date-picker",
 	DIALOG = "dialog",
 	DRAWER = "drawer",
 	DROPDOWN_MENU = "dropdown-menu",
@@ -62,4 +63,6 @@ export enum AVAILABLE_UI_COMPONENTS {
 
 export enum CUSTOM_UI_COMPONENTS {
 	DATA_TABLE = "data-table",
+	DATE_PICKER = "date-picker",
+	TIME_PICKER = "time-picker",
 }

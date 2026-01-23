@@ -260,6 +260,14 @@ export const Disabled: Story = {
 	},
 }
 
+export const WithMonthYearDropdown: Story = {
+	args: {
+		calendarProps: {
+			captionLayout: "dropdown",
+		},
+	},
+}
+
 export const WithTime: Story = {
 	args: {
 		defaultValue: new Date(),
