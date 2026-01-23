@@ -54,6 +54,7 @@ export enum AVAILABLE_UI_COMPONENTS {
 	TABLE = "table",
 	TABS = "tabs",
 	TEXTAREA = "textarea",
+	TIME_PICKER = "time-picker",
 	TOGGLE_GROUP = "toggle-group",
 	TOGGLE = "toggle",
 	TOOLTIP = "tooltip",
