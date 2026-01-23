@@ -168,7 +168,7 @@ export function MultiCombobox({
         if (!groups[item.group]) {
           groups[item.group] = []
         }
-        groups[item.group]!.push(item)
+        groups[item.group]?.push(item)
       } else {
         ungrouped.push(item)
       }
@@ -286,7 +286,6 @@ export function MultiCombobox({
         {visibleItems.map((item) => (
           <Badge key={item.value} variant="secondary" className="mr-1 mb-1">
             {item.label}
-            {/** biome-ignore lint/a11y/useSemanticElements: false positive */}
             <div
               role="button"
               tabIndex={0}

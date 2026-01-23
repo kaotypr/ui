@@ -15,7 +15,9 @@
         "noLabelWithoutControl": "off",
         "useValidAnchor": "off",
         "useKeyWithClickEvents": "off",
-        "useSemanticElements": "off"
+        "useSemanticElements": "off",
+        "useFocusableInteractive": "off",
+        "useAriaPropsForRole": "off"
       }
     }
   },
