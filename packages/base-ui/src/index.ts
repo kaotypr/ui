@@ -1,4 +1,5 @@
 export * from "./components/ui/button"
+export * from "./components/ui/data-combobox"
 
 // List of all available UI components
 export enum AVAILABLE_UI_COMPONENTS {
@@ -19,6 +20,7 @@ export enum AVAILABLE_UI_COMPONENTS {
 	COLLAPSIBLE = "collapsible",
 	COMBOBOX = "combobox",
 	COMMAND = "command",
+	DATA_COMBOBOX = "data-combobox",
 	CONTEXT_MENU = "context-menu",
 	DATA_TABLE = "data-table",
 	DATE_PICKER = "date-picker",
