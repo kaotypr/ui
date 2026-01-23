@@ -42,6 +42,7 @@ export enum AVAILABLE_UI_COMPONENTS {
 	MENUBAR = "menubar",
 	NATIVE_SELECT = "native-select",
 	NAVIGATION_MENU = "navigation-menu",
+	NUMBER_INPUT = "number-input",
 	PAGINATION = "pagination",
 	POPOVER = "popover",
 	PROGRESS = "progress",
@@ -68,7 +69,10 @@ export enum AVAILABLE_UI_COMPONENTS {
 
 export enum CUSTOM_UI_COMPONENTS {
 	DATA_TABLE = "data-table",
+	DATA_COMBOBOX = "data-combobox",
+	DATA_MULTI_COMBOBOX = "data-multi-combobox",
 	DATE_PICKER = "date-picker",
 	DATE_RANGE_PICKER = "date-range-picker",
+	NUMBER_INPUT = "number-input",
 	TIME_PICKER = "time-picker",
 }
