@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ChevronDown, Clock, X } from "lucide-react"
+import { CaretDownIcon, ClockIcon, XIcon } from "@phosphor-icons/react"
 import { CheckIcon } from "@phosphor-icons/react"
 
 import { cn } from "~/lib/utils"
@@ -69,7 +69,7 @@ function parseTimeString(
 
   const meridiemMatch = timeStr.match(/\s*(AM|PM)$/i)
   const meridiem = meridiemMatch
-    ? (meridiemMatch[1].toUpperCase() as "AM" | "PM")
+    ? (meridiemMatch[1]?.toUpperCase() as "AM" | "PM")
     : undefined
 
   const timePart = timeStr.replace(/\s*(AM|PM)$/i, "").trim()
@@ -548,7 +548,7 @@ function TimePickerSummary({ formattedValue, className }: TimePickerSummaryProps
         className
       )}
     >
-      <Clock className="size-4" />
+      <ClockIcon className="size-4" />
       <span>{formattedValue || "--:--"}</span>
     </div>
   )
@@ -647,7 +647,7 @@ function TimePicker({
           />
         }
       >
-        <Clock className="size-4" />
+        <ClockIcon className="size-4" />
         <span className="flex-1 text-left">
           {formattedValue || placeholder}
         </span>
@@ -664,10 +664,10 @@ function TimePicker({
             className="rounded-sm p-0.5 hover:bg-muted focus:outline-none focus:ring-1 focus:ring-ring"
             aria-label="Clear time"
           >
-            <X className="size-3.5" />
+            <XIcon className="size-3.5" />
           </span>
         )}
-        <ChevronDown className="size-4 text-muted-foreground" />
+        <CaretDownIcon className="size-4 text-muted-foreground" />
       </PopoverTrigger>
 
       <PopoverContent

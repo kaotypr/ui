@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { Download, Heart, Plus } from "lucide-react"
+import { DownloadIcon, HeartIcon, PlusIcon } from "@phosphor-icons/react"
 import { Button } from "~/components/ui/button"
 
 const meta = {
@@ -120,13 +120,13 @@ export const IconButtons: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4">
       <Button size="icon-sm" variant="outline">
-        <Plus />
+        <PlusIcon />
       </Button>
       <Button size="icon" variant="outline">
-        <Plus />
+        <PlusIcon />
       </Button>
       <Button size="icon-lg" variant="outline">
-        <Plus />
+        <PlusIcon />
       </Button>
     </div>
   ),
@@ -143,15 +143,15 @@ export const WithIcons: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4">
       <Button>
-        <Download />
+        <DownloadIcon />
         Download
       </Button>
       <Button variant="outline">
-        <Heart />
+        <HeartIcon />
         Favorite
       </Button>
       <Button variant="secondary" size="sm">
-        <Plus />
+        <PlusIcon />
         Add Item
       </Button>
     </div>

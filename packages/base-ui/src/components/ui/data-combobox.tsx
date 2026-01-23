@@ -165,7 +165,7 @@ export function DataCombobox({
 				if (!groups[item.group]) {
 					groups[item.group] = []
 				}
-				groups[item.group].push(item)
+				groups[item.group]?.push(item)
 			} else {
 				ungrouped.push(item)
 			}
@@ -230,7 +230,7 @@ export function DataCombobox({
 
 			observer.current = new IntersectionObserver(
 				(entries) => {
-					if (entries[0].isIntersecting && hasMore) {
+					if (entries?.length && entries[0]?.isIntersecting && hasMore) {
 						onLoadMore?.()
 					}
 				},

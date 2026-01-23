@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon, CheckIcon, Trash2, X as XIcon } from "lucide-react"
+import { CalendarDotsIcon, CheckIcon, TrashIcon, XIcon } from "@phosphor-icons/react"
 import { format as formatDate, parseISO } from "date-fns"
 import type { DateRange } from "react-day-picker"
 
@@ -339,7 +339,7 @@ export function DateRangePicker({
 						className
 					)}
 				>
-					<CalendarIcon className="h-4 w-4" />
+					<CalendarDotsIcon className="h-4 w-4" />
 					<span className="flex-1 truncate">{displayValue}</span>
 					{clearable && hasValue && (
 						<div
@@ -408,7 +408,7 @@ export function DateRangePicker({
 						onClick={handleFooterClear}
 						disabled={disabled || !hasValue}
 					>
-						<Trash2 className="h-4 w-4" />
+						<TrashIcon className="h-4 w-4" />
 						Clear
 					</Button>
 					<Button
