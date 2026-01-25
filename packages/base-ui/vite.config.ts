@@ -193,6 +193,7 @@ export default defineConfig({
 		sourcemap: true,
 		emptyOutDir: true,
 		target: "esnext",
+		minify: false,
 		lib: {
 			// Note: This is overridden by rollupOptions.input below,
 			// but kept for Vite's library mode detection
