@@ -1,12 +1,3 @@
-export * from "./components/ui/button"
-export * from "./components/ui/data-table"
-export * from "./components/ui/data-combobox"
-export * from "./components/ui/data-multi-combobox"
-export * from "./components/ui/date-picker"
-export * from "./components/ui/date-range-picker"
-export * from "./components/ui/number-input"
-export * from "./components/ui/time-picker"
-
 // List of all available UI components
 export enum AVAILABLE_UI_COMPONENTS {
 	ACCORDION = "accordion",
