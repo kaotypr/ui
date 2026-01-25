@@ -14,22 +14,28 @@ const dirname =
 
 /**
  * External dependencies that should not be bundled.
- * Using patterns to catch all sub-paths (e.g., @radix-ui/react-slot/internal)
+ * These are peerDependencies that consumers install themselves.
+ * Using patterns to catch all sub-paths (e.g., date-fns/format)
  */
 const EXTERNAL_DEPS = [
-	// React ecosystem
+	// React ecosystem - always external
 	/^react$/,
 	/^react-dom$/,
 	/^react\/.*$/,
 	/^react-dom\/.*$/,
-	// Base UI React
-	/^@base-ui\/react$/,
-	/^@base-ui\/react\/.*$/,
-	// Utility libraries that consumers likely already have
-	/^class-variance-authority$/,
-	/^clsx$/,
+	// Libraries consumers need direct API access to
 	/^@phosphor-icons\/react$/,
-	/^tailwind-merge$/,
+	/^@phosphor-icons\/react\/.*$/,
+	/^date-fns$/,
+	/^date-fns\/.*$/,
+	/^react-day-picker$/,
+	/^react-day-picker\/.*$/,
+	/^sonner$/,
+	/^recharts$/,
+	/^recharts\/.*$/,
+	/^@tanstack\/react-table$/,
+	/^@tanstack\/react-table\/.*$/,
+	/^next-themes$/,
 ]
 const copyAssetsPlugin = (): Plugin => {
 	return {
