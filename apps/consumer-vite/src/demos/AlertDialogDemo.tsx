@@ -8,8 +8,8 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-  } from "@kaotypr/ui/alert-dialog"
-  import { Button } from "@kaotypr/ui/button"
+  } from "@kaotypr/radix-ui/alert-dialog"
+  import { Button } from "@kaotypr/radix-ui/button"
   
   export function AlertDialogDemo() {
     return (

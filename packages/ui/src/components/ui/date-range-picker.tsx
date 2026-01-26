@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon, Clock, Trash2, X as XIcon } from "lucide-react"
+import { CalendarDotsIcon, CheckIcon, TrashIcon, XIcon } from "@phosphor-icons/react"
 import { format as formatDate, parseISO } from "date-fns"
 import type { DateRange } from "react-day-picker"
 
@@ -328,7 +328,7 @@ export function DateRangePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger asChild>
+			<PopoverTrigger>
 				<Button
 					data-slot="date-range-picker"
 					variant="outline"
@@ -339,7 +339,7 @@ export function DateRangePicker({
 						className
 					)}
 				>
-					<CalendarIcon className="h-4 w-4" />
+					<CalendarDotsIcon className="h-4 w-4" />
 					<span className="flex-1 truncate">{displayValue}</span>
 					{clearable && hasValue && (
 						<div
@@ -374,9 +374,7 @@ export function DateRangePicker({
 					>
 						<div className="flex items-center gap-2">
 							<span className="text-sm text-muted-foreground">From:</span>
-							<Clock className="h-4 w-4 text-muted-foreground" />
 							<TimePicker
-								mode="inline"
 								value={fromTimeValue}
 								onValueChange={handleFromTimeChange}
 								showHours={showHours}
@@ -388,9 +386,7 @@ export function DateRangePicker({
 						</div>
 						<div className="flex items-center gap-2">
 							<span className="text-sm text-muted-foreground">To:</span>
-							<Clock className="h-4 w-4 text-muted-foreground" />
 							<TimePicker
-								mode="inline"
 								value={toTimeValue}
 								onValueChange={handleToTimeChange}
 								showHours={showHours}
@@ -412,7 +408,7 @@ export function DateRangePicker({
 						onClick={handleFooterClear}
 						disabled={disabled || !hasValue}
 					>
-						<Trash2 className="h-4 w-4" />
+						<TrashIcon className="h-4 w-4" />
 						Clear
 					</Button>
 					<Button
@@ -420,8 +416,8 @@ export function DateRangePicker({
 						size="sm"
 						onClick={handleClose}
 					>
-						<XIcon className="h-4 w-4" />
-						Close
+						<CheckIcon className="h-4 w-4" />
+						Done
 					</Button>
 				</div>
 			</PopoverContent>

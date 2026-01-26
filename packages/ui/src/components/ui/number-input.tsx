@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { CaretDownIcon, CaretUpIcon } from '@phosphor-icons/react';
 import { forwardRef, useCallback, useEffect, useState, useRef } from 'react';
 import { NumericFormat, NumericFormatProps } from 'react-number-format';
 import { Button } from '~/components/ui/button';
@@ -139,23 +139,23 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         <div className="flex flex-col">
           <Button
             aria-label="Increase value"
-            className="h-4.5 w-fit rounded-l-none rounded-br-none border-input border-l-0 border-b-[0.5px] focus-visible:relative"
+            className="h-4 w-fit rounded-l-none rounded-br-none border-input border-l-0 border-b-[0.5px] focus-visible:relative"
             variant="outline"
             onClick={handleIncrement}
             disabled={value === max || props.disabled}
             size="icon-sm"
           >
-            <ChevronUp />
+            <CaretUpIcon />
           </Button>
           <Button
             aria-label="Decrease value"
-            className="h-4.5 w-fit rounded-l-none rounded-tr-none border-input disabled:opacity-50 border-l-0 border-t-[0.5px] focus-visible:relative"
+            className="h-4 w-fit rounded-l-none rounded-tr-none border-input disabled:opacity-50 border-l-0 border-t-[0.5px] focus-visible:relative"
             variant="outline"
             onClick={handleDecrement}
             disabled={value === min || props.disabled}
             size="icon-sm"
           >
-            <ChevronDown />
+            <CaretDownIcon />
           </Button>
         </div>
       </div>

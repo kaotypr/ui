@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CalendarIcon, Clock, X } from "lucide-react"
+import { CalendarDotIcon, XIcon } from "@phosphor-icons/react"
 import { format as formatDate, parseISO } from "date-fns"
 
 import { cn } from "~/lib/utils"
@@ -227,7 +227,7 @@ export function DatePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger asChild>
+			<PopoverTrigger>
 				<Button
 					data-slot="date-picker"
 					variant="outline"
@@ -238,7 +238,7 @@ export function DatePicker({
 						className
 					)}
 				>
-					<CalendarIcon className="h-4 w-4" />
+					<CalendarDotIcon className="h-4 w-4" />
 					<span className="flex-1 truncate">{displayValue}</span>
 					{clearable && dateValue && (
 						<div
@@ -247,7 +247,7 @@ export function DatePicker({
 							onClick={handleClear}
 							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
 						>
-							<X className="h-4 w-4" />
+							<XIcon className="h-4 w-4" />
 						</div>
 					)}
 				</Button>
@@ -264,9 +264,7 @@ export function DatePicker({
 						data-slot="date-picker-time"
 						className="flex items-center justify-center gap-2 border-t p-3"
 					>
-						<Clock className="h-4 w-4 text-muted-foreground" />
 						<TimePicker
-							mode="inline"
 							value={timeValue}
 							onValueChange={handleTimeChange}
 							showHours={showHours}

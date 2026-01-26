@@ -3,7 +3,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-  } from "@kaotypr/ui/accordion"
+  } from "@kaotypr/radix-ui/accordion"
   
   export function AccordionDemo() {
     return (

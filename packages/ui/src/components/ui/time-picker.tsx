@@ -1,284 +1,331 @@
 "use client"
 
 import * as React from "react"
-import { Clock, X } from "lucide-react"
+import { CaretDownIcon, ClockIcon, XIcon } from "@phosphor-icons/react"
+import { CheckIcon } from "@phosphor-icons/react"
 
 import { cn } from "~/lib/utils"
-import { Button } from "~/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select"
+import { Button } from "./button"
+import { Popover, PopoverContent, PopoverTrigger } from "./popover"
+import { ScrollArea } from "./scroll-area"
 
 // ============================================================================
 // Types
 // ============================================================================
 
-export interface TimePickerProps {
-  // Value control
+interface TimeValue {
+  hours?: number
+  minutes?: number
+  seconds?: number
+  meridiem?: "AM" | "PM"
+}
+
+interface TimePickerProps {
+  /** The controlled value of the selected time as a string */
   value?: string
+  /** The default value of the selected time (uncontrolled) */
   defaultValue?: string
+  /** Event handler called when the value changes */
   onValueChange?: (value: string | undefined) => void
-
-  // Display mode
-  mode?: "inline" | "popover"
-
-  // Time format
-  meridiem?: boolean // false = 24-hour, true = 12-hour with AM/PM
-
-  // Time units visibility
-  showHours?: boolean // default true
-  showMinutes?: boolean // default true
-  showSeconds?: boolean // default false
-
-  // Step intervals
-  hourStep?: number // default 1
-  minuteStep?: number // default 5
-  secondStep?: number // default 1
-
-  // Constraints
+  /** Time format: false for 24-hour, true for 12-hour with AM/PM */
+  meridiem?: boolean
+  /** Whether to show the hours column */
+  showHours?: boolean
+  /** Whether to show the minutes column */
+  showMinutes?: boolean
+  /** Whether to show the seconds column */
+  showSeconds?: boolean
+  /** Step interval for hours options */
+  hourStep?: number
+  /** Step interval for minutes options */
+  minuteStep?: number
+  /** Step interval for seconds options */
+  secondStep?: number
+  /** Minimum selectable time */
   minTime?: string
+  /** Maximum selectable time */
   maxTime?: string
-
-  // Features
+  /** Whether the selection can be cleared */
   clearable?: boolean
+  /** Whether the time picker is disabled */
   disabled?: boolean
+  /** Placeholder text shown when no time is selected */
   placeholder?: string
-
-  // Styling
+  /** Additional CSS class names for the trigger button */
   className?: string
-  contentClassName?: string // for popover content
-}
-
-interface ParsedTime {
-  hours: number // 0-23 (normalized to 24-hour)
-  minutes: number
-  seconds: number
+  /** Additional CSS class names for the popover content */
+  contentClassName?: string
 }
 
 // ============================================================================
-// Time Parsing Utilities
+// Time Parsing and Formatting Utilities
 // ============================================================================
 
-/**
- * Parse a time string into normalized 24-hour format
- * Supports: "14:30", "14:30:45", "02:30 PM", "02:30:45 PM"
- */
-function parseTimeString(value: string | undefined): ParsedTime | null {
-  if (!value || typeof value !== "string") return null
+function parseTimeString(
+  timeStr: string | undefined,
+  useMeridiem: boolean
+): TimeValue {
+  if (!timeStr) return {}
 
-  const trimmed = value.trim()
-  if (!trimmed) return null
+  const meridiemMatch = timeStr.match(/\s*(AM|PM)$/i)
+  const meridiem = meridiemMatch
+    ? (meridiemMatch[1]?.toUpperCase() as "AM" | "PM")
+    : undefined
 
-  // Check for 12-hour format with AM/PM
-  const meridiemMatch = trimmed.match(
-    /^(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)$/i
-  )
-  if (meridiemMatch?.[1] && meridiemMatch[2] && meridiemMatch[4]) {
-    let hours = Number.parseInt(meridiemMatch[1], 10)
-    const minutes = Number.parseInt(meridiemMatch[2], 10)
-    const seconds = meridiemMatch[3]
-      ? Number.parseInt(meridiemMatch[3], 10)
-      : 0
-    const isPM = meridiemMatch[4].toUpperCase() === "PM"
+  const timePart = timeStr.replace(/\s*(AM|PM)$/i, "").trim()
+  const parts = timePart.split(":").map(Number)
 
-    // Convert to 24-hour
-    if (isPM && hours !== 12) {
-      hours += 12
-    } else if (!isPM && hours === 12) {
-      hours = 0
-    }
+  let hours = parts[0]
+  const minutes = parts[1]
+  const seconds = parts[2]
 
-    if (
-      hours >= 0 &&
-      hours <= 23 &&
-      minutes >= 0 &&
-      minutes <= 59 &&
-      seconds >= 0 &&
-      seconds <= 59
-    ) {
-      return { hours, minutes, seconds }
-    }
-    return null
-  }
-
-  // Check for 24-hour format
-  const match24 = trimmed.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/)
-  if (match24?.[1] && match24[2]) {
-    const hours = Number.parseInt(match24[1], 10)
-    const minutes = Number.parseInt(match24[2], 10)
-    const seconds = match24[3] ? Number.parseInt(match24[3], 10) : 0
-
-    if (
-      hours >= 0 &&
-      hours <= 23 &&
-      minutes >= 0 &&
-      minutes <= 59 &&
-      seconds >= 0 &&
-      seconds <= 59
-    ) {
-      return { hours, minutes, seconds }
+  // If we're using 12-hour format but the input has no meridiem,
+  // treat it as 24-hour and convert
+  if (useMeridiem && !meridiem && hours !== undefined) {
+    const convertedMeridiem = hours >= 12 ? "PM" : "AM"
+    hours = hours % 12 || 12
+    return {
+      hours,
+      minutes,
+      seconds,
+      meridiem: convertedMeridiem,
     }
   }
 
-  return null
+  return {
+    hours: hours,
+    minutes,
+    seconds,
+    meridiem,
+  }
 }
 
-// ============================================================================
-// Time Formatting Utilities
-// ============================================================================
-
-/**
- * Format time to string based on meridiem and visible units
- */
-function formatTimeString(
-  time: ParsedTime,
-  meridiem: boolean,
+function formatTimeValue(
+  value: TimeValue,
+  useMeridiem: boolean,
   showMinutes: boolean,
   showSeconds: boolean
-): string {
-  let hours = time.hours
-  let suffix = ""
+): string | undefined {
+  if (value.hours === undefined) return undefined
 
-  if (meridiem) {
-    // Convert to 12-hour format
-    suffix = hours >= 12 ? " PM" : " AM"
-    hours = hours % 12
+  let hours = value.hours
+  let meridiem = value.meridiem
+
+  if (useMeridiem) {
+    // For 12-hour format, use the meridiem value or default to AM
+    meridiem = meridiem || "AM"
+    // Ensure hours are in 1-12 range
     if (hours === 0) hours = 12
+    else if (hours > 12) hours = hours - 12
+  } else {
+    // For 24-hour format, convert from 12-hour if meridiem is present
+    if (meridiem) {
+      if (meridiem === "PM" && hours !== 12) hours = hours + 12
+      else if (meridiem === "AM" && hours === 12) hours = 0
+    }
   }
 
-  const parts: string[] = [hours.toString().padStart(2, "0")]
+  const parts = [hours.toString().padStart(2, "0")]
 
   if (showMinutes) {
-    parts.push(time.minutes.toString().padStart(2, "0"))
+    parts.push((value.minutes ?? 0).toString().padStart(2, "0"))
   }
 
   if (showSeconds) {
-    parts.push(time.seconds.toString().padStart(2, "0"))
+    parts.push((value.seconds ?? 0).toString().padStart(2, "0"))
   }
 
-  return parts.join(":") + suffix
+  let result = parts.join(":")
+
+  if (useMeridiem && meridiem) {
+    result += ` ${meridiem}`
+  }
+
+  return result
 }
 
-/**
- * Convert time to total minutes for comparison
- */
-function timeToMinutes(time: ParsedTime): number {
-  return time.hours * 60 + time.minutes + time.seconds / 60
+function timeToMinutes(
+  value: TimeValue,
+  useMeridiem: boolean
+): number | undefined {
+  if (value.hours === undefined) return undefined
+
+  let hours = value.hours
+
+  // Convert to 24-hour for comparison
+  if (useMeridiem && value.meridiem) {
+    if (value.meridiem === "PM" && hours !== 12) hours += 12
+    else if (value.meridiem === "AM" && hours === 12) hours = 0
+  }
+
+  return hours * 3600 + (value.minutes ?? 0) * 60 + (value.seconds ?? 0)
+}
+
+function isTimeDisabled(
+  hours: number,
+  minutes: number | undefined,
+  seconds: number | undefined,
+  meridiem: "AM" | "PM" | undefined,
+  minTime: string | undefined,
+  maxTime: string | undefined,
+  useMeridiem: boolean
+): boolean {
+  const current = timeToMinutes(
+    { hours, minutes: minutes ?? 0, seconds: seconds ?? 0, meridiem },
+    useMeridiem
+  )
+
+  if (current === undefined) return false
+
+  if (minTime) {
+    const min = timeToMinutes(parseTimeString(minTime, useMeridiem), useMeridiem)
+    if (min !== undefined && current < min) return true
+  }
+
+  if (maxTime) {
+    const max = timeToMinutes(parseTimeString(maxTime, useMeridiem), useMeridiem)
+    if (max !== undefined && current > max) return true
+  }
+
+  return false
 }
 
 // ============================================================================
-// Option Generation Utilities
+// Generate Options
 // ============================================================================
 
-function generateHourOptions(
-  meridiem: boolean,
-  step: number,
-  includeValue?: number
-): { value: string; label: string }[] {
+function generateHourOptions(useMeridiem: boolean, step: number = 1) {
   const options: { value: string; label: string }[] = []
-  const values = new Set<number>()
+  const max = useMeridiem ? 12 : 23
+  const min = useMeridiem ? 1 : 0
 
-  if (meridiem) {
-    // 12-hour format: 0, 1, ..., 11 (display as 12, 1, ..., 11)
-    for (let h = 0; h < 12; h += step) {
-      values.add(h)
-    }
-  } else {
-    // 24-hour format: 00, 01, ..., 23
-    for (let h = 0; h < 24; h += step) {
-      values.add(h)
-    }
-  }
-
-  if (includeValue !== undefined) {
-    if (meridiem) {
-      values.add(includeValue % 12)
-    } else {
-      values.add(includeValue)
-    }
-  }
-
-  const sortedValues = Array.from(values).sort((a, b) => a - b)
-
-  for (const h of sortedValues) {
-    if (meridiem) {
-      const displayHour = h === 0 ? 12 : h
-      const value = displayHour.toString().padStart(2, "0")
-      options.push({ value, label: value })
-    } else {
-      const value = h.toString().padStart(2, "0")
-      options.push({ value, label: value })
-    }
+  for (let i = min; i <= max; i += step) {
+    options.push({
+      value: i.toString(),
+      label: i.toString().padStart(2, "0"),
+    })
   }
 
   return options
 }
 
-function generateMinuteOptions(
-  step: number,
-  includeValue?: number
-): { value: string; label: string }[] {
-  const values = new Set<number>()
-  for (let m = 0; m < 60; m += step) {
-    values.add(m)
-  }
-  if (includeValue !== undefined) {
-    values.add(includeValue)
-  }
-  const sortedValues = Array.from(values).sort((a, b) => a - b)
+function generateMinuteOptions(step: number = 1) {
+  const options: { value: string; label: string }[] = []
 
-  return sortedValues.map((m) => {
-    const value = m.toString().padStart(2, "0")
-    return { value, label: value }
-  })
+  for (let i = 0; i < 60; i += step) {
+    options.push({
+      value: i.toString(),
+      label: i.toString().padStart(2, "0"),
+    })
+  }
+
+  return options
 }
 
-function generateSecondOptions(
-  step: number,
-  includeValue?: number
-): { value: string; label: string }[] {
-  const values = new Set<number>()
-  for (let s = 0; s < 60; s += step) {
-    values.add(s)
-  }
-  if (includeValue !== undefined) {
-    values.add(includeValue)
-  }
-  const sortedValues = Array.from(values).sort((a, b) => a - b)
+function generateSecondOptions(step: number = 1) {
+  return generateMinuteOptions(step)
+}
 
-  return sortedValues.map((s) => {
-    const value = s.toString().padStart(2, "0")
-    return { value, label: value }
-  })
+function generateMeridiemOptions() {
+  return [
+    { value: "AM", label: "AM" },
+    { value: "PM", label: "PM" },
+  ]
 }
 
 // ============================================================================
-// Helper: Check if time is within constraints
+// TimePickerColumn Component
 // ============================================================================
 
-function isTimeDisabled(
-  hours: number,
-  minutes: number,
-  seconds: number,
-  minTime: ParsedTime | null,
-  maxTime: ParsedTime | null
-): boolean {
-  const time: ParsedTime = { hours, minutes, seconds }
-  const timeMinutes = timeToMinutes(time)
+interface TimePickerColumnProps {
+  options: { value: string; label: string }[]
+  value?: string
+  onValueChange: (value: string) => void
+  isDisabled?: (value: string) => boolean
+  disabled?: boolean
+  className?: string
+  "aria-label"?: string
+}
 
-  if (minTime && timeMinutes < timeToMinutes(minTime)) {
-    return true
-  }
-  if (maxTime && timeMinutes > timeToMinutes(maxTime)) {
-    return true
-  }
+function TimePickerColumn({
+  options,
+  value,
+  onValueChange,
+  isDisabled,
+  disabled,
+  className,
+  "aria-label": ariaLabel,
+}: TimePickerColumnProps) {
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const selectedRef = React.useRef<HTMLButtonElement>(null)
 
-  return false
+  // Auto-scroll to selected value on mount and value change
+  React.useEffect(() => {
+    // Skip if no value is selected
+    if (value === undefined) return
+
+    if (selectedRef.current && containerRef.current) {
+      const container = containerRef.current
+      const selected = selectedRef.current
+      const containerHeight = container.clientHeight
+      const selectedTop = selected.offsetTop
+      const selectedHeight = selected.clientHeight
+
+      // Center the selected item
+      container.scrollTo({
+        top: selectedTop - containerHeight / 2 + selectedHeight / 2,
+        behavior: "smooth",
+      })
+    }
+  }, [value])
+
+  return (
+    <ScrollArea
+      className={cn(
+        "h-[200px] w-16",
+        // Hide scrollbar by default, show thin one on hover
+        "[&_[data-slot=scroll-area-scrollbar]]:w-1 [&_[data-slot=scroll-area-scrollbar]]:opacity-0 [&:hover_[data-slot=scroll-area-scrollbar]]:opacity-100",
+        className
+      )}
+      aria-label={ariaLabel}
+    >
+      <div
+        ref={containerRef}
+        className="flex flex-col py-2"
+        role="listbox"
+        aria-label={ariaLabel}
+      >
+        {options.map((option) => {
+          const isSelected = value === option.value
+          const optionDisabled = disabled || isDisabled?.(option.value)
+
+          return (
+            <button
+              key={option.value}
+              ref={isSelected ? selectedRef : undefined}
+              type="button"
+              role="option"
+              aria-selected={isSelected}
+              disabled={optionDisabled}
+              onClick={() => !optionDisabled && onValueChange(option.value)}
+              className={cn(
+                "relative flex h-8 items-center justify-center px-2 text-sm transition-colors",
+                "hover:bg-accent hover:text-accent-foreground",
+                "focus:bg-accent focus:text-accent-foreground focus:outline-none",
+                isSelected && "font-medium",
+                optionDisabled && "pointer-events-none opacity-50"
+              )}
+            >
+              <span className="flex-1 text-center">{option.label}</span>
+              {isSelected && (
+                <CheckIcon className="absolute right-1 size-3.5 shrink-0" />
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </ScrollArea>
+  )
 }
 
 // ============================================================================
@@ -286,25 +333,25 @@ function isTimeDisabled(
 // ============================================================================
 
 interface TimePickerContentProps {
-  time: ParsedTime | null
-  onTimeChange: (time: ParsedTime) => void
-  meridiem: boolean
+  value: TimeValue
+  onValueChange: (value: TimeValue) => void
+  useMeridiem: boolean
   showHours: boolean
   showMinutes: boolean
   showSeconds: boolean
   hourStep: number
   minuteStep: number
   secondStep: number
-  minTime: ParsedTime | null
-  maxTime: ParsedTime | null
-  disabled: boolean
+  minTime?: string
+  maxTime?: string
+  disabled?: boolean
   className?: string
 }
 
 function TimePickerContent({
-  time,
-  onTimeChange,
-  meridiem,
+  value,
+  onValueChange,
+  useMeridiem,
   showHours,
   showMinutes,
   showSeconds,
@@ -316,216 +363,193 @@ function TimePickerContent({
   disabled,
   className,
 }: TimePickerContentProps) {
-  // Current values for display
-  const currentHours = time?.hours ?? 0
-  const currentMinutes = time?.minutes ?? 0
-  const currentSeconds = time?.seconds ?? 0
+  const hourOptions = React.useMemo(
+    () => generateHourOptions(useMeridiem, hourStep),
+    [useMeridiem, hourStep]
+  )
 
-  // Convert 24-hour to display value
-  const getDisplayHour = (h: number): string => {
-    if (meridiem) {
-      const h12 = h % 12
-      return (h12 === 0 ? 12 : h12).toString().padStart(2, "0")
-    }
-    return h.toString().padStart(2, "0")
+  const minuteOptions = React.useMemo(
+    () => generateMinuteOptions(minuteStep),
+    [minuteStep]
+  )
+
+  const secondOptions = React.useMemo(
+    () => generateSecondOptions(secondStep),
+    [secondStep]
+  )
+
+  const meridiemOptions = React.useMemo(() => generateMeridiemOptions(), [])
+
+  const isHourDisabled = React.useCallback(
+    (hourValue: string) => {
+      const hours = parseInt(hourValue, 10)
+      return isTimeDisabled(
+        hours,
+        value.minutes,
+        value.seconds,
+        useMeridiem ? value.meridiem : undefined,
+        minTime,
+        maxTime,
+        useMeridiem
+      )
+    },
+    [value.minutes, value.seconds, value.meridiem, minTime, maxTime, useMeridiem]
+  )
+
+  const isMinuteDisabled = React.useCallback(
+    (minuteValue: string) => {
+      if (value.hours === undefined) return false
+      const minutes = parseInt(minuteValue, 10)
+      return isTimeDisabled(
+        value.hours,
+        minutes,
+        value.seconds,
+        useMeridiem ? value.meridiem : undefined,
+        minTime,
+        maxTime,
+        useMeridiem
+      )
+    },
+    [value.hours, value.seconds, value.meridiem, minTime, maxTime, useMeridiem]
+  )
+
+  const isSecondDisabled = React.useCallback(
+    (secondValue: string) => {
+      if (value.hours === undefined) return false
+      const seconds = parseInt(secondValue, 10)
+      return isTimeDisabled(
+        value.hours,
+        value.minutes,
+        seconds,
+        useMeridiem ? value.meridiem : undefined,
+        minTime,
+        maxTime,
+        useMeridiem
+      )
+    },
+    [value.hours, value.minutes, value.meridiem, minTime, maxTime, useMeridiem]
+  )
+
+  const isMeridiemDisabled = React.useCallback(
+    (meridiemValue: string) => {
+      if (value.hours === undefined) return false
+      return isTimeDisabled(
+        value.hours,
+        value.minutes,
+        value.seconds,
+        meridiemValue as "AM" | "PM",
+        minTime,
+        maxTime,
+        useMeridiem
+      )
+    },
+    [value.hours, value.minutes, value.seconds, minTime, maxTime, useMeridiem]
+  )
+
+  // Count visible columns for separator logic
+  const visibleColumns: React.ReactNode[] = []
+
+  if (showHours) {
+    visibleColumns.push(
+      <TimePickerColumn
+        key="hours"
+        options={hourOptions}
+        value={value.hours?.toString()}
+        onValueChange={(v) =>
+          onValueChange({ ...value, hours: parseInt(v, 10) })
+        }
+        isDisabled={isHourDisabled}
+        disabled={disabled}
+        aria-label="Hours"
+      />
+    )
   }
 
-  // Get current meridiem (AM/PM) from 24-hour value
-  const currentMeridiem = currentHours >= 12 ? "PM" : "AM"
-
-  // Handle hour change
-  const handleHourChange = (value: string) => {
-    let hours = Number.parseInt(value, 10)
-    if (meridiem) {
-      // Convert 12-hour back to 24-hour
-      if (hours === 12) hours = 0
-      if (currentMeridiem === "PM") hours += 12
-    }
-    onTimeChange({
-      hours,
-      minutes: currentMinutes,
-      seconds: currentSeconds,
-    })
+  if (showMinutes) {
+    visibleColumns.push(
+      <TimePickerColumn
+        key="minutes"
+        options={minuteOptions}
+        value={value.minutes?.toString()}
+        onValueChange={(v) =>
+          onValueChange({ ...value, minutes: parseInt(v, 10) })
+        }
+        isDisabled={isMinuteDisabled}
+        disabled={disabled}
+        aria-label="Minutes"
+      />
+    )
   }
 
-  // Handle minute change
-  const handleMinuteChange = (value: string) => {
-    onTimeChange({
-      hours: currentHours,
-      minutes: Number.parseInt(value, 10),
-      seconds: currentSeconds,
-    })
+  if (showSeconds) {
+    visibleColumns.push(
+      <TimePickerColumn
+        key="seconds"
+        options={secondOptions}
+        value={value.seconds?.toString()}
+        onValueChange={(v) =>
+          onValueChange({ ...value, seconds: parseInt(v, 10) })
+        }
+        isDisabled={isSecondDisabled}
+        disabled={disabled}
+        aria-label="Seconds"
+      />
+    )
   }
 
-  // Handle second change
-  const handleSecondChange = (value: string) => {
-    onTimeChange({
-      hours: currentHours,
-      minutes: currentMinutes,
-      seconds: Number.parseInt(value, 10),
-    })
+  if (useMeridiem) {
+    visibleColumns.push(
+      <TimePickerColumn
+        key="meridiem"
+        options={meridiemOptions}
+        value={value.meridiem}
+        onValueChange={(v) =>
+          onValueChange({ ...value, meridiem: v as "AM" | "PM" })
+        }
+        isDisabled={isMeridiemDisabled}
+        disabled={disabled}
+        aria-label="AM/PM"
+      />
+    )
   }
-
-  // Handle meridiem (AM/PM) change
-  const handleMeridiemChange = (value: string) => {
-    let hours = currentHours
-    const currentIsPM = hours >= 12
-
-    if (value === "AM" && currentIsPM) {
-      hours -= 12
-    } else if (value === "PM" && !currentIsPM) {
-      hours += 12
-    }
-
-    onTimeChange({
-      hours,
-      minutes: currentMinutes,
-      seconds: currentSeconds,
-    })
-  }
-
-  // Generate options
-  const hourOptions = generateHourOptions(meridiem, hourStep, currentHours)
-  const minuteOptions = generateMinuteOptions(minuteStep, currentMinutes)
-  const secondOptions = generateSecondOptions(secondStep, currentSeconds)
 
   return (
     <div
-      data-slot="time-picker-content"
-      className={cn("flex items-center gap-1", className)}
+      className={cn("flex", className)}
+      role="group"
+      aria-label="Time picker"
     >
-      {showHours && (
-        <Select
-          value={getDisplayHour(currentHours)}
-          onValueChange={handleHourChange}
-          disabled={disabled}
-        >
-          <SelectTrigger
-            data-slot="time-picker-hours"
-            aria-label="Hours"
-            className="gap-0.5"
-          >
-            <SelectValue placeholder="HH" />
-          </SelectTrigger>
-          <SelectContent className="min-w-[0px] w-fit max-h-[200px]" position="popper">
-            {hourOptions.map((opt) => {
-              // Check if this hour is disabled due to constraints
-              const hourValue = meridiem
-                ? (Number.parseInt(opt.value, 10) === 12 ? 0 : Number.parseInt(opt.value, 10)) +
-                  (currentMeridiem === "PM" ? 12 : 0)
-                : Number.parseInt(opt.value, 10)
+      {visibleColumns.map((column, index) => (
+        <React.Fragment key={index}>
+          {column}
+          {index < visibleColumns.length - 1 && (
+            <div className="mx-0.5 w-px self-stretch bg-border" />
+          )}
+        </React.Fragment>
+      ))}
+    </div>
+  )
+}
 
-              const isDisabled = isTimeDisabled(
-                hourValue,
-                currentMinutes,
-                currentSeconds,
-                minTime,
-                maxTime
-              )
+// ============================================================================
+// TimePickerSummary Component
+// ============================================================================
 
-              return (
-                <SelectItem key={opt.value} value={opt.value} disabled={isDisabled}>
-                  {opt.label}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </Select>
+interface TimePickerSummaryProps {
+  formattedValue?: string
+  className?: string
+}
+
+function TimePickerSummary({ formattedValue, className }: TimePickerSummaryProps) {
+  return (
+    <div
+      className={cn(
+        "flex items-center gap-2 border-t pt-2 text-sm text-muted-foreground",
+        className
       )}
-
-      {showHours && showMinutes && (
-        <span className="text-muted-foreground">:</span>
-      )}
-
-      {showMinutes && (
-        <Select
-          value={currentMinutes.toString().padStart(2, "0")}
-          onValueChange={handleMinuteChange}
-          disabled={disabled}
-        >
-          <SelectTrigger
-            data-slot="time-picker-minutes"
-            aria-label="Minutes"
-            className="gap-0.5"
-          >
-            <SelectValue placeholder="mm" />
-          </SelectTrigger>
-          <SelectContent className="min-w-[0px] w-fit max-h-[200px]" position="popper">
-            {minuteOptions.map((opt) => {
-              const isDisabled = isTimeDisabled(
-                currentHours,
-                Number.parseInt(opt.value, 10),
-                currentSeconds,
-                minTime,
-                maxTime
-              )
-
-              return (
-                <SelectItem key={opt.value} value={opt.value} disabled={isDisabled}>
-                  {opt.label}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </Select>
-      )}
-
-      {showMinutes && showSeconds && (
-        <span className="text-muted-foreground">:</span>
-      )}
-
-      {showSeconds && (
-        <Select
-          value={currentSeconds.toString().padStart(2, "0")}
-          onValueChange={handleSecondChange}
-          disabled={disabled}
-        >
-          <SelectTrigger
-            data-slot="time-picker-seconds"
-            aria-label="Seconds"
-            className="gap-0.5"
-          >
-            <SelectValue placeholder="ss" />
-          </SelectTrigger>
-          <SelectContent className="min-w-[0px] w-fit max-h-[200px]" position="popper">
-            {secondOptions.map((opt) => {
-              const isDisabled = isTimeDisabled(
-                currentHours,
-                currentMinutes,
-                Number.parseInt(opt.value, 10),
-                minTime,
-                maxTime
-              )
-
-              return (
-                <SelectItem key={opt.value} value={opt.value} disabled={isDisabled}>
-                  {opt.label}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </Select>
-      )}
-
-      {meridiem && (
-        <Select
-          value={currentMeridiem}
-          onValueChange={handleMeridiemChange}
-          disabled={disabled}
-        >
-          <SelectTrigger
-            data-slot="time-picker-meridiem"
-            aria-label="AM/PM"
-            className="gap-0.5 w-fit"
-          >
-            <SelectValue placeholder="AM/PM" />
-          </SelectTrigger>
-          <SelectContent className="min-w-[0px] w-fit">
-            <SelectItem value="AM">AM</SelectItem>
-            <SelectItem value="PM">PM</SelectItem>
-          </SelectContent>
-        </Select>
-      )}
+    >
+      <ClockIcon className="size-4" />
+      <span>{formattedValue || "--:--"}</span>
     </div>
   )
 }
@@ -534,153 +558,126 @@ function TimePickerContent({
 // TimePicker Component
 // ============================================================================
 
-export function TimePicker({
+function TimePicker({
   value: controlledValue,
   defaultValue,
   onValueChange,
-  mode = "inline",
-  meridiem = false,
+  meridiem: useMeridiem = false,
   showHours = true,
   showMinutes = true,
   showSeconds = false,
   hourStep = 1,
-  minuteStep = 5,
+  minuteStep = 1,
   secondStep = 1,
-  minTime: minTimeStr,
-  maxTime: maxTimeStr,
+  minTime,
+  maxTime,
   clearable = false,
   disabled = false,
   placeholder = "Select time",
   className,
   contentClassName,
 }: TimePickerProps) {
-  const [open, setOpen] = React.useState(false)
-  const [uncontrolledValue, setUncontrolledValue] = React.useState<string | undefined>(
-    () => defaultValue
-  )
-
   const isControlled = controlledValue !== undefined
-  const currentValue = isControlled ? controlledValue : uncontrolledValue
 
-  // Parse current value
-  const parsedTime = React.useMemo(
-    () => parseTimeString(currentValue),
-    [currentValue]
+  const [internalValue, setInternalValue] = React.useState<TimeValue>(() =>
+    parseTimeString(defaultValue, useMeridiem)
   )
 
-  // Parse constraints
-  const minTime = React.useMemo(() => parseTimeString(minTimeStr), [minTimeStr])
-  const maxTime = React.useMemo(() => parseTimeString(maxTimeStr), [maxTimeStr])
+  const [open, setOpen] = React.useState(false)
 
-  // Handle time change
-  const handleTimeChange = React.useCallback(
-    (newTime: ParsedTime) => {
-      const formatted = formatTimeString(newTime, meridiem, showMinutes, showSeconds)
+  // Handle controlled vs uncontrolled
+  const currentValue = React.useMemo(() => {
+    if (isControlled) {
+      return parseTimeString(controlledValue, useMeridiem)
+    }
+    return internalValue
+  }, [isControlled, controlledValue, useMeridiem, internalValue])
+
+  const formattedValue = React.useMemo(
+    () =>
+      formatTimeValue(currentValue, useMeridiem, showMinutes, showSeconds),
+    [currentValue, useMeridiem, showMinutes, showSeconds]
+  )
+
+  const handleValueChange = React.useCallback(
+    (newValue: TimeValue) => {
+      if (disabled) return
 
       if (!isControlled) {
-        setUncontrolledValue(formatted)
+        setInternalValue(newValue)
       }
+
+      const formatted = formatTimeValue(
+        newValue,
+        useMeridiem,
+        showMinutes,
+        showSeconds
+      )
       onValueChange?.(formatted)
     },
-    [isControlled, meridiem, showMinutes, showSeconds, onValueChange]
+    [disabled, isControlled, useMeridiem, showMinutes, showSeconds, onValueChange]
   )
 
-  // Handle clear
   const handleClear = React.useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation()
+      if (disabled) return
+
       if (!isControlled) {
-        setUncontrolledValue(undefined)
+        setInternalValue({})
       }
       onValueChange?.(undefined)
     },
-    [isControlled, onValueChange]
+    [disabled, isControlled, onValueChange]
   )
 
-  // Display value for trigger
-  const displayValue = React.useMemo(() => {
-    if (!parsedTime) return placeholder
-    return formatTimeString(parsedTime, meridiem, showMinutes, showSeconds)
-  }, [parsedTime, meridiem, showMinutes, showSeconds, placeholder])
-
-  // Inline mode
-  if (mode === "inline") {
-    return (
-      <div data-slot="time-picker" className={cn("inline-flex items-center gap-1", className)}>
-        <TimePickerContent
-          time={parsedTime}
-          onTimeChange={handleTimeChange}
-          meridiem={meridiem}
-          showHours={showHours}
-          showMinutes={showMinutes}
-          showSeconds={showSeconds}
-          hourStep={hourStep}
-          minuteStep={minuteStep}
-          secondStep={secondStep}
-          minTime={minTime}
-          maxTime={maxTime}
-          disabled={disabled}
-          className={contentClassName}
-        />
-        {clearable && parsedTime && (
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon-sm"
-            onClick={handleClear}
-            disabled={disabled}
-            className="shrink-0"
-            aria-label="Clear time"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        )}
-      </div>
-    )
-  }
-
-  // Popover mode
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          data-slot="time-picker"
-          variant="outline"
-          disabled={disabled}
-          className={cn(
-            "w-fit justify-start text-left font-normal",
-            !parsedTime && "text-muted-foreground",
-            className
-          )}
-        >
-          <Clock className="h-4 w-4" />
-          <span className="flex-1 truncate">{displayValue}</span>
-          {clearable && parsedTime && (
-            <div
-              role="button"
-              tabIndex={0}
-              onClick={handleClear}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleClear(e as unknown as React.MouseEvent)
-                }
-              }}
-              className="ml-2 shrink-0 opacity-50 hover:opacity-100"
-              aria-label="Clear time"
-            >
-              <X className="h-4 w-4" />
-            </div>
-          )}
-        </Button>
+      <PopoverTrigger
+        render={
+          <Button
+            data-slot="time-picker"
+            variant="outline"
+            disabled={disabled}
+            className={cn(
+              "w-fit min-w-[140px] justify-start gap-2 font-normal",
+              !formattedValue && "text-muted-foreground",
+              className
+            )}
+          />
+        }
+      >
+        <ClockIcon className="size-4" />
+        <span className="flex-1 text-left">
+          {formattedValue || placeholder}
+        </span>
+        {clearable && formattedValue && (
+          <span
+            role="button"
+            tabIndex={0}
+            onClick={handleClear}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                handleClear(e as unknown as React.MouseEvent)
+              }
+            }}
+            className="rounded-sm p-0.5 hover:bg-muted focus:outline-none focus:ring-1 focus:ring-ring"
+            aria-label="Clear time"
+          >
+            <XIcon className="size-3.5" />
+          </span>
+        )}
+        <CaretDownIcon className="size-4 text-muted-foreground" />
       </PopoverTrigger>
+
       <PopoverContent
         className={cn("w-auto p-3", contentClassName)}
         align="start"
       >
         <TimePickerContent
-          time={parsedTime}
-          onTimeChange={handleTimeChange}
-          meridiem={meridiem}
+          value={currentValue}
+          onValueChange={handleValueChange}
+          useMeridiem={useMeridiem}
           showHours={showHours}
           showMinutes={showMinutes}
           showSeconds={showSeconds}
@@ -691,7 +688,12 @@ export function TimePicker({
           maxTime={maxTime}
           disabled={disabled}
         />
+
+        <TimePickerSummary formattedValue={formattedValue} />
       </PopoverContent>
     </Popover>
   )
 }
+
+export { TimePicker, TimePickerContent, TimePickerColumn, TimePickerSummary }
+export type { TimePickerProps, TimeValue }

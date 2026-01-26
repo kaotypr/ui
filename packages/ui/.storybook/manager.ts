@@ -1,6 +1,6 @@
 import { addons } from 'storybook/manager-api';
-import kaotyprTheme from './kaotypr.theme';
+import defaultTheme from './theme';
 
 addons.setConfig({
-  theme: kaotyprTheme,
+  theme: defaultTheme,
 });

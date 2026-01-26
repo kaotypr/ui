@@ -1,3 +1,5 @@
+"use client"
+
 import {
     type ColumnDef,
     type ColumnPinningState,
@@ -10,7 +12,7 @@ import {
     getPaginationRowModel,
     useReactTable,
   } from '@tanstack/react-table'
-  import { InboxIcon, Loader2 } from 'lucide-react'
+  import { EmptyIcon, SpinnerGapIcon } from '@phosphor-icons/react'
   import * as React from 'react'
   import { cn } from '~/components/../lib/utils'
   import { Checkbox } from '~/components/ui/checkbox'
@@ -219,7 +221,7 @@ import {
           {loading && (
             <div className="absolute inset-0 bg-background/50 backdrop-blur-[1px] z-50 flex items-center justify-center">
               <div className="flex flex-col items-center gap-2">
-                <Loader2 className="animate-spin text-primary" size={32} />
+                <SpinnerGapIcon className="animate-spin text-primary" size={32} />
                 <span className="text-sm font-medium">Loading...</span>
               </div>
             </div>
@@ -344,7 +346,7 @@ import {
                       <div className="flex flex-col items-center gap-2 py-4 min-h-[124px]"></div>
                     ) : (
                       <div className="flex flex-col items-center gap-2 py-4">
-                        <InboxIcon className="h-6 w-6 text-muted-foreground" />
+                        <EmptyIcon className="h-6 w-6 text-muted-foreground" />
                         <p className="text-sm text-muted-foreground">No data available</p>
                         <p className="text-xs text-muted-foreground/80">
                           Once data is available, it will appear here.
