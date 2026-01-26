@@ -1,6 +1,6 @@
 {
-  "name": "base-ui",
-  "private": true,
+  "name": "@kaotypr/ui",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "sideEffects": [

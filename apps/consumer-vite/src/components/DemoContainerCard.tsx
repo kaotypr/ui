@@ -1,4 +1,4 @@
-import { Button } from "@kaotypr/ui/button"
+import { Button } from "@kaotypr/radix-ui/button"
 import {
 	Card,
 	CardContent,
@@ -6,7 +6,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@kaotypr/ui/card"
+} from "@kaotypr/radix-ui/card"
 import { Moon, Sun } from "lucide-react"
 import { useState } from "react"
 

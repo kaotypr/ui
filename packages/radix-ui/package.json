@@ -1,6 +1,6 @@
 {
   "name": "@kaotypr/radix-ui",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "sideEffects": [
