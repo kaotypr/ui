@@ -15,7 +15,7 @@ const meta = {
 				component: `
 A date picker component for selecting a single date with optional time selection.
 
-This component is built on top of [Radix UI Popover](https://www.radix-ui.com/primitives/docs/components/popover), [React Day Picker](https://daypicker.dev/), and [date-fns](https://date-fns.org/).
+This component is built on top of [React Day Picker](https://daypicker.dev/), and [date-fns](https://date-fns.org/).
 
 ### Features
 - Single date selection

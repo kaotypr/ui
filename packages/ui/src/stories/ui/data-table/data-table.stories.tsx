@@ -175,8 +175,7 @@ const meta = {
 - Customizable column definitions
 - Loading state with overlay
 - Custom empty state message
-- Extensive class name customization
-- Accessible UI components using Radix UI primitives`,
+- Extensive class name customization`,
       },
     },
   },

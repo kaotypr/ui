@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A versatile button component with multiple variants and sizes for different use cases.\n\nThis component uses [Radix UI Slot](https://www.radix-ui.com/primitives/docs/components/slot) for composition support via the `asChild` prop.",
+          "A versatile button component with multiple variants and sizes for different use cases.",
       },
     },
   },
