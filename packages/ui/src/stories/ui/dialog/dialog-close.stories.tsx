@@ -61,7 +61,7 @@ export const Default: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -72,7 +72,7 @@ export const Default: Story = {
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
-						<DialogClose {...args} asChild>
+						<DialogClose {...args}>
 							<Button variant="outline">Close</Button>
 						</DialogClose>
 						<Button onClick={() => setOpen(false)}>Confirm</Button>
@@ -96,7 +96,7 @@ export const AsButton: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -107,7 +107,7 @@ export const AsButton: Story = {
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
-						<DialogClose asChild>
+						<DialogClose>
 							<Button variant="destructive">Cancel</Button>
 						</DialogClose>
 						<Button onClick={() => setOpen(false)}>Confirm</Button>
@@ -115,14 +115,6 @@ export const AsButton: Story = {
 				</DialogContent>
 			</Dialog>
 		)
-	},
-	parameters: {
-		docs: {
-			description: {
-				story:
-					"Close button with custom styling using the asChild prop to render as a Button component.",
-			},
-		},
 	},
 }
 
@@ -132,7 +124,7 @@ export const MultipleCloseButtons: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -143,10 +135,10 @@ export const MultipleCloseButtons: Story = {
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
-						<DialogClose asChild>
+						<DialogClose>
 							<Button variant="outline">Cancel</Button>
 						</DialogClose>
-						<DialogClose asChild>
+						<DialogClose>
 							<Button>Save and Close</Button>
 						</DialogClose>
 					</DialogFooter>

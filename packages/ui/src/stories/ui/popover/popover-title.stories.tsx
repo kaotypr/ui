@@ -48,7 +48,7 @@ export const Default: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -77,7 +77,7 @@ export const LongTitle: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -109,7 +109,7 @@ export const CustomStyling: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open styled popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>

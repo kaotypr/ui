@@ -88,7 +88,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger {...args} asChild>
+			<TooltipTrigger {...args}>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -103,7 +103,7 @@ export const Default: Story = {
 		docs: {
 			description: {
 				story:
-					"Default tooltip trigger using a Button component with the `asChild` prop.",
+					"Default tooltip trigger using a Button component with the ` prop.",
 			},
 		},
 	},
@@ -112,7 +112,7 @@ export const Default: Story = {
 export const WithCustomDelay: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger {...args} asChild delay={1000}>
+			<TooltipTrigger {...args} delay={1000}>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me (1s delay)
@@ -136,7 +136,7 @@ export const WithCustomDelay: Story = {
 export const WithCloseDelay: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger {...args} asChild closeDelay={300}>
+			<TooltipTrigger {...args} closeDelay={300}>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me (300ms close delay)
@@ -161,19 +161,19 @@ export const MultipleTriggers: Story = {
 	render: (args) => (
 		<Tooltip>
 			<div className="flex gap-4">
-				<TooltipTrigger {...args} asChild>
+				<TooltipTrigger {...args}>
 					<Button variant="outline">
 						<InfoIcon />
 						Trigger 1
 					</Button>
 				</TooltipTrigger>
-				<TooltipTrigger {...args} asChild>
+				<TooltipTrigger {...args}>
 					<Button variant="outline">
 						<GearIcon />
 						Trigger 2
 					</Button>
 				</TooltipTrigger>
-				<TooltipTrigger {...args} asChild>
+				<TooltipTrigger {...args}>
 					<Button variant="outline">
 						<UserIcon />
 						Trigger 3
@@ -203,7 +203,7 @@ export const AsNativeButton: Story = {
 				Native button trigger
 			</TooltipTrigger>
 			<TooltipContent>
-				<p>Tooltip trigger without asChild prop</p>
+				<p>Tooltip trigger without prop</p>
 			</TooltipContent>
 		</Tooltip>
 	),
@@ -211,7 +211,7 @@ export const AsNativeButton: Story = {
 		docs: {
 			description: {
 				story:
-					"TooltipTrigger used as a native button element without the `asChild` prop.",
+					"TooltipTrigger used as a native button element without the ` prop.",
 			},
 		},
 	},

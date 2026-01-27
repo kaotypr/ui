@@ -118,7 +118,7 @@ export const Default: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open popover</Button>
 				</PopoverTrigger>
 				<PopoverContent {...args}>
@@ -151,7 +151,7 @@ export const DifferentSides: Story = {
 		return (
 			<div className="flex flex-col items-center gap-8">
 				<Popover open={openTop} onOpenChange={setOpenTop}>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Top</Button>
 					</PopoverTrigger>
 					<PopoverContent side="top">
@@ -166,7 +166,7 @@ export const DifferentSides: Story = {
 
 				<div className="flex items-center gap-8">
 					<Popover open={openLeft} onOpenChange={setOpenLeft}>
-						<PopoverTrigger asChild>
+						<PopoverTrigger>
 							<Button variant="outline">Left</Button>
 						</PopoverTrigger>
 						<PopoverContent side="left">
@@ -180,7 +180,7 @@ export const DifferentSides: Story = {
 					</Popover>
 
 					<Popover open={openRight} onOpenChange={setOpenRight}>
-						<PopoverTrigger asChild>
+						<PopoverTrigger>
 							<Button variant="outline">Right</Button>
 						</PopoverTrigger>
 						<PopoverContent side="right">
@@ -195,7 +195,7 @@ export const DifferentSides: Story = {
 				</div>
 
 				<Popover open={openBottom} onOpenChange={setOpenBottom}>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Bottom</Button>
 					</PopoverTrigger>
 					<PopoverContent side="bottom">
@@ -229,7 +229,7 @@ export const CustomAlignment: Story = {
 		return (
 			<div className="flex flex-col items-center gap-8">
 				<Popover open={openStart} onOpenChange={setOpenStart}>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Align Start</Button>
 					</PopoverTrigger>
 					<PopoverContent align="start">
@@ -243,7 +243,7 @@ export const CustomAlignment: Story = {
 				</Popover>
 
 				<Popover open={openCenter} onOpenChange={setOpenCenter}>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Align Center</Button>
 					</PopoverTrigger>
 					<PopoverContent align="center">
@@ -257,7 +257,7 @@ export const CustomAlignment: Story = {
 				</Popover>
 
 				<Popover open={openEnd} onOpenChange={setOpenEnd}>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Align End</Button>
 					</PopoverTrigger>
 					<PopoverContent align="end">
@@ -288,7 +288,7 @@ export const CustomStyling: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open styled popover</Button>
 				</PopoverTrigger>
 				<PopoverContent className="w-96 border-2 border-blue-500 bg-blue-50 p-6">
@@ -320,7 +320,7 @@ export const CustomOffset: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open with offset</Button>
 				</PopoverTrigger>
 				<PopoverContent sideOffset={16} alignOffset={16}>

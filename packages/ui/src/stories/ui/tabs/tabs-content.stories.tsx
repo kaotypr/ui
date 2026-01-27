@@ -55,6 +55,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+	args: {
+		value: "overview",
+	},
 	render: (args) => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>
@@ -99,6 +102,9 @@ export const Default: Story = {
 }
 
 export const KeepMounted: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>
@@ -143,6 +149,9 @@ export const KeepMounted: Story = {
 }
 
 export const WithRichContent: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[500px]">
 			<TabsList>
@@ -202,6 +211,9 @@ export const WithRichContent: Story = {
 }
 
 export const CustomStyling: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>

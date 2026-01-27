@@ -120,7 +120,7 @@ export const Default: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger {...args} asChild>
+				<PopoverTrigger {...args}>
 					<Button variant="outline">Open popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -149,7 +149,7 @@ export const WithIcon: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">
 						<InfoIcon className="mr-2 h-4 w-4" />
 						More information
@@ -181,7 +181,7 @@ export const OpenOnHover: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild openOnHover delay={300} closeDelay={200}>
+				<PopoverTrigger openOnHover delay={300} closeDelay={200}>
 					<Button variant="outline">Hover to open</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -211,7 +211,7 @@ export const CustomStyling: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button
 						variant="outline"
 						className="border-2 border-blue-500 bg-blue-50 text-blue-700 hover:bg-blue-100"

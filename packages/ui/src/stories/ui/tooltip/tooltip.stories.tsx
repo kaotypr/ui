@@ -145,7 +145,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
 	render: (args) => (
 		<Tooltip {...args}>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -180,7 +180,7 @@ export const Controlled: Story = {
 						args.onOpenChange?.(isOpen, {} as any)
 					}}
 				>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<InfoIcon />
 							Controlled tooltip
@@ -209,7 +209,7 @@ export const Controlled: Story = {
 export const WithDelay: Story = {
 	render: (args) => (
 		<Tooltip {...args}>
-			<TooltipTrigger asChild delay={1000}>
+			<TooltipTrigger delay={1000}>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me (1s delay)
@@ -234,13 +234,13 @@ export const MultipleTriggers: Story = {
 	render: (args) => (
 		<div className="flex gap-4">
 			<Tooltip {...args}>
-				<TooltipTrigger asChild>
+				<TooltipTrigger>
 					<Button variant="outline">
 						<InfoIcon />
 						Trigger 1
 					</Button>
 				</TooltipTrigger>
-				<TooltipTrigger asChild>
+				<TooltipTrigger>
 					<Button variant="outline">
 						<InfoIcon />
 						Trigger 2
@@ -265,7 +265,7 @@ export const MultipleTriggers: Story = {
 export const Disabled: Story = {
 	render: (args) => (
 		<Tooltip {...args} disabled>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline" disabled>
 					<InfoIcon />
 					Disabled tooltip

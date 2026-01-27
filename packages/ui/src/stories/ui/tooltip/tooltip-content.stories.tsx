@@ -61,88 +61,6 @@ Must be used within a Tooltip component.`,
 			},
 			control: { type: "number" },
 		},
-		// Base UI Props (Positioner)
-		disableAnchorTracking: {
-			description:
-				"Whether to disable the popup from tracking any layout shift of its positioning anchor.",
-			table: {
-				type: { summary: "boolean" },
-				defaultValue: { summary: "false" },
-				category: "Base UI Props",
-			},
-			control: { type: "boolean" },
-		},
-		arrowPadding: {
-			description:
-				"Minimum distance to maintain between the arrow and the edges of the popup. Use it to prevent the arrow element from hanging out of the rounded corners of a popup.",
-			table: {
-				type: { summary: "number" },
-				defaultValue: { summary: "5" },
-				category: "Base UI Props",
-			},
-			control: { type: "number" },
-		},
-		anchor: {
-			description:
-				"An element to position the popup against. By default, the popup will be positioned against the trigger.",
-			table: {
-				type: {
-					summary:
-						"Element | RefObject<Element> | VirtualElement | (() => Element | VirtualElement | null) | null",
-				},
-				defaultValue: { summary: "undefined" },
-				category: "Base UI Props",
-			},
-		},
-		collisionAvoidance: {
-			description:
-				"Determines how to handle collisions when positioning the popup.",
-			table: {
-				type: { summary: "CollisionAvoidance" },
-				defaultValue: { summary: "undefined" },
-				category: "Base UI Props",
-			},
-		},
-		collisionBoundary: {
-			description:
-				"An element or a rectangle that delimits the area that the popup is confined to.",
-			table: {
-				type: { summary: "Boundary" },
-				defaultValue: { summary: "'clipping-ancestors'" },
-				category: "Base UI Props",
-			},
-		},
-		collisionPadding: {
-			description:
-				"Additional space to maintain from the edge of the collision boundary.",
-			table: {
-				type: { summary: "Padding" },
-				defaultValue: { summary: "5" },
-				category: "Base UI Props",
-			},
-			control: { type: "number" },
-		},
-		sticky: {
-			description:
-				"Whether to maintain the popup in the viewport after the anchor element was scrolled out of view.",
-			table: {
-				type: { summary: "boolean" },
-				defaultValue: { summary: "false" },
-				category: "Base UI Props",
-			},
-			control: { type: "boolean" },
-		},
-		positionMethod: {
-			description:
-				"Determines which CSS `position` property to use.",
-			table: {
-				type: { summary: '"fixed" | "absolute"' },
-				defaultValue: { summary: "'absolute'" },
-				category: "Base UI Props",
-			},
-			control: { type: "radio" },
-			options: ["fixed", "absolute"],
-		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -177,7 +95,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -201,7 +119,7 @@ export const Default: Story = {
 export const Top: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -224,7 +142,7 @@ export const Top: Story = {
 export const Bottom: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -247,7 +165,7 @@ export const Bottom: Story = {
 export const Left: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -270,7 +188,7 @@ export const Left: Story = {
 export const Right: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -293,7 +211,7 @@ export const Right: Story = {
 export const WithCustomOffset: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me
@@ -318,7 +236,7 @@ export const WithAlignment: Story = {
 	render: (args) => (
 		<div className="flex flex-col gap-8">
 			<Tooltip>
-				<TooltipTrigger asChild>
+				<TooltipTrigger>
 					<Button variant="outline">
 						<InfoIcon />
 						Start aligned
@@ -329,7 +247,7 @@ export const WithAlignment: Story = {
 				</TooltipContent>
 			</Tooltip>
 			<Tooltip>
-				<TooltipTrigger asChild>
+				<TooltipTrigger>
 					<Button variant="outline">
 						<InfoIcon />
 						Center aligned
@@ -340,7 +258,7 @@ export const WithAlignment: Story = {
 				</TooltipContent>
 			</Tooltip>
 			<Tooltip>
-				<TooltipTrigger asChild>
+				<TooltipTrigger>
 					<Button variant="outline">
 						<InfoIcon />
 						End aligned
@@ -365,7 +283,7 @@ export const WithAlignment: Story = {
 export const LongContent: Story = {
 	render: (args) => (
 		<Tooltip>
-			<TooltipTrigger asChild>
+			<TooltipTrigger>
 				<Button variant="outline">
 					<InfoIcon />
 					Hover me

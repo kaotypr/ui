@@ -181,7 +181,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		const [value, setValue] = useState("")
 
 		return (
@@ -211,6 +211,7 @@ export const Default: Story = {
 	},
 	args: {
 		maxLength: 6,
+		children: undefined,
 	},
 	parameters: {
 		docs: {
@@ -223,7 +224,7 @@ export const Default: Story = {
 }
 
 export const Simple: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		const [value, setValue] = useState("")
 
 		return (
@@ -250,6 +251,7 @@ export const Simple: Story = {
 	},
 	args: {
 		maxLength: 6,
+		children: undefined,
 	},
 	parameters: {
 		docs: {
@@ -261,7 +263,7 @@ export const Simple: Story = {
 }
 
 export const FourDigits: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		const [value, setValue] = useState("")
 
 		return (
@@ -286,6 +288,7 @@ export const FourDigits: Story = {
 	},
 	args: {
 		maxLength: 4,
+		children: undefined,
 	},
 	parameters: {
 		docs: {
@@ -297,7 +300,7 @@ export const FourDigits: Story = {
 }
 
 export const WithCompletion: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		const [value, setValue] = useState("")
 
 		return (
@@ -337,6 +340,7 @@ export const WithCompletion: Story = {
 	},
 	args: {
 		maxLength: 6,
+		children: undefined,
 	},
 	parameters: {
 		docs: {
@@ -349,7 +353,7 @@ export const WithCompletion: Story = {
 }
 
 export const Controlled: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		const [value, setValue] = useState("123")
 
 		return (
@@ -398,6 +402,7 @@ export const Controlled: Story = {
 	args: {
 		maxLength: 6,
 		value: "123",
+		children: undefined,
 	},
 	parameters: {
 		docs: {
@@ -410,7 +415,7 @@ export const Controlled: Story = {
 }
 
 export const Disabled: Story = {
-	render: (args) => {
+	render: ({ children, ...args }: any) => {
 		return (
 			<InputOTP
 				{...args}
@@ -434,6 +439,8 @@ export const Disabled: Story = {
 	args: {
 		maxLength: 6,
 		disabled: true,
+		children: undefined,
+		value: undefined,
 	},
 	parameters: {
 		docs: {

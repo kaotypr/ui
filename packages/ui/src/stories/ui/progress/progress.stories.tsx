@@ -151,7 +151,7 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
 	render: (args) => {
-		const [value, setValue] = useState(33)
+		const [value] = useState(33)
 		return (
 			<div className="w-64">
 				<Progress {...args} value={value}>
@@ -218,6 +218,9 @@ export const CustomRange: Story = {
 }
 
 export const DifferentValues: Story = {
+	args: {
+		value: 25,
+	},
 	render: () => (
 		<div className="w-64 space-y-4">
 			<Progress value={25}>
@@ -248,13 +251,16 @@ export const DifferentValues: Story = {
 }
 
 export const Animated: Story = {
+	args: {
+		value: 0,
+	},
 	render: () => {
 		const [value, setValue] = useState(0)
 
 		// Simulate progress
 		useEffect(() => {
 			const interval = setInterval(() => {
-				setValue((prev) => {
+				setValue((prev: number) => {
 					if (prev >= 100) {
 						clearInterval(interval)
 						return 100

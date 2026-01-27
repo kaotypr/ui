@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import * as React from "react"
 import {
 	SidebarProvider,
 	Sidebar,
@@ -11,6 +10,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuBadge,
 	SidebarMenuAction,
+	SidebarRail,
 } from "~/components/ui/sidebar"
 import {
 	HouseIcon,

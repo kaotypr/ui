@@ -98,7 +98,7 @@ export const Default: Story = {
 
 		return (
 			<Sheet open={open} onOpenChange={setOpen}>
-				<SheetTrigger asChild>
+				<SheetTrigger>
 					<Button>Open Sheet</Button>
 				</SheetTrigger>
 				<SheetContent {...args}>
@@ -142,7 +142,7 @@ export const DifferentSides: Story = {
 		return (
 			<div className="flex flex-col items-center gap-4">
 				<Sheet open={openTop} onOpenChange={setOpenTop}>
-					<SheetTrigger asChild>
+					<SheetTrigger>
 						<Button variant="outline">Top</Button>
 					</SheetTrigger>
 					<SheetContent side="top">
@@ -157,7 +157,7 @@ export const DifferentSides: Story = {
 
 				<div className="flex items-center gap-4">
 					<Sheet open={openLeft} onOpenChange={setOpenLeft}>
-						<SheetTrigger asChild>
+						<SheetTrigger>
 							<Button variant="outline">Left</Button>
 						</SheetTrigger>
 						<SheetContent side="left">
@@ -171,7 +171,7 @@ export const DifferentSides: Story = {
 					</Sheet>
 
 					<Sheet open={openRight} onOpenChange={setOpenRight}>
-						<SheetTrigger asChild>
+						<SheetTrigger>
 							<Button variant="outline">Right</Button>
 						</SheetTrigger>
 						<SheetContent side="right">
@@ -186,7 +186,7 @@ export const DifferentSides: Story = {
 				</div>
 
 				<Sheet open={openBottom} onOpenChange={setOpenBottom}>
-					<SheetTrigger asChild>
+					<SheetTrigger>
 						<Button variant="outline">Bottom</Button>
 					</SheetTrigger>
 					<SheetContent side="bottom">
@@ -217,7 +217,7 @@ export const WithoutCloseButton: Story = {
 
 		return (
 			<Sheet open={open} onOpenChange={setOpen}>
-				<SheetTrigger asChild>
+				<SheetTrigger>
 					<Button>Open Sheet</Button>
 				</SheetTrigger>
 				<SheetContent showCloseButton={false}>
@@ -253,7 +253,7 @@ export const CustomStyling: Story = {
 
 		return (
 			<Sheet open={open} onOpenChange={setOpen}>
-				<SheetTrigger asChild>
+				<SheetTrigger>
 					<Button>Open Styled Sheet</Button>
 				</SheetTrigger>
 				<SheetContent className="w-96 border-2 border-blue-500 bg-blue-50">

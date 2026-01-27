@@ -127,7 +127,7 @@ export const Default: Story = {
 					args.onOpenChange?.(newOpen, {} as any)
 				}}
 			>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -158,7 +158,7 @@ export const WithIcon: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen}>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">
 						<InfoIcon className="mr-2 h-4 w-4" />
 						More information
@@ -206,7 +206,7 @@ export const Controlled: Story = {
 						args.onOpenChange?.(newOpen, {} as any)
 					}}
 				>
-					<PopoverTrigger asChild>
+					<PopoverTrigger>
 						<Button variant="outline">Controlled popover</Button>
 					</PopoverTrigger>
 					<PopoverContent>
@@ -238,7 +238,7 @@ export const InitiallyOpen: Story = {
 	render: () => {
 		return (
 			<Popover defaultOpen>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Popover (initially open)</Button>
 				</PopoverTrigger>
 				<PopoverContent>
@@ -268,7 +268,7 @@ export const Modal: Story = {
 
 		return (
 			<Popover open={open} onOpenChange={setOpen} modal>
-				<PopoverTrigger asChild>
+				<PopoverTrigger>
 					<Button variant="outline">Open modal popover</Button>
 				</PopoverTrigger>
 				<PopoverContent>
