@@ -45,22 +45,42 @@ When documenting component props:
 
 Since `@kaotypr/ui` components are built on top of Base UI primitives, **you MUST document all Base UI props that are passed through** from the `@kaotypr/ui` component to the underlying Base UI component.
 
+### Using the Indexed Base UI Documentation
+
+Cursor has access to the **indexed Base UI documentation** (from `https://base-ui.com/llms.txt`). This indexed documentation is the **primary source of truth** for discovering and documenting Base UI props.
+
+**IMPORTANT**: Do NOT read type definitions from `node_modules/@base-ui/react/`. Instead, use the indexed Base UI documentation which provides:
+- Complete API reference for each component
+- Accurate prop descriptions and types
+- Default values
+- Data attributes for styling
+- Accessibility information
+
+To access the indexed documentation for a specific component, fetch the markdown documentation at:
+```
+https://base-ui.com/react/components/{component}.md
+```
+
+For example:
+- Accordion: `https://base-ui.com/react/components/accordion.md`
+- Alert Dialog: `https://base-ui.com/react/components/alert-dialog.md`
+- Dialog: `https://base-ui.com/react/components/dialog.md`
+
 ### Workflow for Documenting Base UI Props
 
 When creating stories for a component built on Base UI:
 
 1. **Identify the Base UI Primitive**: Check the component source file to identify which Base UI primitive(s) it wraps
-2. **Consult Base UI Documentation**: Use the indexed Base UI documentation in Cursor to find all available props for the primitive
-3. **Check Type Definitions**: Read the Base UI type definitions in `node_modules/@base-ui/react/{component}/root/{Component}Root.d.ts` (e.g., `accordion/root/AccordionRoot.d.ts`) for the root component, or `node_modules/@base-ui/react/{component}/{part}/{Component}{Part}.d.ts` (e.g., `accordion/item/AccordionItem.d.ts`) for component parts to get accurate prop types. Note that component props often extend `BaseUIComponentProps` defined in `node_modules/@base-ui/react/utils/types.d.ts`.
+2. **Fetch the Base UI Documentation**: Use the indexed Base UI documentation by fetching `https://base-ui.com/react/components/{component}.md` to find all available props, their types, descriptions, and default values
+3. **Extract Props from Documentation**: The documentation contains an "API Reference" section with complete prop tables for each component part
 4. **Document ALL Props**: Include every prop from the Base UI primitive in argTypes, even if the component doesn't explicitly use them (as they are passed through via spread)
 
 ### Steps to Find Base UI Props
 
 1. **Read the component source file** at `components/ui/{component}.tsx`
-2. **Identify the Base UI import**, e.g., `import { Accordion } from "@base-ui/react"`
-3. **Read the Base UI type definitions** at `node_modules/@base-ui/react/{component}/root/{Component}Root.d.ts` (e.g., `accordion/root/AccordionRoot.d.ts`) or `node_modules/@base-ui/react/{component}/{part}/{Component}{Part}.d.ts` (e.g., `accordion/item/AccordionItem.d.ts`). Note that props often extend `BaseUIComponentProps` defined in `node_modules/@base-ui/react/utils/types.d.ts`.
-4. **Cross-reference with Base UI documentation** at `https://base-ui.com/react/components/{component}`
-5. **Document each prop** with accurate description, type, default value, and appropriate Storybook control
+2. **Identify the Base UI import**, e.g., `import { Accordion } from "@base-ui-components/react"`
+3. **Fetch the indexed Base UI documentation** at `https://base-ui.com/react/components/{component}.md` - this contains the complete API reference with all props, types, descriptions, and default values
+4. **Document each prop** with accurate description, type, default value, and appropriate Storybook control based on the information from the indexed documentation
 
 ### Base UI Props ArgTypes Structure
 
@@ -202,11 +222,17 @@ For each Base UI primitive, always document these common props if applicable:
 When generating Storybook stories for components built on Base UI:
 
 1. **ALWAYS read the component source file first** to identify which Base UI primitive is used
-2. **ALWAYS read the Base UI type definitions** from `node_modules/@base-ui/react/{component}/root/{Component}Root.d.ts` (or relevant part file like `node_modules/@base-ui/react/{component}/{part}/{Component}{Part}.d.ts`) and check for `BaseUIComponentProps` inheritance from `node_modules/@base-ui/react/utils/types.d.ts`
-3. **ALWAYS consult the Base UI documentation** for accurate prop descriptions and default values
+2. **ALWAYS fetch the indexed Base UI documentation** from `https://base-ui.com/react/components/{component}.md` to get the complete API reference - **DO NOT read type definitions from node_modules**
+3. **ALWAYS extract props from the API Reference section** of the indexed documentation, which contains accurate prop tables with descriptions, types, and default values
 4. **ALWAYS include ALL Base UI props** in argTypes, organized by category
-5. **ALWAYS document data attributes** that can be used for styling
+5. **ALWAYS document data attributes** that can be used for styling (found in the "Attribute" section of the indexed documentation)
 6. **ALWAYS include the Base UI documentation URL** in the component description
+
+**Why use indexed documentation instead of type definitions?**
+- The indexed documentation provides human-readable descriptions that are better for Storybook argTypes
+- Type definitions only contain TypeScript types, not descriptions or usage guidance
+- The indexed documentation includes data attributes, accessibility information, and examples
+- It ensures consistency with the official Base UI documentation
 
 ## Story Metadata
 
