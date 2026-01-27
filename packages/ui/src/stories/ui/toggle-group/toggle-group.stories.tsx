@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import * as React from "react"
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group"
-import { BoldIcon, ItalicIcon, UnderlineIcon } from "@phosphor-icons/react"
+import { TextBIcon, TextItalicIcon, TextUnderlineIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/ToggleGroup",
@@ -157,13 +157,13 @@ export const Default: Story = {
 				}}
 			>
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -217,13 +217,13 @@ export const WithSpacing: Story = {
 		return (
 			<ToggleGroup value={value} onValueChange={setValue} spacing={8}>
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -245,13 +245,13 @@ export const OutlineVariant: Story = {
 		return (
 			<ToggleGroup value={value} onValueChange={setValue} variant="outline">
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -277,15 +277,15 @@ export const Vertical: Story = {
 				orientation="vertical"
 			>
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 					<span>Bold</span>
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 					<span>Italic</span>
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 					<span>Underline</span>
 				</ToggleGroupItem>
 			</ToggleGroup>
@@ -308,13 +308,13 @@ export const SmallSize: Story = {
 		return (
 			<ToggleGroup value={value} onValueChange={setValue} size="sm">
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -335,13 +335,13 @@ export const LargeSize: Story = {
 		return (
 			<ToggleGroup value={value} onValueChange={setValue} size="lg">
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -362,13 +362,13 @@ export const Disabled: Story = {
 		return (
 			<ToggleGroup value={value} onValueChange={setValue} disabled>
 				<ToggleGroupItem value="bold" aria-label="Bold">
-					<BoldIcon />
+					<TextBIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="italic" aria-label="Italic">
-					<ItalicIcon />
+					<TextItalicIcon />
 				</ToggleGroupItem>
 				<ToggleGroupItem value="underline" aria-label="Underline">
-					<UnderlineIcon />
+					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
 		)
@@ -387,13 +387,13 @@ export const Uncontrolled: Story = {
 	render: () => (
 		<ToggleGroup defaultValue={["bold"]}>
 			<ToggleGroupItem value="bold" aria-label="Bold">
-				<BoldIcon />
+				<TextBIcon />
 			</ToggleGroupItem>
 			<ToggleGroupItem value="italic" aria-label="Italic">
-				<ItalicIcon />
+				<TextItalicIcon />
 			</ToggleGroupItem>
 			<ToggleGroupItem value="underline" aria-label="Underline">
-				<UnderlineIcon />
+				<TextUnderlineIcon />
 			</ToggleGroupItem>
 		</ToggleGroup>
 	),
