@@ -1,4 +1,4 @@
-import { Button } from "@kaotypr/radix-ui/button"
+import { Button } from "@kaotypr/ui/button"
 import {
 	Card,
 	CardContent,
@@ -6,7 +6,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@kaotypr/radix-ui/card"
+} from "@kaotypr/ui/card"
 import { Moon, Sun } from "lucide-react"
 import { useState } from "react"
 
@@ -32,7 +32,9 @@ const DemoContainerCard = ({
 				<CardDescription>{description}</CardDescription>
 			</CardHeader>
 			<CardContent className="p-2">{content}</CardContent>
-			<CardFooter>{footer}</CardFooter>
+			{footer && (
+				<CardFooter>{footer}</CardFooter>
+			)}
 			<Button size="icon-sm" variant="secondary" className="absolute top-2 right-2" onClick={() => setIsDarkMode(!isDarkMode)}>
 				{isDarkMode ? <Sun className="size-4" /> : <Moon className="size-4" />}
 			</Button>
