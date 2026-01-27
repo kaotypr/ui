@@ -300,7 +300,7 @@ All imports in story files must use the `~/` alias for internal modules. Never u
 
 ## Icons Usage
 
-Always use [@phosphor-icons/react](https://phosphoricons.com/) for any icon needs. Never create custom SVG icons
+Always use [@phosphor-icons/react](https://phosphoricons.com/) for any icon needs. Never create custom SVG icons. Use `Icon` suffix when importing icon from @phosphor-icons/react (e.g FileIcon, FolderIcon)
 
 ## File Organization
 
