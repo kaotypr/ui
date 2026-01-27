@@ -5,10 +5,11 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "check-types": "turbo run check-types",
+    "consumer": "pnpm --filter=consumer-vite",
+    "ui-docs": "pnpm --filter=ui-docs",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "ui": "pnpm --filter=@kaotypr/ui",
-    "consumer": "pnpm --filter=consumer-vite"
+    "ui": "pnpm --filter=@kaotypr/ui"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
