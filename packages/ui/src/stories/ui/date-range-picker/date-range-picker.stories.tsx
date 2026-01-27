@@ -15,7 +15,7 @@ const meta = {
 				component: `
 A date range picker component for selecting start and end dates with a dual-month calendar interface.
 
-This component is built on top of [Radix UI Popover](https://www.radix-ui.com/primitives/docs/components/popover), [React Day Picker](https://daypicker.dev/), and [date-fns](https://date-fns.org/).
+This component is built on top of [React Day Picker](https://daypicker.dev/), and [date-fns](https://date-fns.org/).
 
 ### Features
 - Dual-month calendar display (2 months side-by-side)
