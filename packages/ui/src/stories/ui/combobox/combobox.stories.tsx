@@ -12,6 +12,7 @@ import {
 	ComboboxChips,
 	ComboboxChip,
 	ComboboxChipsInput,
+	useComboboxAnchor,
 } from "~/components/ui/combobox"
 
 const fruits = [
@@ -453,17 +454,17 @@ export const Default: Story = {
 					value={value}
 					onValueChange={(newValue) => {
 						setValue(newValue as string | null)
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
 					<ComboboxInput placeholder="Select a fruit..." />
 					<ComboboxContent>
 						<ComboboxList>
-							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
+							{fruits.map((item) => (
+								<ComboboxItem key={item.value} value={item.value}>
 									{item.label}
 								</ComboboxItem>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
@@ -493,17 +494,17 @@ export const WithValue: Story = {
 					value={value}
 					onValueChange={(newValue) => {
 						setValue(newValue as string | null)
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
 					<ComboboxInput placeholder="Select a fruit..." />
 					<ComboboxContent>
 						<ComboboxList>
-							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
+							{fruits.map((item) => (
+								<ComboboxItem key={item.value} value={item.value}>
 									{item.label}
 								</ComboboxItem>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
@@ -532,7 +533,7 @@ export const WithClear: Story = {
 					value={value}
 					onValueChange={(newValue) => {
 						setValue(newValue as string | null)
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
 					<ComboboxInput
@@ -541,11 +542,11 @@ export const WithClear: Story = {
 					/>
 					<ComboboxContent>
 						<ComboboxList>
-							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
+							{fruits.map((item) => (
+								<ComboboxItem key={item.value} value={item.value}>
 									{item.label}
 								</ComboboxItem>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
@@ -566,40 +567,42 @@ export const WithClear: Story = {
 export const Multiple: Story = {
 	render: (args) => {
 		const [value, setValue] = React.useState<string[]>([])
+		const chipsRef = useComboboxAnchor()
 
 		return (
 			<div className="w-[300px]">
 				<Combobox
 					{...args}
+					defaultValue={undefined}
 					items={fruits}
 					multiple
 					value={value}
 					onValueChange={(newValue) => {
 						setValue(newValue as string[])
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
-					<ComboboxChips anchor={<ComboboxChipsInput />}>
-						{(selectedValue: string[]) =>
-							selectedValue.map((val) => {
+					<ComboboxChips ref={chipsRef}>
+						{value.map((val) => {
 								const fruit = fruits.find(
 									(f) => f.value === val,
 								)
 								return (
-									<ComboboxChip key={val} value={val}>
+									<ComboboxChip key={val}>
 										{fruit?.label || val}
 									</ComboboxChip>
 								)
 							})
 						}
+						<ComboboxChipsInput />
 					</ComboboxChips>
-					<ComboboxContent anchor={<ComboboxChips />}>
+					<ComboboxContent anchor={chipsRef}>
 						<ComboboxList>
-							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
+							{fruits.map((item) => (
+								<ComboboxItem key={item.value} value={item.value}>
 									{item.label}
 								</ComboboxItem>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
@@ -629,24 +632,22 @@ export const Grouped: Story = {
 					value={value}
 					onValueChange={(newValue) => {
 						setValue(newValue as string | null)
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
 					<ComboboxInput placeholder="Select a fruit..." />
 					<ComboboxContent>
 						<ComboboxList>
-							{(
-								group: (typeof groupedFruits)[number],
-							) => (
+							{groupedFruits.map((group) => (
 								<ComboboxGroup key={group.value} items={group.items}>
 									<ComboboxLabel>{group.value}</ComboboxLabel>
-									{(item: (typeof group.items)[number]) => (
-										<ComboboxItem value={item.value}>
+									{group.items.map((item) => (
+										<ComboboxItem key={item.value} value={item.value}>
 											{item.label}
 										</ComboboxItem>
-									)}
+									))}
 								</ComboboxGroup>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
@@ -677,17 +678,17 @@ export const Disabled: Story = {
 					disabled
 					onValueChange={(newValue) => {
 						setValue(newValue as string | null)
-						args.onValueChange?.(newValue as any)
+						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
 					<ComboboxInput placeholder="Select a fruit..." />
 					<ComboboxContent>
 						<ComboboxList>
-							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
+							{fruits.map((item) => (
+								<ComboboxItem key={item.value} value={item.value}>
 									{item.label}
 								</ComboboxItem>
-							)}
+							))}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
