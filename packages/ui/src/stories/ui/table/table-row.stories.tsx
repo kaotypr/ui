@@ -42,16 +42,6 @@ This component renders as a \`<tr>\` element and provides hover and selected sta
 			},
 			control: false,
 		},
-		"data-state": {
-			description: "The state of the row. Use 'selected' to highlight the row.",
-			table: {
-				type: { summary: '"selected" | undefined' },
-				defaultValue: { summary: "undefined" },
-				category: "Props",
-			},
-			control: { type: "select" },
-			options: [undefined, "selected"],
-		},
 	},
 } satisfies Meta<typeof TableRow>
 

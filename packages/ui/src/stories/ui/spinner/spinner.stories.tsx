@@ -46,15 +46,6 @@ This component uses [SpinnerGapIcon](https://phosphoricons.com/) from @phosphor-
 			},
 			control: { type: "text" },
 		},
-		size: {
-			description: "Size of the spinner (sets both width and height).",
-			table: {
-				type: { summary: "number | string" },
-				defaultValue: { summary: "undefined" },
-				category: "SVG Props",
-			},
-			control: { type: "text" },
-		},
 		color: {
 			description: "Color of the spinner (uses currentColor by default).",
 			table: {

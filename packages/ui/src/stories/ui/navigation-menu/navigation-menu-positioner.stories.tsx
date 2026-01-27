@@ -147,7 +147,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-	render: (args) => (
+	render: () => (
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>
@@ -181,7 +181,7 @@ export const CustomSide: Story = {
 		side: "right",
 		sideOffset: 12,
 	},
-	render: (args) => {
+	render: () => {
 		// Note: This is a demonstration of how NavigationMenuPositioner props work.
 		// In practice, you would need to modify NavigationMenu component to customize these props.
 		return (
@@ -213,7 +213,7 @@ export const CustomAlign: Story = {
 		align: "end",
 		alignOffset: 10,
 	},
-	render: (args) => (
+	render: () => (
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>

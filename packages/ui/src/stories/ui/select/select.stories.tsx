@@ -288,8 +288,8 @@ export const Controlled: Story = {
 			<Select
 				{...args}
 				value={value}
-				onValueChange={(v) => {
-					setValue(v)
+				onValueChange={(v: any) => {
+					setValue(v as string | null)
 					args.onValueChange?.(v as any, {} as any)
 				}}
 			>

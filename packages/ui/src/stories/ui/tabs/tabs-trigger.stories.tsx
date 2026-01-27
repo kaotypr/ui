@@ -65,6 +65,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+	args: {
+		value: "overview",
+	},
 	render: (args) => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>
@@ -110,6 +113,9 @@ export const Default: Story = {
 }
 
 export const WithIcon: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>
@@ -162,6 +168,9 @@ export const WithIcon: Story = {
 }
 
 export const Disabled: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>
@@ -208,6 +217,9 @@ export const Disabled: Story = {
 }
 
 export const WithLineVariant: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList variant="line">
@@ -252,6 +264,9 @@ export const WithLineVariant: Story = {
 }
 
 export const CustomStyling: Story = {
+	args: {
+		value: "overview",
+	},
 	render: () => (
 		<Tabs defaultValue="overview" className="w-[400px]">
 			<TabsList>

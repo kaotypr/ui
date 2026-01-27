@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import * as React from "react"
 import {
 	SidebarProvider,
 	Sidebar,
@@ -13,7 +12,7 @@ import {
 	SidebarMenuItem,
 	SidebarMenuButton,
 } from "~/components/ui/sidebar"
-import { HouseIcon, FileIcon, MagnifyingGlassIcon } from "@phosphor-icons/react"
+import { HouseIcon, FileIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Sidebar/SidebarHeader",

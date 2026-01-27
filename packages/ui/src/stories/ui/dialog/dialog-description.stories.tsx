@@ -49,7 +49,7 @@ export const Default: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -85,7 +85,7 @@ export const WithLinks: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -125,7 +125,7 @@ export const LongDescription: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>
@@ -164,7 +164,7 @@ export const CustomStyling: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent>

@@ -66,16 +66,6 @@ This component is built on top of [react-resizable-panels](https://github.com/bv
 			},
 			control: { type: "boolean" },
 		},
-		resizeTargetMinimumSize: {
-			description:
-				"Minimum size of the resizable hit target area (either Separator or Panel edge). This threshold ensures targets are large enough to avoid mis-clicks.",
-			table: {
-				type: { summary: "number" },
-				defaultValue: { summary: "undefined" },
-				category: "react-resizable-panels Props",
-			},
-			control: { type: "number" },
-		},
 		id: {
 			description:
 				"Uniquely identifies this group within an application. Falls back to useId when not provided.",

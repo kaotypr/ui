@@ -71,7 +71,7 @@ export const Default: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<SheetClose {...args} asChild>
+						<SheetClose {...args}>
 							<Button variant="outline">Close</Button>
 						</SheetClose>
 					</div>
@@ -105,7 +105,7 @@ export const WithAsChild: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<SheetClose asChild>
+						<SheetClose>
 							<Button variant="destructive">Close Sheet</Button>
 						</SheetClose>
 					</div>
@@ -145,7 +145,7 @@ export const InFooter: Story = {
 						</p>
 					</div>
 					<div className="flex gap-2">
-						<SheetClose asChild>
+						<SheetClose>
 							<Button variant="outline">Cancel</Button>
 						</SheetClose>
 						<Button>Save Changes</Button>

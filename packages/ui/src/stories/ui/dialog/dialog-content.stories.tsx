@@ -85,7 +85,7 @@ export const Default: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent {...args}>
@@ -121,7 +121,7 @@ export const WithoutCloseButton: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Dialog</Button>
 				</DialogTrigger>
 				<DialogContent showCloseButton={false}>
@@ -157,7 +157,7 @@ export const CustomWidth: Story = {
 
 		return (
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogTrigger asChild>
+				<DialogTrigger>
 					<Button>Open Wide Dialog</Button>
 				</DialogTrigger>
 				<DialogContent className="sm:max-w-2xl">

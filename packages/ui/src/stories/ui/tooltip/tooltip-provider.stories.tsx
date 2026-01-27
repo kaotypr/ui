@@ -61,7 +61,7 @@ export const Default: Story = {
 		<TooltipProvider {...args}>
 			<div className="flex gap-4">
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<InfoIcon />
 							Info
@@ -72,7 +72,7 @@ export const Default: Story = {
 					</TooltipContent>
 				</Tooltip>
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<GearIcon />
 							Settings
@@ -83,7 +83,7 @@ export const Default: Story = {
 					</TooltipContent>
 				</Tooltip>
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<UserIcon />
 							Profile
@@ -111,7 +111,7 @@ export const WithCustomDelay: Story = {
 		<TooltipProvider {...args} delay={500}>
 			<div className="flex gap-4">
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<InfoIcon />
 							Info
@@ -122,7 +122,7 @@ export const WithCustomDelay: Story = {
 					</TooltipContent>
 				</Tooltip>
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<GearIcon />
 							Settings
@@ -150,7 +150,7 @@ export const WithCloseDelay: Story = {
 		<TooltipProvider {...args} delay={300} closeDelay={200}>
 			<div className="flex gap-4">
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<InfoIcon />
 							Info
@@ -161,7 +161,7 @@ export const WithCloseDelay: Story = {
 					</TooltipContent>
 				</Tooltip>
 				<Tooltip>
-					<TooltipTrigger asChild>
+					<TooltipTrigger>
 						<Button variant="outline">
 							<GearIcon />
 							Settings

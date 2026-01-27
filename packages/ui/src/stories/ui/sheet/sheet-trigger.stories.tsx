@@ -117,7 +117,7 @@ export const WithAsChild: Story = {
 
 		return (
 			<Sheet open={open} onOpenChange={setOpen}>
-				<SheetTrigger asChild>
+				<SheetTrigger>
 					<Button variant="outline">Open with asChild</Button>
 				</SheetTrigger>
 				<SheetContent>
