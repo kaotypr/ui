@@ -1,20 +1,45 @@
 schema: spec-driven
 
-# Project context (optional)
+# Project context
 # This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  # Architecture
+  - Monorepo using Turborepo and pnpm
+  - React 19, Vite 7, TypeScript 5.9
+  - Tailwind CSS 4
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+  # Packages
+  - packages/ui: Component library (@kaotypr/ui)
+    - Based on Shadcn UI architecture
+    - Uses Base UI (@base-ui/react) primitives
+    - Styling: Tailwind CSS 4, class-variance-authority (cva), clsx, tailwind-merge
+    - Build: Vite Library Mode
+    - Testing: Vitest, Playwright
+    - Documentation: Storybook 10+
+  - apps/consumer-vite: Consumer application
+
+  # Conventions
+  - Linting/Formatting: Biome (strict)
+    - Indentation: Tabs
+    - Quotes: Double
+    - Semicolons: As needed
+    - Trailing Commas: All
+  - Imports: Use `~/*` alias for `src/*` in UI package
+  - Components: Functional components with strong typing
+  - Styling: Mobile-first Tailwind classes, use `cn()` utility for class merging
+
+# Per-artifact rules
+rules:
+  proposal:
+    - Focus on component API design and prop interfaces
+    - Identify necessary Base UI primitives or external dependencies
+    - Consider accessibility (a11y) implications
+  
+  tasks:
+    - Break down implementation into granular steps:
+      1. Component logic/structure
+      2. Styling/Theming
+      3. Storybook stories
+      4. Tests (Unit/Visual)
+      5. Exports
+    - Group tasks by component if multiple are being added
