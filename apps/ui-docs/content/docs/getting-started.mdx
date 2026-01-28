@@ -1,0 +1,64 @@
+---
+title: Getting Started
+description: Learn how to install and configure @kaotypr/ui in your project
+---
+
+## Installation
+
+Install @kaotypr/ui using your preferred package manager:
+
+```bash tab="npm"
+npm install @kaotypr/ui
+```
+
+```bash tab="yarn"
+yarn add @kaotypr/ui
+```
+
+```bash tab="pnpm"
+pnpm add @kaotypr/ui
+```
+
+## Peer Dependencies
+
+@kaotypr/ui requires the following peer dependencies:
+
+- **React** ^18.0.0 or ^19.0.0
+- **Tailwind CSS** ^3.4.0 or ^4.0.0
+
+Make sure these are installed in your project.
+
+## Tailwind Configuration
+
+To use @kaotypr/ui components with their default styles, add the library to your Tailwind CSS configuration:
+
+```js title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    // ... your content paths
+    './node_modules/@kaotypr/ui/dist/**/*.{js,ts,jsx,tsx}',
+  ],
+  // ... rest of your config
+};
+```
+
+This ensures Tailwind processes the component styles and includes them in your final CSS bundle.
+
+## Basic Usage
+
+Import and use components directly from the package:
+
+```tsx
+import { Button } from '@kaotypr/ui';
+
+export default function MyComponent() {
+  return (
+    <Button variant="default" size="default">
+      Click me
+    </Button>
+  );
+}
+```
+
+Each component comes with TypeScript types and accepts a variety of props for customization. Check the individual component documentation for available options.
