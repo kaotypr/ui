@@ -30,6 +30,8 @@ const EXTERNAL_DEPS = [
 	/^date-fns\/.*$/,
 	/^react-day-picker$/,
 	/^react-day-picker\/.*$/,
+	/^@base-ui\/react$/,
+	/^@base-ui\/react\/.*$/,
 	/^sonner$/,
 	/^recharts$/,
 	/^recharts\/.*$/,

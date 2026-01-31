@@ -25,6 +25,15 @@
       "require": "./dist/assets/css/index.css",
       "default": "./dist/assets/css/index.css"
     },
+    "./css/*": {
+      "import": "./dist/assets/css/*/index.css",
+      "types": "./dist/assets/css/*/index.d.ts"
+    },
+    "./css/shadcn-tailwind.css": {
+      "import": "./dist/assets/css/shadcn-tailwind.css",
+      "require": "./dist/assets/css/shadcn-tailwind.css",
+      "default": "./dist/assets/css/shadcn-tailwind.css"
+    },
     "./hooks/*": {
       "import": "./dist/hooks/*/index.js",
       "types": "./dist/hooks/*/index.d.ts"

@@ -1,3 +1,11 @@
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+/* Fumadocs: preset for layouts/animations */
+@import "fumadocs-ui/css/preset.css";
+
+/* Fumadocs: shadcn bridge - maps fd-* variables to shadcn variables from @kaotypr/ui */
+@import "fumadocs-ui/css/neutral.css";
+
+/* Base: @kaotypr/ui styles (includes tailwindcss + CSS variables + @theme inline) */
+@import "@kaotypr/ui/style";
+
+/* Source scanning for Tailwind class detection */
+@source "../../node_modules/@kaotypr/ui/dist";

@@ -25,6 +25,15 @@
       ],
       "fumadocs-mdx:collections/*": [
         ".source/*"
+      ],
+      "@kaotypr/ui": [
+        "../../packages/ui/src/index.ts"
+      ],
+      "@kaotypr/ui/*": [
+        "../../packages/ui/src/components/ui/*"
+      ],
+      "~/*": [
+        "../../packages/ui/src/*"
       ]
     },
     "plugins": [
