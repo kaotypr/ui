@@ -111,7 +111,7 @@ apps/ui-docs/
 │   └── docs/components/*.md   # Generated markdown files
 ```
 
-### 8. npm scripts integration
+### 8. pnpm scripts integration
 
 **Decision**: Add to `package.json`:
 ```json
@@ -120,8 +120,8 @@ apps/ui-docs/
     "generate:md": "node scripts/mdx-to-md.mjs",
     "generate:examples": "node scripts/generate-examples-index.mjs",
     "generate:llms": "node scripts/generate-llms-txt.mjs",
-    "generate": "npm run generate:examples && npm run generate:md && npm run generate:llms",
-    "prebuild": "npm run generate",
+    "generate": "pnpm generate:examples && pnpm generate:md && pnpm generate:llms",
+    "prebuild": "pnpm generate",
     "dev": "next dev",
     "build": "next build"
   }
