@@ -49,7 +49,18 @@ export async function getComponentSource(name: string): Promise<ComponentSourceR
   }
 
   return {
-    element: <DynamicCodeBlock lang="tsx" code={content} />,
+    element: (
+      <DynamicCodeBlock
+        lang="tsx"
+        code={content}
+        codeblock={{
+          allowCopy: false,
+          viewportProps: {
+            style: { overflow: "visible", maxHeight: "none" },
+          },
+        }}
+      />
+    ),
     rawSource: content,
   }
 }

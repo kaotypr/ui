@@ -33,7 +33,11 @@ export async function ComponentPreview({
 
   return (
     <ComponentPreviewClient
-      source={<div className="[&_pre]:!m-0 [&_pre]:!rounded-none">{sourceElement}</div>}
+      source={
+        <div className="w-max min-w-full [&_figure]:!m-0 [&_figure]:!border-0 [&_figure]:!rounded-none [&_figure]:!bg-transparent [&_figure]:!w-max [&_figure]:!min-w-full [&_pre]:!m-0 [&_pre]:!rounded-none [&_figcaption]:!hidden">
+          {sourceElement}
+        </div>
+      }
       rawSource={rawSource}
       className={className}
       align={align}
