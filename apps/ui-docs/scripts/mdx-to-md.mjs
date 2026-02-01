@@ -4,7 +4,7 @@
  * MDX to Markdown Converter
  *
  * Converts MDX files from content/docs/components/ to plain markdown
- * Strips JSX components like <ComponentPreview> while preserving standard markdown
+ * Replaces <ComponentPreview> with actual component source code
  * Output: public/docs/components/*.md
  */
 
@@ -16,12 +16,53 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = path.resolve(__dirname, "..")
 const INPUT_DIR = path.join(ROOT_DIR, "content/docs/components")
 const OUTPUT_DIR = path.join(ROOT_DIR, "public/docs/components")
+const EXAMPLES_INDEX_PATH = path.join(ROOT_DIR, "src/examples/_examplesIndex.json")
 
 /**
- * Strip JSX components from MDX content
+ * Load examples index and create a name -> filePath map
+ */
+async function loadExamplesIndex() {
+  try {
+    const content = await fs.readFile(EXAMPLES_INDEX_PATH, "utf-8")
+    const index = JSON.parse(content)
+    const nameToPath = new Map()
+
+    for (const examples of Object.values(index)) {
+      for (const example of examples) {
+        nameToPath.set(example.name, path.join(ROOT_DIR, example.filePath))
+      }
+    }
+
+    return nameToPath
+  } catch {
+    console.warn("Could not load examples index, ComponentPreview tags will be removed without replacement")
+    return new Map()
+  }
+}
+
+/**
+ * Read example source code by name
+ */
+async function getExampleSource(name, examplesMap) {
+  const filePath = examplesMap.get(name)
+  if (!filePath) {
+    return null
+  }
+
+  try {
+    const content = await fs.readFile(filePath, "utf-8")
+    return content.trim()
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Convert MDX content to plain markdown
+ * Replaces <ComponentPreview> with actual source code
  * Preserves frontmatter, standard markdown, and code blocks
  */
-function stripJsx(content) {
+async function convertMdx(content, examplesMap) {
   // Split frontmatter from content
   const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
   let frontmatter = ""
@@ -39,7 +80,30 @@ function stripJsx(content) {
     return `__CODE_BLOCK_${codeBlocks.length - 1}__`
   })
 
-  // Remove self-closing JSX tags: <ComponentPreview name="..." />
+  // Replace <ComponentPreview name="..." /> with actual source code
+  const componentPreviewRegex = /<ComponentPreview\s+name=["']([^"']+)["']\s*\/>/g
+  const matches = [...body.matchAll(componentPreviewRegex)]
+
+  for (const match of matches) {
+    const [fullMatch, name] = match
+    const source = await getExampleSource(name, examplesMap)
+
+    if (source) {
+      // Replace with a tsx code block containing the source
+      body = body.replace(fullMatch, `\`\`\`tsx\n${source}\n\`\`\``)
+    } else {
+      // If no source found, just remove the tag
+      body = body.replace(fullMatch, "")
+    }
+  }
+
+  // Re-protect code blocks (including newly inserted ones) before JSX removal
+  body = body.replace(/```[\s\S]*?```/g, (match) => {
+    codeBlocks.push(match)
+    return `__CODE_BLOCK_${codeBlocks.length - 1}__`
+  })
+
+  // Remove other self-closing JSX tags (not ComponentPreview)
   body = body.replace(
     /<[A-Z][a-zA-Z]*(?:\s+[a-zA-Z]+(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}))?)*\s*\/>/g,
     "",
@@ -75,6 +139,10 @@ function stripJsx(content) {
 async function main() {
   console.log("Converting MDX to Markdown...")
 
+  // Load examples index for ComponentPreview replacement
+  const examplesMap = await loadExamplesIndex()
+  console.log(`Loaded ${examplesMap.size} example mappings`)
+
   // Check if input directory exists
   try {
     await fs.access(INPUT_DIR)
@@ -104,7 +172,7 @@ async function main() {
 
     try {
       const content = await fs.readFile(inputPath, "utf-8")
-      const markdown = stripJsx(content)
+      const markdown = await convertMdx(content, examplesMap)
       await fs.writeFile(outputPath, markdown, "utf-8")
       console.log(`  ${file.name} -> ${outputName}`)
       converted++
