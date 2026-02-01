@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
-import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSlot,
-	InputOTPSeparator,
-} from "~/components/ui/input-otp"
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "~/components/ui/input-otp"
 
 const meta = {
 	title: "UI/InputOTP/InputOTPSlot",
@@ -55,11 +50,7 @@ export const Default: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup>
 					<InputOTPSlot {...args} index={0} />
 					<InputOTPSlot {...args} index={1} />
@@ -92,11 +83,7 @@ export const WithValue: Story = {
 		const [value, setValue] = useState("123456")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup>
 					<InputOTPSlot {...args} index={0} />
 					<InputOTPSlot {...args} index={1} />
@@ -129,11 +116,7 @@ export const InvalidState: Story = {
 		const [value, setValue] = useState("123")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup>
 					<InputOTPSlot {...args} index={0} aria-invalid="true" />
 					<InputOTPSlot {...args} index={1} aria-invalid="true" />
@@ -168,15 +151,9 @@ export const ActiveState: Story = {
 		return (
 			<div className="space-y-4">
 				<p className="text-sm text-muted-foreground">
-					Click on any slot to see the active state with ring styling and caret
-					animation.
+					Click on any slot to see the active state with ring styling and caret animation.
 				</p>
-				<InputOTP
-					maxLength={6}
-					value={value}
-					onChange={setValue}
-					autoFocus
-				>
+				<InputOTP maxLength={6} value={value} onChange={setValue} autoFocus>
 					<InputOTPGroup>
 						<InputOTPSlot {...args} index={0} />
 						<InputOTPSlot {...args} index={1} />

@@ -119,8 +119,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default horizontal carousel with navigation buttons and 5 slides.",
+				story: "Default horizontal carousel with navigation buttons and 5 slides.",
 			},
 		},
 	},
@@ -183,8 +182,7 @@ export const WithLoop: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Carousel with loop enabled, allowing infinite scrolling in both directions.",
+				story: "Carousel with loop enabled, allowing infinite scrolling in both directions.",
 			},
 		},
 	},
@@ -217,8 +215,7 @@ export const MultipleSlides: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Carousel showing multiple slides at once with responsive breakpoints.",
+				story: "Carousel showing multiple slides at once with responsive breakpoints.",
 			},
 		},
 	},
@@ -265,12 +262,8 @@ export const WithImages: Story = {
 						<CarouselItem key={index}>
 							<div className="flex aspect-video items-center justify-center rounded-md border bg-muted">
 								<div className="flex flex-col items-center gap-2">
-									<span className="text-2xl font-semibold">
-										Slide {index + 1}
-									</span>
-									<span className="text-sm text-muted-foreground">
-										Image placeholder
-									</span>
+									<span className="text-2xl font-semibold">Slide {index + 1}</span>
+									<span className="text-sm text-muted-foreground">Image placeholder</span>
 								</div>
 							</div>
 						</CarouselItem>

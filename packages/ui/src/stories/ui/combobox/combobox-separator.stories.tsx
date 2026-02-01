@@ -70,15 +70,12 @@ export const Default: Story = {
 						<ComboboxList>
 							{(item: (typeof items)[number], index: number) => {
 								const prevItem = items[index - 1]
-								const showSeparator =
-									prevItem && prevItem.category !== item.category
+								const showSeparator = prevItem && prevItem.category !== item.category
 
 								return (
 									<React.Fragment key={item.value}>
 										{showSeparator && <ComboboxSeparator {...args} />}
-										<ComboboxItem value={item.value}>
-											{item.label}
-										</ComboboxItem>
+										<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 									</React.Fragment>
 								)
 							}}
@@ -92,8 +89,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default ComboboxSeparator used to visually divide items by category.",
+				story: "Default ComboboxSeparator used to visually divide items by category.",
 			},
 		},
 	},
@@ -132,9 +128,7 @@ export const BetweenSections: Story = {
 							{(item: (typeof combinedItems)[number], index: number) => (
 								<React.Fragment key={item.value}>
 									{index === recentItems.length && <ComboboxSeparator />}
-									<ComboboxItem value={item.value}>
-										{item.label}
-									</ComboboxItem>
+									<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 								</React.Fragment>
 							)}
 						</ComboboxList>
@@ -147,8 +141,7 @@ export const BetweenSections: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxSeparator used to divide recent items from all items.",
+				story: "ComboboxSeparator used to divide recent items from all items.",
 			},
 		},
 	},
@@ -179,12 +172,8 @@ export const CustomStyling: Story = {
 						<ComboboxList>
 							{(item: (typeof items)[number], index: number) => (
 								<React.Fragment key={item.value}>
-									{index === 2 && (
-										<ComboboxSeparator className="bg-primary/20 my-2 h-0.5" />
-									)}
-									<ComboboxItem value={item.value}>
-										{item.label}
-									</ComboboxItem>
+									{index === 2 && <ComboboxSeparator className="bg-primary/20 my-2 h-0.5" />}
+									<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 								</React.Fragment>
 							)}
 						</ComboboxList>

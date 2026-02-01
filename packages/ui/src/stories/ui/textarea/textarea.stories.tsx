@@ -357,8 +357,7 @@ export const States: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Different textarea states: default, disabled, read-only, required, and invalid.",
+				story: "Different textarea states: default, disabled, read-only, required, and invalid.",
 			},
 		},
 	},
@@ -368,15 +367,11 @@ export const WithConstraints: Story = {
 	render: () => (
 		<div className="flex flex-col gap-4 w-full max-w-md">
 			<div>
-				<label className="text-sm font-medium mb-1 block">
-					Max Length (100 characters)
-				</label>
+				<label className="text-sm font-medium mb-1 block">Max Length (100 characters)</label>
 				<Textarea placeholder="Max 100 chars" maxLength={100} />
 			</div>
 			<div>
-				<label className="text-sm font-medium mb-1 block">
-					Min Length (10 characters)
-				</label>
+				<label className="text-sm font-medium mb-1 block">Min Length (10 characters)</label>
 				<Textarea placeholder="Min 10 chars" minLength={10} />
 			</div>
 		</div>
@@ -439,11 +434,7 @@ export const WithAutoComplete: Story = {
 		<div className="flex flex-col gap-4 w-full max-w-md">
 			<div>
 				<label className="text-sm font-medium mb-1 block">Address</label>
-				<Textarea
-					placeholder="Enter your address"
-					autoComplete="street-address"
-					rows={3}
-				/>
+				<Textarea placeholder="Enter your address" autoComplete="street-address" rows={3} />
 			</div>
 			<div>
 				<label className="text-sm font-medium mb-1 block">Additional Notes</label>
@@ -454,8 +445,7 @@ export const WithAutoComplete: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Textareas with autocomplete attributes to help browsers provide suggestions.",
+				story: "Textareas with autocomplete attributes to help browsers provide suggestions.",
 			},
 		},
 	},

@@ -149,8 +149,7 @@ export const MultipleCloseButtons: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Multiple close buttons in the footer, both using DialogClose component.",
+				story: "Multiple close buttons in the footer, both using DialogClose component.",
 			},
 		},
 	},

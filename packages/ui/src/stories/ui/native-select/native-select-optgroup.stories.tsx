@@ -30,8 +30,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"When true, prevents all options within the group from being selected.",
+			description: "When true, prevents all options within the group from being selected.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -65,8 +64,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Option groups used to organize related options within a native select dropdown.",
+				story: "Option groups used to organize related options within a native select dropdown.",
 			},
 		},
 	},
@@ -122,8 +120,7 @@ export const MultipleGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Multiple option groups organizing options into different categories.",
+				story: "Multiple option groups organizing options into different categories.",
 			},
 		},
 	},

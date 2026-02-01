@@ -53,14 +53,10 @@ export const Default: Story = {
 				<SheetContent>
 					<SheetHeader>
 						<SheetTitle>Sheet Title</SheetTitle>
-						<SheetDescription>
-							Default sheet footer with action buttons.
-						</SheetDescription>
+						<SheetDescription>Default sheet footer with action buttons.</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<SheetFooter {...args}>
 						<Button variant="outline" onClick={() => setOpen(false)}>
@@ -93,14 +89,10 @@ export const SingleButton: Story = {
 				<SheetContent>
 					<SheetHeader>
 						<SheetTitle>Sheet Title</SheetTitle>
-						<SheetDescription>
-							Sheet footer with a single action button.
-						</SheetDescription>
+						<SheetDescription>Sheet footer with a single action button.</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<SheetFooter>
 						<Button onClick={() => setOpen(false)} className="w-full">
@@ -137,9 +129,7 @@ export const CustomStyling: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<SheetFooter className="border-t border-gray-200 pt-4">
 						<Button variant="outline" onClick={() => setOpen(false)}>

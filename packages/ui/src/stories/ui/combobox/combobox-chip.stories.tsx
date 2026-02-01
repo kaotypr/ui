@@ -91,14 +91,13 @@ export const Default: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip {...args} key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return (
+								<ComboboxChip {...args} key={val}>
+									{fruit?.label || val}
+								</ComboboxChip>
+							)
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -147,16 +146,15 @@ export const WithIcon: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = iconFruits.find((f) => f.value === val)
-								const Icon = fruit?.icon || StarIcon
-								return (
-									<ComboboxChip key={val}>
-										<Icon className="size-3" />
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = iconFruits.find((f) => f.value === val)
+							const Icon = fruit?.icon || StarIcon
+							return (
+								<ComboboxChip key={val}>
+									<Icon className="size-3" />
+									{fruit?.label || val}
+								</ComboboxChip>
+							)
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -200,14 +198,13 @@ export const WithoutRemoveButton: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val} showRemove={false}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return (
+								<ComboboxChip key={val} showRemove={false}>
+									{fruit?.label || val}
+								</ComboboxChip>
+							)
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -238,11 +235,7 @@ export const WithoutRemoveButton: Story = {
 
 export const CustomStyling: Story = {
 	render: () => {
-		const [value, setValue] = React.useState<string[]>([
-			"apple",
-			"banana",
-			"orange",
-		])
+		const [value, setValue] = React.useState<string[]>(["apple", "banana", "orange"])
 		const chipsRef = useComboboxAnchor()
 
 		const colorMap: Record<string, string> = {
@@ -265,17 +258,13 @@ export const CustomStyling: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip
-										key={val}
-										className={colorMap[val] || ""}
-									>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return (
+								<ComboboxChip key={val} className={colorMap[val] || ""}>
+									{fruit?.label || val}
+								</ComboboxChip>
+							)
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>

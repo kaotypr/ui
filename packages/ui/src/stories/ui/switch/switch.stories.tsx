@@ -29,8 +29,7 @@ const meta = {
 		},
 		// Base UI Props
 		name: {
-			description:
-				"Identifies the field when a form is submitted.",
+			description: "Identifies the field when a form is submitted.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -59,12 +58,10 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the switch is activated or deactivated.",
+			description: "Event handler called when the switch is activated or deactivated.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -73,7 +70,7 @@ const meta = {
 		},
 		value: {
 			description:
-				"The value submitted with the form when the switch is on. By default, switch submits the \"on\" value, matching native checkbox behavior.",
+				'The value submitted with the form when the switch is on. By default, switch submits the "on" value, matching native checkbox behavior.',
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -102,8 +99,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -112,8 +108,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		readOnly: {
-			description:
-				"Whether the user should be unable to activate or deactivate the switch.",
+			description: "Whether the user should be unable to activate or deactivate the switch.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -122,8 +117,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must activate the switch before submitting a form.",
+			description: "Whether the user must activate the switch before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -177,8 +171,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default switch in an uncontrolled state with a label.",
+				story: "Default switch in an uncontrolled state with a label.",
 			},
 		},
 	},
@@ -221,8 +214,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled switch using `checked` and `onCheckedChange` props with React state.",
+				story: "Controlled switch using `checked` and `onCheckedChange` props with React state.",
 			},
 		},
 	},
@@ -266,8 +258,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Disabled switches in both unchecked and checked states.",
+				story: "Disabled switches in both unchecked and checked states.",
 			},
 		},
 	},
@@ -289,8 +280,7 @@ export const ReadOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Read-only switches that cannot be toggled by user interaction.",
+				story: "Read-only switches that cannot be toggled by user interaction.",
 			},
 		},
 	},
@@ -309,8 +299,7 @@ export const Required: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Required switch that must be checked before form submission.",
+				story: "Required switch that must be checked before form submission.",
 			},
 		},
 	},
@@ -324,8 +313,8 @@ export const WithForm: Story = {
 				const formData = new FormData(e.currentTarget)
 				alert(
 					`Form submitted with:\n- notifications: ${formData.get(
-						"notifications"
-					)}\n- darkMode: ${formData.get("darkMode")}`
+						"notifications",
+					)}\n- darkMode: ${formData.get("darkMode")}`,
 				)
 			}}
 			className="flex flex-col gap-4"
@@ -338,10 +327,7 @@ export const WithForm: Story = {
 				<Switch name="darkMode" value="on" />
 				<span>Enable dark mode</span>
 			</label>
-			<button
-				type="submit"
-				className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-			>
+			<button type="submit" className="px-4 py-2 bg-primary text-primary-foreground rounded-md">
 				Submit
 			</button>
 		</form>
@@ -349,8 +335,7 @@ export const WithForm: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Switches integrated in a form with `name` and `value` props for form submission.",
+				story: "Switches integrated in a form with `name` and `value` props for form submission.",
 			},
 		},
 	},

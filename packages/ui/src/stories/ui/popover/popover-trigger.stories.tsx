@@ -48,8 +48,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "boolean" },
 		},
 		payload: {
-			description:
-				"A payload to pass to the popover when it is opened.",
+			description: "A payload to pass to the popover when it is opened.",
 			table: {
 				type: { summary: "any" },
 				defaultValue: { summary: "undefined" },
@@ -58,8 +57,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "object" },
 		},
 		openOnHover: {
-			description:
-				"Whether the popover should also open when the trigger is hovered.",
+			description: "Whether the popover should also open when the trigger is hovered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -158,9 +156,7 @@ export const WithIcon: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>Information</PopoverTitle>
-						<PopoverDescription>
-							Trigger with an icon to provide visual context.
-						</PopoverDescription>
+						<PopoverDescription>Trigger with an icon to provide visual context.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>
@@ -198,8 +194,7 @@ export const OpenOnHover: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger that opens the popover on hover with custom delay settings.",
+				story: "Trigger that opens the popover on hover with custom delay settings.",
 			},
 		},
 	},
@@ -222,9 +217,7 @@ export const CustomStyling: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>Custom Styled Trigger</PopoverTitle>
-						<PopoverDescription>
-							The trigger can be styled with custom classes.
-						</PopoverDescription>
+						<PopoverDescription>The trigger can be styled with custom classes.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>

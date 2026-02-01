@@ -84,7 +84,7 @@ function normalizeRangeToDate(value: DateRangeValue | undefined): DateRange | un
 
 function outputValue(
 	range: DateRange | undefined,
-	originalValue: DateRangeValue | undefined
+	originalValue: DateRangeValue | undefined,
 ): DateRangeValue | undefined {
 	if (!range) return undefined
 	if (!range.from && !range.to) return undefined
@@ -94,16 +94,8 @@ function outputValue(
 	const toWasString = typeof originalValue?.to === "string"
 
 	return {
-		from: range.from
-			? fromWasString
-				? range.from.toISOString()
-				: range.from
-			: undefined,
-		to: range.to
-			? toWasString
-				? range.to.toISOString()
-				: range.to
-			: undefined,
+		from: range.from ? (fromWasString ? range.from.toISOString() : range.from) : undefined,
+		to: range.to ? (toWasString ? range.to.toISOString() : range.to) : undefined,
 	}
 }
 
@@ -175,7 +167,7 @@ export function DateRangePicker({
 }: DateRangePickerProps) {
 	const [open, setOpen] = React.useState(false)
 	const [uncontrolledValue, setUncontrolledValue] = React.useState<DateRange | undefined>(() =>
-		normalizeRangeToDate(defaultValue)
+		normalizeRangeToDate(defaultValue),
 	)
 
 	// Track original value type for output
@@ -197,7 +189,7 @@ export function DateRangePicker({
 			const output = outputValue(newRange, originalValueRef.current)
 			onValueChange?.(output)
 		},
-		[isControlled, onValueChange]
+		[isControlled, onValueChange],
 	)
 
 	const handleSelect = React.useCallback(
@@ -226,7 +218,7 @@ export function DateRangePicker({
 
 			handleRangeChange(newRange)
 		},
-		[rangeValue, showTime, handleRangeChange]
+		[rangeValue, showTime, handleRangeChange],
 	)
 
 	const handleFromTimeChange = React.useCallback(
@@ -251,7 +243,7 @@ export function DateRangePicker({
 				to: rangeValue?.to,
 			})
 		},
-		[rangeValue, handleRangeChange]
+		[rangeValue, handleRangeChange],
 	)
 
 	const handleToTimeChange = React.useCallback(
@@ -276,7 +268,7 @@ export function DateRangePicker({
 				to: newTo,
 			})
 		},
-		[rangeValue, handleRangeChange]
+		[rangeValue, handleRangeChange],
 	)
 
 	const handleClear = React.useCallback(
@@ -284,7 +276,7 @@ export function DateRangePicker({
 			e.stopPropagation()
 			handleRangeChange(undefined)
 		},
-		[handleRangeChange]
+		[handleRangeChange],
 	)
 
 	const handleFooterClear = React.useCallback(() => {
@@ -301,9 +293,7 @@ export function DateRangePicker({
 		const fromStr = rangeValue.from
 			? formatDateForDisplay(rangeValue.from, showTime)
 			: placeholderFrom
-		const toStr = rangeValue.to
-			? formatDateForDisplay(rangeValue.to, showTime)
-			: placeholderTo
+		const toStr = rangeValue.to ? formatDateForDisplay(rangeValue.to, showTime) : placeholderTo
 
 		return `${fromStr} - ${toStr}`
 	}, [rangeValue, showTime, placeholder, placeholderFrom, placeholderTo])
@@ -336,7 +326,7 @@ export function DateRangePicker({
 					className={cn(
 						"w-full justify-start text-left font-normal",
 						!hasValue && "text-muted-foreground",
-						className
+						className,
 					)}
 				>
 					<CalendarDotsIcon className="h-4 w-4" />
@@ -411,11 +401,7 @@ export function DateRangePicker({
 						<TrashIcon className="h-4 w-4" />
 						Clear
 					</Button>
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={handleClose}
-					>
+					<Button variant="outline" size="sm" onClick={handleClose}>
 						<CheckIcon className="h-4 w-4" />
 						Done
 					</Button>

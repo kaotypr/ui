@@ -58,12 +58,10 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the dialog is opened or closed.",
+			description: "Event handler called when the dialog is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -82,8 +80,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			options: [true, false, "trap-focus"],
 		},
 		disablePointerDismissal: {
-			description:
-				"Determines whether the dialog should close on outside clicks.",
+			description: "Determines whether the dialog should close on outside clicks.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -128,8 +125,8 @@ export const Default: Story = {
 					<DialogHeader>
 						<DialogTitle>Are you absolutely sure?</DialogTitle>
 						<DialogDescription>
-							This action cannot be undone. This will permanently delete your
-							account and remove your data from our servers.
+							This action cannot be undone. This will permanently delete your account and remove
+							your data from our servers.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -143,8 +140,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default dialog with trigger button, title, description, and action buttons.",
+				story: "Default dialog with trigger button, title, description, and action buttons.",
 			},
 		},
 	},
@@ -156,9 +152,7 @@ export const Controlled: Story = {
 
 		return (
 			<div className="space-y-4">
-				<Button onClick={() => setOpen(!open)}>
-					{open ? "Close Dialog" : "Open Dialog"}
-				</Button>
+				<Button onClick={() => setOpen(!open)}>{open ? "Close Dialog" : "Open Dialog"}</Button>
 				<Dialog
 					{...args}
 					open={open}
@@ -210,8 +204,8 @@ export const WithoutCloseButton: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog without close button</DialogTitle>
 						<DialogDescription>
-							This dialog doesn't have a close button in the top-right corner.
-							Users must use the footer buttons or press Escape to close it.
+							This dialog doesn't have a close button in the top-right corner. Users must use the
+							footer buttons or press Escape to close it.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -227,8 +221,7 @@ export const WithoutCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Dialog without the default close button in the top-right corner.",
+				story: "Dialog without the default close button in the top-right corner.",
 			},
 		},
 	},
@@ -247,8 +240,8 @@ export const NonModal: Story = {
 					<DialogHeader>
 						<DialogTitle>Non-Modal Dialog</DialogTitle>
 						<DialogDescription>
-							This dialog allows interaction with the rest of the page. Focus is
-							not trapped and page scrolling is not locked.
+							This dialog allows interaction with the rest of the page. Focus is not trapped and
+							page scrolling is not locked.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -263,8 +256,7 @@ export const NonModal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Non-modal dialog that allows interaction with the rest of the page.",
+				story: "Non-modal dialog that allows interaction with the rest of the page.",
 			},
 		},
 	},

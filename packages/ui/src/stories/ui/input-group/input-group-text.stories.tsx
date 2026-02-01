@@ -1,10 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	AtIcon,
-	CurrencyDollarIcon,
-	HashIcon,
-	MagnifyingGlassIcon,
-} from "@phosphor-icons/react"
+import { AtIcon, CurrencyDollarIcon, HashIcon, MagnifyingGlassIcon } from "@phosphor-icons/react"
 
 import {
 	InputGroup,
@@ -96,8 +91,7 @@ export const IconWithText: Story = {
 		<InputGroup>
 			<InputGroupAddon align="inline-start">
 				<InputGroupText {...args}>
-					<AtIcon />
-					@
+					<AtIcon />@
 				</InputGroupText>
 			</InputGroupAddon>
 			<InputGroupInput placeholder="username" />

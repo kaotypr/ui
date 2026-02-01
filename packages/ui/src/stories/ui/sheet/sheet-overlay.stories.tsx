@@ -28,8 +28,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	argTypes: {
 		// Base UI Props
 		forceRender: {
-			description:
-				"Whether the backdrop is forced to render even when nested.",
+			description: "Whether the backdrop is forced to render even when nested.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -67,9 +66,7 @@ export const Default: Story = {
 					<SheetOverlay {...args} />
 					<SheetHeader>
 						<SheetTitle>Sheet Title</SheetTitle>
-						<SheetDescription>
-							Default sheet overlay displayed beneath the popup.
-						</SheetDescription>
+						<SheetDescription>Default sheet overlay displayed beneath the popup.</SheetDescription>
 					</SheetHeader>
 				</SheetContent>
 			</Sheet>
@@ -78,8 +75,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default sheet overlay that appears beneath the popup when the sheet is open.",
+				story: "Default sheet overlay that appears beneath the popup when the sheet is open.",
 			},
 		},
 	},

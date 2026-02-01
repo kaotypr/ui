@@ -190,8 +190,7 @@ export const WithoutItemAlignment: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Content without item alignment with trigger, using standard positioning.",
+				story: "Content without item alignment with trigger, using standard positioning.",
 			},
 		},
 	},

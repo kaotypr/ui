@@ -33,8 +33,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Separator.State) => string | undefined)",
+					summary: "string | ((state: Separator.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -46,8 +45,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Separator.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Separator.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -59,8 +57,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render.",
 			table: {
 				type: {
-					summary:
-						"ReactElement | ((props: HTMLProps, state: Separator.State) => ReactElement)",
+					summary: "ReactElement | ((props: HTMLProps, state: Separator.State) => ReactElement)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",

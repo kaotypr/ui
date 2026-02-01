@@ -92,14 +92,9 @@ export const Default: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput {...args} />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -145,14 +140,9 @@ export const WithChips: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput {...args} />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -167,8 +157,7 @@ export const WithChips: Story = {
 					</ComboboxContent>
 				</Combobox>
 				<p className="text-muted-foreground mt-4 text-xs">
-					The input expands as you type and shrinks when empty. It sits inline
-					with the chips.
+					The input expands as you type and shrinks when empty. It sits inline with the chips.
 				</p>
 			</div>
 		)
@@ -179,8 +168,7 @@ export const WithChips: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxChipsInput alongside existing chips, showing how the input adapts.",
+				story: "ComboboxChipsInput alongside existing chips, showing how the input adapts.",
 			},
 		},
 	},
@@ -204,14 +192,9 @@ export const Disabled: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput placeholder="Select fruits..." />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -254,14 +237,9 @@ export const CustomPlaceholder: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput placeholder="Type to search and add fruits..." />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>

@@ -46,8 +46,7 @@ This component is built on top of [Base UI Radio Group](https://base-ui.com/reac
 			description: "Function called when the selected value changes.",
 			table: {
 				type: {
-					summary:
-						"(value: any, eventDetails: RadioGroup.ChangeEventDetails) => void",
+					summary: "(value: any, eventDetails: RadioGroup.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -65,8 +64,7 @@ This component is built on top of [Base UI Radio Group](https://base-ui.com/reac
 			control: { type: "text" },
 		},
 		required: {
-			description:
-				"Whether the user must select an option before submitting a form.",
+			description: "Whether the user must select an option before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -75,8 +73,7 @@ This component is built on top of [Base UI Radio Group](https://base-ui.com/reac
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -214,10 +211,7 @@ export const WithForm: Story = {
 					<Label htmlFor="form-option3">Option 3</Label>
 				</div>
 			</RadioGroup>
-			<button
-				type="submit"
-				className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-			>
+			<button type="submit" className="px-4 py-2 bg-primary text-primary-foreground rounded-md">
 				Submit
 			</button>
 		</form>
@@ -237,11 +231,7 @@ export const Horizontal: Story = {
 		const [value, setValue] = React.useState<string>("option1")
 
 		return (
-			<RadioGroup
-				value={value}
-				onValueChange={setValue}
-				className="flex flex-row gap-6"
-			>
+			<RadioGroup value={value} onValueChange={setValue} className="flex flex-row gap-6">
 				<div className="flex items-center space-x-2">
 					<RadioGroupItem value="option1" id="horizontal-option1" />
 					<Label htmlFor="horizontal-option1">Option 1</Label>
@@ -260,8 +250,7 @@ export const Horizontal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Radio group displayed horizontally using flexbox layout.",
+				story: "Radio group displayed horizontally using flexbox layout.",
 			},
 		},
 	},

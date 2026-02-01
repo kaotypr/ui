@@ -1,10 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	EyeIcon,
-	EyeSlashIcon,
-	MagnifyingGlassIcon,
-	XIcon,
-} from "@phosphor-icons/react"
+import { EyeIcon, EyeSlashIcon, MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react"
 
 import {
 	InputGroup,
@@ -43,8 +38,7 @@ const meta = {
 			description: "The visual variant of the button.",
 			table: {
 				type: {
-					summary:
-						'"default" | "outline" | "secondary" | "ghost" | "destructive" | "link"',
+					summary: '"default" | "outline" | "secondary" | "ghost" | "destructive" | "link"',
 				},
 				defaultValue: { summary: '"ghost"' },
 				category: "Props",

@@ -100,9 +100,7 @@ export const CardSkeleton: Story = {
 }
 
 export const CustomStyling: Story = {
-	render: (args) => (
-		<Skeleton {...args} className="h-8 w-[300px] rounded-lg" />
-	),
+	render: (args) => <Skeleton {...args} className="h-8 w-[300px] rounded-lg" />,
 	parameters: {
 		docs: {
 			description: {

@@ -108,8 +108,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 			},
 		},
 		defaultValueOptions: {
-			description:
-				"Initial option objects for rendering labels when options may not be in data.",
+			description: "Initial option objects for rendering labels when options may not be in data.",
 			table: {
 				type: { summary: "DataMultiComboboxOption[]" },
 				defaultValue: { summary: "undefined" },
@@ -117,12 +116,10 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 			},
 		},
 		onValueChange: {
-			description:
-				"Callback when the value changes. Receives value array and options array.",
+			description: "Callback when the value changes. Receives value array and options array.",
 			table: {
 				type: {
-					summary:
-						"(value: string[], options: DataMultiComboboxOption[]) => void",
+					summary: "(value: string[], options: DataMultiComboboxOption[]) => void",
 				},
 				category: "Event Handlers",
 			},
@@ -178,8 +175,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 
 		// Badge display
 		maxDisplayedItems: {
-			description:
-				"Maximum number of badges to display before showing +N more.",
+			description: "Maximum number of badges to display before showing +N more.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "3" },
@@ -199,8 +195,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 
 		// Features
 		clearable: {
-			description:
-				"Whether all selections can be cleared with a clear button.",
+			description: "Whether all selections can be cleared with a clear button.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -227,8 +222,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 			control: "boolean",
 		},
 		enableResponsive: {
-			description:
-				"When true, uses Drawer on mobile viewports instead of Popover.",
+			description: "When true, uses Drawer on mobile viewports instead of Popover.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -239,8 +233,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 
 		// Infinite scroll
 		onLoadMore: {
-			description:
-				"Callback invoked when user scrolls near the bottom of the list.",
+			description: "Callback invoked when user scrolls near the bottom of the list.",
 			table: {
 				type: { summary: "() => void" },
 				category: "Event Handlers",
@@ -248,8 +241,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 			action: "onLoadMore",
 		},
 		hasMore: {
-			description:
-				"Whether there are more items to load via infinite scroll.",
+			description: "Whether there are more items to load via infinite scroll.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -263,8 +255,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 			description: "Custom render function for each option item.",
 			table: {
 				type: {
-					summary:
-						"(option: DataMultiComboboxOption, isSelected: boolean) => React.ReactNode",
+					summary: "(option: DataMultiComboboxOption, isSelected: boolean) => React.ReactNode",
 				},
 				category: "Custom Rendering",
 			},
@@ -288,8 +279,7 @@ Use \`DataMultiCombobox\` for multi-select scenarios with array-based data. For 
 
 		// Positioning
 		side: {
-			description:
-				"The preferred side of the trigger to render the dropdown.",
+			description: "The preferred side of the trigger to render the dropdown.",
 			table: {
 				type: { summary: '"top" | "bottom"' },
 				defaultValue: { summary: '"bottom"' },
@@ -405,8 +395,7 @@ export const WithDefaultValue: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Combobox with default values set for uncontrolled mode.",
+				story: "Combobox with default values set for uncontrolled mode.",
 			},
 		},
 	},
@@ -437,8 +426,7 @@ export const Clearable: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Set `clearable` to true to show a clear all button when values are selected.",
+				story: "Set `clearable` to true to show a clear all button when values are selected.",
 			},
 		},
 	},
@@ -450,13 +438,9 @@ export const CustomRendering: Story = {
 		placeholder: "Select frameworks...",
 		renderItem: (option, isSelected) => (
 			<div className="flex items-center gap-2 w-full">
-				<span
-					className={`w-2 h-2 rounded-full ${isSelected ? "bg-green-500" : "bg-gray-300"}`}
-				/>
+				<span className={`w-2 h-2 rounded-full ${isSelected ? "bg-green-500" : "bg-gray-300"}`} />
 				<span className="font-medium">{option.label}</span>
-				<span className="text-xs text-muted-foreground ml-auto">
-					{option.value}
-				</span>
+				<span className="text-xs text-muted-foreground ml-auto">{option.value}</span>
 			</div>
 		),
 	},
@@ -479,18 +463,14 @@ export const Loading: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Display a loading indicator when `loading` is true and data is empty.",
+				story: "Display a loading indicator when `loading` is true and data is empty.",
 			},
 		},
 	},
 }
 
 // Generate paginated data for infinite scroll demo
-const generateOptions = (
-	page: number,
-	pageSize: number = 10,
-): DataMultiComboboxOption[] => {
+const generateOptions = (page: number, pageSize: number = 10): DataMultiComboboxOption[] => {
 	const start = page * pageSize
 	return Array.from({ length: pageSize }, (_, i) => ({
 		label: `Option ${start + i + 1}`,
@@ -499,9 +479,7 @@ const generateOptions = (
 }
 
 const InfiniteScrollWrapper = () => {
-	const [data, setData] = useState<DataMultiComboboxOption[]>(() =>
-		generateOptions(0),
-	)
+	const [data, setData] = useState<DataMultiComboboxOption[]>(() => generateOptions(0))
 	const [page, setPage] = useState(0)
 	const [loading, setLoading] = useState(false)
 	const [hasMore, setHasMore] = useState(true)
@@ -545,8 +523,7 @@ export const InfiniteScroll: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Use `onLoadMore` and `hasMore` to implement infinite scroll pagination.",
+				story: "Use `onLoadMore` and `hasMore` to implement infinite scroll pagination.",
 			},
 		},
 	},
@@ -587,14 +564,7 @@ export const Disabled: Story = {
 export const CollapsibleBadges: Story = {
 	args: {
 		data: manyFrameworks,
-		defaultValue: [
-			"nextjs",
-			"sveltekit",
-			"nuxtjs",
-			"remix",
-			"astro",
-			"gatsby",
-		],
+		defaultValue: ["nextjs", "sveltekit", "nuxtjs", "remix", "astro", "gatsby"],
 		maxDisplayedItems: 3,
 		placeholder: "Select frameworks...",
 	},
@@ -611,14 +581,7 @@ export const CollapsibleBadges: Story = {
 export const CollapsibleBadgesExpanded: Story = {
 	args: {
 		data: manyFrameworks,
-		defaultValue: [
-			"nextjs",
-			"sveltekit",
-			"nuxtjs",
-			"remix",
-			"astro",
-			"gatsby",
-		],
+		defaultValue: ["nextjs", "sveltekit", "nuxtjs", "remix", "astro", "gatsby"],
 		maxDisplayedItems: 3,
 		defaultExpanded: true,
 		placeholder: "Select frameworks...",
@@ -664,8 +627,7 @@ const AsyncSearchWrapper = () => {
 				debounceTime={300}
 			/>
 			<div className="text-sm text-muted-foreground">
-				External search demo with 500ms simulated API delay and 300ms
-				debounce.
+				External search demo with 500ms simulated API delay and 300ms debounce.
 			</div>
 		</div>
 	)
@@ -704,23 +666,14 @@ export const WithDisabledOptions: Story = {
 export const CustomMaxDisplayedItems: Story = {
 	args: {
 		data: manyFrameworks,
-		defaultValue: [
-			"nextjs",
-			"sveltekit",
-			"nuxtjs",
-			"remix",
-			"astro",
-			"gatsby",
-			"angular",
-		],
+		defaultValue: ["nextjs", "sveltekit", "nuxtjs", "remix", "astro", "gatsby", "angular"],
 		maxDisplayedItems: 5,
 		placeholder: "Select frameworks...",
 	},
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Set `maxDisplayedItems` to customize how many badges are shown before collapsing.",
+				story: "Set `maxDisplayedItems` to customize how many badges are shown before collapsing.",
 			},
 		},
 	},
@@ -735,8 +688,7 @@ export const CustomWidth: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Use `className` to customize the trigger button width and styling.",
+				story: "Use `className` to customize the trigger button width and styling.",
 			},
 		},
 	},
@@ -758,8 +710,7 @@ export const PositionTop: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					'Use `side="top"` to position the dropdown above the trigger.',
+				story: 'Use `side="top"` to position the dropdown above the trigger.',
 			},
 		},
 	},

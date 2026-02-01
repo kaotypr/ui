@@ -56,8 +56,8 @@ export const Default: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
 						<DialogDescription {...args}>
-							This is a description of what the dialog is about. It provides
-							additional context and information to the user.
+							This is a description of what the dialog is about. It provides additional context and
+							information to the user.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -96,8 +96,7 @@ export const WithLinks: Story = {
 							<a href="#" className="underline">
 								link
 							</a>{" "}
-							that can be styled. The description component supports links with
-							hover effects.
+							that can be styled. The description component supports links with hover effects.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -112,8 +111,7 @@ export const WithLinks: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Dialog description with links that have hover styling applied automatically.",
+				story: "Dialog description with links that have hover styling applied automatically.",
 			},
 		},
 	},
@@ -132,11 +130,10 @@ export const LongDescription: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
 						<DialogDescription>
-							This is a longer description that provides more detailed
-							information about what the dialog is for and what actions the user
-							can take. It explains the purpose, consequences, and any important
-							details the user should be aware of before proceeding with the
-							action.
+							This is a longer description that provides more detailed information about what the
+							dialog is for and what actions the user can take. It explains the purpose,
+							consequences, and any important details the user should be aware of before proceeding
+							with the action.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -171,8 +168,8 @@ export const CustomStyling: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
 						<DialogDescription className="text-base leading-relaxed">
-							This description has custom styling applied via className for
-							different text size and line height.
+							This description has custom styling applied via className for different text size and
+							line height.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>

@@ -24,8 +24,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Base UI Props
 		align: {
-			description:
-				"How to align the popup relative to the specified side.",
+			description: "How to align the popup relative to the specified side.",
 			table: {
 				type: { summary: '"start" | "center" | "end"' },
 				defaultValue: { summary: '"start"' },
@@ -35,8 +34,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			options: ["start", "center", "end"],
 		},
 		alignOffset: {
-			description:
-				"Additional offset along the alignment axis in pixels.",
+			description: "Additional offset along the alignment axis in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -49,8 +47,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 				"Which side of the anchor element to align the popup against. May automatically change to avoid collisions.",
 			table: {
 				type: {
-					summary:
-						'"top" | "bottom" | "left" | "right" | "inline-start" | "inline-end"',
+					summary: '"top" | "bottom" | "left" | "right" | "inline-start" | "inline-end"',
 				},
 				defaultValue: { summary: '"bottom"' },
 				category: "Base UI Props",
@@ -59,8 +56,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			options: ["top", "bottom", "left", "right", "inline-start", "inline-end"],
 		},
 		sideOffset: {
-			description:
-				"Distance between the anchor and the popup in pixels.",
+			description: "Distance between the anchor and the popup in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "4" },
@@ -127,8 +123,7 @@ export const WithCustomAlignment: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Content with custom alignment and positioning (aligned to end, positioned on top).",
+				story: "Content with custom alignment and positioning (aligned to end, positioned on top).",
 			},
 		},
 	},

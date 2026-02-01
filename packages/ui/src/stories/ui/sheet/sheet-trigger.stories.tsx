@@ -134,8 +134,7 @@ export const WithAsChild: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet trigger using the asChild prop to compose with a custom button element.",
+				story: "Sheet trigger using the asChild prop to compose with a custom button element.",
 			},
 		},
 	},

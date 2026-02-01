@@ -54,9 +54,7 @@ export const Default: Story = {
 				<SheetContent>
 					<SheetHeader>
 						<SheetTitle {...args}>Sheet Title</SheetTitle>
-						<SheetDescription>
-							Default sheet title that labels the sheet.
-						</SheetDescription>
+						<SheetDescription>Default sheet title that labels the sheet.</SheetDescription>
 					</SheetHeader>
 				</SheetContent>
 			</Sheet>
@@ -83,8 +81,8 @@ export const LongTitle: Story = {
 				<SheetContent>
 					<SheetHeader>
 						<SheetTitle>
-							This is a very long sheet title that demonstrates how the title wraps
-							when it exceeds the available width
+							This is a very long sheet title that demonstrates how the title wraps when it exceeds
+							the available width
 						</SheetTitle>
 						<SheetDescription>
 							Sheet title with long text that wraps to multiple lines.

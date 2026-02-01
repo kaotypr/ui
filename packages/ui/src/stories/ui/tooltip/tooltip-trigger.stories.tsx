@@ -20,8 +20,7 @@ Must be used within a Tooltip component.`,
 	argTypes: {
 		// Base UI Props
 		handle: {
-			description:
-				"A handle to associate the trigger with a tooltip.",
+			description: "A handle to associate the trigger with a tooltip.",
 			table: {
 				type: { summary: "Tooltip.Handle<Payload>" },
 				defaultValue: { summary: "undefined" },
@@ -29,8 +28,7 @@ Must be used within a Tooltip component.`,
 			},
 		},
 		payload: {
-			description:
-				"A payload to pass to the tooltip when it is opened.",
+			description: "A payload to pass to the tooltip when it is opened.",
 			table: {
 				type: { summary: "Payload" },
 				defaultValue: { summary: "undefined" },
@@ -38,8 +36,7 @@ Must be used within a Tooltip component.`,
 			},
 		},
 		delay: {
-			description:
-				"How long to wait before opening the tooltip. Specified in milliseconds.",
+			description: "How long to wait before opening the tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "600" },
@@ -48,8 +45,7 @@ Must be used within a Tooltip component.`,
 			control: { type: "number" },
 		},
 		closeDelay: {
-			description:
-				"How long to wait before closing the tooltip. Specified in milliseconds.",
+			description: "How long to wait before closing the tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -71,8 +67,7 @@ Must be used within a Tooltip component.`,
 			description: "Inline styles to apply.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Tooltip.Trigger.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Tooltip.Trigger.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -102,8 +97,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default tooltip trigger using a Button component with the ` prop.",
+				story: "Default tooltip trigger using a Button component with the ` prop.",
 			},
 		},
 	},
@@ -126,8 +120,7 @@ export const WithCustomDelay: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tooltip trigger with a custom delay of 1000ms before the tooltip appears.",
+				story: "Tooltip trigger with a custom delay of 1000ms before the tooltip appears.",
 			},
 		},
 	},
@@ -210,8 +203,7 @@ export const AsNativeButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"TooltipTrigger used as a native button element without the ` prop.",
+				story: "TooltipTrigger used as a native button element without the ` prop.",
 			},
 		},
 	},

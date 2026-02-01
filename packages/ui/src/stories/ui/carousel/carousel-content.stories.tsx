@@ -122,8 +122,7 @@ export const WithCustomHeight: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Carousel content with a custom height constraint applied via className.",
+				story: "Carousel content with a custom height constraint applied via className.",
 			},
 		},
 	},

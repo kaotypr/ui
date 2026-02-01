@@ -48,12 +48,10 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the menu is opened or closed.",
+			description: "Event handler called when the menu is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Menu.SubmenuRoot.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Menu.SubmenuRoot.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -61,8 +59,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			action: "onOpenChange",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import * as React from "react"
-import {
-	HoverCard,
-	HoverCardTrigger,
-	HoverCardContent,
-} from "~/components/ui/hover-card"
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "~/components/ui/hover-card"
 
 const meta = {
 	title: "UI/HoverCard/HoverCardTrigger",
@@ -23,8 +19,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 	argTypes: {
 		// Base UI Props
 		delay: {
-			description:
-				"How long to wait before the preview card opens. Specified in milliseconds.",
+			description: "How long to wait before the preview card opens. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "600" },
@@ -33,8 +28,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			control: { type: "number" },
 		},
 		closeDelay: {
-			description:
-				"How long to wait before closing the preview card. Specified in milliseconds.",
+			description: "How long to wait before closing the preview card. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "300" },
@@ -43,8 +37,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			control: { type: "number" },
 		},
 		payload: {
-			description:
-				"A payload to pass to the preview card when it is opened.",
+			description: "A payload to pass to the preview card when it is opened.",
 			table: {
 				type: { summary: "any" },
 				defaultValue: { summary: "undefined" },
@@ -135,8 +128,7 @@ export const CustomDelay: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger with custom delay settings for opening and closing the hover card.",
+				story: "Trigger with custom delay settings for opening and closing the hover card.",
 			},
 		},
 	},

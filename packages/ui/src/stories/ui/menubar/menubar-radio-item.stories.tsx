@@ -66,8 +66,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -108,11 +107,7 @@ export const Default: Story = {
 						<MenubarGroup>
 							<MenubarLabel>Alignment</MenubarLabel>
 							<MenubarRadioGroup value={value} onValueChange={setValue}>
-								<MenubarRadioItem
-									{...args}
-									value="left"
-									onClick={() => args.onClick?.({} as any)}
-								>
+								<MenubarRadioItem {...args} value="left" onClick={() => args.onClick?.({} as any)}>
 									Left
 								</MenubarRadioItem>
 								<MenubarRadioItem value="center">Center</MenubarRadioItem>

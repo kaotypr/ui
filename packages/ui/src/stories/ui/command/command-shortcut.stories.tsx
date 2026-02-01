@@ -186,9 +186,7 @@ export const WithCustomStyling: Story = {
 								onSelect={() => setValue(item.value)}
 							>
 								{item.label}
-								<CommandShortcut className="text-xs font-mono">
-									{item.shortcut}
-								</CommandShortcut>
+								<CommandShortcut className="text-xs font-mono">{item.shortcut}</CommandShortcut>
 							</CommandItem>
 						))}
 					</CommandList>

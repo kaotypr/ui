@@ -65,8 +65,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

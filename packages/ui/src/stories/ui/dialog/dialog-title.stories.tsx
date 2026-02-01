@@ -90,8 +90,7 @@ export const LongTitle: Story = {
 				<DialogContent>
 					<DialogHeader>
 						<DialogTitle>
-							This is a very long dialog title that wraps to multiple lines
-							when needed
+							This is a very long dialog title that wraps to multiple lines when needed
 						</DialogTitle>
 						<DialogDescription>
 							The title will wrap gracefully to accommodate longer text.

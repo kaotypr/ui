@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import {
-	Card,
-	CardHeader,
-	CardTitle,
-	CardDescription,
-	CardContent,
-} from "~/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "~/components/ui/card"
 
 const meta = {
 	title: "UI/Card/CardContent",
@@ -16,8 +10,7 @@ const meta = {
 		layout: "centered",
 		docs: {
 			description: {
-				component:
-					"Main content area of the card. Must be used inside a Card component.",
+				component: "Main content area of the card. Must be used inside a Card component.",
 			},
 		},
 	},
@@ -56,8 +49,8 @@ export const Default: Story = {
 			</CardHeader>
 			<CardContent {...args}>
 				<p className="text-sm text-muted-foreground">
-					This is the main content area of the card. You can place any content
-					here, including text, images, forms, or other components.
+					This is the main content area of the card. You can place any content here, including text,
+					images, forms, or other components.
 				</p>
 			</CardContent>
 		</Card>
@@ -110,8 +103,7 @@ export const Standalone: Story = {
 		<Card className="w-[350px]">
 			<CardContent {...args} className="pt-6">
 				<p className="text-sm">
-					Content can be used without a header or footer for a minimal card
-					layout.
+					Content can be used without a header or footer for a minimal card layout.
 				</p>
 			</CardContent>
 		</Card>

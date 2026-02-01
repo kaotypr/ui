@@ -118,8 +118,7 @@ export const WithManyItems: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandList with many items, demonstrating scrolling behavior.",
+				story: "CommandList with many items, demonstrating scrolling behavior.",
 			},
 		},
 	},

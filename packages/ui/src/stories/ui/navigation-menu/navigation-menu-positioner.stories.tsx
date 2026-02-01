@@ -16,13 +16,13 @@ const meta = {
 	parameters: {
 		layout: "centered",
 		docs: {
-		description: {
-			component: `Positions the navigation menu against the currently active trigger.
+			description: {
+				component: `Positions the navigation menu against the currently active trigger.
 
 This component is built on top of [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu).
 
 Note: This component is automatically included in \`NavigationMenu\` with default positioning props. It is exported for advanced use cases where you might want to create a custom NavigationMenu implementation.`,
-		},
+			},
 		},
 	},
 	argTypes: {
@@ -154,12 +154,8 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -187,13 +183,13 @@ export const CustomSide: Story = {
 		return (
 			<div className="text-sm text-muted-foreground p-4 border rounded-lg">
 				<p className="mb-2">
-					<strong>Note:</strong> NavigationMenuPositioner props (side, sideOffset,
-					align, etc.) are set in the NavigationMenu component definition.
+					<strong>Note:</strong> NavigationMenuPositioner props (side, sideOffset, align, etc.) are
+					set in the NavigationMenu component definition.
 				</p>
 				<p>
-					To customize positioning, you would need to modify the NavigationMenu
-					component or create a custom implementation. The default values are:
-					side="bottom", sideOffset=8, align="start", alignOffset=0.
+					To customize positioning, you would need to modify the NavigationMenu component or create
+					a custom implementation. The default values are: side="bottom", sideOffset=8,
+					align="start", alignOffset=0.
 				</p>
 			</div>
 		)
@@ -220,12 +216,8 @@ export const CustomAlign: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>

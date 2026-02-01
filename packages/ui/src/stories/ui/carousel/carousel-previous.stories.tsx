@@ -25,8 +25,7 @@ const meta = {
 			description: "The visual variant of the button.",
 			table: {
 				type: {
-					summary:
-						'"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+					summary: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
 				},
 				defaultValue: { summary: "outline" },
 				category: "Props",
@@ -38,23 +37,13 @@ const meta = {
 			description: "The size of the button.",
 			table: {
 				type: {
-					summary:
-						'"default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"',
+					summary: '"default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"',
 				},
 				defaultValue: { summary: "icon-sm" },
 				category: "Props",
 			},
 			control: { type: "select" },
-			options: [
-				"default",
-				"xs",
-				"sm",
-				"lg",
-				"icon",
-				"icon-xs",
-				"icon-sm",
-				"icon-lg",
-			],
+			options: ["default", "xs", "sm", "lg", "icon", "icon-xs", "icon-sm", "icon-lg"],
 		},
 		className: {
 			description: "Additional CSS class names to apply",
@@ -93,8 +82,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default previous button positioned on the left side of a horizontal carousel.",
+				story: "Default previous button positioned on the left side of a horizontal carousel.",
 			},
 		},
 	},
@@ -121,8 +109,7 @@ export const Vertical: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Previous button in a vertical carousel, positioned at the top with rotated icon.",
+				story: "Previous button in a vertical carousel, positioned at the top with rotated icon.",
 			},
 		},
 	},

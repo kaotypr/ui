@@ -8,11 +8,7 @@ import {
 	MenubarItem,
 	MenubarShortcut,
 } from "~/components/ui/menubar"
-import {
-	CopyIcon,
-	ScissorsIcon,
-	ClipboardTextIcon,
-} from "@phosphor-icons/react"
+import { CopyIcon, ScissorsIcon, ClipboardTextIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Menubar/MenubarShortcut",

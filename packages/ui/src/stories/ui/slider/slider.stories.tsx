@@ -19,8 +19,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 	argTypes: {
 		// Base UI Props
 		name: {
-			description:
-				"Identifies the field when a form is submitted.",
+			description: "Identifies the field when a form is submitted.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -39,8 +38,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: { type: "object" },
 		},
 		value: {
-			description:
-				"The value of the slider. For ranged sliders, provide an array with two values.",
+			description: "The value of the slider. For ranged sliders, provide an array with two values.",
 			table: {
 				type: { summary: "number | number[]" },
 				defaultValue: { summary: "undefined" },
@@ -129,8 +127,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: { type: "number" },
 		},
 		minStepsBetweenValues: {
-			description:
-				"The minimum steps between values in a range slider.",
+			description: "The minimum steps between values in a range slider.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -139,8 +136,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: { type: "number" },
 		},
 		min: {
-			description:
-				"The minimum allowed value of the slider. Should not be equal to max.",
+			description: "The minimum allowed value of the slider. Should not be equal to max.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -149,8 +145,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: { type: "number" },
 		},
 		max: {
-			description:
-				"The maximum allowed value of the slider. Should not be equal to min.",
+			description: "The maximum allowed value of the slider. Should not be equal to min.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "100" },
@@ -159,8 +154,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: { type: "number" },
 		},
 		format: {
-			description:
-				"Options to format the input value.",
+			description: "Options to format the input value.",
 			table: {
 				type: { summary: "Intl.NumberFormatOptions" },
 				defaultValue: { summary: "undefined" },
@@ -169,8 +163,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 			control: false,
 		},
 		disabled: {
-			description:
-				"Whether the slider should ignore user interaction.",
+			description: "Whether the slider should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -194,8 +187,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Slider.Root.State) => string | undefined)",
+					summary: "string | ((state: Slider.Root.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -207,8 +199,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Slider.Root.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Slider.Root.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -220,8 +211,7 @@ This component is built on top of [Base UI Slider](https://base-ui.com/react/com
 				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render.",
 			table: {
 				type: {
-					summary:
-						"ReactElement | ((props: HTMLProps, state: Slider.Root.State) => ReactElement)",
+					summary: "ReactElement | ((props: HTMLProps, state: Slider.Root.State) => ReactElement)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -245,9 +235,7 @@ export const Default: Story = {
 					{...args}
 					value={value}
 					onValueChange={(newValue) => {
-						const numValue = Array.isArray(newValue)
-							? newValue[0]
-							: newValue
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
 						setValue(numValue)
 						args.onValueChange?.(newValue, {} as any)
 					}}
@@ -289,9 +277,7 @@ export const Range: Story = {
 					{...args}
 					value={value}
 					onValueChange={(newValue) => {
-						const arrayValue = Array.isArray(newValue)
-							? newValue
-							: [newValue]
+						const arrayValue = Array.isArray(newValue) ? newValue : [newValue]
 						setValue(arrayValue)
 						args.onValueChange?.(newValue, {} as any)
 					}}
@@ -302,8 +288,7 @@ export const Range: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Range slider with two thumbs for selecting a value range.",
+				story: "Range slider with two thumbs for selecting a value range.",
 			},
 		},
 	},
@@ -320,9 +305,7 @@ export const Vertical: Story = {
 					orientation="vertical"
 					value={value}
 					onValueChange={(newValue) => {
-						const numValue = Array.isArray(newValue)
-							? newValue[0]
-							: newValue
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
 						setValue(numValue)
 						args.onValueChange?.(newValue, {} as any)
 					}}
@@ -367,9 +350,7 @@ export const WithSteps: Story = {
 					max={100}
 					value={value}
 					onValueChange={(newValue) => {
-						const numValue = Array.isArray(newValue)
-							? newValue[0]
-							: newValue
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
 						setValue(numValue)
 						args.onValueChange?.(newValue, {} as any)
 					}}
@@ -380,8 +361,7 @@ export const WithSteps: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Slider with step increments of 10. Use arrow keys to step through values.",
+				story: "Slider with step increments of 10. Use arrow keys to step through values.",
 			},
 		},
 	},
@@ -400,9 +380,7 @@ export const CustomRange: Story = {
 					step={25}
 					value={value}
 					onValueChange={(newValue) => {
-						const numValue = Array.isArray(newValue)
-							? newValue[0]
-							: newValue
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
 						setValue(numValue)
 						args.onValueChange?.(newValue, {} as any)
 					}}
@@ -413,8 +391,7 @@ export const CustomRange: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Slider with custom min (0), max (500), and step (25) values.",
+				story: "Slider with custom min (0), max (500), and step (25) values.",
 			},
 		},
 	},
@@ -434,10 +411,7 @@ export const WithForm: Story = {
 				Volume
 			</label>
 			<Slider name="volume" defaultValue={50} />
-			<button
-				type="submit"
-				className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-			>
+			<button type="submit" className="px-4 py-2 bg-primary text-primary-foreground rounded-md">
 				Submit
 			</button>
 		</form>
@@ -445,8 +419,7 @@ export const WithForm: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Slider integrated in a form with `name` prop for form submission.",
+				story: "Slider integrated in a form with `name` prop for form submission.",
 			},
 		},
 	},

@@ -1,10 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	Field,
-	FieldLabel,
-	FieldError,
-	FieldContent,
-} from "~/components/ui/field"
+import { Field, FieldLabel, FieldError, FieldContent } from "~/components/ui/field"
 import { Input } from "~/components/ui/input"
 
 const meta = {
@@ -53,12 +48,7 @@ export const Default: Story = {
 		<Field data-invalid="true">
 			<FieldLabel htmlFor="email-error">Email</FieldLabel>
 			<FieldContent>
-				<Input
-					id="email-error"
-					type="email"
-					placeholder="Enter your email"
-					aria-invalid="true"
-				/>
+				<Input id="email-error" type="email" placeholder="Enter your email" aria-invalid="true" />
 			</FieldContent>
 			<FieldError {...args}>Please enter a valid email address.</FieldError>
 		</Field>
@@ -115,11 +105,7 @@ export const WithDuplicateErrors: Story = {
 		<Field data-invalid="true">
 			<FieldLabel htmlFor="username-error">Username</FieldLabel>
 			<FieldContent>
-				<Input
-					id="username-error"
-					placeholder="johndoe"
-					aria-invalid="true"
-				/>
+				<Input id="username-error" placeholder="johndoe" aria-invalid="true" />
 			</FieldContent>
 			<FieldError
 				{...args}
@@ -141,8 +127,7 @@ export const WithDuplicateErrors: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Field error with duplicate error messages showing deduplication behavior.",
+				story: "Field error with duplicate error messages showing deduplication behavior.",
 			},
 		},
 	},
@@ -164,8 +149,7 @@ export const EmptyErrors: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Field error with empty errors array - component should not render.",
+				story: "Field error with empty errors array - component should not render.",
 			},
 		},
 	},

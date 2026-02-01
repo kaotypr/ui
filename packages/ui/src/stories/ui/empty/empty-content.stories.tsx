@@ -58,9 +58,7 @@ export const Default: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 			<EmptyContent {...args}>
 				<Button>Create Item</Button>
@@ -111,13 +109,14 @@ export const WithSecondaryAction: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 			<EmptyContent {...args}>
 				<Button>Create Item</Button>
-				<button type="button" className="text-sm text-muted-foreground underline underline-offset-4">
+				<button
+					type="button"
+					className="text-sm text-muted-foreground underline underline-offset-4"
+				>
 					Learn more
 				</button>
 			</EmptyContent>
@@ -140,14 +139,10 @@ export const TextOnly: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 			<EmptyContent {...args}>
-				<p className="text-sm text-muted-foreground">
-					Need help? Contact support for assistance.
-				</p>
+				<p className="text-sm text-muted-foreground">Need help? Contact support for assistance.</p>
 			</EmptyContent>
 		</Empty>
 	),

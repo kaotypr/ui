@@ -112,9 +112,7 @@ export const CustomStyling: Story = {
 				</SelectTrigger>
 				<SelectContent>
 					<SelectGroup>
-						<SelectLabel className="text-blue-600 font-semibold">
-							Fruits
-						</SelectLabel>
+						<SelectLabel className="text-blue-600 font-semibold">Fruits</SelectLabel>
 						<SelectItem value="apple">Apple</SelectItem>
 						<SelectItem value="banana">Banana</SelectItem>
 						<SelectItem value="orange">Orange</SelectItem>

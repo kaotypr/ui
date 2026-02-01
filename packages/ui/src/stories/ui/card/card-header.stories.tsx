@@ -79,9 +79,7 @@ export const WithAction: Story = {
 		<Card className="w-[350px]">
 			<CardHeader {...args}>
 				<CardTitle>Card Header with Action</CardTitle>
-				<CardDescription>
-					Header includes an action button positioned on the right.
-				</CardDescription>
+				<CardDescription>Header includes an action button positioned on the right.</CardDescription>
 				<CardAction>
 					<Button variant="ghost" size="icon">
 						<ShareIcon />

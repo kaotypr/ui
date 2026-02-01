@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	ShareIcon,
-	BookmarkIcon,
-	DotsThreeVerticalIcon,
-} from "@phosphor-icons/react"
+import { ShareIcon, BookmarkIcon, DotsThreeVerticalIcon } from "@phosphor-icons/react"
 
 import { Button } from "~/components/ui/button"
 import {
@@ -59,9 +55,7 @@ export const Default: Story = {
 		<Card className="w-[350px]">
 			<CardHeader>
 				<CardTitle>Card with Action</CardTitle>
-				<CardDescription>
-					This card includes an action button in the header.
-				</CardDescription>
+				<CardDescription>This card includes an action button in the header.</CardDescription>
 				<CardAction {...args}>
 					<Button variant="ghost" size="icon">
 						<ShareIcon />
@@ -87,9 +81,7 @@ export const MultipleActions: Story = {
 		<Card className="w-[350px]">
 			<CardHeader>
 				<CardTitle>Card with Multiple Actions</CardTitle>
-				<CardDescription>
-					Multiple action buttons can be grouped together.
-				</CardDescription>
+				<CardDescription>Multiple action buttons can be grouped together.</CardDescription>
 				<CardAction {...args}>
 					<div className="flex gap-1">
 						<Button variant="ghost" size="icon">
@@ -123,9 +115,7 @@ export const TextButton: Story = {
 		<Card className="w-[350px]">
 			<CardHeader>
 				<CardTitle>Card with Text Action</CardTitle>
-				<CardDescription>
-					Action can also be a text button instead of an icon.
-				</CardDescription>
+				<CardDescription>Action can also be a text button instead of an icon.</CardDescription>
 				<CardAction {...args}>
 					<Button variant="ghost" size="sm">
 						More

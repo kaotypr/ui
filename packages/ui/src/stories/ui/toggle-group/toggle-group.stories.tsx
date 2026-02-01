@@ -43,8 +43,7 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			options: ["default", "sm", "lg"],
 		},
 		spacing: {
-			description:
-				"The spacing between toggle group items. Set to 0 for connected appearance.",
+			description: "The spacing between toggle group items. Set to 0 for connected appearance.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -84,12 +83,10 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			control: { type: "object" },
 		},
 		onValueChange: {
-			description:
-				"Callback fired when the pressed states of the toggle group changes.",
+			description: "Callback fired when the pressed states of the toggle group changes.",
 			table: {
 				type: {
-					summary:
-						"(groupValue: any[], eventDetails: Toggle.Group.ChangeEventDetails) => void",
+					summary: "(groupValue: any[], eventDetails: Toggle.Group.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -117,8 +114,7 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the toggle group should ignore user interaction.",
+			description: "Whether the toggle group should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -183,11 +179,7 @@ export const SingleSelection: Story = {
 		const [value, setValue] = React.useState<string[]>([])
 
 		return (
-			<ToggleGroup
-				value={value}
-				onValueChange={setValue}
-				multiple={false}
-			>
+			<ToggleGroup value={value} onValueChange={setValue} multiple={false}>
 				<ToggleGroupItem value="left" aria-label="Align left">
 					Left
 				</ToggleGroupItem>
@@ -203,8 +195,7 @@ export const SingleSelection: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with single selection mode. Only one item can be pressed at a time.",
+				story: "Toggle group with single selection mode. Only one item can be pressed at a time.",
 			},
 		},
 	},
@@ -231,8 +222,7 @@ export const WithSpacing: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with spacing between items for a separated appearance.",
+				story: "Toggle group with spacing between items for a separated appearance.",
 			},
 		},
 	},
@@ -259,8 +249,7 @@ export const OutlineVariant: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with outline variant showing borders around each item.",
+				story: "Toggle group with outline variant showing borders around each item.",
 			},
 		},
 	},
@@ -271,11 +260,7 @@ export const Vertical: Story = {
 		const [value, setValue] = React.useState<string[]>([])
 
 		return (
-			<ToggleGroup
-				value={value}
-				onValueChange={setValue}
-				orientation="vertical"
-			>
+			<ToggleGroup value={value} onValueChange={setValue} orientation="vertical">
 				<ToggleGroupItem value="bold" aria-label="Bold">
 					<TextBIcon />
 					<span>Bold</span>
@@ -294,8 +279,7 @@ export const Vertical: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group displayed vertically. Items stack on top of each other.",
+				story: "Toggle group displayed vertically. Items stack on top of each other.",
 			},
 		},
 	},
@@ -376,8 +360,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with disabled state. All items are non-interactive.",
+				story: "Toggle group with disabled state. All items are non-interactive.",
 			},
 		},
 	},

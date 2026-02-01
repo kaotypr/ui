@@ -18,8 +18,7 @@ This component is built on top of [Base UI Scrollbar](https://base-ui.com/react/
 	argTypes: {
 		// Base UI Props
 		orientation: {
-			description:
-				"Whether the scrollbar controls vertical or horizontal scroll.",
+			description: "Whether the scrollbar controls vertical or horizontal scroll.",
 			table: {
 				type: { summary: '"horizontal" | "vertical"' },
 				defaultValue: { summary: '"vertical"' },
@@ -43,8 +42,7 @@ This component is built on top of [Base UI Scrollbar](https://base-ui.com/react/
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: ScrollArea.Scrollbar.State) => string | undefined)",
+					summary: "string | ((state: ScrollArea.Scrollbar.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -74,8 +72,8 @@ type Story = StoryObj<typeof meta>
 const longContent = Array.from({ length: 50 }, (_, i) => (
 	<div key={i} className="p-4 border-b">
 		<p className="text-sm">
-			Item {i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Item {i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+			incididunt ut labore et dolore magna aliqua.
 		</p>
 	</div>
 ))
@@ -119,8 +117,7 @@ export const Horizontal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Horizontal scrollbar for scrolling content left and right.",
+				story: "Horizontal scrollbar for scrolling content left and right.",
 			},
 		},
 	},
@@ -166,8 +163,7 @@ export const CustomStyling: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Scrollbar with custom styling. The width is increased for better visibility.",
+				story: "Scrollbar with custom styling. The width is increased for better visibility.",
 			},
 		},
 	},
@@ -178,8 +174,8 @@ export const KeepMounted: Story = {
 		<ScrollArea className="h-[300px] w-[350px] rounded-md border p-4">
 			<div className="p-4">
 				<p className="text-sm">
-					This content is short and doesn't require scrolling, but the
-					scrollbar is kept mounted in the DOM.
+					This content is short and doesn't require scrolling, but the scrollbar is kept mounted in
+					the DOM.
 				</p>
 			</div>
 			<ScrollBar {...args} keepMounted />

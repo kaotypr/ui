@@ -80,25 +80,19 @@ export const Default: Story = {
 			<TabsContent value="overview">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Overview</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Default tab trigger button.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="account">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Default tab trigger button.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="settings">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Settings</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Default tab trigger button.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
 				</div>
 			</TabsContent>
 		</Tabs>
@@ -191,9 +185,7 @@ export const Disabled: Story = {
 			<TabsContent value="account">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						This tab is disabled.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">This tab is disabled.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="settings">
@@ -209,8 +201,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Disabled tab trigger that cannot be selected or activated.",
+				story: "Disabled tab trigger that cannot be selected or activated.",
 			},
 		},
 	},

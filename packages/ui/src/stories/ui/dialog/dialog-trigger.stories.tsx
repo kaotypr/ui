@@ -37,8 +37,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			},
 		},
 		payload: {
-			description:
-				"A payload to pass to the dialog when it is opened.",
+			description: "A payload to pass to the dialog when it is opened.",
 			table: {
 				type: { summary: "Payload" },
 				defaultValue: { summary: "undefined" },
@@ -131,8 +130,7 @@ export const WithCustomButton: Story = {
 					<DialogHeader>
 						<DialogTitle>Confirm Deletion</DialogTitle>
 						<DialogDescription>
-							Are you sure you want to delete your account? This action cannot
-							be undone.
+							Are you sure you want to delete your account? This action cannot be undone.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -150,8 +148,7 @@ export const WithCustomButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger using a custom button variant and size via the prop.",
+				story: "Trigger using a custom button variant and size via the prop.",
 			},
 		},
 	},
@@ -173,9 +170,7 @@ export const MultipleTriggers: Story = {
 					<DialogContent>
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
-							<DialogDescription>
-								This dialog can be opened by multiple triggers.
-							</DialogDescription>
+							<DialogDescription>This dialog can be opened by multiple triggers.</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
 							<Button variant="outline" onClick={() => setOpen(false)}>
@@ -190,8 +185,7 @@ export const MultipleTriggers: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Multiple trigger buttons that can open the same dialog.",
+				story: "Multiple trigger buttons that can open the same dialog.",
 			},
 		},
 	},

@@ -66,14 +66,10 @@ export const Default: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription {...args}>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription {...args}>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -87,8 +83,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default drawer description displayed below the title.",
+				story: "Default drawer description displayed below the title.",
 			},
 		},
 	},
@@ -107,15 +102,13 @@ export const LongDescription: Story = {
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
 						<DrawerDescription>
-							This is a longer description that provides more context about
-							what the drawer is for and what actions the user can take. It
-							will wrap appropriately to fit within the drawer header.
+							This is a longer description that provides more context about what the drawer is for
+							and what actions the user can take. It will wrap appropriately to fit within the
+							drawer header.
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -129,8 +122,7 @@ export const LongDescription: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer description with long text that wraps appropriately.",
+				story: "Drawer description with long text that wraps appropriately.",
 			},
 		},
 	},
@@ -153,9 +145,7 @@ export const WithCustomStyling: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -169,8 +159,7 @@ export const WithCustomStyling: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer description with custom styling applied via className.",
+				story: "Drawer description with custom styling applied via className.",
 			},
 		},
 	},

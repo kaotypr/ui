@@ -72,8 +72,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default dialog header containing a title and description.",
+				story: "Default dialog header containing a title and description.",
 			},
 		},
 	},

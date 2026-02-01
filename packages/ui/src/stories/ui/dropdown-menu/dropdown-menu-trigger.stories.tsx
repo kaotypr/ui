@@ -24,8 +24,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Base UI Props
 		handle: {
-			description:
-				"A handle to associate the trigger with a menu.",
+			description: "A handle to associate the trigger with a menu.",
 			table: {
 				type: { summary: "Menu.Handle<Payload>" },
 				defaultValue: { summary: "undefined" },
@@ -44,8 +43,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		payload: {
-			description:
-				"A payload to pass to the menu when it is opened.",
+			description: "A payload to pass to the menu when it is opened.",
 			table: {
 				type: { summary: "Payload" },
 				defaultValue: { summary: "undefined" },
@@ -54,8 +52,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: false,
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -64,8 +61,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		openOnHover: {
-			description:
-				"Whether the menu should also open when the trigger is hovered.",
+			description: "Whether the menu should also open when the trigger is hovered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "undefined" },

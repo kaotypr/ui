@@ -26,8 +26,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 	argTypes: {
 		// Props
 		inset: {
-			description:
-				"When true, adds left padding to align with items that have icons.",
+			description: "When true, adds left padding to align with items that have icons.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -75,8 +74,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -299,8 +297,7 @@ export const WithInset: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menu item with inset prop to align with items that have icons.",
+				story: "Menu item with inset prop to align with items that have icons.",
 			},
 		},
 	},

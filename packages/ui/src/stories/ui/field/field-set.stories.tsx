@@ -1,11 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	FieldSet,
-	FieldLegend,
-	Field,
-	FieldLabel,
-	FieldContent,
-} from "~/components/ui/field"
+import { FieldSet, FieldLegend, Field, FieldLabel, FieldContent } from "~/components/ui/field"
 import { Input } from "~/components/ui/input"
 import { Checkbox } from "~/components/ui/checkbox"
 
@@ -93,8 +87,7 @@ export const WithCheckboxGroup: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Fieldset with checkbox group showing automatic gap spacing adjustment.",
+				story: "Fieldset with checkbox group showing automatic gap spacing adjustment.",
 			},
 		},
 	},

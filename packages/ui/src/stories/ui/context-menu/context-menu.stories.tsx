@@ -62,12 +62,10 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the menu is opened or closed.",
+			description: "Event handler called when the menu is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: ContextMenu.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: ContextMenu.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -105,8 +103,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		onOpenChangeComplete: {
-			description:
-				"Event handler called after any animations complete when the menu is closed.",
+			description: "Event handler called after any animations complete when the menu is closed.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -115,8 +112,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			action: "onOpenChangeComplete",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -187,8 +183,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default context menu with common actions and keyboard shortcuts.",
+				story: "Default context menu with common actions and keyboard shortcuts.",
 			},
 		},
 	},
@@ -234,8 +229,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Context menu with grouped items and labels for better organization.",
+				story: "Context menu with grouped items and labels for better organization.",
 			},
 		},
 	},
@@ -289,8 +283,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled context menu where the open state is managed externally.",
+				story: "Controlled context menu where the open state is managed externally.",
 			},
 		},
 	},

@@ -100,8 +100,8 @@ export const Default: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							Click the trigger button to toggle the sidebar. You can also use
-							the keyboard shortcut Cmd/Ctrl+B.
+							Click the trigger button to toggle the sidebar. You can also use the keyboard shortcut
+							Cmd/Ctrl+B.
 						</p>
 					</div>
 				</main>

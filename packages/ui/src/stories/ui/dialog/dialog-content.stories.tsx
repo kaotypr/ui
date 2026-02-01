@@ -28,8 +28,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	argTypes: {
 		// Props
 		showCloseButton: {
-			description:
-				"Whether to show the close button in the top-right corner.",
+			description: "Whether to show the close button in the top-right corner.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "true" },
@@ -44,7 +43,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			table: {
 				type: {
 					summary:
-						'boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement | null)',
+						"boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement | null)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -56,7 +55,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			table: {
 				type: {
 					summary:
-						'boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)',
+						"boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -92,8 +91,7 @@ export const Default: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
 						<DialogDescription>
-							This is the default dialog content with header, description, and
-							footer.
+							This is the default dialog content with header, description, and footer.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -128,8 +126,7 @@ export const WithoutCloseButton: Story = {
 					<DialogHeader>
 						<DialogTitle>Dialog without close button</DialogTitle>
 						<DialogDescription>
-							This dialog content doesn't have a close button in the top-right
-							corner.
+							This dialog content doesn't have a close button in the top-right corner.
 						</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
@@ -144,8 +141,7 @@ export const WithoutCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Dialog content without the default close button in the top-right corner.",
+				story: "Dialog content without the default close button in the top-right corner.",
 			},
 		},
 	},

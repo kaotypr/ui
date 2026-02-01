@@ -26,8 +26,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Base UI Props
 		container: {
-			description:
-				"A parent element to render the portal element into.",
+			description: "A parent element to render the portal element into.",
 			table: {
 				type: { summary: "HTMLElement | ShadowRoot | RefObject | null" },
 				defaultValue: { summary: "document.body" },
@@ -36,8 +35,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: false,
 		},
 		keepMounted: {
-			description:
-				"Whether to keep the portal mounted in the DOM while the popup is hidden.",
+			description: "Whether to keep the portal mounted in the DOM while the popup is hidden.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -84,8 +82,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default portal that renders the menu content in a different part of the DOM.",
+				story: "Default portal that renders the menu content in a different part of the DOM.",
 			},
 		},
 	},
@@ -98,10 +95,7 @@ export const WithCustomContainer: Story = {
 
 		return (
 			<div className="space-y-4">
-				<div
-					ref={containerRef}
-					className="h-32 w-full rounded-md border border-dashed p-4"
-				>
+				<div ref={containerRef} className="h-32 w-full rounded-md border border-dashed p-4">
 					Custom portal container
 				</div>
 				<Menubar>

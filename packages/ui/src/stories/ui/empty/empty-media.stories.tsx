@@ -1,17 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	FolderOpenIcon,
-	MagnifyingGlassIcon,
-	PackageIcon,
-} from "@phosphor-icons/react"
+import { FolderOpenIcon, MagnifyingGlassIcon, PackageIcon } from "@phosphor-icons/react"
 
-import {
-	Empty,
-	EmptyHeader,
-	EmptyMedia,
-	EmptyTitle,
-	EmptyDescription,
-} from "~/components/ui/empty"
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "~/components/ui/empty"
 
 const meta = {
 	title: "UI/Empty/EmptyMedia",
@@ -73,9 +63,7 @@ export const Default: Story = {
 					<FolderOpenIcon className="size-12" />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -99,9 +87,7 @@ export const IconVariant: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -123,9 +109,7 @@ export const DifferentIcons: Story = {
 						<MagnifyingGlassIcon />
 					</EmptyMedia>
 					<EmptyTitle>No results found</EmptyTitle>
-					<EmptyDescription>
-						Try adjusting your search terms.
-					</EmptyDescription>
+					<EmptyDescription>Try adjusting your search terms.</EmptyDescription>
 				</EmptyHeader>
 			</Empty>
 			<Empty>
@@ -134,9 +118,7 @@ export const DifferentIcons: Story = {
 						<PackageIcon />
 					</EmptyMedia>
 					<EmptyTitle>No packages</EmptyTitle>
-					<EmptyDescription>
-						Start by adding your first package.
-					</EmptyDescription>
+					<EmptyDescription>Start by adding your first package.</EmptyDescription>
 				</EmptyHeader>
 			</Empty>
 		</div>

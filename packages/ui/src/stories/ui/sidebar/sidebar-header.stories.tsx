@@ -58,9 +58,7 @@ export const Default: Story = {
 						</div>
 						<div className="flex flex-col">
 							<span className="text-sm font-semibold">Acme Inc</span>
-							<span className="text-xs text-muted-foreground">
-								Dashboard
-							</span>
+							<span className="text-xs text-muted-foreground">Dashboard</span>
 						</div>
 					</div>
 				</SidebarHeader>
@@ -98,8 +96,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default sidebar header with trigger button and company branding.",
+				story: "Default sidebar header with trigger button and company branding.",
 			},
 		},
 	},

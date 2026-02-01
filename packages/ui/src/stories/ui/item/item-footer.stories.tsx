@@ -93,9 +93,7 @@ export const WithMetadata: Story = {
 			</ItemContent>
 			<ItemFooter {...args}>
 				<div className="flex items-center justify-between w-full">
-					<span className="text-xs text-muted-foreground">
-						Last saved 2 hours ago
-					</span>
+					<span className="text-xs text-muted-foreground">Last saved 2 hours ago</span>
 					<ItemActions>
 						<Button variant="ghost" size="sm">
 							Cancel

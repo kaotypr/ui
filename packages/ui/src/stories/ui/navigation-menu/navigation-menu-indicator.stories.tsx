@@ -71,12 +71,8 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -87,8 +83,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default navigation menu indicator that appears below the active trigger.",
+				story: "Default navigation menu indicator that appears below the active trigger.",
 			},
 		},
 	},
@@ -102,12 +97,8 @@ export const WithMultipleItems: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -115,12 +106,8 @@ export const WithMultipleItems: Story = {
 					<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/components/button">
-								Button
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/components/input">
-								Input
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+							<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>

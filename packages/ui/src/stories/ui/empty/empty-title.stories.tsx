@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FolderOpenIcon } from "@phosphor-icons/react"
 
-import {
-	Empty,
-	EmptyHeader,
-	EmptyMedia,
-	EmptyTitle,
-	EmptyDescription,
-} from "~/components/ui/empty"
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "~/components/ui/empty"
 
 const meta = {
 	title: "UI/Empty/EmptyTitle",
@@ -59,9 +53,7 @@ export const Default: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle {...args} />
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -85,9 +77,7 @@ export const LongTitle: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle {...args} />
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -112,9 +102,7 @@ export const WithCustomStyling: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle {...args} />
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),

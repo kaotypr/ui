@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FileIcon, FolderIcon } from "@phosphor-icons/react"
-import {
-	Item,
-	ItemMedia,
-	ItemContent,
-	ItemTitle,
-	ItemDescription,
-} from "~/components/ui/item"
+import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription } from "~/components/ui/item"
 
 const meta = {
 	title: "UI/Item/ItemMedia",
@@ -109,11 +103,7 @@ export const ImageVariant: Story = {
 	render: (args) => (
 		<Item>
 			<ItemMedia {...args} variant="image">
-				<img
-					src="https://via.placeholder.com/40"
-					alt="Avatar"
-					className="rounded-sm"
-				/>
+				<img src="https://via.placeholder.com/40" alt="Avatar" className="rounded-sm" />
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>John Doe</ItemTitle>
@@ -137,11 +127,7 @@ export const ImageWithSmallItem: Story = {
 	render: (args) => (
 		<Item size="sm">
 			<ItemMedia {...args} variant="image">
-				<img
-					src="https://via.placeholder.com/32"
-					alt="Avatar"
-					className="rounded-sm"
-				/>
+				<img src="https://via.placeholder.com/32" alt="Avatar" className="rounded-sm" />
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>John Doe</ItemTitle>
@@ -165,11 +151,7 @@ export const ImageWithExtraSmallItem: Story = {
 	render: (args) => (
 		<Item size="xs">
 			<ItemMedia {...args} variant="image">
-				<img
-					src="https://via.placeholder.com/24"
-					alt="Avatar"
-					className="rounded-sm"
-				/>
+				<img src="https://via.placeholder.com/24" alt="Avatar" className="rounded-sm" />
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>John Doe</ItemTitle>

@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import * as React from "react"
-import {
-	HoverCard,
-	HoverCardTrigger,
-	HoverCardContent,
-} from "~/components/ui/hover-card"
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "~/components/ui/hover-card"
 
 const meta = {
 	title: "UI/HoverCard",
@@ -46,12 +42,10 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the preview card is opened or closed.",
+			description: "Event handler called when the preview card is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: PreviewCard.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: PreviewCard.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -117,8 +111,7 @@ export const Default: Story = {
 					<div className="space-y-2">
 						<h4 className="text-sm font-semibold">Preview Card</h4>
 						<p className="text-sm text-muted-foreground">
-							A popup that appears when a link is hovered, showing a preview
-							for sighted users.
+							A popup that appears when a link is hovered, showing a preview for sighted users.
 						</p>
 					</div>
 				</HoverCardContent>
@@ -128,8 +121,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default hover card that appears when hovering over a link.",
+				story: "Default hover card that appears when hovering over a link.",
 			},
 		},
 	},
@@ -150,9 +142,8 @@ export const WithRichContent: Story = {
 					<div className="space-y-3">
 						<h4 className="text-sm font-semibold">Typography</h4>
 						<p className="text-sm text-muted-foreground">
-							Typography is the art and science of arranging type to make
-							written language clear, visually appealing, and effective in
-							communication.
+							Typography is the art and science of arranging type to make written language clear,
+							visually appealing, and effective in communication.
 						</p>
 						<div className="text-xs text-muted-foreground">
 							Learn more about typography principles and best practices.
@@ -165,7 +156,8 @@ export const WithRichContent: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Hover card with rich content including title, description, and additional information.",
+				story:
+					"Hover card with rich content including title, description, and additional information.",
 			},
 		},
 	},
@@ -215,8 +207,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled hover card where the open state is managed externally.",
+				story: "Controlled hover card where the open state is managed externally.",
 			},
 		},
 	},

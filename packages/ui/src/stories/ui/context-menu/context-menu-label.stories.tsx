@@ -26,8 +26,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 	argTypes: {
 		// Props
 		inset: {
-			description:
-				"When true, adds left padding to align with items that have icons.",
+			description: "When true, adds left padding to align with items that have icons.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

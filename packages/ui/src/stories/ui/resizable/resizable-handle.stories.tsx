@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	ResizablePanelGroup,
-	ResizablePanel,
-	ResizableHandle,
-} from "~/components/ui/resizable"
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "~/components/ui/resizable"
 
 const meta = {
 	title: "UI/Resizable/ResizableHandle",
@@ -24,8 +20,7 @@ Must be used within a ResizablePanelGroup component. Separator elements must be 
 	argTypes: {
 		// Custom Props
 		withHandle: {
-			description:
-				"Whether to show a visible handle indicator on the separator.",
+			description: "Whether to show a visible handle indicator on the separator.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -78,9 +73,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 1</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -89,9 +82,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 2</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>

@@ -51,8 +51,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			description: "Function called when the selected value changes.",
 			table: {
 				type: {
-					summary:
-						"(value: any, eventDetails: Menu.RadioGroup.ChangeEventDetails) => void",
+					summary: "(value: any, eventDetails: Menu.RadioGroup.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -60,8 +59,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			action: "onValueChange",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

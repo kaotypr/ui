@@ -54,12 +54,10 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the popover is opened or closed.",
+			description: "Event handler called when the popover is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Popover.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Popover.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -134,8 +132,8 @@ export const Default: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Are you absolutely sure?</PopoverTitle>
 						<PopoverDescription>
-							This action cannot be undone. This will permanently delete your
-							account and remove your data from our servers.
+							This action cannot be undone. This will permanently delete your account and remove
+							your data from our servers.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -145,8 +143,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default popover with trigger button and content containing title and description.",
+				story: "Default popover with trigger button and content containing title and description.",
 			},
 		},
 	},
@@ -168,8 +165,7 @@ export const WithIcon: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Information</PopoverTitle>
 						<PopoverDescription>
-							This popover provides additional context and information about the
-							feature or action.
+							This popover provides additional context and information about the feature or action.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -191,11 +187,7 @@ export const Controlled: Story = {
 
 		return (
 			<div className="space-y-4">
-				<Button
-					type="button"
-					onClick={() => setOpen(!open)}
-					variant="outline"
-				>
+				<Button type="button" onClick={() => setOpen(!open)} variant="outline">
 					{open ? "Close Popover" : "Open Popover"}
 				</Button>
 				<Popover
@@ -227,8 +219,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled popover where the open state is managed externally.",
+				story: "Controlled popover where the open state is managed externally.",
 			},
 		},
 	},
@@ -255,8 +246,7 @@ export const InitiallyOpen: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Popover that is initially open using the defaultOpen prop.",
+				story: "Popover that is initially open using the defaultOpen prop.",
 			},
 		},
 	},
@@ -275,8 +265,8 @@ export const Modal: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Modal Popover</PopoverTitle>
 						<PopoverDescription>
-							This popover is in modal mode. User interaction is limited to
-							the popover, and document page scroll is locked.
+							This popover is in modal mode. User interaction is limited to the popover, and
+							document page scroll is locked.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -286,8 +276,7 @@ export const Modal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Modal popover where user interaction is limited to the popover.",
+				story: "Modal popover where user interaction is limited to the popover.",
 			},
 		},
 	},

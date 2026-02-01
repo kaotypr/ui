@@ -41,8 +41,7 @@ This component is built on top of [Base UI Toggle](https://base-ui.com/react/com
 		},
 		// Base UI Props
 		value: {
-			description:
-				"A unique string that identifies the toggle when used inside a toggle group.",
+			description: "A unique string that identifies the toggle when used inside a toggle group.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -71,12 +70,10 @@ This component is built on top of [Base UI Toggle](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		onPressedChange: {
-			description:
-				"Callback fired when the pressed state is changed.",
+			description: "Callback fired when the pressed state is changed.",
 			table: {
 				type: {
-					summary:
-						"(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void",
+					summary: "(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -94,8 +91,7 @@ This component is built on top of [Base UI Toggle](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -196,11 +192,7 @@ export const OutlineVariant: Story = {
 				<ToggleGroupItem value="italic" variant="outline" aria-label="Italic">
 					<TextItalicIcon />
 				</ToggleGroupItem>
-				<ToggleGroupItem
-					value="underline"
-					variant="outline"
-					aria-label="Underline"
-				>
+				<ToggleGroupItem value="underline" variant="outline" aria-label="Underline">
 					<TextUnderlineIcon />
 				</ToggleGroupItem>
 			</ToggleGroup>
@@ -302,8 +294,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle item with disabled state. The item is non-interactive.",
+				story: "Toggle item with disabled state. The item is non-interactive.",
 			},
 		},
 	},

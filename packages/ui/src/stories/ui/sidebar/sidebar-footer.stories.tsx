@@ -11,13 +11,7 @@ import {
 	SidebarFooter,
 	SidebarMenuBadge,
 } from "~/components/ui/sidebar"
-import {
-	HouseIcon,
-	FileIcon,
-	BellIcon,
-	UserIcon,
-	GearIcon,
-} from "@phosphor-icons/react"
+import { HouseIcon, FileIcon, BellIcon, UserIcon, GearIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Sidebar/SidebarFooter",
@@ -196,9 +190,7 @@ export const UserProfile: Story = {
 						</div>
 						<div className="flex flex-col">
 							<span className="text-sm font-medium">John Doe</span>
-							<span className="text-xs text-muted-foreground">
-								john@example.com
-							</span>
+							<span className="text-xs text-muted-foreground">john@example.com</span>
 						</div>
 					</div>
 				</SidebarFooter>

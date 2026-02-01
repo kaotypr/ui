@@ -27,8 +27,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 	argTypes: {
 		// Props
 		inset: {
-			description:
-				"When true, adds left padding to align with items that have icons.",
+			description: "When true, adds left padding to align with items that have icons.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -48,8 +47,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -58,8 +56,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		openOnHover: {
-			description:
-				"Whether the menu should also open when the trigger is hovered.",
+			description: "Whether the menu should also open when the trigger is hovered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "undefined" },
@@ -150,9 +147,7 @@ export const Disabled: Story = {
 					<ContextMenuItem>Copy</ContextMenuItem>
 					<ContextMenuItem>Cut</ContextMenuItem>
 					<ContextMenuSub>
-						<ContextMenuSubTrigger disabled>
-							More Options (disabled)
-						</ContextMenuSubTrigger>
+						<ContextMenuSubTrigger disabled>More Options (disabled)</ContextMenuSubTrigger>
 						<ContextMenuSubContent>
 							<ContextMenuItem>Option 1</ContextMenuItem>
 							<ContextMenuItem>Option 2</ContextMenuItem>

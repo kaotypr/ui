@@ -38,8 +38,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			options: ["top", "bottom", "left", "right"],
 		},
 		sideOffset: {
-			description:
-				"Distance between the anchor and the popup in pixels.",
+			description: "Distance between the anchor and the popup in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "4" },
@@ -48,8 +47,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "number" },
 		},
 		align: {
-			description:
-				"How to align the popup relative to the specified side.",
+			description: "How to align the popup relative to the specified side.",
 			table: {
 				type: { summary: '"start" | "center" | "end"' },
 				defaultValue: { summary: '"center"' },
@@ -59,8 +57,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			options: ["start", "center", "end"],
 		},
 		alignOffset: {
-			description:
-				"Additional offset along the alignment axis in pixels.",
+			description: "Additional offset along the alignment axis in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -70,8 +67,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 		},
 		// Base UI Props (Popup)
 		initialFocus: {
-			description:
-				"Determines the element to focus when the popover is opened.",
+			description: "Determines the element to focus when the popover is opened.",
 			table: {
 				type: {
 					summary:
@@ -83,8 +79,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: false,
 		},
 		finalFocus: {
-			description:
-				"Determines the element to focus when the popover is closed.",
+			description: "Determines the element to focus when the popover is closed.",
 			table: {
 				type: {
 					summary:
@@ -157,9 +152,7 @@ export const DifferentSides: Story = {
 					<PopoverContent side="top">
 						<PopoverHeader>
 							<PopoverTitle>Top Side</PopoverTitle>
-							<PopoverDescription>
-								Content appears above the trigger.
-							</PopoverDescription>
+							<PopoverDescription>Content appears above the trigger.</PopoverDescription>
 						</PopoverHeader>
 					</PopoverContent>
 				</Popover>
@@ -172,9 +165,7 @@ export const DifferentSides: Story = {
 						<PopoverContent side="left">
 							<PopoverHeader>
 								<PopoverTitle>Left Side</PopoverTitle>
-								<PopoverDescription>
-									Content appears to the left of the trigger.
-								</PopoverDescription>
+								<PopoverDescription>Content appears to the left of the trigger.</PopoverDescription>
 							</PopoverHeader>
 						</PopoverContent>
 					</Popover>
@@ -201,9 +192,7 @@ export const DifferentSides: Story = {
 					<PopoverContent side="bottom">
 						<PopoverHeader>
 							<PopoverTitle>Bottom Side</PopoverTitle>
-							<PopoverDescription>
-								Content appears below the trigger.
-							</PopoverDescription>
+							<PopoverDescription>Content appears below the trigger.</PopoverDescription>
 						</PopoverHeader>
 					</PopoverContent>
 				</Popover>
@@ -213,8 +202,7 @@ export const DifferentSides: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates popover content positioned on different sides of the trigger.",
+				story: "Demonstrates popover content positioned on different sides of the trigger.",
 			},
 		},
 	},
@@ -235,9 +223,7 @@ export const CustomAlignment: Story = {
 					<PopoverContent align="start">
 						<PopoverHeader>
 							<PopoverTitle>Align Start</PopoverTitle>
-							<PopoverDescription>
-								Content aligned to the start of the trigger.
-							</PopoverDescription>
+							<PopoverDescription>Content aligned to the start of the trigger.</PopoverDescription>
 						</PopoverHeader>
 					</PopoverContent>
 				</Popover>
@@ -249,9 +235,7 @@ export const CustomAlignment: Story = {
 					<PopoverContent align="center">
 						<PopoverHeader>
 							<PopoverTitle>Align Center</PopoverTitle>
-							<PopoverDescription>
-								Content centered relative to the trigger.
-							</PopoverDescription>
+							<PopoverDescription>Content centered relative to the trigger.</PopoverDescription>
 						</PopoverHeader>
 					</PopoverContent>
 				</Popover>
@@ -263,9 +247,7 @@ export const CustomAlignment: Story = {
 					<PopoverContent align="end">
 						<PopoverHeader>
 							<PopoverTitle>Align End</PopoverTitle>
-							<PopoverDescription>
-								Content aligned to the end of the trigger.
-							</PopoverDescription>
+							<PopoverDescription>Content aligned to the end of the trigger.</PopoverDescription>
 						</PopoverHeader>
 					</PopoverContent>
 				</Popover>
@@ -275,8 +257,7 @@ export const CustomAlignment: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates different alignment options for the popover content.",
+				story: "Demonstrates different alignment options for the popover content.",
 			},
 		},
 	},
@@ -297,8 +278,8 @@ export const CustomStyling: Story = {
 							Custom Styled Content
 						</PopoverTitle>
 						<PopoverDescription className="text-blue-800">
-							This popover has custom styling with a wider width, colored
-							border, and custom background.
+							This popover has custom styling with a wider width, colored border, and custom
+							background.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -327,8 +308,7 @@ export const CustomOffset: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Custom Offset</PopoverTitle>
 						<PopoverDescription>
-							This popover has custom side and alignment offsets for more
-							spacing from the trigger.
+							This popover has custom side and alignment offsets for more spacing from the trigger.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -338,8 +318,7 @@ export const CustomOffset: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Content with custom side and alignment offsets for increased spacing.",
+				story: "Content with custom side and alignment offsets for increased spacing.",
 			},
 		},
 	},

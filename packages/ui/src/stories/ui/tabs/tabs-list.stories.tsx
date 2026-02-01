@@ -102,8 +102,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default variant tabs list with rounded background and padding.",
+				story: "Default variant tabs list with rounded background and padding.",
 			},
 		},
 	},

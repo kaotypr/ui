@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FolderOpenIcon } from "@phosphor-icons/react"
 
-import {
-	Empty,
-	EmptyHeader,
-	EmptyMedia,
-	EmptyTitle,
-	EmptyDescription,
-} from "~/components/ui/empty"
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "~/components/ui/empty"
 
 const meta = {
 	title: "UI/Empty/EmptyDescription",
@@ -98,7 +92,8 @@ export const WithLink: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Description with an embedded link. Links are automatically styled with hover effects.",
+				story:
+					"Description with an embedded link. Links are automatically styled with hover effects.",
 			},
 		},
 	},

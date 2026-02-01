@@ -44,12 +44,10 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the menu is opened or closed.",
+			description: "Event handler called when the menu is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Menu.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Menu.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -87,8 +85,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onOpenChangeComplete: {
-			description:
-				"Event handler called after any animations complete when the menu is closed.",
+			description: "Event handler called after any animations complete when the menu is closed.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -97,8 +94,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			action: "onOpenChangeComplete",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -206,8 +202,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled menubar menu where the open state is managed externally.",
+				story: "Controlled menubar menu where the open state is managed externally.",
 			},
 		},
 	},

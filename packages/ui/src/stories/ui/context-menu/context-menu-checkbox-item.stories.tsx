@@ -54,12 +54,10 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the checkbox item is ticked or unticked.",
+			description: "Event handler called when the checkbox item is ticked or unticked.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -85,8 +83,7 @@ This component is built on top of [Base UI Context Menu](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -133,12 +130,8 @@ export const Default: Story = {
 					>
 						Show line numbers
 					</ContextMenuCheckboxItem>
-					<ContextMenuCheckboxItem checked={true}>
-						Word wrap
-					</ContextMenuCheckboxItem>
-					<ContextMenuCheckboxItem checked={false}>
-						Minimap
-					</ContextMenuCheckboxItem>
+					<ContextMenuCheckboxItem checked={true}>Word wrap</ContextMenuCheckboxItem>
+					<ContextMenuCheckboxItem checked={false}>Minimap</ContextMenuCheckboxItem>
 				</ContextMenuContent>
 			</ContextMenu>
 		)
@@ -165,12 +158,8 @@ export const Uncontrolled: Story = {
 					<ContextMenuCheckboxItem defaultChecked={false}>
 						Show line numbers
 					</ContextMenuCheckboxItem>
-					<ContextMenuCheckboxItem defaultChecked={true}>
-						Word wrap
-					</ContextMenuCheckboxItem>
-					<ContextMenuCheckboxItem defaultChecked={false}>
-						Minimap
-					</ContextMenuCheckboxItem>
+					<ContextMenuCheckboxItem defaultChecked={true}>Word wrap</ContextMenuCheckboxItem>
+					<ContextMenuCheckboxItem defaultChecked={false}>Minimap</ContextMenuCheckboxItem>
 				</ContextMenuContent>
 			</ContextMenu>
 		)

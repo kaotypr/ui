@@ -65,8 +65,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default header containing a title and description for the popover.",
+				story: "Default header containing a title and description for the popover.",
 			},
 		},
 	},

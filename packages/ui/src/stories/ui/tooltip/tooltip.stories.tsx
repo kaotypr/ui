@@ -45,12 +45,10 @@ This component is built on top of [Base UI Tooltip](https://base-ui.com/react/co
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the tooltip is opened or closed.",
+			description: "Event handler called when the tooltip is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Tooltip.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Tooltip.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -106,8 +104,7 @@ This component is built on top of [Base UI Tooltip](https://base-ui.com/react/co
 			control: { type: "text" },
 		},
 		trackCursorAxis: {
-			description:
-				"Determines which axis the tooltip should track the cursor on.",
+			description: "Determines which axis the tooltip should track the cursor on.",
 			table: {
 				type: { summary: '"none" | "both" | "x" | "y"' },
 				defaultValue: { summary: '"none"' },
@@ -126,8 +123,7 @@ This component is built on top of [Base UI Tooltip](https://base-ui.com/react/co
 			control: { type: "boolean" },
 		},
 		disableHoverablePopup: {
-			description:
-				"Whether the tooltip contents can be hovered without closing the tooltip.",
+			description: "Whether the tooltip contents can be hovered without closing the tooltip.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

@@ -55,8 +55,7 @@ export const Default: Story = {
 					<SheetHeader>
 						<SheetTitle>Sheet Title</SheetTitle>
 						<SheetDescription {...args}>
-							Default sheet description that provides additional information about
-							the sheet.
+							Default sheet description that provides additional information about the sheet.
 						</SheetDescription>
 					</SheetHeader>
 				</SheetContent>
@@ -66,8 +65,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default sheet description that provides additional information about the sheet.",
+				story: "Default sheet description that provides additional information about the sheet.",
 			},
 		},
 	},
@@ -86,10 +84,9 @@ export const LongDescription: Story = {
 					<SheetHeader>
 						<SheetTitle>Sheet Title</SheetTitle>
 						<SheetDescription>
-							This is a longer sheet description that demonstrates how the
-							description text wraps when it exceeds the available width. It provides
-							more detailed information about what the sheet is for and what actions
-							the user can take within it.
+							This is a longer sheet description that demonstrates how the description text wraps
+							when it exceeds the available width. It provides more detailed information about what
+							the sheet is for and what actions the user can take within it.
 						</SheetDescription>
 					</SheetHeader>
 				</SheetContent>
@@ -99,8 +96,7 @@ export const LongDescription: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet description with longer text that wraps to multiple lines.",
+				story: "Sheet description with longer text that wraps to multiple lines.",
 			},
 		},
 	},

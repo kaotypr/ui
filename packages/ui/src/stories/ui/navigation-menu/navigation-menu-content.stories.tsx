@@ -70,12 +70,8 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent {...args}>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 							<NavigationMenuLink href="/docs/releases">Releases</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
@@ -103,29 +99,17 @@ export const WithRichContent: Story = {
 							<div>
 								<h3 className="text-lg font-semibold mb-2">UI Components</h3>
 								<div className="grid gap-2">
-									<NavigationMenuLink href="/components/button">
-										Button
-									</NavigationMenuLink>
-									<NavigationMenuLink href="/components/input">
-										Input
-									</NavigationMenuLink>
-									<NavigationMenuLink href="/components/dialog">
-										Dialog
-									</NavigationMenuLink>
+									<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+									<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
+									<NavigationMenuLink href="/components/dialog">Dialog</NavigationMenuLink>
 								</div>
 							</div>
 							<div>
 								<h3 className="text-lg font-semibold mb-2">Form Components</h3>
 								<div className="grid gap-2">
-									<NavigationMenuLink href="/components/checkbox">
-										Checkbox
-									</NavigationMenuLink>
-									<NavigationMenuLink href="/components/select">
-										Select
-									</NavigationMenuLink>
-									<NavigationMenuLink href="/components/radio">
-										Radio
-									</NavigationMenuLink>
+									<NavigationMenuLink href="/components/checkbox">Checkbox</NavigationMenuLink>
+									<NavigationMenuLink href="/components/select">Select</NavigationMenuLink>
+									<NavigationMenuLink href="/components/radio">Radio</NavigationMenuLink>
 								</div>
 							</div>
 						</div>

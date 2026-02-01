@@ -25,8 +25,7 @@ This component is built on top of [Base UI Progress](https://base-ui.com/react/c
 	argTypes: {
 		// Base UI Props
 		value: {
-			description:
-				"The current value. The component is indeterminate when value is null.",
+			description: "The current value. The component is indeterminate when value is null.",
 			table: {
 				type: { summary: "number | null" },
 				defaultValue: { summary: "null" },
@@ -49,8 +48,7 @@ This component is built on top of [Base UI Progress](https://base-ui.com/react/c
 				"Accepts a function which returns a string value that provides a human-readable text alternative for the current value of the progress bar.",
 			table: {
 				type: {
-					summary:
-						"((formattedValue: string | null, value: number | null) => string)",
+					summary: "((formattedValue: string | null, value: number | null) => string)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -100,8 +98,7 @@ This component is built on top of [Base UI Progress](https://base-ui.com/react/c
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Progress.Root.State) => string | undefined)",
+					summary: "string | ((state: Progress.Root.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -113,8 +110,7 @@ This component is built on top of [Base UI Progress](https://base-ui.com/react/c
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Progress.Root.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Progress.Root.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -187,8 +183,7 @@ export const Indeterminate: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Indeterminate progress bar for when the completion status is unknown.",
+				story: "Indeterminate progress bar for when the completion status is unknown.",
 			},
 		},
 	},

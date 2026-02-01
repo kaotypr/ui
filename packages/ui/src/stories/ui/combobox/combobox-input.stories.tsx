@@ -34,8 +34,7 @@ This component is built on top of [Base UI Combobox.Input](https://base-ui.com/r
 	argTypes: {
 		// Custom Props (from @kaotypr/ui)
 		showTrigger: {
-			description:
-				"Whether to show the trigger button (dropdown arrow) inside the input.",
+			description: "Whether to show the trigger button (dropdown arrow) inside the input.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "true" },
@@ -44,8 +43,7 @@ This component is built on top of [Base UI Combobox.Input](https://base-ui.com/r
 			control: { type: "boolean" },
 		},
 		showClear: {
-			description:
-				"Whether to show the clear button when a value is selected.",
+			description: "Whether to show the clear button when a value is selected.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -106,9 +104,7 @@ export const Default: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -146,9 +142,7 @@ export const WithClearButton: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -164,8 +158,7 @@ export const WithClearButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxInput with a clear button that appears when a value is selected.",
+				story: "ComboboxInput with a clear button that appears when a value is selected.",
 			},
 		},
 	},
@@ -188,9 +181,7 @@ export const WithoutTrigger: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -230,9 +221,7 @@ export const Disabled: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>

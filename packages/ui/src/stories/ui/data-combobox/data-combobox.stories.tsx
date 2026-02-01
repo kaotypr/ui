@@ -522,14 +522,14 @@ const InfiniteScrollWrapper = () => {
 	}, [page, loading])
 
 	return (
-			<DataCombobox
-				data={data}
-				loading={loading}
-				hasMore={hasMore}
-				onLoadMore={handleLoadMore}
-				placeholder="Select option..."
-				searchPlaceholder="Search options..."
-			/>
+		<DataCombobox
+			data={data}
+			loading={loading}
+			hasMore={hasMore}
+			onLoadMore={handleLoadMore}
+			placeholder="Select option..."
+			searchPlaceholder="Search options..."
+		/>
 	)
 }
 

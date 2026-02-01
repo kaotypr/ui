@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CaretDownIcon } from "@phosphor-icons/react"
 
-import {
-	Collapsible,
-	CollapsibleTrigger,
-	CollapsibleContent,
-} from "~/components/ui/collapsible"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "~/components/ui/collapsible"
 
 const meta = {
 	title: "UI/Collapsible/CollapsibleTrigger",
@@ -78,8 +74,7 @@ export const Default: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						Yes. Free to use for personal and commercial projects. No
-						attribution required.
+						Yes. Free to use for personal and commercial projects. No attribution required.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -88,8 +83,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default trigger button with text and an icon that rotates when the panel is open.",
+				story: "Default trigger button with text and an icon that rotates when the panel is open.",
 			},
 		},
 	},
@@ -108,8 +102,7 @@ export const WithCustomStyling: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						This trigger has custom styling with primary background color and
-						enhanced padding.
+						This trigger has custom styling with primary background color and enhanced padding.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -147,8 +140,7 @@ export const Minimal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Minimal trigger with reduced padding and subtle styling for compact layouts.",
+				story: "Minimal trigger with reduced padding and subtle styling for compact layouts.",
 			},
 		},
 	},

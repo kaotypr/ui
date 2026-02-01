@@ -106,17 +106,15 @@ export const Default: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
 				</Combobox>
 				<p className="text-muted-foreground mt-4 text-xs">
-					Note: ComboboxTrigger is built into ComboboxInput by default. The
-					trigger button with the dropdown icon is automatically included.
+					Note: ComboboxTrigger is built into ComboboxInput by default. The trigger button with the
+					dropdown icon is automatically included.
 				</p>
 			</div>
 		)
@@ -124,8 +122,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default ComboboxTrigger is built into ComboboxInput and shows a dropdown icon.",
+				story: "Default ComboboxTrigger is built into ComboboxInput and shows a dropdown icon.",
 			},
 		},
 	},
@@ -144,22 +141,14 @@ export const StandaloneTrigger: Story = {
 						setValue(newValue as string | null)
 					}}
 				>
-			<InputGroup className="w-auto">
-				<InputGroupInput
-					placeholder="Select a fruit..."
-					readOnly
-					value={
-						value
-							? fruits.find((f) => f.value === value)?.label || ""
-							: ""
-					}
-				/>
+					<InputGroup className="w-auto">
+						<InputGroupInput
+							placeholder="Select a fruit..."
+							readOnly
+							value={value ? fruits.find((f) => f.value === value)?.label || "" : ""}
+						/>
 						<InputGroupAddon align="inline-end">
-							<InputGroupButton
-								size="icon-xs"
-								variant="ghost"
-								render={<ComboboxTrigger />}
-							>
+							<InputGroupButton size="icon-xs" variant="ghost" render={<ComboboxTrigger />}>
 								<CaretUpDownIcon className="size-4" />
 							</InputGroupButton>
 						</InputGroupAddon>
@@ -167,9 +156,7 @@ export const StandaloneTrigger: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -181,8 +168,7 @@ export const StandaloneTrigger: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxTrigger used as a standalone button with custom icon.",
+				story: "ComboboxTrigger used as a standalone button with custom icon.",
 			},
 		},
 	},
@@ -206,9 +192,7 @@ export const Disabled: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>

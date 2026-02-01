@@ -54,8 +54,7 @@ This component is built on top of [Base UI Combobox.List](https://base-ui.com/re
 	argTypes: {
 		// Base UI Props
 		children: {
-			description:
-				"A render function that receives each item and returns a ReactNode.",
+			description: "A render function that receives each item and returns a ReactNode.",
 			table: {
 				type: { summary: "ReactNode | ((item: any, index: number) => ReactNode)" },
 				defaultValue: { summary: "undefined" },
@@ -97,9 +96,7 @@ export const Default: Story = {
 					<ComboboxContent>
 						<ComboboxList {...args}>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -134,9 +131,7 @@ export const ScrollableList: Story = {
 					<ComboboxContent>
 						<ComboboxList {...args}>
 							{(item: (typeof manyFruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
@@ -148,8 +143,7 @@ export const ScrollableList: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxList with many items, demonstrating scrollable behavior.",
+				story: "ComboboxList with many items, demonstrating scrollable behavior.",
 			},
 		},
 	},
@@ -172,9 +166,7 @@ export const WithCustomStyling: Story = {
 					<ComboboxContent>
 						<ComboboxList {...args}>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>

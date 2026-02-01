@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FileIcon } from "@phosphor-icons/react"
-import {
-	Item,
-	ItemMedia,
-	ItemContent,
-	ItemTitle,
-	ItemDescription,
-} from "~/components/ui/item"
+import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription } from "~/components/ui/item"
 
 const meta = {
 	title: "UI/Item/ItemDescription",
@@ -56,9 +50,7 @@ export const Default: Story = {
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>Document.pdf</ItemTitle>
-				<ItemDescription {...args}>
-					Last modified 2 hours ago
-				</ItemDescription>
+				<ItemDescription {...args}>Last modified 2 hours ago</ItemDescription>
 			</ItemContent>
 		</Item>
 	),
@@ -106,9 +98,9 @@ export const LongDescription: Story = {
 			<ItemContent>
 				<ItemTitle>Document.pdf</ItemTitle>
 				<ItemDescription {...args}>
-					This is a very long description that will be truncated with ellipsis
-					when it exceeds two lines of text. The description supports multiple
-					lines but will be cut off if it's too long.
+					This is a very long description that will be truncated with ellipsis when it exceeds two
+					lines of text. The description supports multiple lines but will be cut off if it's too
+					long.
 				</ItemDescription>
 			</ItemContent>
 		</Item>
@@ -130,9 +122,7 @@ export const WithExtraSmallItem: Story = {
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>Document.pdf</ItemTitle>
-				<ItemDescription {...args}>
-					Last modified 2 hours ago
-				</ItemDescription>
+				<ItemDescription {...args}>Last modified 2 hours ago</ItemDescription>
 			</ItemContent>
 		</Item>
 	),
@@ -154,8 +144,7 @@ export const MultipleLines: Story = {
 			<ItemContent>
 				<ItemTitle>Document.pdf</ItemTitle>
 				<ItemDescription {...args}>
-					Last modified 2 hours ago. This document contains important
-					information about the project.
+					Last modified 2 hours ago. This document contains important information about the project.
 				</ItemDescription>
 			</ItemContent>
 		</Item>

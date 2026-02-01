@@ -11,12 +11,7 @@ import {
 	SidebarMenuItem,
 	SidebarMenuButton,
 } from "~/components/ui/sidebar"
-import {
-	HouseIcon,
-	FileIcon,
-	GearIcon,
-	PlusIcon,
-} from "@phosphor-icons/react"
+import { HouseIcon, FileIcon, GearIcon, PlusIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Sidebar/SidebarGroup",
@@ -141,8 +136,7 @@ export const WithAction: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sidebar group with an action button that appears next to the label.",
+				story: "Sidebar group with an action button that appears next to the label.",
 			},
 		},
 	},
@@ -178,8 +172,7 @@ export const WithGroupContent: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							Sidebar group using SidebarGroupContent wrapper for additional
-							styling control.
+							Sidebar group using SidebarGroupContent wrapper for additional styling control.
 						</p>
 					</div>
 				</main>
@@ -189,8 +182,7 @@ export const WithGroupContent: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sidebar group using SidebarGroupContent for wrapping menu content.",
+				story: "Sidebar group using SidebarGroupContent for wrapping menu content.",
 			},
 		},
 	},

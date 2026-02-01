@@ -27,8 +27,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Props
 		inset: {
-			description:
-				"When true, adds left padding to align with items that have icons.",
+			description: "When true, adds left padding to align with items that have icons.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -48,8 +47,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -58,8 +56,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		openOnHover: {
-			description:
-				"Whether the menu should also open when the trigger is hovered.",
+			description: "Whether the menu should also open when the trigger is hovered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "undefined" },
@@ -146,9 +143,7 @@ export const Disabled: Story = {
 					<DropdownMenuItem>Copy</DropdownMenuItem>
 					<DropdownMenuItem>Cut</DropdownMenuItem>
 					<DropdownMenuSub>
-						<DropdownMenuSubTrigger disabled>
-							More Options (disabled)
-						</DropdownMenuSubTrigger>
+						<DropdownMenuSubTrigger disabled>More Options (disabled)</DropdownMenuSubTrigger>
 						<DropdownMenuSubContent>
 							<DropdownMenuItem>Option 1</DropdownMenuItem>
 							<DropdownMenuItem>Option 2</DropdownMenuItem>

@@ -55,12 +55,10 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the checkbox item is ticked or unticked.",
+			description: "Event handler called when the checkbox item is ticked or unticked.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -86,8 +84,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -133,12 +130,8 @@ export const Default: Story = {
 						>
 							Show line numbers
 						</MenubarCheckboxItem>
-						<MenubarCheckboxItem checked={true}>
-							Word wrap
-						</MenubarCheckboxItem>
-						<MenubarCheckboxItem checked={false}>
-							Minimap
-						</MenubarCheckboxItem>
+						<MenubarCheckboxItem checked={true}>Word wrap</MenubarCheckboxItem>
+						<MenubarCheckboxItem checked={false}>Minimap</MenubarCheckboxItem>
 					</MenubarContent>
 				</MenubarMenu>
 			</Menubar>
@@ -162,15 +155,9 @@ export const Uncontrolled: Story = {
 				<MenubarMenu open={open} onOpenChange={setOpen}>
 					<MenubarTrigger>View</MenubarTrigger>
 					<MenubarContent>
-						<MenubarCheckboxItem defaultChecked={false}>
-							Show line numbers
-						</MenubarCheckboxItem>
-						<MenubarCheckboxItem defaultChecked={true}>
-							Word wrap
-						</MenubarCheckboxItem>
-						<MenubarCheckboxItem defaultChecked={false}>
-							Minimap
-						</MenubarCheckboxItem>
+						<MenubarCheckboxItem defaultChecked={false}>Show line numbers</MenubarCheckboxItem>
+						<MenubarCheckboxItem defaultChecked={true}>Word wrap</MenubarCheckboxItem>
+						<MenubarCheckboxItem defaultChecked={false}>Minimap</MenubarCheckboxItem>
 					</MenubarContent>
 				</MenubarMenu>
 			</Menubar>

@@ -209,8 +209,7 @@ This component is built on top of [Base UI Input](https://base-ui.com/react/comp
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Input.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Input.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -238,8 +237,7 @@ This component is built on top of [Base UI Input](https://base-ui.com/react/comp
 			control: { type: "text" },
 		},
 		"aria-describedby": {
-			description:
-				"Identifies the element(s) that describe the input.",
+			description: "Identifies the element(s) that describe the input.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -371,19 +369,14 @@ export const States: Story = {
 			</div>
 			<div>
 				<label className="text-sm font-medium mb-1 block">Invalid</label>
-				<Input
-					placeholder="Invalid input"
-					aria-invalid="true"
-					defaultValue="invalid@"
-				/>
+				<Input placeholder="Invalid input" aria-invalid="true" defaultValue="invalid@" />
 			</div>
 		</div>
 	),
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Different input states: default, disabled, read-only, required, and invalid.",
+				story: "Different input states: default, disabled, read-only, required, and invalid.",
 			},
 		},
 	},
@@ -393,21 +386,15 @@ export const WithConstraints: Story = {
 	render: () => (
 		<div className="flex flex-col gap-4 w-64">
 			<div>
-				<label className="text-sm font-medium mb-1 block">
-					Max Length (10 characters)
-				</label>
+				<label className="text-sm font-medium mb-1 block">Max Length (10 characters)</label>
 				<Input placeholder="Max 10 chars" maxLength={10} />
 			</div>
 			<div>
-				<label className="text-sm font-medium mb-1 block">
-					Min Length (5 characters)
-				</label>
+				<label className="text-sm font-medium mb-1 block">Min Length (5 characters)</label>
 				<Input placeholder="Min 5 chars" minLength={5} />
 			</div>
 			<div>
-				<label className="text-sm font-medium mb-1 block">
-					Pattern (numbers only)
-				</label>
+				<label className="text-sm font-medium mb-1 block">Pattern (numbers only)</label>
 				<Input placeholder="Numbers only" pattern="[0-9]*" />
 			</div>
 		</div>
@@ -486,8 +473,7 @@ export const WithAutoComplete: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Input fields with autocomplete attributes to help browsers provide suggestions.",
+				story: "Input fields with autocomplete attributes to help browsers provide suggestions.",
 			},
 		},
 	},

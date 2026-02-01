@@ -114,8 +114,7 @@ This component is built on top of [Base UI Menubar](https://base-ui.com/react/co
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Menubar.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Menubar.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -282,8 +281,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menubar menu with grouped items and labels for better organization.",
+				story: "Menubar menu with grouped items and labels for better organization.",
 			},
 		},
 	},

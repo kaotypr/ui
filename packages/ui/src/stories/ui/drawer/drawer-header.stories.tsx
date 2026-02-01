@@ -53,14 +53,10 @@ export const Default: Story = {
 				<DrawerContent>
 					<DrawerHeader {...args}>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -74,8 +70,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default drawer header with title and description.",
+				story: "Default drawer header with title and description.",
 			},
 		},
 	},
@@ -95,9 +90,7 @@ export const TitleOnly: Story = {
 						<DrawerTitle>Simple Title</DrawerTitle>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -111,8 +104,7 @@ export const TitleOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer header with only a title, no description.",
+				story: "Drawer header with only a title, no description.",
 			},
 		},
 	},
@@ -130,14 +122,10 @@ export const WithCustomStyling: Story = {
 				<DrawerContent>
 					<DrawerHeader className="border-b pb-4">
 						<DrawerTitle>Custom Styled Header</DrawerTitle>
-						<DrawerDescription>
-							The header can be customized with className.
-						</DrawerDescription>
+						<DrawerDescription>The header can be customized with className.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -151,8 +139,7 @@ export const WithCustomStyling: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer header with custom styling applied via className.",
+				story: "Drawer header with custom styling applied via className.",
 			},
 		},
 	},

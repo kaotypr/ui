@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	ResizablePanelGroup,
-	ResizablePanel,
-	ResizableHandle,
-} from "~/components/ui/resizable"
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "~/components/ui/resizable"
 
 const meta = {
 	title: "UI/Resizable",
@@ -130,9 +126,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 1</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -141,9 +135,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 2</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -153,8 +145,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default resizable panel group with two panels that can be resized horizontally.",
+				story: "Default resizable panel group with two panels that can be resized horizontally.",
 			},
 		},
 	},
@@ -168,9 +159,7 @@ export const Vertical: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Top Panel</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -179,9 +168,7 @@ export const Vertical: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Bottom Panel</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -191,8 +178,7 @@ export const Vertical: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Resizable panel group with vertical orientation, stacking panels vertically.",
+				story: "Resizable panel group with vertical orientation, stacking panels vertically.",
 			},
 		},
 	},
@@ -262,8 +248,7 @@ export const WithHandle: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Resizable panel group with a visible handle indicator on the separator.",
+				story: "Resizable panel group with a visible handle indicator on the separator.",
 			},
 		},
 	},

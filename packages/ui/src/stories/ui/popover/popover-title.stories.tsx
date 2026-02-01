@@ -54,9 +54,7 @@ export const Default: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle {...args}>Popover Title</PopoverTitle>
-						<PopoverDescription>
-							This is the default title styling.
-						</PopoverDescription>
+						<PopoverDescription>This is the default title styling.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>
@@ -83,8 +81,7 @@ export const LongTitle: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>
-							This is a longer title that demonstrates how the component
-							handles text wrapping
+							This is a longer title that demonstrates how the component handles text wrapping
 						</PopoverTitle>
 						<PopoverDescription>
 							The title will wrap to multiple lines if needed.
@@ -118,8 +115,7 @@ export const CustomStyling: Story = {
 							Custom Styled Title
 						</PopoverTitle>
 						<PopoverDescription>
-							Title with custom styling including larger font size, bold weight,
-							and custom color.
+							Title with custom styling including larger font size, bold weight, and custom color.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>

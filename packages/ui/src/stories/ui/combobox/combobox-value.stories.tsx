@@ -37,8 +37,7 @@ This component is built on top of [Base UI Combobox.Value](https://base-ui.com/r
 	argTypes: {
 		// Base UI Props
 		placeholder: {
-			description:
-				"The placeholder value to display when no value is selected.",
+			description: "The placeholder value to display when no value is selected.",
 			table: {
 				type: { summary: "ReactNode" },
 				defaultValue: { summary: "undefined" },
@@ -48,8 +47,7 @@ This component is built on top of [Base UI Combobox.Value](https://base-ui.com/r
 		},
 		// Props
 		children: {
-			description:
-				"A render function that receives the selected value and returns a ReactNode.",
+			description: "A render function that receives the selected value and returns a ReactNode.",
 			table: {
 				type: { summary: "ReactNode | ((selectedValue: any) => ReactNode)" },
 				defaultValue: { summary: "undefined" },
@@ -81,18 +79,14 @@ export const Default: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
 				</Combobox>
 				<div className="bg-muted mt-4 rounded-md p-3">
-					<p className="text-muted-foreground mb-1 text-xs font-medium">
-						Current Value:
-					</p>
+					<p className="text-muted-foreground mb-1 text-xs font-medium">Current Value:</p>
 					<Combobox
 						items={fruits}
 						value={value}
@@ -116,8 +110,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxValue displaying the current selection with a custom render function.",
+				story: "ComboboxValue displaying the current selection with a custom render function.",
 			},
 		},
 	},
@@ -140,18 +133,14 @@ export const WithPlaceholder: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
 					</ComboboxContent>
 				</Combobox>
 				<div className="bg-muted mt-4 rounded-md p-3">
-					<p className="text-muted-foreground mb-1 text-xs font-medium">
-						Selected Value Display:
-					</p>
+					<p className="text-muted-foreground mb-1 text-xs font-medium">Selected Value Display:</p>
 					<Combobox
 						items={fruits}
 						value={value}
@@ -162,9 +151,7 @@ export const WithPlaceholder: Story = {
 						<div className="text-sm">
 							<ComboboxValue
 								placeholder={
-									<span className="text-muted-foreground italic">
-										No fruit selected
-									</span>
+									<span className="text-muted-foreground italic">No fruit selected</span>
 								}
 							/>
 						</div>
@@ -227,9 +214,7 @@ export const CustomRenderFunction: Story = {
 					</ComboboxContent>
 				</Combobox>
 				<div className="bg-muted mt-4 rounded-md p-3">
-					<p className="text-muted-foreground mb-1 text-xs font-medium">
-						Custom Value Display:
-					</p>
+					<p className="text-muted-foreground mb-1 text-xs font-medium">Custom Value Display:</p>
 					<Combobox
 						items={detailedFruits}
 						value={value}
@@ -240,9 +225,7 @@ export const CustomRenderFunction: Story = {
 						<div className="text-sm">
 							<ComboboxValue placeholder="Select a fruit">
 								{(selectedValue: string) => {
-									const fruit = detailedFruits.find(
-										(f) => f.value === selectedValue,
-									)
+									const fruit = detailedFruits.find((f) => f.value === selectedValue)
 									if (!fruit) return selectedValue
 									return (
 										<span className={`font-medium ${fruit.color}`}>
@@ -260,8 +243,7 @@ export const CustomRenderFunction: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"ComboboxValue with a custom render function that displays emoji and colored text.",
+				story: "ComboboxValue with a custom render function that displays emoji and colored text.",
 			},
 		},
 	},

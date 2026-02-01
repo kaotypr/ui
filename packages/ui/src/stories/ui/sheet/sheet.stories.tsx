@@ -58,12 +58,10 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the sheet is opened or closed.",
+			description: "Event handler called when the sheet is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -82,8 +80,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			options: [true, false, "trap-focus"],
 		},
 		disablePointerDismissal: {
-			description:
-				"Determines whether the sheet should close on outside clicks.",
+			description: "Determines whether the sheet should close on outside clicks.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -132,9 +129,7 @@ export const Default: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<SheetFooter>
 						<Button variant="outline">Cancel</Button>
@@ -147,8 +142,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default sheet with trigger button, title, description, and action buttons.",
+				story: "Default sheet with trigger button, title, description, and action buttons.",
 			},
 		},
 	},
@@ -160,9 +154,7 @@ export const Controlled: Story = {
 
 		return (
 			<div className="space-y-4">
-				<Button onClick={() => setOpen(!open)}>
-					{open ? "Close Sheet" : "Open Sheet"}
-				</Button>
+				<Button onClick={() => setOpen(!open)}>{open ? "Close Sheet" : "Open Sheet"}</Button>
 				<Sheet
 					{...args}
 					open={open}
@@ -174,9 +166,7 @@ export const Controlled: Story = {
 					<SheetContent>
 						<SheetHeader>
 							<SheetTitle>Controlled Sheet</SheetTitle>
-							<SheetDescription>
-								This sheet's open state is controlled externally.
-							</SheetDescription>
+							<SheetDescription>This sheet's open state is controlled externally.</SheetDescription>
 						</SheetHeader>
 						<SheetFooter>
 							<Button variant="outline" onClick={() => setOpen(false)}>
@@ -217,9 +207,7 @@ export const DifferentSides: Story = {
 					<SheetContent side="top">
 						<SheetHeader>
 							<SheetTitle>Top Sheet</SheetTitle>
-							<SheetDescription>
-								This sheet slides in from the top.
-							</SheetDescription>
+							<SheetDescription>This sheet slides in from the top.</SheetDescription>
 						</SheetHeader>
 					</SheetContent>
 				</Sheet>
@@ -232,9 +220,7 @@ export const DifferentSides: Story = {
 						<SheetContent side="left">
 							<SheetHeader>
 								<SheetTitle>Left Sheet</SheetTitle>
-								<SheetDescription>
-									This sheet slides in from the left.
-								</SheetDescription>
+								<SheetDescription>This sheet slides in from the left.</SheetDescription>
 							</SheetHeader>
 						</SheetContent>
 					</Sheet>
@@ -246,9 +232,7 @@ export const DifferentSides: Story = {
 						<SheetContent side="right">
 							<SheetHeader>
 								<SheetTitle>Right Sheet</SheetTitle>
-								<SheetDescription>
-									This sheet slides in from the right.
-								</SheetDescription>
+								<SheetDescription>This sheet slides in from the right.</SheetDescription>
 							</SheetHeader>
 						</SheetContent>
 					</Sheet>
@@ -261,9 +245,7 @@ export const DifferentSides: Story = {
 					<SheetContent side="bottom">
 						<SheetHeader>
 							<SheetTitle>Bottom Sheet</SheetTitle>
-							<SheetDescription>
-								This sheet slides in from the bottom.
-							</SheetDescription>
+							<SheetDescription>This sheet slides in from the bottom.</SheetDescription>
 						</SheetHeader>
 					</SheetContent>
 				</Sheet>
@@ -273,8 +255,7 @@ export const DifferentSides: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates sheets positioned on different sides of the screen.",
+				story: "Demonstrates sheets positioned on different sides of the screen.",
 			},
 		},
 	},
@@ -293,8 +274,8 @@ export const WithoutCloseButton: Story = {
 					<SheetHeader>
 						<SheetTitle>Sheet without close button</SheetTitle>
 						<SheetDescription>
-							This sheet doesn't have a close button in the top-right corner.
-							Users must use the footer buttons or press Escape to close it.
+							This sheet doesn't have a close button in the top-right corner. Users must use the
+							footer buttons or press Escape to close it.
 						</SheetDescription>
 					</SheetHeader>
 					<SheetFooter>
@@ -310,8 +291,7 @@ export const WithoutCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet without the default close button in the top-right corner.",
+				story: "Sheet without the default close button in the top-right corner.",
 			},
 		},
 	},
@@ -330,8 +310,8 @@ export const NonModal: Story = {
 					<SheetHeader>
 						<SheetTitle>Non-Modal Sheet</SheetTitle>
 						<SheetDescription>
-							This sheet allows interaction with the rest of the page. Focus is
-							not trapped and page scrolling is not locked.
+							This sheet allows interaction with the rest of the page. Focus is not trapped and page
+							scrolling is not locked.
 						</SheetDescription>
 					</SheetHeader>
 					<SheetFooter>
@@ -346,8 +326,7 @@ export const NonModal: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Non-modal sheet that allows interaction with the rest of the page.",
+				story: "Non-modal sheet that allows interaction with the rest of the page.",
 			},
 		},
 	},

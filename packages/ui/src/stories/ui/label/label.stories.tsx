@@ -29,8 +29,7 @@ Labels provide accessible text descriptions for form elements and can be associa
 			control: { type: "text" },
 		},
 		form: {
-			description:
-				"The id of the form element this label is associated with.",
+			description: "The id of the form element this label is associated with.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -79,8 +78,7 @@ Labels provide accessible text descriptions for form elements and can be associa
 			control: { type: "text" },
 		},
 		"aria-labelledby": {
-			description:
-				"Identifies the element(s) that label the label element.",
+			description: "Identifies the element(s) that label the label element.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -136,12 +134,7 @@ export const Required: Story = {
 			<Label {...args} htmlFor="required-input">
 				Email <span className="text-destructive">*</span>
 			</Label>
-			<Input
-				id="required-input"
-				type="email"
-				placeholder="Enter your email"
-				required
-			/>
+			<Input id="required-input" type="email" placeholder="Enter your email" required />
 		</div>
 	),
 	args: {
@@ -162,12 +155,7 @@ export const WithDisabledInput: Story = {
 			<Label {...args} htmlFor="disabled-input">
 				Disabled Field
 			</Label>
-			<Input
-				id="disabled-input"
-				type="text"
-				placeholder="This input is disabled"
-				disabled
-			/>
+			<Input id="disabled-input" type="text" placeholder="This input is disabled" disabled />
 		</div>
 	),
 	args: {
@@ -194,20 +182,11 @@ export const MultipleFields: Story = {
 				<Label htmlFor="email-input">
 					Email <span className="text-destructive">*</span>
 				</Label>
-				<Input
-					id="email-input"
-					type="email"
-					placeholder="Enter your email"
-					required
-				/>
+				<Input id="email-input" type="email" placeholder="Enter your email" required />
 			</div>
 			<div className="flex flex-col gap-2">
 				<Label htmlFor="password-input">Password</Label>
-				<Input
-					id="password-input"
-					type="password"
-					placeholder="Enter your password"
-				/>
+				<Input id="password-input" type="password" placeholder="Enter your password" />
 			</div>
 		</div>
 	),
@@ -224,9 +203,7 @@ export const WithDescription: Story = {
 	render: () => (
 		<div className="flex flex-col gap-2 w-64">
 			<Label htmlFor="username-input">Username</Label>
-			<p className="text-xs text-muted-foreground">
-				Choose a unique username for your account
-			</p>
+			<p className="text-xs text-muted-foreground">Choose a unique username for your account</p>
 			<Input id="username-input" type="text" placeholder="Enter username" />
 		</div>
 	),

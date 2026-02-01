@@ -56,8 +56,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		children: {
-			description:
-				"The content to display (icons, text, buttons, or any React node).",
+			description: "The content to display (icons, text, buttons, or any React node).",
 			table: {
 				type: { summary: "React.ReactNode" },
 				defaultValue: { summary: "undefined" },
