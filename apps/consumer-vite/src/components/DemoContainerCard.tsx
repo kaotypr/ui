@@ -17,13 +17,8 @@ interface DemoContainerCardProps {
 	footer?: React.ReactNode
 }
 
-const DemoContainerCard = ({
-	title,
-	description,
-	content,
-	footer,
-}: DemoContainerCardProps) => {
-	const [isDarkMode, setIsDarkMode] = useState(false);
+const DemoContainerCard = ({ title, description, content, footer }: DemoContainerCardProps) => {
+	const [isDarkMode, setIsDarkMode] = useState(false)
 
 	return (
 		<Card className={`w-md my-4 block relative${isDarkMode ? " dark" : ""}`}>
@@ -32,10 +27,13 @@ const DemoContainerCard = ({
 				<CardDescription>{description}</CardDescription>
 			</CardHeader>
 			<CardContent className="p-2">{content}</CardContent>
-			{footer && (
-				<CardFooter>{footer}</CardFooter>
-			)}
-			<Button size="icon-sm" variant="secondary" className="absolute top-2 right-2" onClick={() => setIsDarkMode(!isDarkMode)}>
+			{footer && <CardFooter>{footer}</CardFooter>}
+			<Button
+				size="icon-sm"
+				variant="secondary"
+				className="absolute top-2 right-2"
+				onClick={() => setIsDarkMode(!isDarkMode)}
+			>
 				{isDarkMode ? <Sun className="size-4" /> : <Moon className="size-4" />}
 			</Button>
 		</Card>
