@@ -8,9 +8,9 @@
  * Output: public/docs/components/*.md
  */
 
-import fs from "fs/promises"
-import path from "path"
-import { fileURLToPath } from "url"
+import fs from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = path.resolve(__dirname, "..")
@@ -40,7 +40,10 @@ function stripJsx(content) {
   })
 
   // Remove self-closing JSX tags: <ComponentPreview name="..." />
-  body = body.replace(/<[A-Z][a-zA-Z]*(?:\s+[a-zA-Z]+(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}))?)*\s*\/>/g, "")
+  body = body.replace(
+    /<[A-Z][a-zA-Z]*(?:\s+[a-zA-Z]+(?:=(?:"[^"]*"|'[^']*'|\{[^}]*\}))?)*\s*\/>/g,
+    "",
+  )
 
   // Remove JSX tags with content: <Component>...</Component>
   // Handle nested tags by repeatedly removing innermost tags
@@ -58,7 +61,7 @@ function stripJsx(content) {
   body = body.replace(/^export\s+(?!default).*$/gm, "")
 
   // Restore code blocks
-  body = body.replace(/__CODE_BLOCK_(\d+)__/g, (_, index) => codeBlocks[parseInt(index)])
+  body = body.replace(/__CODE_BLOCK_(\d+)__/g, (_, index) => codeBlocks[Number.parseInt(index, 10)])
 
   // Clean up multiple consecutive blank lines
   body = body.replace(/\n{3,}/g, "\n\n")
@@ -105,15 +108,15 @@ async function main() {
       await fs.writeFile(outputPath, markdown, "utf-8")
       console.log(`  ${file.name} -> ${outputName}`)
       converted++
-    } catch (err) {
-      console.error(`  Error converting ${file.name}:`, err.message)
+    } catch (_err) {
+      console.error(`  Error converting ${file.name}:`, _err.message)
     }
   }
 
   console.log(`Converted ${converted} files to ${OUTPUT_DIR}`)
 }
 
-main().catch((err) => {
-  console.error("Error converting MDX to MD:", err)
+main().catch((_err) => {
+  console.error("Error converting MDX to MD:", _err.message)
   process.exit(1)
 })

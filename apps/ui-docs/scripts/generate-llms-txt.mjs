@@ -8,9 +8,9 @@
  * Output: public/llms.txt
  */
 
-import fs from "fs/promises"
-import path from "path"
-import { fileURLToPath } from "url"
+import fs from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = path.resolve(__dirname, "..")
@@ -37,7 +37,8 @@ async function scanForMarkdown(dir, basePath = "") {
         files.push(relativePath)
       }
     }
-  } catch (err) {
+  } catch (_err) {
+    console.error("Error scanning for markdown files:", _err.message)
     // Directory doesn't exist or can't be read
   }
 
@@ -57,9 +58,7 @@ async function main() {
   }
 
   // Generate URLs
-  const urls = mdFiles
-    .sort()
-    .map((file) => `${BASE_URL}/docs/${file}`)
+  const urls = mdFiles.sort().map((file) => `${BASE_URL}/docs/${file}`)
 
   // Build llms.txt content
   const content = [
@@ -83,7 +82,7 @@ async function main() {
   console.log(`Listed ${urls.length} documentation URLs`)
 }
 
-main().catch((err) => {
-  console.error("Error generating llms.txt:", err)
+main().catch((_err) => {
+  console.error("Error generating llms.txt:", _err.message)
   process.exit(1)
 })

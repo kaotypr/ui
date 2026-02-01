@@ -1,27 +1,27 @@
-import Link from 'next/link';
+import Link from "next/link"
 
 const features = [
   {
-    title: 'Built on Base UI',
+    title: "Built on Base UI",
     description:
-      'Accessible, unstyled primitives that handle complex interactions and keyboard navigation out of the box.',
+      "Accessible, unstyled primitives that handle complex interactions and keyboard navigation out of the box.",
   },
   {
-    title: 'Tailwind CSS Styling',
+    title: "Tailwind CSS Styling",
     description:
-      'Fully customizable with Tailwind CSS. Easily adapt components to match your design system.',
+      "Fully customizable with Tailwind CSS. Easily adapt components to match your design system.",
   },
   {
-    title: 'TypeScript First',
+    title: "TypeScript First",
     description:
-      'Complete type definitions for all components, ensuring type safety and excellent IDE support.',
+      "Complete type definitions for all components, ensuring type safety and excellent IDE support.",
   },
   {
-    title: '60+ Components',
+    title: "60+ Components",
     description:
-      'A comprehensive collection of production-ready components for building modern web applications.',
+      "A comprehensive collection of production-ready components for building modern web applications.",
   },
-];
+]
 
 export default function HomePage() {
   return (
@@ -29,8 +29,8 @@ export default function HomePage() {
       <section className="flex flex-col items-center justify-center text-center py-20 px-4">
         <h1 className="text-4xl font-bold mb-4">@kaotypr/ui</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-          A collection of beautifully designed, accessible React components built
-          with Radix UI and Tailwind CSS.
+          A collection of beautifully designed, accessible React components built with Radix UI and
+          Tailwind CSS.
         </p>
         <div className="flex gap-4">
           <Link
@@ -57,14 +57,12 @@ export default function HomePage() {
                 className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
               >
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
     </div>
-  );
+  )
 }

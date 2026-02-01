@@ -1,6 +1,6 @@
-import { Provider } from '@/components/provider';
-import { type ReactNode } from 'react';
-import './global.css';
+import type { ReactNode } from "react"
+import { Provider } from "@/components/provider"
+import "./global.css"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -9,5 +9,5 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Provider>{children}</Provider>
       </body>
     </html>
-  );
+  )
 }

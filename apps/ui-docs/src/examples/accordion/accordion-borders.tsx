@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@kaotypr/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@kaotypr/ui/accordion"
 
 const items = [
   {
@@ -28,10 +23,7 @@ const items = [
 
 export default function AccordionBorders() {
   return (
-    <Accordion
-      className="max-w-lg rounded-lg border"
-      defaultValue={["billing"]}
-    >
+    <Accordion className="max-w-lg rounded-lg border" defaultValue={["billing"]}>
       {items.map((item) => (
         <AccordionItem
           key={item.value}

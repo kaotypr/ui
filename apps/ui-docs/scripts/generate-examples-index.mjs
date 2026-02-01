@@ -7,9 +7,9 @@
  * Output: content/docs/_examplesIndex.json
  */
 
-import fs from "fs/promises"
-import path from "path"
-import { fileURLToPath } from "url"
+import fs from "node:fs/promises"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = path.resolve(__dirname, "..")
@@ -23,13 +23,15 @@ async function extractTags(filePath) {
   try {
     const content = await fs.readFile(filePath, "utf-8")
     const tagMatch = content.match(/\/\*\*[\s\S]*?@tags\s+([^\n*]+)[\s\S]*?\*\//)
+    // biome-ignore lint/complexity/useOptionalChain: suppress optional chain warning
     if (tagMatch && tagMatch[1]) {
       return tagMatch[1]
         .split(",")
         .map((tag) => tag.trim())
         .filter(Boolean)
     }
-  } catch (err) {
+  } catch (_err) {
+    console.error("Error reading file:", _err.message)
     // File read error, return empty tags
   }
   return []

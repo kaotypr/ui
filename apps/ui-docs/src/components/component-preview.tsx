@@ -10,7 +10,12 @@ interface ComponentPreviewProps {
   [key: string]: any
 }
 
-export async function ComponentPreview({ name, className, align, ...props }: ComponentPreviewProps) {
+export async function ComponentPreview({
+  name,
+  className,
+  align,
+  ...props
+}: ComponentPreviewProps) {
   let entry: any = null
   for (const group in ExamplesIndex) {
     if (ExamplesIndex[group][name]) {

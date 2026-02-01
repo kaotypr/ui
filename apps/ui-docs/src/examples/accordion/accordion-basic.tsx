@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@kaotypr/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@kaotypr/ui/accordion"
 
 const items = [
   {

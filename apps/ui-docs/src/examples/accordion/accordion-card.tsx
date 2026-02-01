@@ -1,16 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@kaotypr/ui/accordion"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@kaotypr/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@kaotypr/ui/accordion"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaotypr/ui/card"
 
 const items = [
   {
@@ -39,8 +28,7 @@ export default function AccordionCard() {
       <CardHeader>
         <CardTitle>Subscription & Billing</CardTitle>
         <CardDescription>
-          Common questions about your account, plans, payments and
-          cancellations.
+          Common questions about your account, plans, payments and cancellations.
         </CardDescription>
       </CardHeader>
       <CardContent>

@@ -1,9 +1,9 @@
 "use client"
 
-import * as React from "react"
-import { Check, ChevronDown, ChevronUp, Code, Copy } from "lucide-react"
-import { Card, CardContent } from "@kaotypr/ui/card"
 import { Button } from "@kaotypr/ui/button"
+import { Card, CardContent } from "@kaotypr/ui/card"
+import { Check, ChevronDown, ChevronUp, Code, Copy } from "lucide-react"
+import * as React from "react"
 
 interface ComponentPreviewClientProps {
   children: React.ReactNode
@@ -13,7 +13,6 @@ interface ComponentPreviewClientProps {
   align?: "center" | "start" | "end"
 }
 
-const COLLAPSED_LINES = 5
 const COLLAPSED_HEIGHT = "8rem"
 const EXPANDED_MAX_HEIGHT = "24rem"
 
