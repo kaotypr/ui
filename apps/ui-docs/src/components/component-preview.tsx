@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ExamplesIndex } from "@/examples/__index__"
 import { ComponentPreviewClient } from "./component-preview-client"
-import { ComponentSource } from "./component-source"
+import { getComponentSource } from "./component-source"
 
 interface ComponentPreviewProps {
   name: string
@@ -10,7 +10,7 @@ interface ComponentPreviewProps {
   [key: string]: any
 }
 
-export function ComponentPreview({ name, className, align, ...props }: ComponentPreviewProps) {
+export async function ComponentPreview({ name, className, align, ...props }: ComponentPreviewProps) {
   let entry: any = null
   for (const group in ExamplesIndex) {
     if (ExamplesIndex[group][name]) {
@@ -24,10 +24,22 @@ export function ComponentPreview({ name, className, align, ...props }: Component
   }
 
   const PreviewComponent = entry.component
+  const { element: sourceElement, rawSource } = await getComponentSource(name)
 
   return (
-    <ComponentPreviewClient source={<ComponentSource name={name} />} className={className} align={align}>
-      <React.Suspense fallback={<div className="flex items-center justify-center text-sm text-muted-foreground">Loading preview...</div>}>
+    <ComponentPreviewClient
+      source={<div className="[&_pre]:!m-0 [&_pre]:!rounded-none">{sourceElement}</div>}
+      rawSource={rawSource}
+      className={className}
+      align={align}
+    >
+      <React.Suspense
+        fallback={
+          <div className="flex items-center justify-center text-sm text-muted-foreground">
+            Loading preview...
+          </div>
+        }
+      >
         <PreviewComponent {...props} />
       </React.Suspense>
     </ComponentPreviewClient>

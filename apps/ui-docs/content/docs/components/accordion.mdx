@@ -13,6 +13,17 @@ description: A vertically stacked set of interactive headings that each reveal a
 npm install @kaotypr/ui
 ```
 
+## Import
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@kaotypr/ui/accordion"
+```
+
 ## Examples
 
 ### Basic
@@ -34,3 +45,45 @@ npm install @kaotypr/ui
 ### Disabled Items
 
 <ComponentPreview name="accordion-disabled" />
+
+## API Reference
+
+### Accordion
+
+The root component that wraps all accordion items.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string[]` | `[]` | The default expanded item values (uncontrolled) |
+| `value` | `string[]` | - | The controlled expanded item values |
+| `onValueChange` | `(value: string[]) => void` | - | Callback when expanded items change |
+| `disabled` | `boolean` | `false` | Whether all items are disabled |
+| `className` | `string` | - | Additional CSS classes |
+
+### AccordionItem
+
+A single collapsible item in the accordion.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | **Required** | Unique identifier for this item |
+| `disabled` | `boolean` | `false` | Whether this item is disabled |
+| `className` | `string` | - | Additional CSS classes |
+
+### AccordionTrigger
+
+The clickable header that toggles the accordion item.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content |
+| `className` | `string` | - | Additional CSS classes |
+
+### AccordionContent
+
+The collapsible content panel.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The panel content |
+| `className` | `string` | - | Additional CSS classes |

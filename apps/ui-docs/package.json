@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "generate:examples": "node scripts/generate-examples-index.mjs",
+    "generate:md": "node scripts/mdx-to-md.mjs",
+    "generate:llms": "node scripts/generate-llms-txt.mjs",
+    "generate": "pnpm generate:examples && pnpm generate:md && pnpm generate:llms",
+    "prebuild": "pnpm generate",
     "build": "next build",
     "dev": "next dev",
     "start": "serve out",

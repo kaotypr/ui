@@ -3,6 +3,9 @@
 
 # generated content
 .source
+public/docs/
+src/examples/_examplesIndex.json
+public/llms.txt
 
 # test & build
 /coverage
