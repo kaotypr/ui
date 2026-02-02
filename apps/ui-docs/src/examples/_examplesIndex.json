@@ -1,0 +1,1938 @@
+{
+  "accordion": [
+    {
+      "name": "accordion-basic",
+      "filePath": "src/examples/accordion/accordion-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "accordion-borders",
+      "filePath": "src/examples/accordion/accordion-borders.tsx",
+      "tags": []
+    },
+    {
+      "name": "accordion-card",
+      "filePath": "src/examples/accordion/accordion-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "accordion-demo",
+      "filePath": "src/examples/accordion/accordion-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "accordion-disabled",
+      "filePath": "src/examples/accordion/accordion-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "accordion-multiple",
+      "filePath": "src/examples/accordion/accordion-multiple.tsx",
+      "tags": []
+    }
+  ],
+  "alert": [
+    {
+      "name": "alert-action",
+      "filePath": "src/examples/alert/alert-action.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-basic",
+      "filePath": "src/examples/alert/alert-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-colors",
+      "filePath": "src/examples/alert/alert-colors.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-demo",
+      "filePath": "src/examples/alert/alert-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-destructive",
+      "filePath": "src/examples/alert/alert-destructive.tsx",
+      "tags": []
+    }
+  ],
+  "alert-dialog": [
+    {
+      "name": "alert-dialog-basic",
+      "filePath": "src/examples/alert-dialog/alert-dialog-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-dialog-demo",
+      "filePath": "src/examples/alert-dialog/alert-dialog-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-dialog-destructive",
+      "filePath": "src/examples/alert-dialog/alert-dialog-destructive.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-dialog-media",
+      "filePath": "src/examples/alert-dialog/alert-dialog-media.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-dialog-small",
+      "filePath": "src/examples/alert-dialog/alert-dialog-small.tsx",
+      "tags": []
+    },
+    {
+      "name": "alert-dialog-small-media",
+      "filePath": "src/examples/alert-dialog/alert-dialog-small-media.tsx",
+      "tags": []
+    }
+  ],
+  "aspect-ratio": [
+    {
+      "name": "aspect-ratio-demo",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "aspect-ratio-portrait",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-portrait.tsx",
+      "tags": []
+    },
+    {
+      "name": "aspect-ratio-square",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-square.tsx",
+      "tags": []
+    }
+  ],
+  "avatar": [
+    {
+      "name": "avatar-badge",
+      "filePath": "src/examples/avatar/avatar-badge.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-badge-icon",
+      "filePath": "src/examples/avatar/avatar-badge-icon.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-basic",
+      "filePath": "src/examples/avatar/avatar-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-demo",
+      "filePath": "src/examples/avatar/avatar-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-dropdown",
+      "filePath": "src/examples/avatar/avatar-dropdown.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-size",
+      "filePath": "src/examples/avatar/avatar-size.tsx",
+      "tags": []
+    }
+  ],
+  "avatar-group": [
+    {
+      "name": "avatar-group",
+      "filePath": "src/examples/avatar-group/avatar-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-group-count",
+      "filePath": "src/examples/avatar-group/avatar-group-count.tsx",
+      "tags": []
+    },
+    {
+      "name": "avatar-group-count-icon",
+      "filePath": "src/examples/avatar-group/avatar-group-count-icon.tsx",
+      "tags": []
+    }
+  ],
+  "badge": [
+    {
+      "name": "badge-colors",
+      "filePath": "src/examples/badge/badge-colors.tsx",
+      "tags": []
+    },
+    {
+      "name": "badge-demo",
+      "filePath": "src/examples/badge/badge-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "badge-icon",
+      "filePath": "src/examples/badge/badge-icon.tsx",
+      "tags": []
+    },
+    {
+      "name": "badge-link",
+      "filePath": "src/examples/badge/badge-link.tsx",
+      "tags": []
+    },
+    {
+      "name": "badge-spinner",
+      "filePath": "src/examples/badge/badge-spinner.tsx",
+      "tags": []
+    },
+    {
+      "name": "badge-variants",
+      "filePath": "src/examples/badge/badge-variants.tsx",
+      "tags": []
+    }
+  ],
+  "breadcrumb": [
+    {
+      "name": "breadcrumb-basic",
+      "filePath": "src/examples/breadcrumb/breadcrumb-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "breadcrumb-demo",
+      "filePath": "src/examples/breadcrumb/breadcrumb-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "breadcrumb-dropdown",
+      "filePath": "src/examples/breadcrumb/breadcrumb-dropdown.tsx",
+      "tags": []
+    },
+    {
+      "name": "breadcrumb-ellipsis",
+      "filePath": "src/examples/breadcrumb/breadcrumb-ellipsis.tsx",
+      "tags": []
+    },
+    {
+      "name": "breadcrumb-link",
+      "filePath": "src/examples/breadcrumb/breadcrumb-link.tsx",
+      "tags": []
+    },
+    {
+      "name": "breadcrumb-separator",
+      "filePath": "src/examples/breadcrumb/breadcrumb-separator.tsx",
+      "tags": []
+    }
+  ],
+  "button": [
+    {
+      "name": "button-default",
+      "filePath": "src/examples/button/button-default.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-demo",
+      "filePath": "src/examples/button/button-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-destructive",
+      "filePath": "src/examples/button/button-destructive.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-ghost",
+      "filePath": "src/examples/button/button-ghost.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-icon",
+      "filePath": "src/examples/button/button-icon.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-link",
+      "filePath": "src/examples/button/button-link.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-outline",
+      "filePath": "src/examples/button/button-outline.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-render",
+      "filePath": "src/examples/button/button-render.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-rounded",
+      "filePath": "src/examples/button/button-rounded.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-secondary",
+      "filePath": "src/examples/button/button-secondary.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-size",
+      "filePath": "src/examples/button/button-size.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-spinner",
+      "filePath": "src/examples/button/button-spinner.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-with-icon",
+      "filePath": "src/examples/button/button-with-icon.tsx",
+      "tags": []
+    }
+  ],
+  "button-group": [
+    {
+      "name": "button-group-demo",
+      "filePath": "src/examples/button-group/button-group-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-dropdown",
+      "filePath": "src/examples/button-group/button-group-dropdown.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-input",
+      "filePath": "src/examples/button-group/button-group-input.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-input-group",
+      "filePath": "src/examples/button-group/button-group-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-nested",
+      "filePath": "src/examples/button-group/button-group-nested.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-orientation",
+      "filePath": "src/examples/button-group/button-group-orientation.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-popover",
+      "filePath": "src/examples/button-group/button-group-popover.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-select",
+      "filePath": "src/examples/button-group/button-group-select.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-separator",
+      "filePath": "src/examples/button-group/button-group-separator.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-size",
+      "filePath": "src/examples/button-group/button-group-size.tsx",
+      "tags": []
+    },
+    {
+      "name": "button-group-split",
+      "filePath": "src/examples/button-group/button-group-split.tsx",
+      "tags": []
+    }
+  ],
+  "calendar": [
+    {
+      "name": "calendar-basic",
+      "filePath": "src/examples/calendar/calendar-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-booked-dates",
+      "filePath": "src/examples/calendar/calendar-booked-dates.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-caption",
+      "filePath": "src/examples/calendar/calendar-caption.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-custom-days",
+      "filePath": "src/examples/calendar/calendar-custom-days.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-demo",
+      "filePath": "src/examples/calendar/calendar-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-hijri",
+      "filePath": "src/examples/calendar/calendar-hijri.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-multiple",
+      "filePath": "src/examples/calendar/calendar-multiple.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-presets",
+      "filePath": "src/examples/calendar/calendar-presets.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-range",
+      "filePath": "src/examples/calendar/calendar-range.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-time",
+      "filePath": "src/examples/calendar/calendar-time.tsx",
+      "tags": []
+    },
+    {
+      "name": "calendar-week-numbers",
+      "filePath": "src/examples/calendar/calendar-week-numbers.tsx",
+      "tags": []
+    }
+  ],
+  "card": [
+    {
+      "name": "card-demo",
+      "filePath": "src/examples/card/card-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "card-image",
+      "filePath": "src/examples/card/card-image.tsx",
+      "tags": []
+    },
+    {
+      "name": "card-small",
+      "filePath": "src/examples/card/card-small.tsx",
+      "tags": []
+    }
+  ],
+  "carousel": [
+    {
+      "name": "carousel-api",
+      "filePath": "src/examples/carousel/carousel-api.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-demo",
+      "filePath": "src/examples/carousel/carousel-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-multiple",
+      "filePath": "src/examples/carousel/carousel-multiple.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-orientation",
+      "filePath": "src/examples/carousel/carousel-orientation.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-plugin",
+      "filePath": "src/examples/carousel/carousel-plugin.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-size",
+      "filePath": "src/examples/carousel/carousel-size.tsx",
+      "tags": []
+    },
+    {
+      "name": "carousel-spacing",
+      "filePath": "src/examples/carousel/carousel-spacing.tsx",
+      "tags": []
+    }
+  ],
+  "chart": [
+    {
+      "name": "chart-demo",
+      "filePath": "src/examples/chart/chart-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-example",
+      "filePath": "src/examples/chart/chart-example.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-example-axis",
+      "filePath": "src/examples/chart/chart-example-axis.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-example-grid",
+      "filePath": "src/examples/chart/chart-example-grid.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-example-legend",
+      "filePath": "src/examples/chart/chart-example-legend.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-example-tooltip",
+      "filePath": "src/examples/chart/chart-example-tooltip.tsx",
+      "tags": []
+    },
+    {
+      "name": "chart-tooltip",
+      "filePath": "src/examples/chart/chart-tooltip.tsx",
+      "tags": []
+    }
+  ],
+  "checkbox": [
+    {
+      "name": "checkbox-basic",
+      "filePath": "src/examples/checkbox/checkbox-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-demo",
+      "filePath": "src/examples/checkbox/checkbox-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-description",
+      "filePath": "src/examples/checkbox/checkbox-description.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-disabled",
+      "filePath": "src/examples/checkbox/checkbox-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-group",
+      "filePath": "src/examples/checkbox/checkbox-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-invalid",
+      "filePath": "src/examples/checkbox/checkbox-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "checkbox-table",
+      "filePath": "src/examples/checkbox/checkbox-table.tsx",
+      "tags": []
+    }
+  ],
+  "collapsible": [
+    {
+      "name": "collapsible-basic",
+      "filePath": "src/examples/collapsible/collapsible-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "collapsible-demo",
+      "filePath": "src/examples/collapsible/collapsible-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "collapsible-file-tree",
+      "filePath": "src/examples/collapsible/collapsible-file-tree.tsx",
+      "tags": []
+    },
+    {
+      "name": "collapsible-settings",
+      "filePath": "src/examples/collapsible/collapsible-settings.tsx",
+      "tags": []
+    }
+  ],
+  "combobox": [
+    {
+      "name": "combobox-auto-highlight",
+      "filePath": "src/examples/combobox/combobox-auto-highlight.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-basic",
+      "filePath": "src/examples/combobox/combobox-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-clear",
+      "filePath": "src/examples/combobox/combobox-clear.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-custom",
+      "filePath": "src/examples/combobox/combobox-custom.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-demo",
+      "filePath": "src/examples/combobox/combobox-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-disabled",
+      "filePath": "src/examples/combobox/combobox-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-groups",
+      "filePath": "src/examples/combobox/combobox-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-input-group",
+      "filePath": "src/examples/combobox/combobox-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-invalid",
+      "filePath": "src/examples/combobox/combobox-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-multiple",
+      "filePath": "src/examples/combobox/combobox-multiple.tsx",
+      "tags": []
+    },
+    {
+      "name": "combobox-popup",
+      "filePath": "src/examples/combobox/combobox-popup.tsx",
+      "tags": []
+    }
+  ],
+  "command": [
+    {
+      "name": "command-basic",
+      "filePath": "src/examples/command/command-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "command-demo",
+      "filePath": "src/examples/command/command-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "command-dialog",
+      "filePath": "src/examples/command/command-dialog.tsx",
+      "tags": []
+    },
+    {
+      "name": "command-groups",
+      "filePath": "src/examples/command/command-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "command-scrollable",
+      "filePath": "src/examples/command/command-scrollable.tsx",
+      "tags": []
+    },
+    {
+      "name": "command-shortcuts",
+      "filePath": "src/examples/command/command-shortcuts.tsx",
+      "tags": []
+    }
+  ],
+  "context-menu": [
+    {
+      "name": "context-menu-basic",
+      "filePath": "src/examples/context-menu/context-menu-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-checkboxes",
+      "filePath": "src/examples/context-menu/context-menu-checkboxes.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-demo",
+      "filePath": "src/examples/context-menu/context-menu-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-destructive",
+      "filePath": "src/examples/context-menu/context-menu-destructive.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-groups",
+      "filePath": "src/examples/context-menu/context-menu-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-icons",
+      "filePath": "src/examples/context-menu/context-menu-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-radio",
+      "filePath": "src/examples/context-menu/context-menu-radio.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-shortcuts",
+      "filePath": "src/examples/context-menu/context-menu-shortcuts.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-sides",
+      "filePath": "src/examples/context-menu/context-menu-sides.tsx",
+      "tags": []
+    },
+    {
+      "name": "context-menu-submenu",
+      "filePath": "src/examples/context-menu/context-menu-submenu.tsx",
+      "tags": []
+    }
+  ],
+  "data-picker": [
+    {
+      "name": "data-picker-with-dropdowns",
+      "filePath": "src/examples/data-picker/data-picker-with-dropdowns.tsx",
+      "tags": []
+    }
+  ],
+  "data-table": [
+    {
+      "name": "data-table-demo",
+      "filePath": "src/examples/data-table/data-table-demo.tsx",
+      "tags": []
+    }
+  ],
+  "date-picker": [
+    {
+      "name": "date-picker-basic",
+      "filePath": "src/examples/date-picker/date-picker-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-demo",
+      "filePath": "src/examples/date-picker/date-picker-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-dob",
+      "filePath": "src/examples/date-picker/date-picker-dob.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-input",
+      "filePath": "src/examples/date-picker/date-picker-input.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-natural-language",
+      "filePath": "src/examples/date-picker/date-picker-natural-language.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-range",
+      "filePath": "src/examples/date-picker/date-picker-range.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-time",
+      "filePath": "src/examples/date-picker/date-picker-time.tsx",
+      "tags": []
+    }
+  ],
+  "dialog": [
+    {
+      "name": "dialog-close-button",
+      "filePath": "src/examples/dialog/dialog-close-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "dialog-demo",
+      "filePath": "src/examples/dialog/dialog-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "dialog-no-close-button",
+      "filePath": "src/examples/dialog/dialog-no-close-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "dialog-scrollable-content",
+      "filePath": "src/examples/dialog/dialog-scrollable-content.tsx",
+      "tags": []
+    },
+    {
+      "name": "dialog-sticky-footer",
+      "filePath": "src/examples/dialog/dialog-sticky-footer.tsx",
+      "tags": []
+    }
+  ],
+  "drawer": [
+    {
+      "name": "drawer-demo",
+      "filePath": "src/examples/drawer/drawer-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "drawer-dialog",
+      "filePath": "src/examples/drawer/drawer-dialog.tsx",
+      "tags": []
+    },
+    {
+      "name": "drawer-scrollable-content",
+      "filePath": "src/examples/drawer/drawer-scrollable-content.tsx",
+      "tags": []
+    },
+    {
+      "name": "drawer-sides",
+      "filePath": "src/examples/drawer/drawer-sides.tsx",
+      "tags": []
+    }
+  ],
+  "dropdown-menu": [
+    {
+      "name": "dropdown-menu-avatar",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-avatar.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-basic",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-checkboxes",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-checkboxes.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-checkboxes-icons",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-checkboxes-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-complex",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-complex.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-demo",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-destructive",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-destructive.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-icons",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-radio-group",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-radio-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-radio-icons",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-radio-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-shortcuts",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-shortcuts.tsx",
+      "tags": []
+    },
+    {
+      "name": "dropdown-menu-submenu",
+      "filePath": "src/examples/dropdown-menu/dropdown-menu-submenu.tsx",
+      "tags": []
+    }
+  ],
+  "empty": [
+    {
+      "name": "empty-avatar",
+      "filePath": "src/examples/empty/empty-avatar.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-avatar-group",
+      "filePath": "src/examples/empty/empty-avatar-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-background",
+      "filePath": "src/examples/empty/empty-background.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-card",
+      "filePath": "src/examples/empty/empty-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-demo",
+      "filePath": "src/examples/empty/empty-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-input-group",
+      "filePath": "src/examples/empty/empty-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "empty-outline",
+      "filePath": "src/examples/empty/empty-outline.tsx",
+      "tags": []
+    }
+  ],
+  "field": [
+    {
+      "name": "field-checkbox",
+      "filePath": "src/examples/field/field-checkbox.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-choice-card",
+      "filePath": "src/examples/field/field-choice-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-demo",
+      "filePath": "src/examples/field/field-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-fieldset",
+      "filePath": "src/examples/field/field-fieldset.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-group",
+      "filePath": "src/examples/field/field-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-input",
+      "filePath": "src/examples/field/field-input.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-radio",
+      "filePath": "src/examples/field/field-radio.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-responsive",
+      "filePath": "src/examples/field/field-responsive.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-select",
+      "filePath": "src/examples/field/field-select.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-slider",
+      "filePath": "src/examples/field/field-slider.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-switch",
+      "filePath": "src/examples/field/field-switch.tsx",
+      "tags": []
+    },
+    {
+      "name": "field-textarea",
+      "filePath": "src/examples/field/field-textarea.tsx",
+      "tags": []
+    }
+  ],
+  "file-upload": [
+    {
+      "name": "file-upload-list",
+      "filePath": "src/examples/file-upload/file-upload-list.tsx",
+      "tags": []
+    }
+  ],
+  "hover-card": [
+    {
+      "name": "hover-card-demo",
+      "filePath": "src/examples/hover-card/hover-card-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "hover-card-sides",
+      "filePath": "src/examples/hover-card/hover-card-sides.tsx",
+      "tags": []
+    }
+  ],
+  "input": [
+    {
+      "name": "input-badge",
+      "filePath": "src/examples/input/input-badge.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-basic",
+      "filePath": "src/examples/input/input-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-button-group",
+      "filePath": "src/examples/input/input-button-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-demo",
+      "filePath": "src/examples/input/input-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-disabled",
+      "filePath": "src/examples/input/input-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-field",
+      "filePath": "src/examples/input/input-field.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-fieldgroup",
+      "filePath": "src/examples/input/input-fieldgroup.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-file",
+      "filePath": "src/examples/input/input-file.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-form",
+      "filePath": "src/examples/input/input-form.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-grid",
+      "filePath": "src/examples/input/input-grid.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-inline",
+      "filePath": "src/examples/input/input-inline.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-input-group",
+      "filePath": "src/examples/input/input-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-invalid",
+      "filePath": "src/examples/input/input-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-required",
+      "filePath": "src/examples/input/input-required.tsx",
+      "tags": []
+    }
+  ],
+  "input-group": [
+    {
+      "name": "input-group-basic",
+      "filePath": "src/examples/input-group/input-group-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-block-end",
+      "filePath": "src/examples/input-group/input-group-block-end.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-block-start",
+      "filePath": "src/examples/input-group/input-group-block-start.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-button",
+      "filePath": "src/examples/input-group/input-group-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-button-group",
+      "filePath": "src/examples/input-group/input-group-button-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-custom",
+      "filePath": "src/examples/input-group/input-group-custom.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-demo",
+      "filePath": "src/examples/input-group/input-group-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-dropdown",
+      "filePath": "src/examples/input-group/input-group-dropdown.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-icon",
+      "filePath": "src/examples/input-group/input-group-icon.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-in-card",
+      "filePath": "src/examples/input-group/input-group-in-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-inline-end",
+      "filePath": "src/examples/input-group/input-group-inline-end.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-inline-start",
+      "filePath": "src/examples/input-group/input-group-inline-start.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-kbd",
+      "filePath": "src/examples/input-group/input-group-kbd.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-label",
+      "filePath": "src/examples/input-group/input-group-label.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-spinner",
+      "filePath": "src/examples/input-group/input-group-spinner.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-text",
+      "filePath": "src/examples/input-group/input-group-text.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-textarea",
+      "filePath": "src/examples/input-group/input-group-textarea.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-textarea-examples",
+      "filePath": "src/examples/input-group/input-group-textarea-examples.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-tooltip",
+      "filePath": "src/examples/input-group/input-group-tooltip.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-with-addons",
+      "filePath": "src/examples/input-group/input-group-with-addons.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-with-buttons",
+      "filePath": "src/examples/input-group/input-group-with-buttons.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-with-kbd",
+      "filePath": "src/examples/input-group/input-group-with-kbd.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-group-with-tooltip",
+      "filePath": "src/examples/input-group/input-group-with-tooltip.tsx",
+      "tags": []
+    }
+  ],
+  "input-otp": [
+    {
+      "name": "input-otp-alphanumeric",
+      "filePath": "src/examples/input-otp/input-otp-alphanumeric.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-controlled",
+      "filePath": "src/examples/input-otp/input-otp-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-demo",
+      "filePath": "src/examples/input-otp/input-otp-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-disabled",
+      "filePath": "src/examples/input-otp/input-otp-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-form",
+      "filePath": "src/examples/input-otp/input-otp-form.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-four-digits",
+      "filePath": "src/examples/input-otp/input-otp-four-digits.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-invalid",
+      "filePath": "src/examples/input-otp/input-otp-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-pattern",
+      "filePath": "src/examples/input-otp/input-otp-pattern.tsx",
+      "tags": []
+    },
+    {
+      "name": "input-otp-separator",
+      "filePath": "src/examples/input-otp/input-otp-separator.tsx",
+      "tags": []
+    }
+  ],
+  "item": [
+    {
+      "name": "item-avatar",
+      "filePath": "src/examples/item/item-avatar.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-demo",
+      "filePath": "src/examples/item/item-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-dropdown",
+      "filePath": "src/examples/item/item-dropdown.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-header",
+      "filePath": "src/examples/item/item-header.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-icon",
+      "filePath": "src/examples/item/item-icon.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-image",
+      "filePath": "src/examples/item/item-image.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-link",
+      "filePath": "src/examples/item/item-link.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-size",
+      "filePath": "src/examples/item/item-size.tsx",
+      "tags": []
+    },
+    {
+      "name": "item-variant",
+      "filePath": "src/examples/item/item-variant.tsx",
+      "tags": []
+    }
+  ],
+  "item-group": [
+    {
+      "name": "item-group",
+      "filePath": "src/examples/item-group/item-group.tsx",
+      "tags": []
+    }
+  ],
+  "kbd": [
+    {
+      "name": "kbd-button",
+      "filePath": "src/examples/kbd/kbd-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "kbd-demo",
+      "filePath": "src/examples/kbd/kbd-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "kbd-group",
+      "filePath": "src/examples/kbd/kbd-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "kbd-input-group",
+      "filePath": "src/examples/kbd/kbd-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "kbd-tooltip",
+      "filePath": "src/examples/kbd/kbd-tooltip.tsx",
+      "tags": []
+    }
+  ],
+  "label": [
+    {
+      "name": "label-demo",
+      "filePath": "src/examples/label/label-demo.tsx",
+      "tags": []
+    }
+  ],
+  "menubar": [
+    {
+      "name": "menubar-checkbox",
+      "filePath": "src/examples/menubar/menubar-checkbox.tsx",
+      "tags": []
+    },
+    {
+      "name": "menubar-demo",
+      "filePath": "src/examples/menubar/menubar-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "menubar-icons",
+      "filePath": "src/examples/menubar/menubar-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "menubar-radio",
+      "filePath": "src/examples/menubar/menubar-radio.tsx",
+      "tags": []
+    },
+    {
+      "name": "menubar-submenu",
+      "filePath": "src/examples/menubar/menubar-submenu.tsx",
+      "tags": []
+    }
+  ],
+  "muted": [
+    {
+      "name": "muted-item-group",
+      "filePath": "src/examples/muted/muted-item-group.tsx",
+      "tags": []
+    }
+  ],
+  "native-select": [
+    {
+      "name": "native-select-demo",
+      "filePath": "src/examples/native-select/native-select-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "native-select-disabled",
+      "filePath": "src/examples/native-select/native-select-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "native-select-groups",
+      "filePath": "src/examples/native-select/native-select-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "native-select-invalid",
+      "filePath": "src/examples/native-select/native-select-invalid.tsx",
+      "tags": []
+    }
+  ],
+  "navigation-menu": [
+    {
+      "name": "navigation-menu-demo",
+      "filePath": "src/examples/navigation-menu/navigation-menu-demo.tsx",
+      "tags": []
+    }
+  ],
+  "outline": [
+    {
+      "name": "outline-item-group",
+      "filePath": "src/examples/outline/outline-item-group.tsx",
+      "tags": []
+    }
+  ],
+  "pagination": [
+    {
+      "name": "pagination-demo",
+      "filePath": "src/examples/pagination/pagination-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "pagination-icons-only",
+      "filePath": "src/examples/pagination/pagination-icons-only.tsx",
+      "tags": []
+    },
+    {
+      "name": "pagination-simple",
+      "filePath": "src/examples/pagination/pagination-simple.tsx",
+      "tags": []
+    }
+  ],
+  "popover": [
+    {
+      "name": "popover-alignments",
+      "filePath": "src/examples/popover/popover-alignments.tsx",
+      "tags": []
+    },
+    {
+      "name": "popover-basic",
+      "filePath": "src/examples/popover/popover-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "popover-demo",
+      "filePath": "src/examples/popover/popover-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "popover-form",
+      "filePath": "src/examples/popover/popover-form.tsx",
+      "tags": []
+    }
+  ],
+  "progress": [
+    {
+      "name": "progress-controlled",
+      "filePath": "src/examples/progress/progress-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "progress-demo",
+      "filePath": "src/examples/progress/progress-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "progress-label",
+      "filePath": "src/examples/progress/progress-label.tsx",
+      "tags": []
+    }
+  ],
+  "radio": [
+    {
+      "name": "radio-fields",
+      "filePath": "src/examples/radio/radio-fields.tsx",
+      "tags": []
+    }
+  ],
+  "radio-group": [
+    {
+      "name": "radio-group-choice-card",
+      "filePath": "src/examples/radio-group/radio-group-choice-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "radio-group-demo",
+      "filePath": "src/examples/radio-group/radio-group-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "radio-group-description",
+      "filePath": "src/examples/radio-group/radio-group-description.tsx",
+      "tags": []
+    },
+    {
+      "name": "radio-group-disabled",
+      "filePath": "src/examples/radio-group/radio-group-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "radio-group-fieldset",
+      "filePath": "src/examples/radio-group/radio-group-fieldset.tsx",
+      "tags": []
+    },
+    {
+      "name": "radio-group-invalid",
+      "filePath": "src/examples/radio-group/radio-group-invalid.tsx",
+      "tags": []
+    }
+  ],
+  "resizable": [
+    {
+      "name": "resizable-demo",
+      "filePath": "src/examples/resizable/resizable-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "resizable-handle",
+      "filePath": "src/examples/resizable/resizable-handle.tsx",
+      "tags": []
+    },
+    {
+      "name": "resizable-vertical",
+      "filePath": "src/examples/resizable/resizable-vertical.tsx",
+      "tags": []
+    }
+  ],
+  "scroll-area": [
+    {
+      "name": "scroll-area-demo",
+      "filePath": "src/examples/scroll-area/scroll-area-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "scroll-area-horizontal-demo",
+      "filePath": "src/examples/scroll-area/scroll-area-horizontal-demo.tsx",
+      "tags": []
+    }
+  ],
+  "select": [
+    {
+      "name": "select-align-item",
+      "filePath": "src/examples/select/select-align-item.tsx",
+      "tags": []
+    },
+    {
+      "name": "select-demo",
+      "filePath": "src/examples/select/select-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "select-disabled",
+      "filePath": "src/examples/select/select-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "select-groups",
+      "filePath": "src/examples/select/select-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "select-invalid",
+      "filePath": "src/examples/select/select-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "select-scrollable",
+      "filePath": "src/examples/select/select-scrollable.tsx",
+      "tags": []
+    }
+  ],
+  "separator": [
+    {
+      "name": "separator-demo",
+      "filePath": "src/examples/separator/separator-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "separator-list",
+      "filePath": "src/examples/separator/separator-list.tsx",
+      "tags": []
+    },
+    {
+      "name": "separator-menu",
+      "filePath": "src/examples/separator/separator-menu.tsx",
+      "tags": []
+    },
+    {
+      "name": "separator-vertical",
+      "filePath": "src/examples/separator/separator-vertical.tsx",
+      "tags": []
+    }
+  ],
+  "sheet": [
+    {
+      "name": "sheet-demo",
+      "filePath": "src/examples/sheet/sheet-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "sheet-no-close-button",
+      "filePath": "src/examples/sheet/sheet-no-close-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "sheet-side",
+      "filePath": "src/examples/sheet/sheet-side.tsx",
+      "tags": []
+    }
+  ],
+  "sidebar": [
+    {
+      "name": "sidebar-controlled",
+      "filePath": "src/examples/sidebar/sidebar-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-demo",
+      "filePath": "src/examples/sidebar/sidebar-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-footer",
+      "filePath": "src/examples/sidebar/sidebar-footer.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-group",
+      "filePath": "src/examples/sidebar/sidebar-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-group-action",
+      "filePath": "src/examples/sidebar/sidebar-group-action.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-group-collapsible",
+      "filePath": "src/examples/sidebar/sidebar-group-collapsible.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-header",
+      "filePath": "src/examples/sidebar/sidebar-header.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-menu",
+      "filePath": "src/examples/sidebar/sidebar-menu.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-menu-action",
+      "filePath": "src/examples/sidebar/sidebar-menu-action.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-menu-badge",
+      "filePath": "src/examples/sidebar/sidebar-menu-badge.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-menu-collapsible",
+      "filePath": "src/examples/sidebar/sidebar-menu-collapsible.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-menu-sub",
+      "filePath": "src/examples/sidebar/sidebar-menu-sub.tsx",
+      "tags": []
+    },
+    {
+      "name": "sidebar-rsc",
+      "filePath": "src/examples/sidebar/sidebar-rsc.tsx",
+      "tags": []
+    }
+  ],
+  "skeleton": [
+    {
+      "name": "skeleton-avatar",
+      "filePath": "src/examples/skeleton/skeleton-avatar.tsx",
+      "tags": []
+    },
+    {
+      "name": "skeleton-card",
+      "filePath": "src/examples/skeleton/skeleton-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "skeleton-demo",
+      "filePath": "src/examples/skeleton/skeleton-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "skeleton-form",
+      "filePath": "src/examples/skeleton/skeleton-form.tsx",
+      "tags": []
+    },
+    {
+      "name": "skeleton-table",
+      "filePath": "src/examples/skeleton/skeleton-table.tsx",
+      "tags": []
+    },
+    {
+      "name": "skeleton-text",
+      "filePath": "src/examples/skeleton/skeleton-text.tsx",
+      "tags": []
+    }
+  ],
+  "slider": [
+    {
+      "name": "slider-controlled",
+      "filePath": "src/examples/slider/slider-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "slider-demo",
+      "filePath": "src/examples/slider/slider-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "slider-disabled",
+      "filePath": "src/examples/slider/slider-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "slider-multiple",
+      "filePath": "src/examples/slider/slider-multiple.tsx",
+      "tags": []
+    },
+    {
+      "name": "slider-range",
+      "filePath": "src/examples/slider/slider-range.tsx",
+      "tags": []
+    },
+    {
+      "name": "slider-vertical",
+      "filePath": "src/examples/slider/slider-vertical.tsx",
+      "tags": []
+    }
+  ],
+  "sonner": [
+    {
+      "name": "sonner-demo",
+      "filePath": "src/examples/sonner/sonner-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "sonner-description",
+      "filePath": "src/examples/sonner/sonner-description.tsx",
+      "tags": []
+    },
+    {
+      "name": "sonner-position",
+      "filePath": "src/examples/sonner/sonner-position.tsx",
+      "tags": []
+    },
+    {
+      "name": "sonner-types",
+      "filePath": "src/examples/sonner/sonner-types.tsx",
+      "tags": []
+    }
+  ],
+  "spinner": [
+    {
+      "name": "spinner-badge",
+      "filePath": "src/examples/spinner/spinner-badge.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-button",
+      "filePath": "src/examples/spinner/spinner-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-custom",
+      "filePath": "src/examples/spinner/spinner-custom.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-demo",
+      "filePath": "src/examples/spinner/spinner-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-empty",
+      "filePath": "src/examples/spinner/spinner-empty.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-input-group",
+      "filePath": "src/examples/spinner/spinner-input-group.tsx",
+      "tags": []
+    },
+    {
+      "name": "spinner-size",
+      "filePath": "src/examples/spinner/spinner-size.tsx",
+      "tags": []
+    }
+  ],
+  "switch": [
+    {
+      "name": "switch-choice-card",
+      "filePath": "src/examples/switch/switch-choice-card.tsx",
+      "tags": []
+    },
+    {
+      "name": "switch-demo",
+      "filePath": "src/examples/switch/switch-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "switch-description",
+      "filePath": "src/examples/switch/switch-description.tsx",
+      "tags": []
+    },
+    {
+      "name": "switch-disabled",
+      "filePath": "src/examples/switch/switch-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "switch-invalid",
+      "filePath": "src/examples/switch/switch-invalid.tsx",
+      "tags": []
+    },
+    {
+      "name": "switch-sizes",
+      "filePath": "src/examples/switch/switch-sizes.tsx",
+      "tags": []
+    }
+  ],
+  "table": [
+    {
+      "name": "table-actions",
+      "filePath": "src/examples/table/table-actions.tsx",
+      "tags": []
+    },
+    {
+      "name": "table-demo",
+      "filePath": "src/examples/table/table-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "table-footer",
+      "filePath": "src/examples/table/table-footer.tsx",
+      "tags": []
+    }
+  ],
+  "tabs": [
+    {
+      "name": "tabs-demo",
+      "filePath": "src/examples/tabs/tabs-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "tabs-disabled",
+      "filePath": "src/examples/tabs/tabs-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "tabs-icons",
+      "filePath": "src/examples/tabs/tabs-icons.tsx",
+      "tags": []
+    },
+    {
+      "name": "tabs-line",
+      "filePath": "src/examples/tabs/tabs-line.tsx",
+      "tags": []
+    },
+    {
+      "name": "tabs-vertical",
+      "filePath": "src/examples/tabs/tabs-vertical.tsx",
+      "tags": []
+    }
+  ],
+  "textarea": [
+    {
+      "name": "textarea-button",
+      "filePath": "src/examples/textarea/textarea-button.tsx",
+      "tags": []
+    },
+    {
+      "name": "textarea-demo",
+      "filePath": "src/examples/textarea/textarea-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "textarea-disabled",
+      "filePath": "src/examples/textarea/textarea-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "textarea-field",
+      "filePath": "src/examples/textarea/textarea-field.tsx",
+      "tags": []
+    },
+    {
+      "name": "textarea-invalid",
+      "filePath": "src/examples/textarea/textarea-invalid.tsx",
+      "tags": []
+    }
+  ],
+  "toggle": [
+    {
+      "name": "toggle-demo",
+      "filePath": "src/examples/toggle/toggle-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-disabled",
+      "filePath": "src/examples/toggle/toggle-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-outline",
+      "filePath": "src/examples/toggle/toggle-outline.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-sizes",
+      "filePath": "src/examples/toggle/toggle-sizes.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-text",
+      "filePath": "src/examples/toggle/toggle-text.tsx",
+      "tags": []
+    }
+  ],
+  "toggle-group": [
+    {
+      "name": "toggle-group-demo",
+      "filePath": "src/examples/toggle-group/toggle-group-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-group-disabled",
+      "filePath": "src/examples/toggle-group/toggle-group-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-group-outline",
+      "filePath": "src/examples/toggle-group/toggle-group-outline.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-group-sizes",
+      "filePath": "src/examples/toggle-group/toggle-group-sizes.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-group-spacing",
+      "filePath": "src/examples/toggle-group/toggle-group-spacing.tsx",
+      "tags": []
+    },
+    {
+      "name": "toggle-group-vertical",
+      "filePath": "src/examples/toggle-group/toggle-group-vertical.tsx",
+      "tags": []
+    }
+  ],
+  "tooltip": [
+    {
+      "name": "tooltip-demo",
+      "filePath": "src/examples/tooltip/tooltip-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "tooltip-disabled",
+      "filePath": "src/examples/tooltip/tooltip-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "tooltip-keyboard",
+      "filePath": "src/examples/tooltip/tooltip-keyboard.tsx",
+      "tags": []
+    },
+    {
+      "name": "tooltip-sides",
+      "filePath": "src/examples/tooltip/tooltip-sides.tsx",
+      "tags": []
+    }
+  ]
+}
