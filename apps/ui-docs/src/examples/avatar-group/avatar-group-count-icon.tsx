@@ -5,7 +5,7 @@ import {
   AvatarGroupCount,
   AvatarImage,
 } from "@kaotypr/ui/avatar"
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 export function AvatarGroupCountIconExample() {
   return (

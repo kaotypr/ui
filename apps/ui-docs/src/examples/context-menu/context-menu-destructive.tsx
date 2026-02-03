@@ -6,7 +6,7 @@ import {
   ContextMenuSeparator,
   ContextMenuTrigger,
 } from "@kaotypr/ui/context-menu"
-import { ArchiveIcon, PencilIcon, ShareIcon, TrashIcon } from "lucide-react"
+import { PencilSimpleIcon, ShareIcon, TrashIcon } from "@phosphor-icons/react"
 
 export function ContextMenuDestructive() {
   return (
@@ -18,7 +18,7 @@ export function ContextMenuDestructive() {
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
-            <PencilIcon />
+            <PencilSimpleIcon />
             Edit
           </ContextMenuItem>
           <ContextMenuItem>

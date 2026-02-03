@@ -1,11 +1,11 @@
 import { Badge } from "@kaotypr/ui/badge"
-import { BadgeCheck, BookmarkIcon } from "lucide-react"
+import { BookmarkIcon, CheckCircleIcon } from "@phosphor-icons/react"
 
 export function BadgeWithIconLeft() {
   return (
     <div className="flex flex-wrap gap-2">
       <Badge variant="secondary">
-        <BadgeCheck data-icon="inline-start" />
+        <CheckCircleIcon data-icon="inline-start" />
         Verified
       </Badge>
       <Badge variant="outline">

@@ -7,7 +7,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@kaotypr/ui/empty"
-import { ArrowUpRightIcon, FolderIcon } from "lucide-react"
+import { ArrowUpRightIcon, FolderIcon } from "@phosphor-icons/react"
 
 export function EmptyInCard() {
   return (

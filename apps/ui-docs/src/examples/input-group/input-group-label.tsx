@@ -6,7 +6,7 @@ import {
 } from "@kaotypr/ui/input-group"
 import { Label } from "@kaotypr/ui/label"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
-import { InfoIcon } from "lucide-react"
+import { InfoIcon } from "@phosphor-icons/react"
 
 export default function InputGroupLabel() {
   return (

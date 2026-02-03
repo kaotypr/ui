@@ -7,7 +7,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@kaotypr/ui/input-group"
-import { CopyIcon, TrashIcon } from "lucide-react"
+import { CopyIcon, TrashIcon } from "@phosphor-icons/react"
 
 export function InputGroupWithButtons() {
   return (

@@ -8,7 +8,7 @@ import {
   EmptyTitle,
 } from "@kaotypr/ui/empty"
 import { FolderIcon } from "@phosphor-icons/react"
-import { ArrowUpRightIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "@phosphor-icons/react"
 
 export default function EmptyDemo() {
   return (

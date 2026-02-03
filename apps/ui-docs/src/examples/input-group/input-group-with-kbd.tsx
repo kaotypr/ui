@@ -3,7 +3,12 @@ import { Input } from "@kaotypr/ui/input"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Kbd, KbdGroup } from "@kaotypr/ui/kbd"
 import { Spinner } from "@kaotypr/ui/spinner"
-import { CheckIcon, InfoIcon, SearchIcon, SparklesIcon } from "lucide-react"
+import {
+  CheckIcon,
+  InfoIcon,
+  MagnifyingGlassIcon,
+  SparkleIcon,
+} from "@phosphor-icons/react"
 
 export function InputGroupWithKbd() {
   return (
@@ -32,7 +37,7 @@ export function InputGroupWithKbd() {
         <InputGroup>
           <InputGroupInput id="input-search-type-25" placeholder="Type to search..." />
           <InputGroupAddon align="inline-start">
-            <SparklesIcon />
+            <SparkleIcon />
           </InputGroupAddon>
           <InputGroupAddon align="inline-end">
             <KbdGroup>
@@ -57,7 +62,7 @@ export function InputGroupWithKbd() {
       <InputGroup>
         <InputGroupInput id="input-search-docs-27" placeholder="Search documentation..." />
         <InputGroupAddon>
-          <SearchIcon />
+          <MagnifyingGlassIcon />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
       </InputGroup>
@@ -68,7 +73,7 @@ export function InputGroupWithKbd() {
           disabled
         />
         <InputGroupAddon>
-          <SearchIcon />
+          <MagnifyingGlassIcon />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">Disabled</InputGroupAddon>
       </InputGroup>

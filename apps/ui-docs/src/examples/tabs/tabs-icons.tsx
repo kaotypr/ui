@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger } from "@kaotypr/ui/tabs"
-import { AppWindowIcon, CodeIcon } from "lucide-react"
+import { AppWindowIcon, CodeIcon } from "@phosphor-icons/react"
 
 export function TabsIcons() {
   return (

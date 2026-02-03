@@ -9,14 +9,14 @@ import {
   InputGroupText,
 } from "@kaotypr/ui/input-group"
 import {
+  BroadcastIcon,
   CopyIcon,
-  EyeOffIcon,
+  EyeSlashIcon,
   InfoIcon,
-  MicIcon,
-  RadioIcon,
-  SearchIcon,
+  MagnifyingGlassIcon,
+  MicrophoneIcon,
   StarIcon,
-} from "lucide-react"
+} from "@phosphor-icons/react"
 import { toast } from "sonner"
 
 export function InputGroupWithAddons() {
@@ -27,7 +27,7 @@ export function InputGroupWithAddons() {
         <InputGroup>
           <InputGroupInput id="input-icon-left-05" />
           <InputGroupAddon>
-            <SearchIcon className="text-muted-foreground" />
+            <MagnifyingGlassIcon className="text-muted-foreground" />
           </InputGroupAddon>
         </InputGroup>
       </Field>
@@ -36,7 +36,7 @@ export function InputGroupWithAddons() {
         <InputGroup>
           <InputGroupInput id="input-icon-right-07" />
           <InputGroupAddon align="inline-end">
-            <EyeOffIcon />
+            <EyeSlashIcon />
           </InputGroupAddon>
         </InputGroup>
       </Field>
@@ -45,10 +45,10 @@ export function InputGroupWithAddons() {
         <InputGroup>
           <InputGroupInput id="input-icon-both-09" />
           <InputGroupAddon>
-            <MicIcon className="text-muted-foreground" />
+            <MicrophoneIcon className="text-muted-foreground" />
           </InputGroupAddon>
           <InputGroupAddon align="inline-end">
-            <RadioIcon className="animate-pulse text-red-500" />
+            <BroadcastIcon className="animate-pulse text-red-500" />
           </InputGroupAddon>
         </InputGroup>
       </Field>
@@ -83,7 +83,7 @@ export function InputGroupWithAddons() {
             </InputGroupButton>
           </InputGroupAddon>
           <InputGroupAddon>
-            <RadioIcon className="animate-pulse text-red-500" />
+            <BroadcastIcon className="animate-pulse text-red-500" />
           </InputGroupAddon>
         </InputGroup>
       </Field>

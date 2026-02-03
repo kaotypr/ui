@@ -9,7 +9,7 @@ import {
 } from "@kaotypr/ui/card"
 import { Field, FieldDescription, FieldLabel } from "@kaotypr/ui/field"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@kaotypr/ui/input-otp"
-import { RefreshCwIcon } from "lucide-react"
+import { ArrowClockwiseIcon } from "@phosphor-icons/react"
 
 export function InputOTPForm() {
   return (
@@ -26,7 +26,7 @@ export function InputOTPForm() {
           <div className="flex items-center justify-between">
             <FieldLabel htmlFor="otp-verification">Verification code</FieldLabel>
             <Button variant="outline" size="xs">
-              <RefreshCwIcon />
+              <ArrowClockwiseIcon />
               Resend Code
             </Button>
           </div>

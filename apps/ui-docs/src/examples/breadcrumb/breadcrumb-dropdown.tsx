@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { ChevronDownIcon, DotIcon } from "lucide-react"
+import { CaretDownIcon, DotIcon } from "@phosphor-icons/react"
 
 export function BreadcrumbDropdown() {
   return (
@@ -28,9 +28,11 @@ export function BreadcrumbDropdown() {
         </BreadcrumbSeparator>
         <BreadcrumbItem>
           <DropdownMenu>
-            <DropdownMenuTrigger render={<button className="flex items-center gap-1" />}>
+            <DropdownMenuTrigger
+              render={<button type="button" className="flex items-center gap-1" />}
+            >
               Components
-              <ChevronDownIcon data-icon="inline-end" />
+              <CaretDownIcon data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>

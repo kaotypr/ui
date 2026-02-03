@@ -5,7 +5,7 @@ import {
   InputGroupInput,
 } from "@kaotypr/ui/input-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
-import { HelpCircle, InfoIcon } from "lucide-react"
+import { InfoIcon, QuestionIcon } from "@phosphor-icons/react"
 
 export default function InputGroupTooltip() {
   return (
@@ -32,7 +32,7 @@ export default function InputGroupTooltip() {
             <TooltipTrigger
               render={<InputGroupButton variant="ghost" aria-label="Help" size="icon-xs" />}
             >
-              <HelpCircle />
+              <QuestionIcon />
             </TooltipTrigger>
             <TooltipContent>
               <p>We&apos;ll use this to send you notifications</p>
@@ -45,7 +45,7 @@ export default function InputGroupTooltip() {
         <Tooltip>
           <TooltipTrigger render={<InputGroupAddon />}>
             <InputGroupButton variant="ghost" aria-label="Help" size="icon-xs">
-              <HelpCircle />
+              <QuestionIcon />
             </InputGroupButton>
           </TooltipTrigger>
           <TooltipContent side="left">

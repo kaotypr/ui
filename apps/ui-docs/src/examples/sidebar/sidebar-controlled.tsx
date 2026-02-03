@@ -15,40 +15,40 @@ import {
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
 import {
-  FrameIcon,
-  LifeBuoyIcon,
-  MapIcon,
-  PanelLeftCloseIcon,
-  PanelLeftOpenIcon,
-  PieChartIcon,
-  SendIcon,
-} from "lucide-react"
+  ChartPieIcon,
+  LifebuoyIcon,
+  MapTrifoldIcon,
+  PaperPlaneTiltIcon,
+  SidebarIcon,
+  SidebarSimpleIcon,
+  SquareIcon,
+} from "@phosphor-icons/react"
 
 const projects = [
   {
     name: "Design Engineering",
     url: "#",
-    icon: FrameIcon,
+    icon: SquareIcon,
   },
   {
     name: "Sales & Marketing",
     url: "#",
-    icon: PieChartIcon,
+    icon: ChartPieIcon,
   },
   {
     name: "Travel",
     url: "#",
-    icon: MapIcon,
+    icon: MapTrifoldIcon,
   },
   {
     name: "Support",
     url: "#",
-    icon: LifeBuoyIcon,
+    icon: LifebuoyIcon,
   },
   {
     name: "Feedback",
     url: "#",
-    icon: SendIcon,
+    icon: PaperPlaneTiltIcon,
   },
 ]
 
@@ -79,7 +79,7 @@ export default function AppSidebar() {
       <SidebarInset>
         <header className="flex h-12 items-center justify-between px-4">
           <Button onClick={() => setOpen((open) => !open)} size="sm" variant="ghost">
-            {open ? <PanelLeftCloseIcon /> : <PanelLeftOpenIcon />}
+            {open ? <SidebarSimpleIcon /> : <SidebarIcon />}
             <span>{open ? "Close" : "Open"} Sidebar</span>
           </Button>
         </header>

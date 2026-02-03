@@ -6,7 +6,7 @@ import { Calendar } from "@kaotypr/ui/calendar"
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 import { addDays, format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@phosphor-icons/react"
 import { type DateRange } from "react-day-picker"
 
 export function DatePickerWithRange() {

@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
-import { LifeBuoyIcon, SendIcon } from "lucide-react"
+import { LifebuoyIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react"
 
 export default function AppSidebar() {
   return (
@@ -24,13 +24,13 @@ export default function AppSidebar() {
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <LifeBuoyIcon />
+                    <LifebuoyIcon />
                     Support
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <SendIcon />
+                    <PaperPlaneTiltIcon />
                     Feedback
                   </SidebarMenuButton>
                 </SidebarMenuItem>

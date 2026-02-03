@@ -5,7 +5,7 @@ import {
   InputGroupText,
 } from "@kaotypr/ui/input-group"
 import { Spinner } from "@kaotypr/ui/spinner"
-import { LoaderIcon } from "lucide-react"
+import { SpinnerGapIcon } from "@phosphor-icons/react"
 
 export default function InputGroupSpinner() {
   return (
@@ -32,7 +32,7 @@ export default function InputGroupSpinner() {
       <InputGroup>
         <InputGroupInput placeholder="Refreshing data..." />
         <InputGroupAddon>
-          <LoaderIcon className="animate-spin" />
+          <SpinnerGapIcon className="animate-spin" />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">
           <InputGroupText className="text-muted-foreground">Please wait...</InputGroupText>

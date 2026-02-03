@@ -8,7 +8,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@kaotypr/ui/item"
-import { Plus } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 export function ItemAvatar() {
   return (
@@ -26,7 +26,7 @@ export function ItemAvatar() {
         </ItemContent>
         <ItemActions>
           <Button size="icon-sm" variant="outline" className="rounded-full" aria-label="Invite">
-            <Plus />
+            <PlusIcon />
           </Button>
         </ItemActions>
       </Item>

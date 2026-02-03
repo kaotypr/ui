@@ -1,5 +1,5 @@
 import { Badge } from "@kaotypr/ui/badge"
-import { ArrowUpRightIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "@phosphor-icons/react"
 
 export function BadgeAsLink() {
   return (

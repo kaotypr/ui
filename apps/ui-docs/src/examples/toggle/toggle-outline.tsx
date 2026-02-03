@@ -1,15 +1,15 @@
 import { Toggle } from "@kaotypr/ui/toggle"
-import { BoldIcon, ItalicIcon } from "lucide-react"
+import { TextBolderIcon, TextItalicIcon } from "@phosphor-icons/react"
 
 export function ToggleOutline() {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Toggle variant="outline" aria-label="Toggle italic">
-        <ItalicIcon />
+        <TextItalicIcon />
         Italic
       </Toggle>
       <Toggle variant="outline" aria-label="Toggle bold">
-        <BoldIcon />
+        <TextBolderIcon />
         Bold
       </Toggle>
     </div>

@@ -14,7 +14,7 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
-import { ChevronRightIcon } from "lucide-react"
+import { CaretRightIcon } from "@phosphor-icons/react"
 
 const items = [
   {
@@ -157,7 +157,7 @@ export default function AppSidebar() {
                     <SidebarMenuItem>
                       <CollapsibleTrigger render={<SidebarMenuButton />}>
                         <span>{item.title}</span>
-                        <ChevronRightIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                        <CaretRightIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub>

@@ -17,16 +17,16 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import {
-  ArchiveIcon,
+  ArchiveBoxIcon,
   ArrowLeftIcon,
   CalendarPlusIcon,
   ClockIcon,
-  ListFilterIcon,
-  MailCheckIcon,
-  MoreHorizontalIcon,
+  DotsThreeIcon,
+  EnvelopeSimpleIcon,
+  FunnelIcon,
   TagIcon,
-  Trash2Icon,
-} from "lucide-react"
+  TrashIcon,
+} from "@phosphor-icons/react"
 
 export default function ButtonGroupDemo() {
   const [label, setLabel] = React.useState("personal")
@@ -48,16 +48,16 @@ export default function ButtonGroupDemo() {
           <DropdownMenuTrigger
             render={<Button variant="outline" size="icon" aria-label="More Options" />}
           >
-            <MoreHorizontalIcon />
+            <DotsThreeIcon />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <MailCheckIcon />
+                <EnvelopeSimpleIcon />
                 Mark as Read
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <ArchiveIcon />
+                <ArchiveBoxIcon />
                 Archive
               </DropdownMenuItem>
             </DropdownMenuGroup>
@@ -72,7 +72,7 @@ export default function ButtonGroupDemo() {
                 Add to Calendar
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <ListFilterIcon />
+                <FunnelIcon />
                 Add to List
               </DropdownMenuItem>
               <DropdownMenuSub>
@@ -92,7 +92,7 @@ export default function ButtonGroupDemo() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem variant="destructive">
-                <Trash2Icon />
+                <TrashIcon />
                 Trash
               </DropdownMenuItem>
             </DropdownMenuGroup>

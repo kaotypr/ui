@@ -11,7 +11,7 @@ import {
   AlertDialogTrigger,
 } from "@kaotypr/ui/alert-dialog"
 import { Button } from "@kaotypr/ui/button"
-import { BluetoothIcon } from "lucide-react"
+import { BluetoothIcon } from "@phosphor-icons/react"
 
 export function AlertDialogSmallWithMedia() {
   return (

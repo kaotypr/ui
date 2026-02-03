@@ -6,14 +6,14 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@kaotypr/ui/item"
-import { InboxIcon } from "lucide-react"
+import { TrayIcon } from "@phosphor-icons/react"
 
 export function OutlineItemGroup() {
   return (
     <ItemGroup>
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Item 1</ItemTitle>
@@ -22,7 +22,7 @@ export function OutlineItemGroup() {
       </Item>
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Item 2</ItemTitle>
@@ -31,7 +31,7 @@ export function OutlineItemGroup() {
       </Item>
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Item 3</ItemTitle>

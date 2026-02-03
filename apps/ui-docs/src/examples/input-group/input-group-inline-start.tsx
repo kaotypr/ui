@@ -1,6 +1,6 @@
 import { Field, FieldDescription, FieldLabel } from "@kaotypr/ui/field"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
-import { SearchIcon } from "lucide-react"
+import { MagnifyingGlassIcon } from "@phosphor-icons/react"
 
 export function InputGroupInlineStart() {
   return (
@@ -9,7 +9,7 @@ export function InputGroupInlineStart() {
       <InputGroup>
         <InputGroupInput id="inline-start-input" placeholder="Search..." />
         <InputGroupAddon align="inline-start">
-          <SearchIcon className="text-muted-foreground" />
+          <MagnifyingGlassIcon className="text-muted-foreground" />
         </InputGroupAddon>
       </InputGroup>
       <FieldDescription>Icon positioned at the start.</FieldDescription>

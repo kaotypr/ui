@@ -11,7 +11,7 @@ import {
   AlertDialogTrigger,
 } from "@kaotypr/ui/alert-dialog"
 import { Button } from "@kaotypr/ui/button"
-import { Trash2Icon } from "lucide-react"
+import { TrashIcon } from "@phosphor-icons/react"
 
 export function AlertDialogDestructive() {
   return (
@@ -20,12 +20,13 @@ export function AlertDialogDestructive() {
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
-            <Trash2Icon />
+            <TrashIcon />
           </AlertDialogMedia>
           <AlertDialogTitle>Delete chat?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete this chat conversation. View <a href="#">Settings</a>{" "}
-            delete any memories saved during this chat.
+            This will permanently delete this chat conversation. View{" "}
+            {/** biome-ignore lint/a11y/useValidAnchor: false positive */}
+            <a href="#">Settings</a> delete any memories saved during this chat.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

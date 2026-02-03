@@ -11,7 +11,14 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@kaotypr/ui/command"
-import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "lucide-react"
+import {
+  CalculatorIcon,
+  CalendarIcon,
+  CreditCardIcon,
+  GearIcon,
+  SmileyIcon,
+  UserIcon,
+} from "@phosphor-icons/react"
 
 export function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)
@@ -42,32 +49,32 @@ export function CommandDialogDemo() {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             <CommandItem>
-              <Calendar />
+              <CalendarIcon />
               <span>Calendar</span>
             </CommandItem>
             <CommandItem>
-              <Smile />
+              <SmileyIcon />
               <span>Search Emoji</span>
             </CommandItem>
             <CommandItem>
-              <Calculator />
+              <CalculatorIcon />
               <span>Calculator</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
             <CommandItem>
-              <User />
+              <UserIcon />
               <span>Profile</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
             <CommandItem>
-              <CreditCard />
+              <CreditCardIcon />
               <span>Billing</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
             <CommandItem>
-              <Settings />
+              <GearIcon />
               <span>Settings</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>

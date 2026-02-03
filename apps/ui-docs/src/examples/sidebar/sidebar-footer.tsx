@@ -18,7 +18,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@kaotypr/ui/sidebar"
-import { ChevronUpIcon } from "lucide-react"
+import { CaretUpIcon } from "@phosphor-icons/react"
 
 export default function AppSidebar() {
   return (
@@ -36,7 +36,7 @@ export default function AppSidebar() {
                   }
                 >
                   Username
-                  <ChevronUpIcon className="ml-auto" />
+                  <CaretUpIcon className="ml-auto" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="top" className="w-(--radix-popper-anchor-width)">
                   <DropdownMenuItem>

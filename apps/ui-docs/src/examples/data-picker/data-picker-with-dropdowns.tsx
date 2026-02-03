@@ -6,7 +6,7 @@ import { Calendar } from "@kaotypr/ui/calendar"
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 import { format } from "date-fns"
-import { ChevronDownIcon } from "lucide-react"
+import { CaretDownIcon } from "@phosphor-icons/react"
 
 export function DataPickerWithDropdowns() {
   const [date, setDate] = React.useState<Date>()
@@ -25,7 +25,7 @@ export function DataPickerWithDropdowns() {
             />
           }
         >
-          <ChevronDownIcon className="ml-auto" />
+          <CaretDownIcon className="ml-auto" />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">

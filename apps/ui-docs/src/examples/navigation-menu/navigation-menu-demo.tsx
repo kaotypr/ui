@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@kaotypr/ui/navigation-menu"
-import { CircleAlertIcon } from "lucide-react"
+import { WarningCircleIcon } from "@phosphor-icons/react"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -90,19 +90,19 @@ export default function NavigationMenuDemo() {
                 <NavigationMenuLink
                   render={<Link href="#" className="flex-row items-center gap-2" />}
                 >
-                  <CircleAlertIcon />
+                  <WarningCircleIcon />
                   Backlog
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={<Link href="#" className="flex-row items-center gap-2" />}
                 >
-                  <CircleAlertIcon />
+                  <WarningCircleIcon />
                   To Do
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={<Link href="#" className="flex-row items-center gap-2" />}
                 >
-                  <CircleAlertIcon />
+                  <WarningCircleIcon />
                   Done
                 </NavigationMenuLink>
               </li>

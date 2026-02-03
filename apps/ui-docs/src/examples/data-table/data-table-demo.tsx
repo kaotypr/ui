@@ -27,7 +27,7 @@ import {
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { CaretDownIcon, CaretUpDownIcon, DotsThreeIcon } from "@phosphor-icons/react"
 
 const data: Payment[] = [
   {
@@ -105,7 +105,7 @@ export const columns: ColumnDef<Payment>[] = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Email
-          <ArrowUpDown />
+          <CaretUpDownIcon />
         </Button>
       )
     },
@@ -136,7 +136,7 @@ export const columns: ColumnDef<Payment>[] = [
         <DropdownMenu>
           <DropdownMenuTrigger render={<Button variant="ghost" className="h-8 w-8 p-0" />}>
             <span className="sr-only">Open menu</span>
-            <MoreHorizontal />
+            <DotsThreeIcon />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuGroup>
@@ -193,7 +193,7 @@ export function DataTableDemo() {
         />
         <DropdownMenu>
           <DropdownMenuTrigger render={<Button variant="outline" className="ml-auto" />}>
-            Columns <ChevronDown />
+            Columns <CaretDownIcon />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuGroup>

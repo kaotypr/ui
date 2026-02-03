@@ -19,39 +19,39 @@ import {
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
 import {
-  FrameIcon,
-  LifeBuoyIcon,
-  MapIcon,
-  MoreHorizontalIcon,
-  PieChartIcon,
-  SendIcon,
-} from "lucide-react"
+  ChartPieIcon,
+  DotsThreeIcon,
+  LifebuoyIcon,
+  MapTrifoldIcon,
+  PaperPlaneTiltIcon,
+  SquareIcon,
+} from "@phosphor-icons/react"
 
 const projects = [
   {
     name: "Design Engineering",
     url: "#",
-    icon: FrameIcon,
+    icon: SquareIcon,
   },
   {
     name: "Sales & Marketing",
     url: "#",
-    icon: PieChartIcon,
+    icon: ChartPieIcon,
   },
   {
     name: "Travel",
     url: "#",
-    icon: MapIcon,
+    icon: MapTrifoldIcon,
   },
   {
     name: "Support",
     url: "#",
-    icon: LifeBuoyIcon,
+    icon: LifebuoyIcon,
   },
   {
     name: "Feedback",
     url: "#",
-    icon: SendIcon,
+    icon: PaperPlaneTiltIcon,
   },
 ]
 
@@ -75,7 +75,7 @@ export default function AppSidebar() {
                     </SidebarMenuButton>
                     <DropdownMenu>
                       <DropdownMenuTrigger render={<SidebarMenuAction />}>
-                        <MoreHorizontalIcon />
+                        <DotsThreeIcon />
                         <span className="sr-only">More</span>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent side="right" align="start">

@@ -7,7 +7,7 @@ import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Input } from "@kaotypr/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 import { format } from "date-fns"
-import { ChevronDownIcon } from "lucide-react"
+import { CaretDownIcon } from "@phosphor-icons/react"
 
 export function DatePickerTime() {
   const [open, setOpen] = React.useState(false)
@@ -28,7 +28,7 @@ export function DatePickerTime() {
             }
           >
             {date ? format(date, "PPP") : "Select date"}
-            <ChevronDownIcon data-icon="inline-end" />
+            <CaretDownIcon data-icon="inline-end" />
           </PopoverTrigger>
           <PopoverContent className="w-auto overflow-hidden p-0" align="start">
             <Calendar

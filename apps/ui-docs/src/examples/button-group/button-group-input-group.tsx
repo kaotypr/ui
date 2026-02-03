@@ -10,7 +10,7 @@ import {
   InputGroupInput,
 } from "@kaotypr/ui/input-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
-import { AudioLinesIcon, PlusIcon } from "lucide-react"
+import { MusicNotesIcon, PlusIcon } from "@phosphor-icons/react"
 
 export default function ButtonGroupInputGroup() {
   const [voiceEnabled, setVoiceEnabled] = React.useState(false)
@@ -41,7 +41,7 @@ export default function ButtonGroupInputGroup() {
                   />
                 }
               >
-                <AudioLinesIcon />
+                <MusicNotesIcon />
               </TooltipTrigger>
               <TooltipContent>Voice Mode</TooltipContent>
             </Tooltip>

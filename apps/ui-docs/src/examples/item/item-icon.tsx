@@ -7,14 +7,14 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@kaotypr/ui/item"
-import { ShieldAlertIcon } from "lucide-react"
+import { ShieldWarningIcon } from "@phosphor-icons/react"
 
 export function ItemIcon() {
   return (
     <div className="flex w-full max-w-lg flex-col gap-6">
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <ShieldAlertIcon />
+          <ShieldWarningIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Security Alert</ItemTitle>

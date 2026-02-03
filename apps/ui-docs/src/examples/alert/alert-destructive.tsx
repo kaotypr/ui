@@ -1,10 +1,10 @@
 import { Alert, AlertDescription, AlertTitle } from "@kaotypr/ui/alert"
-import { AlertCircleIcon } from "lucide-react"
+import { WarningCircleIcon } from "@phosphor-icons/react"
 
 export default function AlertDestructive() {
   return (
     <Alert variant="destructive" className="max-w-md">
-      <AlertCircleIcon />
+      <WarningCircleIcon />
       <AlertTitle>Payment failed</AlertTitle>
       <AlertDescription>
         Your payment could not be processed. Please check your payment method and try again.

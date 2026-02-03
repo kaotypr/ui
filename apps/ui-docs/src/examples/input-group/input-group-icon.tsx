@@ -1,5 +1,12 @@
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
-import { CheckIcon, CreditCardIcon, InfoIcon, MailIcon, SearchIcon, StarIcon } from "lucide-react"
+import {
+  CheckIcon,
+  CreditCardIcon,
+  EnvelopeIcon,
+  InfoIcon,
+  MagnifyingGlassIcon,
+  StarIcon,
+} from "@phosphor-icons/react"
 
 export default function InputGroupIcon() {
   return (
@@ -7,13 +14,13 @@ export default function InputGroupIcon() {
       <InputGroup>
         <InputGroupInput placeholder="Search..." />
         <InputGroupAddon>
-          <SearchIcon />
+          <MagnifyingGlassIcon />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
         <InputGroupInput type="email" placeholder="Enter your email" />
         <InputGroupAddon>
-          <MailIcon />
+          <EnvelopeIcon />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>

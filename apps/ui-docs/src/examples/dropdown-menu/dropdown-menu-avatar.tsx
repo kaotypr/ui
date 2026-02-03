@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { BadgeCheckIcon, BellIcon, CreditCardIcon, LogOutIcon } from "lucide-react"
+import { BellIcon, CheckCircleIcon, CreditCardIcon, SignOutIcon } from "@phosphor-icons/react"
 
 export function DropdownMenuAvatar() {
   return (
@@ -24,7 +24,7 @@ export function DropdownMenuAvatar() {
       <DropdownMenuContent align="end">
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <BadgeCheckIcon />
+            <CheckCircleIcon />
             Account
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -38,7 +38,7 @@ export function DropdownMenuAvatar() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOutIcon />
+          <SignOutIcon />
           Sign Out
         </DropdownMenuItem>
       </DropdownMenuContent>

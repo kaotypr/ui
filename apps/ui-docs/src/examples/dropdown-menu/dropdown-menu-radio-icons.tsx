@@ -11,7 +11,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { Building2Icon, CreditCardIcon, WalletIcon } from "lucide-react"
+import { BuildingIcon, CreditCardIcon, WalletIcon } from "@phosphor-icons/react"
 
 export function DropdownMenuRadioIcons() {
   const [paymentMethod, setPaymentMethod] = React.useState("card")
@@ -34,7 +34,7 @@ export function DropdownMenuRadioIcons() {
               PayPal
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="bank">
-              <Building2Icon />
+              <BuildingIcon />
               Bank Transfer
             </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>

@@ -11,15 +11,15 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import {
-  AlertTriangleIcon,
+  CaretDownIcon,
   CheckIcon,
-  ChevronDownIcon,
   CopyIcon,
   ShareIcon,
+  SpeakerSlashIcon,
   TrashIcon,
-  UserRoundXIcon,
-  VolumeOffIcon,
-} from "lucide-react"
+  UserMinusIcon,
+  WarningIcon,
+} from "@phosphor-icons/react"
 
 export default function ButtonGroupDropdown() {
   return (
@@ -27,12 +27,12 @@ export default function ButtonGroupDropdown() {
       <Button variant="outline">Follow</Button>
       <DropdownMenu>
         <DropdownMenuTrigger render={<Button variant="outline" className="!pl-2" />}>
-          <ChevronDownIcon />
+          <CaretDownIcon />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-44">
           <DropdownMenuGroup>
             <DropdownMenuItem>
-              <VolumeOffIcon />
+              <SpeakerSlashIcon />
               Mute Conversation
             </DropdownMenuItem>
             <DropdownMenuItem>
@@ -40,11 +40,11 @@ export default function ButtonGroupDropdown() {
               Mark as Read
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <AlertTriangleIcon />
+              <WarningIcon />
               Report Conversation
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <UserRoundXIcon />
+              <UserMinusIcon />
               Block User
             </DropdownMenuItem>
             <DropdownMenuItem>

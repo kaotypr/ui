@@ -5,7 +5,7 @@ import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
 import { Input } from "@kaotypr/ui/input"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger } from "@kaotypr/ui/select"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowRightIcon } from "@phosphor-icons/react"
 
 const CURRENCIES = [
   { label: "US Dollar", value: "$" },

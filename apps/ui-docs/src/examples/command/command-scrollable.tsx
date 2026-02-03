@@ -17,27 +17,27 @@ import {
   BellIcon,
   CalculatorIcon,
   CalendarIcon,
-  ClipboardPasteIcon,
+  ClipboardTextIcon,
   CodeIcon,
   CopyIcon,
   CreditCardIcon,
   FileTextIcon,
   FolderIcon,
   FolderPlusIcon,
-  HelpCircleIcon,
-  HomeIcon,
+  GearIcon,
+  HouseIcon,
   ImageIcon,
-  InboxIcon,
-  LayoutGridIcon,
   ListIcon,
   PlusIcon,
+  QuestionIcon,
   ScissorsIcon,
-  SettingsIcon,
+  SquaresFourIcon,
   TrashIcon,
+  TrayIcon,
   UserIcon,
-  ZoomInIcon,
-  ZoomOutIcon,
-} from "lucide-react"
+  MagnifyingGlassPlusIcon,
+  MagnifyingGlassMinusIcon,
+} from "@phosphor-icons/react"
 
 export function CommandManyItems() {
   const [open, setOpen] = React.useState(false)
@@ -54,12 +54,12 @@ export function CommandManyItems() {
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Navigation">
               <CommandItem>
-                <HomeIcon />
+                <HouseIcon />
                 <span>Home</span>
                 <CommandShortcut>⌘H</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <InboxIcon />
+                <TrayIcon />
                 <span>Inbox</span>
                 <CommandShortcut>⌘I</CommandShortcut>
               </CommandItem>
@@ -97,7 +97,7 @@ export function CommandManyItems() {
                 <CommandShortcut>⌘X</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <ClipboardPasteIcon />
+                <ClipboardTextIcon />
                 <span>Paste</span>
                 <CommandShortcut>⌘V</CommandShortcut>
               </CommandItem>
@@ -110,7 +110,7 @@ export function CommandManyItems() {
             <CommandSeparator />
             <CommandGroup heading="View">
               <CommandItem>
-                <LayoutGridIcon />
+                <SquaresFourIcon />
                 <span>Grid View</span>
               </CommandItem>
               <CommandItem>
@@ -118,12 +118,12 @@ export function CommandManyItems() {
                 <span>List View</span>
               </CommandItem>
               <CommandItem>
-                <ZoomInIcon />
+                <MagnifyingGlassPlusIcon />
                 <span>Zoom In</span>
                 <CommandShortcut>⌘+</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <ZoomOutIcon />
+                <MagnifyingGlassMinusIcon />
                 <span>Zoom Out</span>
                 <CommandShortcut>⌘-</CommandShortcut>
               </CommandItem>
@@ -141,7 +141,7 @@ export function CommandManyItems() {
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <SettingsIcon />
+                <GearIcon />
                 <span>Settings</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>
@@ -150,7 +150,7 @@ export function CommandManyItems() {
                 <span>Notifications</span>
               </CommandItem>
               <CommandItem>
-                <HelpCircleIcon />
+                <QuestionIcon />
                 <span>Help & Support</span>
               </CommandItem>
             </CommandGroup>

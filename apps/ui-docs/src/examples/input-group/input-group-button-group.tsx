@@ -1,7 +1,7 @@
 import { ButtonGroup, ButtonGroupText } from "@kaotypr/ui/button-group"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Label } from "@kaotypr/ui/label"
-import { Link2Icon } from "lucide-react"
+import { LinkIcon } from "@phosphor-icons/react"
 
 export default function InputGroupButtonGroup() {
   return (
@@ -11,7 +11,7 @@ export default function InputGroupButtonGroup() {
         <InputGroup>
           <InputGroupInput id="url" />
           <InputGroupAddon align="inline-end">
-            <Link2Icon />
+            <LinkIcon />
           </InputGroupAddon>
         </InputGroup>
         <ButtonGroupText>.com</ButtonGroupText>

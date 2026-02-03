@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { BellIcon, MailIcon, MessageSquareIcon } from "lucide-react"
+import { BellIcon, ChatCircleIcon, EnvelopeIcon } from "@phosphor-icons/react"
 
 export function DropdownMenuCheckboxesIcons() {
   const [notifications, setNotifications] = React.useState({
@@ -31,7 +31,7 @@ export function DropdownMenuCheckboxesIcons() {
               setNotifications({ ...notifications, email: checked === true })
             }
           >
-            <MailIcon />
+            <EnvelopeIcon />
             Email notifications
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
@@ -40,7 +40,7 @@ export function DropdownMenuCheckboxesIcons() {
               setNotifications({ ...notifications, sms: checked === true })
             }
           >
-            <MessageSquareIcon />
+            <ChatCircleIcon />
             SMS notifications
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem

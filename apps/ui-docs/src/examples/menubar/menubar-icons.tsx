@@ -10,12 +10,12 @@ import {
 } from "@kaotypr/ui/menubar"
 import {
   FileIcon,
+  FloppyDiskIcon,
   FolderIcon,
-  HelpCircleIcon,
-  SaveIcon,
-  SettingsIcon,
+  GearIcon,
+  QuestionIcon,
   TrashIcon,
-} from "lucide-react"
+} from "@phosphor-icons/react"
 
 export function MenubarIcons() {
   return (
@@ -33,7 +33,7 @@ export function MenubarIcons() {
           </MenubarItem>
           <MenubarSeparator />
           <MenubarItem>
-            <SaveIcon />
+            <FloppyDiskIcon />
             Save <MenubarShortcut>⌘S</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
@@ -43,11 +43,11 @@ export function MenubarIcons() {
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              <SettingsIcon />
+              <GearIcon />
               Settings
             </MenubarItem>
             <MenubarItem>
-              <HelpCircleIcon />
+              <QuestionIcon />
               Help
             </MenubarItem>
             <MenubarSeparator />

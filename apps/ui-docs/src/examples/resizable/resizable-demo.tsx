@@ -2,7 +2,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@kaotypr/u
 
 export default function ResizableDemo() {
   return (
-    <ResizablePanelGroup direction="horizontal" className="max-w-sm rounded-lg border">
+    <ResizablePanelGroup dir="horizontal" className="max-w-sm rounded-lg border">
       <ResizablePanel defaultSize={50}>
         <div className="flex h-[200px] items-center justify-center p-6">
           <span className="font-semibold">One</span>
@@ -10,7 +10,7 @@ export default function ResizableDemo() {
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel defaultSize={50}>
-        <ResizablePanelGroup direction="vertical">
+        <ResizablePanelGroup dir="vertical">
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center p-6">
               <span className="font-semibold">Two</span>

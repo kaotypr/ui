@@ -2,7 +2,7 @@ import { Button } from "@kaotypr/ui/button"
 import { Card, CardContent, CardHeader } from "@kaotypr/ui/card"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@kaotypr/ui/collapsible"
 import { Tabs, TabsList, TabsTrigger } from "@kaotypr/ui/tabs"
-import { ChevronRightIcon, FileIcon, FolderIcon } from "lucide-react"
+import { CaretRightIcon, FileIcon, FolderIcon } from "@phosphor-icons/react"
 
 type FileTreeItem = { name: string } | { name: string; items: FileTreeItem[] }
 
@@ -68,7 +68,7 @@ export function CollapsibleFileTree() {
               />
             }
           >
-            <ChevronRightIcon className="transition-transform group-data-[state=open]:rotate-90" />
+            <CaretRightIcon className="transition-transform group-data-[state=open]:rotate-90" />
             <FolderIcon />
             {fileItem.name}
           </CollapsibleTrigger>

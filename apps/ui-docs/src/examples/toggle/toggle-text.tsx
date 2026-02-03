@@ -1,10 +1,10 @@
 import { Toggle } from "@kaotypr/ui/toggle"
-import { ItalicIcon } from "lucide-react"
+import { TextItalicIcon } from "@phosphor-icons/react"
 
 export function ToggleText() {
   return (
     <Toggle aria-label="Toggle italic">
-      <ItalicIcon />
+      <TextItalicIcon />
       Italic
     </Toggle>
   )

@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
-import { FrameIcon, MapIcon, PieChartIcon, PlusIcon } from "lucide-react"
+import { ChartPieIcon, MapTrifoldIcon, PlusIcon, SquareIcon } from "@phosphor-icons/react"
 import { toast, Toaster } from "sonner"
 
 export default function AppSidebar() {
@@ -38,19 +38,19 @@ export default function AppSidebar() {
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
-                    <FrameIcon />
+                    <SquareIcon />
                     <span>Design Engineering</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
-                    <PieChartIcon />
+                    <ChartPieIcon />
                     <span>Sales & Marketing</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
-                    <MapIcon />
+                    <MapTrifoldIcon />
                     <span>Travel</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

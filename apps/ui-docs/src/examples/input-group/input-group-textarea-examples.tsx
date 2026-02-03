@@ -8,7 +8,13 @@ import {
   InputGroupTextarea,
 } from "@kaotypr/ui/input-group"
 import { Textarea } from "@kaotypr/ui/textarea"
-import { ArrowUpIcon, CodeIcon, CopyIcon, InfoIcon, RefreshCwIcon } from "lucide-react"
+import {
+  ArrowClockwiseIcon,
+  ArrowUpIcon,
+  CodeIcon,
+  CopyIcon,
+  InfoIcon,
+} from "@phosphor-icons/react"
 
 export function InputGroupTextareaExamples() {
   return (
@@ -110,7 +116,7 @@ export function InputGroupTextareaExamples() {
               script.js
             </InputGroupText>
             <InputGroupButton size="icon-xs" className="ml-auto">
-              <RefreshCwIcon />
+              <ArrowClockwiseIcon />
             </InputGroupButton>
             <InputGroupButton size="icon-xs" variant="ghost">
               <CopyIcon />

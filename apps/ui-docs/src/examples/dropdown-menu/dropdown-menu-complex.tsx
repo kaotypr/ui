@@ -22,30 +22,30 @@ import {
 import {
   BellIcon,
   CreditCardIcon,
-  DownloadIcon,
+  DownloadSimpleIcon,
+  DotsThreeIcon,
+  EnvelopeIcon,
   EyeIcon,
   FileCodeIcon,
   FileIcon,
   FileTextIcon,
+  FloppyDiskIcon,
   FolderIcon,
   FolderOpenIcon,
-  FolderSearchIcon,
-  HelpCircleIcon,
+  GearIcon,
   KeyboardIcon,
-  LanguagesIcon,
   LayoutIcon,
-  LogOutIcon,
-  MailIcon,
+  MagnifyingGlassIcon,
   MonitorIcon,
   MoonIcon,
-  MoreHorizontalIcon,
   PaletteIcon,
-  SaveIcon,
-  SettingsIcon,
+  QuestionIcon,
   ShieldIcon,
+  SignOutIcon,
   SunIcon,
+  TranslateIcon,
   UserIcon,
-} from "lucide-react"
+} from "@phosphor-icons/react"
 
 export function DropdownMenuComplex() {
   const [notifications, setNotifications] = React.useState({
@@ -90,7 +90,7 @@ export function DropdownMenuComplex() {
                   </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
-                      <MoreHorizontalIcon />
+                      <DotsThreeIcon />
                       More Projects
                     </DropdownMenuSubTrigger>
                     <DropdownMenuPortal>
@@ -110,7 +110,7 @@ export function DropdownMenuComplex() {
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <FolderSearchIcon />
+                    <MagnifyingGlassIcon />
                     Browse...
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
@@ -119,12 +119,12 @@ export function DropdownMenuComplex() {
           </DropdownMenuSub>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <SaveIcon />
+            <FloppyDiskIcon />
             Save
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <DownloadIcon />
+            <DownloadSimpleIcon />
             Export
             <DropdownMenuShortcut>⇧⌘E</DropdownMenuShortcut>
           </DropdownMenuItem>
@@ -192,7 +192,7 @@ export function DropdownMenuComplex() {
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
-              <SettingsIcon />
+              <GearIcon />
               Settings
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
@@ -204,7 +204,7 @@ export function DropdownMenuComplex() {
                     Keyboard Shortcuts
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <LanguagesIcon />
+                    <TranslateIcon />
                     Language
                   </DropdownMenuItem>
                   <DropdownMenuSub>
@@ -237,7 +237,7 @@ export function DropdownMenuComplex() {
                               })
                             }
                           >
-                            <MailIcon />
+                            <EnvelopeIcon />
                             Email Notifications
                           </DropdownMenuCheckboxItem>
                         </DropdownMenuGroup>
@@ -259,7 +259,7 @@ export function DropdownMenuComplex() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <HelpCircleIcon />
+            <QuestionIcon />
             Help & Support
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -270,7 +270,7 @@ export function DropdownMenuComplex() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
-            <LogOutIcon />
+            <SignOutIcon />
             Sign Out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>

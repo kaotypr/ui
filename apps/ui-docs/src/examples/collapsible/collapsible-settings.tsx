@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaot
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@kaotypr/ui/collapsible"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Input } from "@kaotypr/ui/input"
-import { MaximizeIcon, MinimizeIcon } from "lucide-react"
+import { ArrowsInIcon, ArrowsOutIcon } from "@phosphor-icons/react"
 
 export function CollapsibleSettings() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -48,7 +48,7 @@ export function CollapsibleSettings() {
             </CollapsibleContent>
           </FieldGroup>
           <CollapsibleTrigger render={<Button variant="outline" size="icon" />}>
-            {isOpen ? <MinimizeIcon /> : <MaximizeIcon />}
+            {isOpen ? <ArrowsInIcon /> : <ArrowsOutIcon />}
           </CollapsibleTrigger>
         </Collapsible>
       </CardContent>

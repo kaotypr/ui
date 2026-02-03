@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { PencilIcon, ShareIcon, TrashIcon } from "lucide-react"
+import { PencilSimpleIcon, ShareIcon, TrashIcon } from "@phosphor-icons/react"
 
 export function DropdownMenuDestructive() {
   return (
@@ -18,7 +18,7 @@ export function DropdownMenuDestructive() {
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <PencilIcon />
+            <PencilSimpleIcon />
             Edit
           </DropdownMenuItem>
           <DropdownMenuItem>

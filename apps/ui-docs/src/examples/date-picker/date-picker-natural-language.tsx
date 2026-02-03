@@ -11,7 +11,7 @@ import {
 } from "@kaotypr/ui/input-group"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 import { parseDate } from "chrono-node"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@phosphor-icons/react"
 
 function formatDate(date: Date | undefined) {
   if (!date) {

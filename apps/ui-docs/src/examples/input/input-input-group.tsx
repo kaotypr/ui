@@ -5,7 +5,7 @@ import {
   InputGroupInput,
   InputGroupText,
 } from "@kaotypr/ui/input-group"
-import { InfoIcon } from "lucide-react"
+import { InfoIcon } from "@phosphor-icons/react"
 
 export function InputInputGroup() {
   return (

@@ -1,5 +1,5 @@
 import { Button } from "@kaotypr/ui/button"
-import { ArrowUpRightIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "@phosphor-icons/react"
 
 export default function ButtonSize() {
   return (

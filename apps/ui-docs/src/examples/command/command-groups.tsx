@@ -17,10 +17,10 @@ import {
   CalculatorIcon,
   CalendarIcon,
   CreditCardIcon,
-  SettingsIcon,
-  SmileIcon,
+  GearIcon,
+  SmileyIcon,
   UserIcon,
-} from "lucide-react"
+} from "@phosphor-icons/react"
 
 export function CommandWithGroups() {
   const [open, setOpen] = React.useState(false)
@@ -41,7 +41,7 @@ export function CommandWithGroups() {
                 <span>Calendar</span>
               </CommandItem>
               <CommandItem>
-                <SmileIcon />
+                <SmileyIcon />
                 <span>Search Emoji</span>
               </CommandItem>
               <CommandItem>
@@ -62,7 +62,7 @@ export function CommandWithGroups() {
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <SettingsIcon />
+                <GearIcon />
                 <span>Settings</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>

@@ -1,12 +1,12 @@
 import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
-import { InboxIcon } from "lucide-react"
+import { TrayIcon } from "@phosphor-icons/react"
 
 export function ItemSizeDemo() {
   return (
     <div className="flex w-full max-w-md flex-col gap-6">
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Default Size</ItemTitle>
@@ -15,7 +15,7 @@ export function ItemSizeDemo() {
       </Item>
       <Item variant="outline" size="sm">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Small Size</ItemTitle>
@@ -24,7 +24,7 @@ export function ItemSizeDemo() {
       </Item>
       <Item variant="outline" size="xs">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Extra Small Size</ItemTitle>

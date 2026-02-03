@@ -11,33 +11,39 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
-import { FrameIcon, LifeBuoyIcon, MapIcon, PieChartIcon, SendIcon } from "lucide-react"
+import {
+  ChartPieIcon,
+  LifebuoyIcon,
+  MapTrifoldIcon,
+  PaperPlaneTiltIcon,
+  SquareIcon,
+} from "@phosphor-icons/react"
 
 const projects = [
   {
     name: "Design Engineering",
     url: "#",
-    icon: FrameIcon,
+    icon: SquareIcon,
   },
   {
     name: "Sales & Marketing",
     url: "#",
-    icon: PieChartIcon,
+    icon: ChartPieIcon,
   },
   {
     name: "Travel",
     url: "#",
-    icon: MapIcon,
+    icon: MapTrifoldIcon,
   },
   {
     name: "Support",
     url: "#",
-    icon: LifeBuoyIcon,
+    icon: LifebuoyIcon,
   },
   {
     name: "Feedback",
     url: "#",
-    icon: SendIcon,
+    icon: PaperPlaneTiltIcon,
   },
 ]
 

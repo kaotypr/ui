@@ -1,7 +1,7 @@
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyTitle } from "@kaotypr/ui/empty"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Kbd } from "@kaotypr/ui/kbd"
-import { SearchIcon } from "lucide-react"
+import { MagnifyingGlassIcon } from "@phosphor-icons/react"
 
 export default function EmptyInputGroup() {
   return (
@@ -17,7 +17,7 @@ export default function EmptyInputGroup() {
         <InputGroup className="sm:w-3/4">
           <InputGroupInput placeholder="Try searching for pages..." />
           <InputGroupAddon>
-            <SearchIcon />
+            <MagnifyingGlassIcon />
           </InputGroupAddon>
           <InputGroupAddon align="inline-end">
             <Kbd>/</Kbd>

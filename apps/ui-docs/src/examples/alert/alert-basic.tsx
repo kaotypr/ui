@@ -1,10 +1,10 @@
 import { Alert, AlertDescription, AlertTitle } from "@kaotypr/ui/alert"
-import { CheckCircle2Icon } from "lucide-react"
+import { CheckCircleIcon } from "@phosphor-icons/react"
 
 export default function AlertBasic() {
   return (
     <Alert className="max-w-md">
-      <CheckCircle2Icon />
+      <CheckCircleIcon />
       <AlertTitle>Account updated successfully</AlertTitle>
       <AlertDescription>
         Your profile information has been saved. Changes will be reflected immediately.

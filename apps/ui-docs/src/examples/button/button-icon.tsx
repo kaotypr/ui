@@ -1,10 +1,10 @@
 import { Button } from "@kaotypr/ui/button"
-import { CircleFadingArrowUpIcon } from "lucide-react"
+import { ArrowUpIcon } from "@phosphor-icons/react"
 
 export default function ButtonIcon() {
   return (
     <Button variant="outline" size="icon">
-      <CircleFadingArrowUpIcon />
+      <ArrowUpIcon />
     </Button>
   )
 }

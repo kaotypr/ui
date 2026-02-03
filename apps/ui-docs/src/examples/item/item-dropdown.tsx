@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
-import { ChevronDownIcon } from "lucide-react"
+import { CaretDownIcon } from "@phosphor-icons/react"
 
 const people = [
   {
@@ -34,7 +34,7 @@ export function ItemDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Select <ChevronDownIcon />
+        Select <CaretDownIcon />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48" align="end">
         <DropdownMenuGroup>

@@ -7,7 +7,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@kaotypr/ui/item"
-import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react"
+import { CaretRightIcon, CheckCircleIcon } from "@phosphor-icons/react"
 
 export function ItemDemo() {
   return (
@@ -25,13 +25,13 @@ export function ItemDemo() {
       </Item>
       <Item variant="outline" size="sm" render={<a href="#" />}>
         <ItemMedia>
-          <BadgeCheckIcon className="size-5" />
+          <CheckCircleIcon className="size-5" />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Your profile has been verified.</ItemTitle>
         </ItemContent>
         <ItemActions>
-          <ChevronRightIcon className="size-4" />
+          <CaretRightIcon className="size-4" />
         </ItemActions>
       </Item>
     </div>

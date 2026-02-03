@@ -1,6 +1,6 @@
 import { Field, FieldDescription, FieldLabel } from "@kaotypr/ui/field"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
-import { EyeOffIcon } from "lucide-react"
+import { EyeSlashIcon } from "@phosphor-icons/react"
 
 export function InputGroupInlineEnd() {
   return (
@@ -9,7 +9,7 @@ export function InputGroupInlineEnd() {
       <InputGroup>
         <InputGroupInput id="inline-end-input" type="password" placeholder="Enter password" />
         <InputGroupAddon align="inline-end">
-          <EyeOffIcon />
+          <EyeSlashIcon />
         </InputGroupAddon>
       </InputGroup>
       <FieldDescription>Icon positioned at the end.</FieldDescription>

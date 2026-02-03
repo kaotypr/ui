@@ -5,7 +5,7 @@ import { Calendar } from "@kaotypr/ui/calendar"
 import { Card, CardContent, CardFooter } from "@kaotypr/ui/card"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
-import { Clock2Icon } from "lucide-react"
+import { ClockIcon } from "@phosphor-icons/react"
 
 export function CalendarWithTime() {
   const [date, setDate] = React.useState<Date | undefined>(
@@ -30,7 +30,7 @@ export function CalendarWithTime() {
                 className="appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
               />
               <InputGroupAddon>
-                <Clock2Icon className="text-muted-foreground" />
+                <ClockIcon className="text-muted-foreground" />
               </InputGroupAddon>
             </InputGroup>
           </Field>
@@ -45,7 +45,7 @@ export function CalendarWithTime() {
                 className="appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
               />
               <InputGroupAddon>
-                <Clock2Icon className="text-muted-foreground" />
+                <ClockIcon className="text-muted-foreground" />
               </InputGroupAddon>
             </InputGroup>
           </Field>

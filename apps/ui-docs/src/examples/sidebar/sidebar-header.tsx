@@ -16,7 +16,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@kaotypr/ui/sidebar"
-import { ChevronDownIcon } from "lucide-react"
+import { CaretDownIcon } from "@phosphor-icons/react"
 
 export default function AppSidebar() {
   return (
@@ -32,7 +32,7 @@ export default function AppSidebar() {
                   }
                 >
                   Select Workspace
-                  <ChevronDownIcon className="ml-auto" />
+                  <CaretDownIcon className="ml-auto" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-(--radix-popper-anchor-width)">
                   <DropdownMenuItem>

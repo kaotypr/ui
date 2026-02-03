@@ -6,7 +6,7 @@ import {
   ContextMenuSeparator,
   ContextMenuTrigger,
 } from "@kaotypr/ui/context-menu"
-import { ClipboardPasteIcon, CopyIcon, ScissorsIcon, TrashIcon } from "lucide-react"
+import { ClipboardTextIcon, CopyIcon, ScissorsIcon, TrashIcon } from "@phosphor-icons/react"
 
 export function ContextMenuIcons() {
   return (
@@ -26,7 +26,7 @@ export function ContextMenuIcons() {
             Cut
           </ContextMenuItem>
           <ContextMenuItem>
-            <ClipboardPasteIcon />
+            <ClipboardTextIcon />
             Paste
           </ContextMenuItem>
         </ContextMenuGroup>

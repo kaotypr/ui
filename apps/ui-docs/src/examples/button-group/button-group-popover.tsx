@@ -10,17 +10,17 @@ import {
   PopoverTrigger,
 } from "@kaotypr/ui/popover"
 import { Textarea } from "@kaotypr/ui/textarea"
-import { BotIcon, ChevronDownIcon } from "lucide-react"
+import { CaretDownIcon, RobotIcon } from "@phosphor-icons/react"
 
 export default function ButtonGroupPopover() {
   return (
     <ButtonGroup>
       <Button variant="outline">
-        <BotIcon /> Copilot
+        <RobotIcon /> Copilot
       </Button>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" size="icon" aria-label="Open Popover" />}>
-          <ChevronDownIcon />
+          <CaretDownIcon />
         </PopoverTrigger>
         <PopoverContent align="end" className="rounded-xl text-sm">
           <PopoverHeader>

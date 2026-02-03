@@ -7,7 +7,7 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@kaotypr/ui/input-group"
-import { CopyIcon, FileCodeIcon } from "lucide-react"
+import { CopyIcon, FileCodeIcon } from "@phosphor-icons/react"
 
 export function InputGroupBlockStart() {
   return (

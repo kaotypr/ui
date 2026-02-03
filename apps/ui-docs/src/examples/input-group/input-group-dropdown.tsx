@@ -13,7 +13,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@kaotypr/ui/input-group"
-import { ChevronDownIcon, MoreHorizontal } from "lucide-react"
+import { CaretDownIcon, DotsThreeIcon } from "@phosphor-icons/react"
 
 export function InputGroupDropdown() {
   return (
@@ -25,7 +25,7 @@ export function InputGroupDropdown() {
             <DropdownMenuTrigger
               render={<InputGroupButton variant="ghost" aria-label="More" size="icon-xs" />}
             >
-              <MoreHorizontal />
+              <DotsThreeIcon />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={8} alignOffset={-4}>
               <DropdownMenuGroup>
@@ -44,7 +44,7 @@ export function InputGroupDropdown() {
             <DropdownMenuTrigger
               render={<InputGroupButton variant="ghost" className="!pr-1.5 text-xs" />}
             >
-              Search In... <ChevronDownIcon className="size-3" />
+              Search In... <CaretDownIcon className="size-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={8} alignOffset={-4}>
               <DropdownMenuGroup>

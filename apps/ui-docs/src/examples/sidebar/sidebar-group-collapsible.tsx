@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
-import { ChevronDownIcon, LifeBuoyIcon, SendIcon } from "lucide-react"
+import { CaretDownIcon, LifebuoyIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react"
 
 export default function AppSidebar() {
   return (
@@ -26,20 +26,20 @@ export default function AppSidebar() {
                 className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm"
               >
                 Help
-                <ChevronDownIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                <CaretDownIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
               </SidebarGroupLabel>
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
-                        <LifeBuoyIcon />
+                        <LifebuoyIcon />
                         Support
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
-                        <SendIcon />
+                        <PaperPlaneTiltIcon />
                         Feedback
                       </SidebarMenuButton>
                     </SidebarMenuItem>

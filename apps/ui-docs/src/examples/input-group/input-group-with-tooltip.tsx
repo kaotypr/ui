@@ -23,7 +23,7 @@ import {
   PopoverTrigger,
 } from "@kaotypr/ui/popover"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
-import { ChevronDownIcon, InfoIcon, StarIcon } from "lucide-react"
+import { CaretDownIcon, InfoIcon, StarIcon } from "@phosphor-icons/react"
 import { toast } from "sonner"
 
 export function InputGroupWithTooltip({
@@ -62,7 +62,7 @@ export function InputGroupWithTooltip({
                 <DropdownMenuTrigger
                   render={<InputGroupButton className="text-muted-foreground tabular-nums" />}
                 >
-                  {country} <ChevronDownIcon />
+                  {country} <CaretDownIcon />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="start"

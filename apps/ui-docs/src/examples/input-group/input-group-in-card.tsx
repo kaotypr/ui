@@ -16,7 +16,7 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@kaotypr/ui/input-group"
-import { ExternalLinkIcon, MailIcon } from "lucide-react"
+import { ArrowSquareOutIcon, EnvelopeIcon } from "@phosphor-icons/react"
 
 export function InputGroupInCard() {
   return (
@@ -32,7 +32,7 @@ export function InputGroupInCard() {
             <InputGroup>
               <InputGroupInput id="email-input" type="email" placeholder="you@example.com" />
               <InputGroupAddon align="inline-end">
-                <MailIcon />
+                <EnvelopeIcon />
               </InputGroupAddon>
             </InputGroup>
           </Field>
@@ -44,7 +44,7 @@ export function InputGroupInCard() {
               </InputGroupAddon>
               <InputGroupInput id="website-input" placeholder="example.com" />
               <InputGroupAddon align="inline-end">
-                <ExternalLinkIcon />
+                <ArrowSquareOutIcon />
               </InputGroupAddon>
             </InputGroup>
           </Field>

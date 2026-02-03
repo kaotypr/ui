@@ -12,7 +12,7 @@ import {
   CommandList,
   CommandShortcut,
 } from "@kaotypr/ui/command"
-import { CreditCardIcon, SettingsIcon, UserIcon } from "lucide-react"
+import { CreditCardIcon, GearIcon, UserIcon } from "@phosphor-icons/react"
 
 export function CommandWithShortcuts() {
   const [open, setOpen] = React.useState(false)
@@ -39,7 +39,7 @@ export function CommandWithShortcuts() {
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
               <CommandItem>
-                <SettingsIcon />
+                <GearIcon />
                 <span>Settings</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>

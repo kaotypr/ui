@@ -8,7 +8,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@kaotypr/ui/empty"
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 export default function EmptyAvatarGroup() {
   return (

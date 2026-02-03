@@ -1,5 +1,5 @@
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@kaotypr/ui/item"
-import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react"
+import { ArrowSquareOutIcon, CaretRightIcon } from "@phosphor-icons/react"
 
 export function ItemLink() {
   return (
@@ -10,7 +10,7 @@ export function ItemLink() {
           <ItemDescription>Learn how to get started with our components.</ItemDescription>
         </ItemContent>
         <ItemActions>
-          <ChevronRightIcon className="size-4" />
+          <CaretRightIcon className="size-4" />
         </ItemActions>
       </Item>
       <Item variant="outline" render={<a href="#" target="_blank" rel="noopener noreferrer" />}>
@@ -19,7 +19,7 @@ export function ItemLink() {
           <ItemDescription>Opens in a new tab with security attributes.</ItemDescription>
         </ItemContent>
         <ItemActions>
-          <ExternalLinkIcon className="size-4" />
+          <ArrowSquareOutIcon className="size-4" />
         </ItemActions>
       </Item>
     </div>

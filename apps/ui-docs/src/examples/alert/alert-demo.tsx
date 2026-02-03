@@ -1,11 +1,11 @@
 import { Alert, AlertDescription, AlertTitle } from "@kaotypr/ui/alert"
-import { CheckCircle2Icon, InfoIcon } from "lucide-react"
+import { CheckCircleIcon, InfoIcon } from "@phosphor-icons/react"
 
 export default function AlertDemo() {
   return (
     <div className="grid w-full max-w-md items-start gap-4">
       <Alert>
-        <CheckCircle2Icon />
+        <CheckCircleIcon />
         <AlertTitle>Payment successful</AlertTitle>
         <AlertDescription>
           Your payment of $29.99 has been processed. A receipt has been sent to your email address.

@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
-import { CreditCardIcon, LogOutIcon, SettingsIcon, UserIcon } from "lucide-react"
+import { CreditCardIcon, GearIcon, SignOutIcon, UserIcon } from "@phosphor-icons/react"
 
 export function DropdownMenuIcons() {
   return (
@@ -24,12 +24,12 @@ export function DropdownMenuIcons() {
           Billing
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <SettingsIcon />
+          <GearIcon />
           Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
-          <LogOutIcon />
+          <SignOutIcon />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>

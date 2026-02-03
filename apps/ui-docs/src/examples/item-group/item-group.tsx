@@ -11,7 +11,7 @@ import {
   ItemSeparator,
   ItemTitle,
 } from "@kaotypr/ui/item"
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 const people = [
   {

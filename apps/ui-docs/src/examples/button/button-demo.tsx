@@ -1,5 +1,5 @@
 import { Button } from "@kaotypr/ui/button"
-import { ArrowUpIcon } from "lucide-react"
+import { ArrowUpIcon } from "@phosphor-icons/react"
 
 export default function ButtonDemo() {
   return (

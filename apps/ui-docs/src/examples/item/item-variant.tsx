@@ -1,12 +1,12 @@
 import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
-import { InboxIcon } from "lucide-react"
+import { TrayIcon } from "@phosphor-icons/react"
 
 export function ItemVariant() {
   return (
     <div className="flex w-full max-w-md flex-col gap-6">
       <Item>
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Default Variant</ItemTitle>
@@ -15,7 +15,7 @@ export function ItemVariant() {
       </Item>
       <Item variant="outline">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Outline Variant</ItemTitle>
@@ -24,7 +24,7 @@ export function ItemVariant() {
       </Item>
       <Item variant="muted">
         <ItemMedia variant="icon">
-          <InboxIcon />
+          <TrayIcon />
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Muted Variant</ItemTitle>

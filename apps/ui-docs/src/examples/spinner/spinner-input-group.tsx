@@ -6,7 +6,7 @@ import {
   InputGroupTextarea,
 } from "@kaotypr/ui/input-group"
 import { Spinner } from "@kaotypr/ui/spinner"
-import { ArrowUpIcon } from "lucide-react"
+import { ArrowUpIcon } from "@phosphor-icons/react"
 
 export function SpinnerInputGroup() {
   return (

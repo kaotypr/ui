@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@kaotypr/ui/collapsible"
-import { ChevronsUpDown } from "lucide-react"
+import { CaretUpDownIcon } from "@phosphor-icons/react"
 
 export default function CollapsibleDemo() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -13,7 +13,7 @@ export default function CollapsibleDemo() {
       <div className="flex items-center justify-between gap-4 px-4">
         <h4 className="text-sm font-semibold">Order #4189</h4>
         <CollapsibleTrigger render={<Button variant="ghost" size="icon" className="size-8" />}>
-          <ChevronsUpDown />
+          <CaretUpDownIcon />
           <span className="sr-only">Toggle details</span>
         </CollapsibleTrigger>
       </div>

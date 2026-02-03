@@ -1,5 +1,5 @@
 import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "@kaotypr/ui/avatar"
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 export function AvatarBadgeIconExample() {
   return (

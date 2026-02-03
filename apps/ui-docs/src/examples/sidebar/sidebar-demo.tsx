@@ -13,18 +13,24 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@kaotypr/ui/sidebar"
-import { CalendarIcon, HomeIcon, InboxIcon, SearchIcon, SettingsIcon } from "lucide-react"
+import {
+  CalendarIcon,
+  GearIcon,
+  HouseIcon,
+  MagnifyingGlassIcon,
+  TrayIcon,
+} from "@phosphor-icons/react"
 
 const items = [
   {
     title: "Home",
     url: "#",
-    icon: HomeIcon,
+    icon: HouseIcon,
   },
   {
     title: "Inbox",
     url: "#",
-    icon: InboxIcon,
+    icon: TrayIcon,
   },
   {
     title: "Calendar",
@@ -34,12 +40,12 @@ const items = [
   {
     title: "Search",
     url: "#",
-    icon: SearchIcon,
+    icon: MagnifyingGlassIcon,
   },
   {
     title: "Settings",
     url: "#",
-    icon: SettingsIcon,
+    icon: GearIcon,
   },
 ]
 

@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Item, ItemActions, ItemContent, ItemGroup, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
 import { Progress } from "@kaotypr/ui/progress"
-import { FileIcon } from "lucide-react"
+import { FileIcon } from "@phosphor-icons/react"
 
 export function FileUploadList() {
   const files = React.useMemo(

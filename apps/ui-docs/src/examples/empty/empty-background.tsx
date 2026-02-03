@@ -7,8 +7,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@kaotypr/ui/empty"
-import { BellIcon } from "@phosphor-icons/react"
-import { RefreshCcwIcon } from "lucide-react"
+import { ArrowClockwiseIcon, BellIcon } from "@phosphor-icons/react"
 
 export function EmptyMuted() {
   return (
@@ -24,7 +23,7 @@ export function EmptyMuted() {
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline">
-          <RefreshCcwIcon data-icon="inline-start" />
+          <ArrowClockwiseIcon data-icon="inline-start" />
           Refresh
         </Button>
       </EmptyContent>

@@ -12,7 +12,7 @@ import {
   ComboboxList,
 } from "@kaotypr/ui/combobox"
 import { InputGroupAddon } from "@kaotypr/ui/input-group"
-import { GlobeIcon } from "lucide-react"
+import { GlobeIcon } from "@phosphor-icons/react"
 
 const timezones = [
   {

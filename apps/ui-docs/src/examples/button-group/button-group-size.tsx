@@ -1,6 +1,6 @@
 import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 export default function ButtonGroupSize() {
   return (

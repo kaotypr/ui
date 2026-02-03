@@ -11,7 +11,7 @@ import {
   AlertDialogTrigger,
 } from "@kaotypr/ui/alert-dialog"
 import { Button } from "@kaotypr/ui/button"
-import { CircleFadingPlusIcon } from "lucide-react"
+import { PlusCircleIcon } from "@phosphor-icons/react"
 
 export function AlertDialogWithMedia() {
   return (
@@ -20,7 +20,7 @@ export function AlertDialogWithMedia() {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogMedia>
-            <CircleFadingPlusIcon />
+            <PlusCircleIcon />
           </AlertDialogMedia>
           <AlertDialogTitle>Share this project?</AlertDialogTitle>
           <AlertDialogDescription>

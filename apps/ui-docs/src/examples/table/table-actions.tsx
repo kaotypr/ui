@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@kaotypr/ui/table"
-import { MoreHorizontalIcon } from "lucide-react"
+import { DotsThreeIcon } from "@phosphor-icons/react"
 
 export function TableActions() {
   return (
@@ -28,7 +28,7 @@ export function TableActions() {
               <DropdownMenuTrigger
                 render={<Button variant="ghost" size="icon" className="size-8" />}
               >
-                <MoreHorizontalIcon />
+                <DotsThreeIcon />
                 <span className="sr-only">Open menu</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -48,7 +48,7 @@ export function TableActions() {
               <DropdownMenuTrigger
                 render={<Button variant="ghost" size="icon" className="size-8" />}
               >
-                <MoreHorizontalIcon />
+                <DotsThreeIcon />
                 <span className="sr-only">Open menu</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -68,7 +68,7 @@ export function TableActions() {
               <DropdownMenuTrigger
                 render={<Button variant="ghost" size="icon" className="size-8" />}
               >
-                <MoreHorizontalIcon />
+                <DotsThreeIcon />
                 <span className="sr-only">Open menu</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">

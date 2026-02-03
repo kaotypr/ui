@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@kaotypr/ui/breadcrumb"
-import { DotIcon } from "lucide-react"
+import { CircleIcon } from "@phosphor-icons/react"
 
 export function BreadcrumbSeparatorDemo() {
   return (
@@ -17,13 +17,13 @@ export function BreadcrumbSeparatorDemo() {
           <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
-          <DotIcon />
+          <CircleIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
-          <DotIcon />
+          <CircleIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
