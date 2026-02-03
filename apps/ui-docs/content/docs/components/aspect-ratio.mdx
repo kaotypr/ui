@@ -1,0 +1,38 @@
+---
+title: AspectRatio
+description: A component that maintains a specified aspect ratio for its content, useful for responsive images and video embeds.
+---
+
+## Usage
+
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Import
+
+```tsx
+import { AspectRatio } from "@kaotypr/ui/aspect-ratio"
+```
+
+## Examples
+
+### Square
+
+<ComponentPreview name="aspect-ratio-square" />
+
+### Portrait
+
+<ComponentPreview name="aspect-ratio-portrait" />
+
+## API Reference
+
+### AspectRatio
+
+The root component that maintains a given aspect ratio for its children. Renders a `div` with CSS custom property `--ratio` and uses Tailwind's arbitrary value `aspect-(--ratio)` so content (e.g. images, iframes) can fill the space while the container keeps the ratio.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `ratio` | `number` | **Required** | The aspect ratio to maintain, expressed as width/height (e.g., `16/9`, `4/3`, `1` for square) |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `ReactNode` | - | The content to render within the aspect ratio container (e.g. an image with `fill` or an iframe) |
+
+All other standard `div` props are supported (`style`, `id`, `data-*`, etc.).

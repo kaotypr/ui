@@ -1,4 +1,13 @@
 {
   "title": "Components",
-  "pages": ["accordion", "alert", "alert-dialog", "button"]
+  "pages": [
+    "accordion",
+    "alert",
+    "alert-dialog",
+    "aspect-ratio",
+    "avatar",
+    "avatar-group",
+    "breadcrumb",
+    "button"
+  ]
 }

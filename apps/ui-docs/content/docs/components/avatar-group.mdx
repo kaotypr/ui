@@ -1,0 +1,58 @@
+---
+title: AvatarGroup
+description: A container for grouping multiple avatars with overlap styling, with optional count indicator for remaining members.
+---
+
+## Usage
+
+<ComponentPreview name="avatar-group" />
+
+## Import
+
+```tsx
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+} from "@kaotypr/ui/avatar"
+```
+
+## Examples
+
+### With count
+
+Use `AvatarGroupCount` to show how many additional members are not displayed.
+
+<ComponentPreview name="avatar-group-count" />
+
+### Count with icon
+
+Display an icon (e.g. plus or dots) in the count slot instead of a number.
+
+<ComponentPreview name="avatar-group-count-icon" />
+
+## API Reference
+
+`AvatarGroup` and `AvatarGroupCount` are layout components that work with [Avatar](/docs/components/avatar). The underlying `Avatar` uses [Base UI Avatar](https://base-ui.com/react/components/avatar).
+
+### AvatarGroup
+
+A container that groups multiple avatars with overlapping styling. Use for team members, participants, or assignees.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Avatar components and optionally one `AvatarGroupCount` |
+| ... | `HTMLAttributes<HTMLDivElement>` | - | All other div attributes (e.g. `style`, `aria-*`) |
+
+### AvatarGroupCount
+
+Displays a count or icon for remaining avatars. Must be used inside `AvatarGroup`. Sizes automatically when child avatars use `size="sm"` or `size="lg"`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Content to show (e.g. `"+5"` or an icon) |
+| ... | `HTMLAttributes<HTMLDivElement>` | - | All other div attributes |

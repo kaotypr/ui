@@ -1,0 +1,110 @@
+---
+title: Avatar
+description: An easily stylable avatar component for displaying user profile pictures, initials, or fallback content.
+---
+
+## Usage
+
+<ComponentPreview name="avatar-demo" />
+
+## Import
+
+```tsx
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarBadge,
+  AvatarGroup,
+  AvatarGroupCount,
+} from "@kaotypr/ui/avatar"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="avatar-basic" />
+
+### Sizes
+
+<ComponentPreview name="avatar-size" />
+
+### With Badge
+
+<ComponentPreview name="avatar-badge" />
+
+### Badge with Icon
+
+<ComponentPreview name="avatar-badge-icon" />
+
+### In Dropdown
+
+<ComponentPreview name="avatar-dropdown" />
+
+## API Reference
+
+This component is built on top of [Base UI Avatar](https://base-ui.com/react/components/avatar).
+
+### Avatar
+
+The root component that wraps the image and fallback. Renders a circular container with configurable size.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` | The size variant of the avatar |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### AvatarImage
+
+The image to display in the avatar. Must be used within an `Avatar` component. When the image fails to load or is not provided, `AvatarFallback` is shown.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | - | The source URL of the avatar image |
+| `alt` | `string` | - | Alternative text for the image for accessibility |
+| `onLoadingStatusChange` | `(status: ImageLoadingStatus) => void` | - | Callback fired when the loading status changes |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### AvatarFallback
+
+Rendered when the image fails to load or when no image is provided. Must be used within an `Avatar` component. Typically shows initials or an icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delay` | `number` | - | How long to wait (ms) before showing the fallback |
+| `children` | `ReactNode` | - | Fallback content (initials, icon, or any React node) |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### AvatarBadge
+
+A badge indicator positioned at the bottom-right of the avatar to show status or notifications. Must be used within an `Avatar` component. Accepts optional content (e.g. an icon); scales with avatar size.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Optional content (e.g. a small icon) inside the badge |
+
+### AvatarGroup
+
+A container for grouping multiple avatars with overlap styling. Place `Avatar` components and optionally `AvatarGroupCount` as children.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Avatar components and optional AvatarGroupCount |
+
+### AvatarGroupCount
+
+Displays a count or label for remaining avatars in a group (e.g. "+3"). Must be used within an `AvatarGroup`. Sizes match the avatars in the group.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Count or label (e.g. "+3" or an icon) |
