@@ -97,6 +97,11 @@
       "tags": []
     },
     {
+      "name": "aspect-ratio-placeholder",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-placeholder.tsx",
+      "tags": []
+    },
+    {
       "name": "aspect-ratio-portrait",
       "filePath": "src/examples/aspect-ratio/aspect-ratio-portrait.tsx",
       "tags": []
@@ -104,6 +109,16 @@
     {
       "name": "aspect-ratio-square",
       "filePath": "src/examples/aspect-ratio/aspect-ratio-square.tsx",
+      "tags": []
+    },
+    {
+      "name": "aspect-ratio-video-embed",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-video-embed.tsx",
+      "tags": []
+    },
+    {
+      "name": "aspect-ratio-widescreen",
+      "filePath": "src/examples/aspect-ratio/aspect-ratio-widescreen.tsx",
       "tags": []
     }
   ],

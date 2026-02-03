@@ -1,0 +1,242 @@
+---
+title: Combobox
+description: An input combined with a list of predefined items to select, with optional search and multi-select.
+---
+
+## Usage
+
+<ComponentPreview name="combobox-demo" />
+
+## Import
+
+```tsx
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxContent,
+  ComboboxList,
+  ComboboxItem,
+  ComboboxValue,
+  ComboboxTrigger,
+  ComboboxGroup,
+  ComboboxLabel,
+  ComboboxCollection,
+  ComboboxEmpty,
+  ComboboxSeparator,
+  ComboboxChips,
+  ComboboxChip,
+  ComboboxChipsInput,
+  useComboboxAnchor,
+} from "@kaotypr/ui/combobox"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="combobox-basic" />
+
+### With Clear
+
+<ComponentPreview name="combobox-clear" />
+
+### Multiple (Chips)
+
+<ComponentPreview name="combobox-multiple" />
+
+### Grouped Items
+
+<ComponentPreview name="combobox-groups" />
+
+### Disabled
+
+<ComponentPreview name="combobox-disabled" />
+
+### Auto Highlight
+
+<ComponentPreview name="combobox-auto-highlight" />
+
+### Custom Items
+
+<ComponentPreview name="combobox-custom" />
+
+### With Input Group
+
+<ComponentPreview name="combobox-input-group" />
+
+### Invalid
+
+<ComponentPreview name="combobox-invalid" />
+
+### Popup (Trigger + Value)
+
+<ComponentPreview name="combobox-popup" />
+
+## API Reference
+
+This component is built on top of [Base UI Combobox](https://base-ui.com/react/components/combobox).
+
+### Combobox
+
+The root component that manages value, open state, filtering, and items.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `items` | `any[] \| Group[]` | - | The items to display. Flat array or array of groups with `value` and `items` |
+| `value` | `Value \| Value[] \| null` | - | Controlled selected value |
+| `defaultValue` | `Value \| Value[] \| null` | - | Uncontrolled initial value |
+| `onValueChange` | `(value, eventDetails) => void` | - | Called when selection changes |
+| `inputValue` | `string \| number \| string[]` | - | Controlled input value |
+| `defaultInputValue` | `string \| number \| string[]` | - | Uncontrolled initial input value |
+| `onInputValueChange` | `(inputValue, eventDetails) => void` | - | Called when input changes |
+| `open` | `boolean` | - | Controlled popup open state |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state |
+| `onOpenChange` | `(open, eventDetails) => void` | - | Called when popup opens or closes |
+| `multiple` | `boolean` | `false` | Allow multiple selection |
+| `disabled` | `boolean` | `false` | Disable the combobox |
+| `readOnly` | `boolean` | `false` | Prevent changing selection |
+| `required` | `boolean` | `false` | Required for form submission |
+| `autoHighlight` | `boolean` | `false` | Highlight first matching item while filtering |
+| `openOnInputClick` | `boolean` | `true` | Open popup on input click |
+| `filter` | `(itemValue, query, itemToString) => boolean` \| `null` | - | Custom filter function |
+| `itemToStringLabel` | `(itemValue) => string` | - | Object to display string (default uses `label` when shape is `{ value, label }`) |
+| `itemToStringValue` | `(itemValue) => string` | - | Object to submit string (default uses `value` when shape is `{ value, label }`) |
+| `name` | `string` | - | Form field name |
+| `id` | `string` | - | Component id |
+
+### ComboboxInput
+
+The text input with optional trigger and clear button. Must be used within `Combobox`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showTrigger` | `boolean` | `true` | Show the dropdown trigger button |
+| `showClear` | `boolean` | `false` | Show clear button when value is set |
+| `placeholder` | `string` | - | Input placeholder |
+| `disabled` | `boolean` | `false` | Disable the input |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxContent
+
+The popup container for the list. Must be used within `Combobox`. Renders in a portal and positions relative to the input (or `anchor`).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Placement side |
+| `sideOffset` | `number` | `6` | Distance from anchor |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment |
+| `alignOffset` | `number` | `0` | Alignment offset |
+| `anchor` | `RefObject<HTMLElement>` | - | Anchor element (e.g. from `useComboboxAnchor()` for chips) |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxList
+
+Scrollable list container for items. Must be used within `ComboboxContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `(item) => ReactNode` \| `ReactNode` | - | Render function for flat items, or elements for grouped |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxItem
+
+A single selectable option. Must be used within `ComboboxList` (or `ComboboxCollection` when grouped).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | **Required** | Item value (object or primitive) |
+| `disabled` | `boolean` | `false` | Disable this item |
+| `children` | `ReactNode` | - | Label or custom content |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxValue
+
+Displays the current selected value (e.g. inside a custom trigger). Use when the trigger is not the input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `(value \| values) => ReactNode` | - | Render function; for single select receives value, for multiple receives array |
+
+### ComboboxTrigger
+
+Button that opens the popup. Use with `ComboboxValue` for a button-style combobox instead of an input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement` | - | Custom element (e.g. `Button`) |
+| `children` | `ReactNode` | - | Trigger content |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxGroup
+
+Groups items with a label. Use when `items` is an array of `{ value, items }`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `items` | `any[]` | **Required** | Items in this group |
+| `children` | `ReactNode` | - | Typically `ComboboxLabel` and `ComboboxCollection` |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxLabel
+
+Accessible label for a group. Use inside `ComboboxGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Group label text |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxCollection
+
+Renders items inside a group with a render function. Use inside `ComboboxGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `(item) => ReactNode` | **Required** | Render function for each item |
+
+### ComboboxEmpty
+
+Shown when the filtered list is empty. Must be used within `ComboboxContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Message or content when no results |
+
+### ComboboxSeparator
+
+Visual separator between groups. Optional, use inside `ComboboxList` between groups.
+
+### ComboboxChips
+
+Container for multi-select chips and the chips input. Use with `multiple` and `useComboboxAnchor()` so the popup anchors to this element.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `ref` | `RefObject<HTMLElement>` | - | Pass ref from `useComboboxAnchor()` for positioning |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | `ComboboxValue` (rendering chips + input) or chips + `ComboboxChipsInput` |
+
+### ComboboxChip
+
+A single chip for a selected value in multi-select. Use inside `ComboboxChips` / `ComboboxValue`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showRemove` | `boolean` | `true` | Show remove button on the chip |
+| `children` | `ReactNode` | - | Chip label |
+| `className` | `string` | - | Additional CSS classes |
+
+### ComboboxChipsInput
+
+The text input inside the chips container. Use inside `ComboboxChips` (often inside `ComboboxValue` alongside chips).
+
+### useComboboxAnchor
+
+Hook that returns a ref to anchor the popup to the chips container in multi-select. Pass the ref to `ComboboxChips` and to `ComboboxContent` via the `anchor` prop.
+
+```tsx
+const anchorRef = useComboboxAnchor()
+// ...
+<ComboboxChips ref={anchorRef}>...</ComboboxChips>
+<ComboboxContent anchor={anchorRef}>...</ComboboxContent>
+```

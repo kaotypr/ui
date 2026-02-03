@@ -1,0 +1,150 @@
+---
+title: Command
+description: A command menu that filters and sorts items automatically. Use as an accessible combobox or command palette.
+---
+
+## Usage
+
+<ComponentPreview name="command-demo" />
+
+## Import
+
+```tsx
+import {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+} from "@kaotypr/ui/command"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="command-basic" />
+
+### Dialog
+
+<ComponentPreview name="command-dialog" />
+
+### Groups
+
+<ComponentPreview name="command-groups" />
+
+### Scrollable
+
+<ComponentPreview name="command-scrollable" />
+
+### Shortcuts
+
+<ComponentPreview name="command-shortcuts" />
+
+## API Reference
+
+This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
+
+### Command
+
+The root component that manages value, filtering, and keyboard navigation.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | Controlled selected item value |
+| `defaultValue` | `string` | - | Uncontrolled initial value |
+| `onValueChange` | `(value: string) => void` | - | Called when the selected value changes |
+| `filter` | `(value: string, search: string, keywords?: string[]) => number` | - | Custom filter; return 0 to hide, 1 to show |
+| `shouldFilter` | `boolean` | `true` | Whether to filter items by search |
+| `loop` | `boolean` | `false` | Whether arrow keys wrap around the list |
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandDialog
+
+A dialog wrapper for the command menu. Use with `open` / `onOpenChange` for control. Renders a Dialog with a Command palette inside; pass `Command` and its children as children.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"Command Palette"` | Accessible dialog title (sr-only) |
+| `description` | `string` | `"Search for a command to run..."` | Accessible description (sr-only) |
+| `showCloseButton` | `boolean` | `false` | Show close button in the dialog |
+| `open` | `boolean` | - | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Called when open state changes |
+| `className` | `string` | - | Additional CSS classes for the content |
+
+All other [Dialog](https://base-ui.com/react/components/dialog) props are supported.
+
+### CommandInput
+
+The search input for filtering commands. Must be used within `Command`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `placeholder` | `string` | - | Input placeholder |
+| `value` | `string` | - | Controlled input value |
+| `defaultValue` | `string` | - | Uncontrolled initial value |
+| `disabled` | `boolean` | `false` | Disable the input |
+| `className` | `string` | - | Additional CSS classes |
+
+All other native input props are forwarded.
+
+### CommandList
+
+Container for command items and groups. Must be used within `Command`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandEmpty
+
+Renders its children when no results match the search. Must be used within `CommandList`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Content to show when empty (e.g. "No results found.") |
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandGroup
+
+Groups related items with an optional heading. Must be used within `CommandList`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `heading` | `string` | - | Heading text for the group |
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandItem
+
+A single selectable command. Must be used within `CommandList` or `CommandGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | Unique value (inferred from textContent if omitted) |
+| `keywords` | `string[]` | - | Keywords for filtering |
+| `disabled` | `boolean` | `false` | Disable the item |
+| `onSelect` | `(value: string) => void` | - | Called when the item is selected |
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandShortcut
+
+Displays a keyboard shortcut. Use inside `CommandItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Shortcut text (e.g. "⌘P") |
+| `className` | `string` | - | Additional CSS classes |
+
+### CommandSeparator
+
+A visual separator between groups. Must be used within `CommandList`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `alwaysRender` | `boolean` | `false` | Always render the separator when filtered |
+| `className` | `string` | - | Additional CSS classes |

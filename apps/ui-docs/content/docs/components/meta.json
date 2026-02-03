@@ -13,6 +13,11 @@
     "calendar",
     "card",
     "carousel",
-    "chart"
+    "chart",
+    "combobox",
+    "command",
+    "checkbox",
+    "collapsible",
+    "context-menu"
   ]
 }
