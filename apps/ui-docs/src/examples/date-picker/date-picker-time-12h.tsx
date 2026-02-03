@@ -2,13 +2,16 @@
 
 import { DatePicker } from "@kaotypr/ui/date-picker"
 
-export function DatePickerTime() {
+export function DatePickerTime12h() {
   return (
     <DatePicker
       defaultValue={new Date()}
       showTime
-      format="PPP HH:mm"
-      placeholder="Pick date and time"
+      format="PPP hh:mm aa"
+      placeholder="Pick date and time (12h)"
+      timePickerProps={{
+        meridiem: true,
+      }}
       className="w-[280px]"
     />
   )

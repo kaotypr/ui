@@ -227,7 +227,7 @@ export function DatePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger>
+			<PopoverTrigger disabled={disabled}>
 				<Button
 					data-slot="date-picker"
 					variant="outline"

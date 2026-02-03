@@ -1,0 +1,156 @@
+---
+title: Date Picker
+description: A date picker for selecting a single date with optional time selection, built on Calendar and Popover.
+---
+
+## Usage
+
+<ComponentPreview name="date-picker-demo" />
+
+## Import
+
+```tsx
+import { DatePicker } from "@kaotypr/ui/date-picker"
+```
+
+## Examples
+
+### Basic
+
+A simple date picker with a default value.
+
+<ComponentPreview name="date-picker-basic" />
+
+### Controlled
+
+Use `value` and `onValueChange` for controlled state management. The component preserves the value type - if you pass a `Date`, you get a `Date` back; if you pass an ISO string, you get an ISO string back.
+
+<ComponentPreview name="date-picker-controlled" />
+
+### Custom Format
+
+Use the `format` prop with [date-fns format patterns](https://date-fns.org/docs/format) to customize how the date is displayed.
+
+<ComponentPreview name="date-picker-format" />
+
+### With Time
+
+Enable time selection with `showTime`. By default shows hours and minutes.
+
+<ComponentPreview name="date-picker-time" />
+
+### With Time and Seconds
+
+Add seconds input with `showSeconds` when `showTime` is enabled.
+
+<ComponentPreview name="date-picker-time-seconds" />
+
+### 12-Hour Format
+
+Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.
+
+<ComponentPreview name="date-picker-time-12h" />
+
+### Date of Birth
+
+Use `calendarProps.captionLayout="dropdown"` with `fromYear` and `toYear` for a date-of-birth style picker.
+
+<ComponentPreview name="date-picker-dob" />
+
+### Multiple Months
+
+Display multiple months with `calendarProps.numberOfMonths`.
+
+<ComponentPreview name="date-picker-multiple-months" />
+
+### Disabled
+
+Set `disabled` to prevent user interaction.
+
+<ComponentPreview name="date-picker-disabled" />
+
+### Disabled Dates
+
+Use `calendarProps.disabled` to disable specific dates. The disabled function receives a date and returns true if it should be disabled.
+
+<ComponentPreview name="date-picker-disabled-dates" />
+
+### Clearable
+
+Control whether the selection can be cleared with the `clearable` prop. Defaults to `true`.
+
+<ComponentPreview name="date-picker-clearable" />
+
+## API Reference
+
+The DatePicker component is built on top of [React Day Picker](https://daypicker.dev/) (via Calendar), [date-fns](https://date-fns.org/) for formatting, and the Popover and TimePicker components.
+
+### DatePicker
+
+A single-date picker with an optional time section. Value can be controlled or uncontrolled, and can be a `Date` or ISO string (the component preserves the type on change).
+
+#### Value Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `Date \| string` | - | Controlled value (Date or ISO string) |
+| `defaultValue` | `Date \| string` | - | Uncontrolled initial value |
+| `onValueChange` | `(value: Date \| string \| undefined) => void` | - | Called when the selected date/time changes; returns Date or ISO string to match input type |
+
+#### Display Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `placeholder` | `string` | `"Pick a date"` | Placeholder text when no date is selected |
+| `format` | `string` | `"PPP"` | date-fns format pattern for display (e.g. `"MM/dd/yyyy"`, `"PPP HH:mm"`, `"yyyy-MM-dd"`) |
+
+#### Time Selection Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showTime` | `boolean` | `false` | Show time inputs below the calendar |
+| `showHours` | `boolean` | `true` | Show hours when `showTime` is true |
+| `showMinutes` | `boolean` | `true` | Show minutes when `showTime` is true |
+| `showSeconds` | `boolean` | `false` | Show seconds when `showTime` is true |
+| `timePickerProps` | `DatePickerTimeProps` | - | Props passed to the embedded TimePicker (see below) |
+
+#### Feature Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `clearable` | `boolean` | `true` | Whether to show a clear button when a date is selected |
+| `disabled` | `boolean` | `false` | Disable the picker |
+
+#### Calendar Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `calendarProps` | `Omit<CalendarProps, "selected" \| "onSelect" \| "mode">` | - | Props for the Calendar component |
+
+Common `calendarProps` options:
+- `disabled`: Function or array to disable specific dates
+- `defaultMonth`: Initial month to display
+- `numberOfMonths`: Number of months to display
+- `captionLayout`: `"buttons"` \| `"dropdown"` - navigation style
+- `fromYear` / `toYear`: Year range for dropdown navigation
+- `showWeekNumber`: Show week numbers
+
+#### Styling Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Class name for the trigger button |
+| `contentClassName` | `string` | - | Class name for the popover content |
+
+### DatePickerTimeProps
+
+Props that can be passed to the TimePicker via `timePickerProps`:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `meridiem` | `boolean` | `false` | Use 12-hour format with AM/PM |
+| `hourStep` | `number` | `1` | Step interval for hours |
+| `minuteStep` | `number` | `1` | Step interval for minutes |
+| `secondStep` | `number` | `1` | Step interval for seconds |
+| `minTime` | `string` | - | Minimum selectable time (e.g. `"09:00"`) |
+| `maxTime` | `string` | - | Maximum selectable time (e.g. `"17:00"`) |
