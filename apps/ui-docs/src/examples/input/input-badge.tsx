@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@kaotypr/ui/badge"
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import { Input } from "@kaotypr/ui/input"

@@ -1,3 +1,5 @@
+"use client"
+
 import { Alert, AlertAction, AlertDescription, AlertTitle } from "@kaotypr/ui/alert"
 import { Button } from "@kaotypr/ui/button"
 

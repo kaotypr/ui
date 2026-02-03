@@ -1,3 +1,5 @@
+"use client"
+
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@kaotypr/ui/input-otp"
 
 export function InputOTPDemo() {

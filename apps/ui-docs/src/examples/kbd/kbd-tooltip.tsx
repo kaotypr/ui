@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
 import { Kbd, KbdGroup } from "@kaotypr/ui/kbd"

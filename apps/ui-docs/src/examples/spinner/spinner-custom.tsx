@@ -1,3 +1,5 @@
+"use client"
+
 import { CircleNotchIcon } from "@phosphor-icons/react"
 
 import { cn } from "@kaotypr/ui/lib/utils"

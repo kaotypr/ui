@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { GitBranchIcon, GitForkIcon } from "@phosphor-icons/react"
 

@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarGroup, AvatarImage } from "@kaotypr/ui/avatar"
 
 export function AvatarGroupExample() {

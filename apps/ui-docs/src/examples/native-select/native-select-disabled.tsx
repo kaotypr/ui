@@ -1,3 +1,5 @@
+"use client"
+
 import { NativeSelect, NativeSelectOption } from "@kaotypr/ui/native-select"
 
 export function NativeSelectDisabled() {

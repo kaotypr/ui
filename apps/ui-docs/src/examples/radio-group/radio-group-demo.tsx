@@ -1,3 +1,5 @@
+"use client"
+
 import { Label } from "@kaotypr/ui/label"
 import { RadioGroup, RadioGroupItem } from "@kaotypr/ui/radio-group"
 

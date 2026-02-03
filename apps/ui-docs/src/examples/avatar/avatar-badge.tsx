@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "@kaotypr/ui/avatar"
 
 export function AvatarWithBadge() {

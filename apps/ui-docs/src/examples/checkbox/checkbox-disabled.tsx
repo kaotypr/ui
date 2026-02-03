@@ -1,3 +1,5 @@
+"use client"
+
 import { Checkbox } from "@kaotypr/ui/checkbox"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 

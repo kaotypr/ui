@@ -1,3 +1,5 @@
+"use client"
+
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyTitle } from "@kaotypr/ui/empty"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Kbd } from "@kaotypr/ui/kbd"

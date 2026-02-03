@@ -1,3 +1,5 @@
+"use client"
+
 import { Alert, AlertDescription, AlertTitle } from "@kaotypr/ui/alert"
 import { WarningCircleIcon } from "@phosphor-icons/react"
 

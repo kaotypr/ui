@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@kaotypr/ui/badge"
 import { BookmarkIcon, CheckCircleIcon } from "@phosphor-icons/react"
 

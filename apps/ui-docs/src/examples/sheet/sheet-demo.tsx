@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { Input } from "@kaotypr/ui/input"
 import { Label } from "@kaotypr/ui/label"

@@ -1,3 +1,5 @@
+"use client"
+
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import {
   CheckIcon,

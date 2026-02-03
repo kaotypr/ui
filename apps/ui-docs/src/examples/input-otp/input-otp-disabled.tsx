@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@kaotypr/ui/input-otp"
 

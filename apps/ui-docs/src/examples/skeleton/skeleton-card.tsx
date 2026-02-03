@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardHeader } from "@kaotypr/ui/card"
 import { Skeleton } from "@kaotypr/ui/skeleton"
 

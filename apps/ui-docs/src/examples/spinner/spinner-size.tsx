@@ -1,3 +1,5 @@
+"use client"
+
 import { Spinner } from "@kaotypr/ui/spinner"
 
 export function SpinnerSize() {

@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import {
   Pagination,

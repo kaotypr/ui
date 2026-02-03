@@ -1,3 +1,5 @@
+"use client"
+
 import { Tabs, TabsList, TabsTrigger } from "@kaotypr/ui/tabs"
 
 export function TabsLine() {

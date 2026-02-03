@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaotypr/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@kaotypr/ui/tabs"
 

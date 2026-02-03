@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import {
   InputGroup,

@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { Checkbox } from "@kaotypr/ui/checkbox"
 import {

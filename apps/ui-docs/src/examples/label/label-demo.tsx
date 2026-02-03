@@ -1,3 +1,5 @@
+"use client"
+
 import { Checkbox } from "@kaotypr/ui/checkbox"
 import { Label } from "@kaotypr/ui/label"
 

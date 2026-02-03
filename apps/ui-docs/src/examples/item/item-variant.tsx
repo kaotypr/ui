@@ -1,3 +1,5 @@
+"use client"
+
 import { Item, ItemContent, ItemDescription, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
 import { TrayIcon } from "@phosphor-icons/react"
 

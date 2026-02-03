@@ -1,3 +1,5 @@
+"use client"
+
 import { Textarea } from "@kaotypr/ui/textarea"
 
 export default function TextareaDemo() {

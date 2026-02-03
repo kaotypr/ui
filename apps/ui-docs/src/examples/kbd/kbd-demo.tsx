@@ -1,3 +1,5 @@
+"use client"
+
 import { Kbd, KbdGroup } from "@kaotypr/ui/kbd"
 
 export default function KbdDemo() {

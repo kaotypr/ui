@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { AspectRatio } from "@kaotypr/ui/aspect-ratio"
 

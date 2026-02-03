@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@kaotypr/ui/hover-card"
 

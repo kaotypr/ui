@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldDescription, FieldLabel } from "@kaotypr/ui/field"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"

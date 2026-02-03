@@ -1,3 +1,5 @@
+"use client"
+
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@kaotypr/ui/resizable"
 
 export function ResizableVertical() {

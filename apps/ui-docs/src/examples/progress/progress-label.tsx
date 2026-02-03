@@ -1,3 +1,5 @@
+"use client"
+
 import { Progress, ProgressLabel, ProgressValue } from "@kaotypr/ui/progress"
 
 export function ProgressWithLabel() {

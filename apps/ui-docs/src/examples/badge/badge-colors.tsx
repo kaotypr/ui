@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@kaotypr/ui/badge"
 
 export function BadgeCustomColors() {

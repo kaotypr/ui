@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@kaotypr/ui/badge"
 import { Button } from "@kaotypr/ui/button"
 import {

@@ -1,3 +1,5 @@
+"use client"
+
 import { Toggle } from "@kaotypr/ui/toggle"
 import { TextBolderIcon, TextItalicIcon } from "@phosphor-icons/react"
 

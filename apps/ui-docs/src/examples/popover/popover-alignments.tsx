@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 

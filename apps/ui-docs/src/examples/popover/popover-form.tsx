@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@kaotypr/ui/button"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Input } from "@kaotypr/ui/input"

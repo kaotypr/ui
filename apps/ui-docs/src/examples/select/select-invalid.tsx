@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldError, FieldLabel } from "@kaotypr/ui/field"
 import {
   Select,

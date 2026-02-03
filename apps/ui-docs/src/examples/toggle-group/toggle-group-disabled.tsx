@@ -1,3 +1,5 @@
+"use client"
+
 import { ToggleGroup, ToggleGroupItem } from "@kaotypr/ui/toggle-group"
 import { TextBolderIcon, TextItalicIcon, TextUnderlineIcon } from "@phosphor-icons/react"
 

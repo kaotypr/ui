@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@kaotypr/ui/avatar"
 import { Button } from "@kaotypr/ui/button"

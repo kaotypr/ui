@@ -1,3 +1,5 @@
+"use client"
+
 import { ButtonGroup, ButtonGroupText } from "@kaotypr/ui/button-group"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Label } from "@kaotypr/ui/label"

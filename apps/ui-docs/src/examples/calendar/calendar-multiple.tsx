@@ -1,3 +1,5 @@
+"use client"
+
 import { Calendar } from "@kaotypr/ui/calendar"
 import { Card, CardContent } from "@kaotypr/ui/card"
 

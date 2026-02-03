@@ -1,3 +1,5 @@
+"use client"
+
 import { NativeSelect, NativeSelectOption } from "@kaotypr/ui/native-select"
 
 export default function NativeSelectDemo() {

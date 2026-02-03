@@ -1,3 +1,5 @@
+"use client"
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@kaotypr/ui/accordion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaotypr/ui/card"
 

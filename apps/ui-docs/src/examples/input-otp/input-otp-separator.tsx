@@ -1,3 +1,5 @@
+"use client"
+
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@kaotypr/ui/input-otp"
 
 export default function InputOTPWithSeparator() {

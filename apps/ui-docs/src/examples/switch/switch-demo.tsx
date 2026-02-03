@@ -1,3 +1,5 @@
+"use client"
+
 import { Label } from "@kaotypr/ui/label"
 import { Switch } from "@kaotypr/ui/switch"
 

@@ -1,3 +1,5 @@
+"use client"
+
 import { Item, ItemContent, ItemMedia, ItemTitle } from "@kaotypr/ui/item"
 import { Spinner } from "@kaotypr/ui/spinner"
 

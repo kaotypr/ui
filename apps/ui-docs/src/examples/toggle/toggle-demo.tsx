@@ -1,3 +1,5 @@
+"use client"
+
 import { Toggle } from "@kaotypr/ui/toggle"
 import { BookmarkIcon } from "@phosphor-icons/react"
 

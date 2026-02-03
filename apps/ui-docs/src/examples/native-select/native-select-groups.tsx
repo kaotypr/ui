@@ -1,3 +1,5 @@
+"use client"
+
 import { NativeSelect, NativeSelectOptGroup, NativeSelectOption } from "@kaotypr/ui/native-select"
 
 export default function NativeSelectGroups() {

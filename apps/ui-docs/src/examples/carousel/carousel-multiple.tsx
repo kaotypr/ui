@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@kaotypr/ui/card"
 import {
   Carousel,

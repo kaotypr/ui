@@ -1,3 +1,5 @@
+"use client"
+
 import { Skeleton } from "@kaotypr/ui/skeleton"
 
 export function SkeletonForm() {

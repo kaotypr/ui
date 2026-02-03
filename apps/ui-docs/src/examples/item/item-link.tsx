@@ -1,3 +1,5 @@
+"use client"
+
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@kaotypr/ui/item"
 import { ArrowSquareOutIcon, CaretRightIcon } from "@phosphor-icons/react"
 

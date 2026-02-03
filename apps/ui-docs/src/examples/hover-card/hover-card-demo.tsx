@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@kaotypr/ui/avatar"
 import { Button } from "@kaotypr/ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@kaotypr/ui/hover-card"

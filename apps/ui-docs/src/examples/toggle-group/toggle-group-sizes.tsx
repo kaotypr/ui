@@ -1,3 +1,5 @@
+"use client"
+
 import { ToggleGroup, ToggleGroupItem } from "@kaotypr/ui/toggle-group"
 
 export function ToggleGroupSizes() {

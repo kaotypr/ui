@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { ScrollArea } from "@kaotypr/ui/scroll-area"
 import { Separator } from "@kaotypr/ui/separator"

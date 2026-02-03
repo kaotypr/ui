@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldDescription, FieldGroup, FieldLabel, FieldSet } from "@kaotypr/ui/field"
 import { Textarea } from "@kaotypr/ui/textarea"
 

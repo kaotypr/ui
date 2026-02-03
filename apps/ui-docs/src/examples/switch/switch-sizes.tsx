@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Switch } from "@kaotypr/ui/switch"
 

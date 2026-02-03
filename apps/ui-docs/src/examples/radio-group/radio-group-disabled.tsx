@@ -1,3 +1,5 @@
+"use client"
+
 import { Field, FieldLabel } from "@kaotypr/ui/field"
 import { RadioGroup, RadioGroupItem } from "@kaotypr/ui/radio-group"
 

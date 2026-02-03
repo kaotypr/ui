@@ -1,3 +1,5 @@
+"use client"
+
 import { Slider } from "@kaotypr/ui/slider"
 
 export function SliderMultiple() {
