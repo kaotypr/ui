@@ -18,6 +18,8 @@
     "command",
     "checkbox",
     "collapsible",
-    "context-menu"
+    "context-menu",
+    "data-table",
+    "date-picker"
   ]
 }

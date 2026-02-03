@@ -707,17 +707,50 @@
       "tags": []
     }
   ],
-  "data-picker": [
-    {
-      "name": "data-picker-with-dropdowns",
-      "filePath": "src/examples/data-picker/data-picker-with-dropdowns.tsx",
-      "tags": []
-    }
-  ],
   "data-table": [
+    {
+      "name": "data-table-basic",
+      "filePath": "src/examples/data-table/data-table-basic.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-bordered",
+      "filePath": "src/examples/data-table/data-table-bordered.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-column-pinning",
+      "filePath": "src/examples/data-table/data-table-column-pinning.tsx",
+      "tags": []
+    },
     {
       "name": "data-table-demo",
       "filePath": "src/examples/data-table/data-table-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-empty",
+      "filePath": "src/examples/data-table/data-table-empty.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-loading",
+      "filePath": "src/examples/data-table/data-table-loading.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-pagination",
+      "filePath": "src/examples/data-table/data-table-pagination.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-row-click",
+      "filePath": "src/examples/data-table/data-table-row-click.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-table-selection",
+      "filePath": "src/examples/data-table/data-table-selection.tsx",
       "tags": []
     }
   ],
@@ -728,8 +761,28 @@
       "tags": []
     },
     {
+      "name": "date-picker-clearable",
+      "filePath": "src/examples/date-picker/date-picker-clearable.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-controlled",
+      "filePath": "src/examples/date-picker/date-picker-controlled.tsx",
+      "tags": []
+    },
+    {
       "name": "date-picker-demo",
       "filePath": "src/examples/date-picker/date-picker-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-disabled",
+      "filePath": "src/examples/date-picker/date-picker-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-disabled-dates",
+      "filePath": "src/examples/date-picker/date-picker-disabled-dates.tsx",
       "tags": []
     },
     {
@@ -738,23 +791,28 @@
       "tags": []
     },
     {
-      "name": "date-picker-input",
-      "filePath": "src/examples/date-picker/date-picker-input.tsx",
+      "name": "date-picker-format",
+      "filePath": "src/examples/date-picker/date-picker-format.tsx",
       "tags": []
     },
     {
-      "name": "date-picker-natural-language",
-      "filePath": "src/examples/date-picker/date-picker-natural-language.tsx",
-      "tags": []
-    },
-    {
-      "name": "date-picker-range",
-      "filePath": "src/examples/date-picker/date-picker-range.tsx",
+      "name": "date-picker-multiple-months",
+      "filePath": "src/examples/date-picker/date-picker-multiple-months.tsx",
       "tags": []
     },
     {
       "name": "date-picker-time",
       "filePath": "src/examples/date-picker/date-picker-time.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-time-12h",
+      "filePath": "src/examples/date-picker/date-picker-time-12h.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-picker-time-seconds",
+      "filePath": "src/examples/date-picker/date-picker-time-seconds.tsx",
       "tags": []
     }
   ],
