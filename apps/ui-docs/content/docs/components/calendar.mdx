@@ -1,0 +1,125 @@
+---
+title: Calendar
+description: A calendar component for displaying and selecting dates, built on React Day Picker.
+---
+
+## Usage
+
+<ComponentPreview name="calendar-demo" />
+
+## Import
+
+```tsx
+import { Calendar, CalendarDayButton } from "@kaotypr/ui/calendar"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="calendar-basic" />
+
+### Range Selection
+
+Select a date range. Use `mode="range"` with `selected` and `onSelect` for a `DateRange` (from/to).
+
+<ComponentPreview name="calendar-range" />
+
+### Multiple Selection
+
+Select multiple individual dates with `mode="multiple"`.
+
+<ComponentPreview name="calendar-multiple" />
+
+### Caption with Dropdown
+
+Use `captionLayout="dropdown"` for month (and optionally year) dropdown navigation instead of arrow buttons.
+
+<ComponentPreview name="calendar-caption" />
+
+### Week Numbers
+
+Show ISO week numbers with `showWeekNumber`.
+
+<ComponentPreview name="calendar-week-numbers" />
+
+### Booked Dates
+
+Disable specific dates with the `disabled` prop and style them with `modifiers` and `modifiersClassNames`.
+
+<ComponentPreview name="calendar-booked-dates" />
+
+### With Presets
+
+Combine the calendar with preset buttons (e.g. Today, Tomorrow) and controlled `month` / `onMonthChange` for navigation.
+
+<ComponentPreview name="calendar-presets" />
+
+### With Time
+
+Use the calendar inside a card with time inputs in the footer for date-time selection.
+
+<ComponentPreview name="calendar-time" />
+
+### Custom Day Content
+
+Override the `DayButton` via `components.DayButton` to render custom content (e.g. pricing) inside each day cell.
+
+<ComponentPreview name="calendar-custom-days" />
+
+### Hijri (Persian) Calendar
+
+For alternative calendar systems (e.g. Persian/Hijri), use React Day Picker’s locale or a custom `DayPicker` (e.g. `react-day-picker/persian`) with the same styling approach. The example below illustrates a custom setup.
+
+<ComponentPreview name="calendar-hijri" />
+
+## API Reference
+
+This component is built on top of [React Day Picker](https://daypicker.dev/). The following props are the most commonly used; see the React Day Picker docs for the full API.
+
+### Calendar
+
+The root calendar component. It extends React Day Picker’s `DayPicker` and adds custom styling and navigation button variants.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `buttonVariant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` | Variant of the previous/next month navigation buttons |
+| `showOutsideDays` | `boolean` | `true` | Show days from adjacent months |
+| `captionLayout` | `"label" \| "dropdown" \| "dropdown-months" \| "dropdown-years"` | `"label"` | Caption layout: label only, or dropdown(s) for month/year |
+| `mode` | `"single" \| "multiple" \| "range" \| undefined` | - | Selection mode: single day, multiple days, or range |
+| `selected` | `Date \| Date[] \| DateRange \| undefined` | - | Controlled selected date(s) or range |
+| `onSelect` | `(date: Date \| Date[] \| DateRange \| undefined) => void` | - | Called when selection changes |
+| `defaultMonth` | `Date` | Current month | Initial month to display |
+| `month` | `Date` | - | Controlled current month (use with `onMonthChange`) |
+| `onMonthChange` | `(month: Date) => void` | - | Called when the user navigates to another month |
+| `numberOfMonths` | `number` | `1` | Number of months to show (e.g. 2 for side-by-side) |
+| `showWeekNumber` | `boolean` | `false` | Show week numbers column |
+| `fixedWeeks` | `boolean` | `false` | Always show 6 weeks per month |
+| `disabled` | `Matcher \| Matcher[]` | - | Dates or matcher to disable (e.g. function, date, array) |
+| `hideNavigation` | `boolean` | `false` | Hide month navigation buttons |
+| `disableNavigation` | `boolean` | `false` | Disable month navigation (buttons still visible) |
+| `required` | `boolean` | `false` | Whether a selection is required |
+| `min` | `number` | - | Min number of days in range (range mode) |
+| `max` | `number` | - | Max number of days in range (range mode) |
+| `weekStartsOn` | `0 \| 1 \| 2 \| 3 \| 4 \| 5 \| 6` | - | First day of week (0 = Sunday, 1 = Monday, etc.) |
+| `locale` | `Partial<DayPickerLocale>` | - | Locale for labels and formatting |
+| `modifiers` | `Record<string, Matcher \| Matcher[] \| undefined>` | - | Custom day modifiers |
+| `modifiersClassNames` | `ModifiersClassNames` | - | Class names for days matching modifiers |
+| `className` | `string` | - | Extra class name for the root element |
+| `classNames` | `Partial<ClassNames>` | - | Override default class names |
+| `components` | `Partial<CustomComponents>` | - | Override rendered components (e.g. `DayButton`) |
+| `formatters` | `Partial<Formatters>` | - | Override date formatters |
+| `footer` | `ReactNode` | - | Footer content (e.g. for presets or hints) |
+
+Types such as `DateRange`, `Matcher`, `ModifiersClassNames`, `ClassNames`, `CustomComponents`, `Formatters`, and `DayPickerLocale` come from `react-day-picker`.
+
+### CalendarDayButton
+
+The default day cell component used by `Calendar`. Exported for use when building a custom `DayButton` that wraps or extends it (e.g. in `components.DayButton`).
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `day` | `DayProps` | Day data from React Day Picker |
+| `modifiers` | `DayModifiers` | Modifiers for the day (selected, disabled, range, etc.) |
+| `className` | `string` | Additional class name |
+| … | extends `DayButton` | All props from React Day Picker’s `DayButton` |

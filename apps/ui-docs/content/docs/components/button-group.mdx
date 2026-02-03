@@ -1,0 +1,89 @@
+---
+title: ButtonGroup
+description: A container component for grouping related buttons and form elements together with consistent spacing and borders.
+---
+
+## Usage
+
+<ComponentPreview name="button-group-demo" />
+
+## Import
+
+```tsx
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@kaotypr/ui/button-group"
+```
+
+## Examples
+
+### Orientation
+
+<ComponentPreview name="button-group-orientation" />
+
+### With Separator
+
+<ComponentPreview name="button-group-separator" />
+
+### Split Button
+
+<ComponentPreview name="button-group-split" />
+
+### With Input
+
+<ComponentPreview name="button-group-input" />
+
+### With Dropdown
+
+<ComponentPreview name="button-group-dropdown" />
+
+### Nested Groups
+
+<ComponentPreview name="button-group-nested" />
+
+### Input Group
+
+<ComponentPreview name="button-group-input-group" />
+
+### Sizes
+
+<ComponentPreview name="button-group-size" />
+
+## API Reference
+
+ButtonGroup is a custom layout component. `ButtonGroupText` uses [Base UI useRender](https://base-ui.com/react/hooks/use-render) for the render prop; `ButtonGroupSeparator` composes the [Separator](/components/separator) component.
+
+### ButtonGroup
+
+The root container that groups buttons and form elements. Renders a `div` with `role="group"` and applies shared border-radius and gap styling so child buttons/inputs appear visually connected.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The layout direction of the group |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `ReactNode` | - | Buttons, inputs, `ButtonGroupText`, or `ButtonGroupSeparator` to group |
+
+All other standard `div` props are supported (`style`, `id`, `data-*`, `aria-*`, etc.).
+
+### ButtonGroupText
+
+A text or icon element styled to sit inside a ButtonGroup (e.g. URL prefix, search icon, unit suffix). Use for input prefixes/suffixes that are not interactive. Must be used within a `ButtonGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The content to display (text, icons, or any React node) |
+| `render` | `ReactElement \| (props) => ReactElement` | - | Custom element to render instead of the default `div` |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### ButtonGroupSeparator
+
+A visual divider between elements in a ButtonGroup (e.g. between a primary action and a dropdown trigger). Must be used within a `ButtonGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Orientation of the separator line. Use `"vertical"` in horizontal groups and `"horizontal"` in vertical groups |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+All other [Separator](/components/separator) props are supported.

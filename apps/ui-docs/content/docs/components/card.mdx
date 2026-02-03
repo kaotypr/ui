@@ -1,0 +1,100 @@
+---
+title: Card
+description: A flexible container component for displaying content with optional header, footer, and action elements.
+---
+
+## Usage
+
+<ComponentPreview name="card-demo" />
+
+## Import
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardAction,
+  CardContent,
+  CardFooter,
+} from "@kaotypr/ui/card"
+```
+
+## Examples
+
+### Small
+
+<ComponentPreview name="card-small" />
+
+### With Image
+
+<ComponentPreview name="card-image" />
+
+## API Reference
+
+The card is a composition of styled container components. Use `Card` as the root and compose with `CardHeader`, `CardTitle`, `CardDescription`, `CardAction`, `CardContent`, and `CardFooter` as needed.
+
+### Card
+
+The root container. Renders a flex column with rounded corners, ring border, and optional size variant. Supports a leading image—when the first child is an `<img>`, top padding is removed and the image gets rounded top corners.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "sm"` | `"default"` | Size variant; `sm` reduces padding and gaps |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Typically CardHeader, CardContent, CardFooter, or an image |
+
+### CardHeader
+
+Container for the card title, description, and optional action. Must be used inside `Card`. Uses a grid layout that adapts when `CardAction` or `CardDescription` is present.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Typically CardTitle, CardDescription, and optionally CardAction |
+
+### CardTitle
+
+The main title of the card. Typically used inside `CardHeader`. Uses base font size and medium weight; scales down with `Card` size `sm`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Title content |
+
+### CardDescription
+
+Secondary text below the title. Typically used inside `CardHeader`. Renders with muted foreground color and smaller text.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Description content |
+
+### CardAction
+
+Optional element shown in the top-right of the header. Must be used inside `CardHeader`. Use for icon buttons, links, or badges.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Action content (e.g. Button, Badge) |
+
+### CardContent
+
+Main content area of the card. Must be used inside `Card`. Provides horizontal padding that respects the card size variant.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Body content |
+
+### CardFooter
+
+Footer section, usually for actions or metadata. Must be used inside `Card`. Renders with a top border, muted background, rounded bottom corners, and flex layout.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Footer content (e.g. buttons) |

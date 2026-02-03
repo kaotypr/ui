@@ -1,0 +1,108 @@
+---
+title: Carousel
+description: A scrollable container for displaying a collection of items with navigation controls, built on Embla Carousel.
+---
+
+## Usage
+
+<ComponentPreview name="carousel-demo" />
+
+## Import
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@kaotypr/ui/carousel"
+```
+
+## Examples
+
+### Vertical orientation
+
+<ComponentPreview name="carousel-orientation" />
+
+### Multiple slides per view
+
+<ComponentPreview name="carousel-multiple" />
+
+### Responsive size
+
+<ComponentPreview name="carousel-size" />
+
+### Custom spacing
+
+<ComponentPreview name="carousel-spacing" />
+
+### With autoplay plugin
+
+<ComponentPreview name="carousel-plugin" />
+
+### Programmatic API
+
+<ComponentPreview name="carousel-api" />
+
+## API Reference
+
+This component is built on top of [Embla Carousel React](https://www.embla-carousel.com/get-started/react/). See [Embla Carousel Options](https://www.embla-carousel.com/api/options/) and [Embla Carousel Plugins](https://www.embla-carousel.com/plugins/) for advanced configuration.
+
+### Carousel
+
+The root component that wraps all carousel content and controls.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The orientation of the carousel |
+| `opts` | `EmblaOptionsType` | - | Embla Carousel options (align, loop, etc.) |
+| `plugins` | `EmblaPluginType[]` | - | Embla Carousel plugins (e.g. autoplay) |
+| `setApi` | `(api: CarouselApi) => void` | - | Callback that receives the carousel API when ready, for programmatic control |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Carousel content and controls |
+
+### CarouselContent
+
+The scrollable container that holds carousel items. Must be used within a `Carousel` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Carousel items to display |
+
+### CarouselItem
+
+A single slide within the carousel. Must be used within `CarouselContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names (e.g. `basis-1/2` for multiple per view) |
+| `children` | `ReactNode` | - | Content of the slide |
+
+### CarouselPrevious
+
+Button to go to the previous slide. Must be used within a `Carousel`. Disabled when at the start.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"outline"` | Button variant |
+| `size` | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"icon-sm"` | Button size |
+| `className` | `string` | - | Additional CSS class names |
+
+### CarouselNext
+
+Button to go to the next slide. Must be used within a `Carousel`. Disabled when at the end.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"outline"` | Button variant |
+| `size` | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"icon-sm"` | Button size |
+| `className` | `string` | - | Additional CSS class names |
+
+### useCarousel
+
+Hook to access carousel context. Must be used within a `Carousel` component.
+
+Returns: `{ carouselRef, api, scrollPrev, scrollNext, canScrollPrev, canScrollNext, orientation, opts }`

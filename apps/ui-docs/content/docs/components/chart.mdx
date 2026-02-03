@@ -1,0 +1,127 @@
+---
+title: Chart
+description: A wrapper for Recharts that provides theming, styling, and context for line, bar, area, and other chart types.
+---
+
+## Usage
+
+<ComponentPreview name="chart-demo" />
+
+## Import
+
+```tsx
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  type ChartConfig,
+} from "@kaotypr/ui/chart"
+```
+
+Charts are built with [Recharts](https://recharts.org/). Import chart primitives from `recharts` and wrap them with `ChartContainer`:
+
+```tsx
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="chart-example" />
+
+### With Axis
+
+<ComponentPreview name="chart-example-axis" />
+
+### With Grid
+
+<ComponentPreview name="chart-example-grid" />
+
+### With Tooltip
+
+<ComponentPreview name="chart-example-tooltip" />
+
+### With Legend
+
+<ComponentPreview name="chart-example-legend" />
+
+### Tooltip Styles
+
+<ComponentPreview name="chart-tooltip" />
+
+## API Reference
+
+This component is built on top of [Recharts](https://recharts.org/). Use Recharts primitives (`BarChart`, `LineChart`, `AreaChart`, `XAxis`, `YAxis`, `Bar`, `Line`, `Area`, etc.) inside `ChartContainer`.
+
+### ChartConfig
+
+Configuration object that maps data keys to labels, colors, and optional icons. Used by `ChartContainer`, `ChartTooltipContent`, and `ChartLegendContent`.
+
+```ts
+type ChartConfig = {
+  [key: string]: {
+    label?: React.ReactNode
+    icon?: React.ComponentType
+  } & (
+    | { color?: string; theme?: never }
+    | { color?: never; theme: { light: string; dark: string } }
+  )
+}
+```
+
+- **Single color:** set `color` (e.g. `"#2563eb"` or `"var(--chart-1)"`).
+- **Theme-aware:** set `theme: { light: "...", dark: "..." }` for light/dark mode.
+
+### ChartContainer
+
+The root wrapper that provides chart context and responsive sizing. Renders a `ResponsiveContainer` from Recharts. Must wrap any chart that uses `ChartTooltipContent` or `ChartLegendContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `config` | `ChartConfig` | **Required** | Chart configuration for labels, colors, and optional icons |
+| `id` | `string` | - | Optional unique identifier; a unique ID is generated if omitted |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Recharts chart component (e.g. `BarChart`, `LineChart`, `AreaChart`) |
+
+### ChartTooltip
+
+Re-export of Recharts `Tooltip`. Use it to enable tooltips and pass `ChartTooltipContent` as the `content` prop.
+
+### ChartTooltipContent
+
+Custom tooltip content that reads from chart config. Must be used within `ChartContainer`. Pass as `content={<ChartTooltipContent />}` to `ChartTooltip`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `indicator` | `"line" \| "dot" \| "dashed"` | `"dot"` | Indicator style for each series |
+| `hideLabel` | `boolean` | `false` | Hide the tooltip label |
+| `hideIndicator` | `boolean` | `false` | Hide the color indicator |
+| `labelFormatter` | `(value, payload) => ReactNode` | - | Custom label formatter |
+| `formatter` | `(value, name, item, index, payload) => ReactNode` | - | Custom value formatter |
+| `color` | `string` | - | Override indicator color |
+| `nameKey` | `string` | - | Config key for name lookup |
+| `labelKey` | `string` | - | Config key for label lookup |
+| `labelClassName` | `string` | - | CSS class for the label |
+| `className` | `string` | - | CSS class for the tooltip container |
+
+Also accepts Recharts tooltip props: `active`, `payload`, `label`.
+
+### ChartLegend
+
+Re-export of Recharts `Legend`. Use it to enable a legend and pass `ChartLegendContent` as the `content` prop.
+
+### ChartLegendContent
+
+Custom legend content with optional icons from config. Must be used within `ChartContainer`. Pass as `content={<ChartLegendContent />}` to `ChartLegend`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `verticalAlign` | `"top" \| "bottom"` | `"bottom"` | Vertical position of the legend |
+| `hideIcon` | `boolean` | `false` | Hide icon even when configured in config |
+| `nameKey` | `string` | - | Config key for name lookup |
+| `className` | `string` | - | Additional CSS class names |
+
+Also accepts Recharts legend props such as `payload`.

@@ -8,6 +8,11 @@
     "avatar",
     "avatar-group",
     "breadcrumb",
-    "button"
+    "button",
+    "button-group",
+    "calendar",
+    "card",
+    "carousel",
+    "chart"
   ]
 }
