@@ -3,7 +3,7 @@
 import { Button } from "@kaotypr/ui/button"
 import { Card, CardContent } from "@kaotypr/ui/card"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
-import { Check, Copy } from "lucide-react"
+import { CheckIcon, CopyIcon } from "@phosphor-icons/react"
 import * as React from "react"
 
 interface ComponentPreviewClientProps {
@@ -86,7 +86,11 @@ export function ComponentPreviewClient({
               className="absolute top-2 right-4 h-8 w-8 inline-flex items-center justify-center rounded-md bg-muted-foreground/10 text-muted-foreground hover:text-foreground hover:bg-muted-foreground/20 z-10 cursor-pointer"
               onClick={handleCopy}
             >
-              {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+              {copied ? (
+                <CheckIcon className="w-4 h-4 text-green-500" />
+              ) : (
+                <CopyIcon className="w-4 h-4" />
+              )}
             </TooltipTrigger>
             <TooltipContent>{copied ? "Copied!" : "Copy to clipboard"}</TooltipContent>
           </Tooltip>
