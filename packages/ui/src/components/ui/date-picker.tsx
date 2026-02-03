@@ -227,31 +227,34 @@ export function DatePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger disabled={disabled}>
-				<Button
-					data-slot="date-picker"
-					variant="outline"
-					disabled={disabled}
-					className={cn(
-						"w-full justify-start text-left font-normal",
-						!dateValue && "text-muted-foreground",
-						className,
-					)}
-				>
-					<CalendarDotIcon className="h-4 w-4" />
-					<span className="flex-1 truncate">{displayValue}</span>
-					{clearable && dateValue && (
-						<div
-							role="button"
-							tabIndex={0}
-							onClick={handleClear}
-							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
-						>
-							<XIcon className="h-4 w-4" />
-						</div>
-					)}
-				</Button>
-			</PopoverTrigger>
+			<PopoverTrigger
+				disabled={disabled}
+				render={
+					<Button
+						data-slot="date-picker"
+						variant="outline"
+						disabled={disabled}
+						className={cn(
+							"w-full justify-start text-left font-normal",
+							!dateValue && "text-muted-foreground",
+							className,
+						)}
+					>
+						<CalendarDotIcon className="h-4 w-4" />
+						<span className="flex-1 truncate">{displayValue}</span>
+						{clearable && dateValue && (
+							<div
+								role="button"
+								tabIndex={0}
+								onClick={handleClear}
+								className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
+							>
+								<XIcon className="h-4 w-4" />
+							</div>
+						)}
+					</Button>
+				}
+			></PopoverTrigger>
 			<PopoverContent className={cn("w-auto p-0", contentClassName)} align="start">
 				<Calendar {...calendarProps} mode="single" selected={dateValue} onSelect={handleSelect} />
 				{showTime && (
