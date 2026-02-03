@@ -34,6 +34,7 @@ export default function CardDemo() {
               <div className="flex items-center">
                 <Label htmlFor="password">Password</Label>
                 <a
+                  // biome-ignore lint/a11y/useValidAnchor: example
                   href="#"
                   className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                 >
