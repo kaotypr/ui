@@ -1,4 +1,4 @@
 {
   "title": "Components",
-  "pages": ["accordion", "button"]
+  "pages": ["accordion", "button", "alert-dialog"]
 }

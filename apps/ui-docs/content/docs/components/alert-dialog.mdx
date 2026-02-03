@@ -1,0 +1,165 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important information and expects a confirmation.
+---
+
+## Usage
+
+<ComponentPreview name="alert-dialog-demo" />
+
+## Import
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@kaotypr/ui/alert-dialog"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="alert-dialog-basic" />
+
+### Destructive
+
+<ComponentPreview name="alert-dialog-destructive" />
+
+### With Media
+
+<ComponentPreview name="alert-dialog-media" />
+
+### Small
+
+<ComponentPreview name="alert-dialog-small" />
+
+### Small with Media
+
+<ComponentPreview name="alert-dialog-small-media" />
+
+## API Reference
+
+This component is built on top of [Base UI Alert Dialog](https://base-ui.com/react/components/alert-dialog).
+
+### AlertDialog
+
+The root component that wraps the trigger and content. Manages open state and focus.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Controlled open state. Use with `onOpenChange` for controlled mode. |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state. |
+| `onOpenChange` | `(open: boolean, eventDetails: AlertDialog.Root.ChangeEventDetails) => void` | - | Called when the dialog opens or closes. |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Called after open/close animations complete. |
+| `actionsRef` | `React.RefObject<AlertDialog.Root.Actions>` | - | Ref for imperative actions (e.g. close, unmount). |
+| `defaultTriggerId` | `string \| null` | - | ID of the trigger when initially open (uncontrolled). |
+| `triggerId` | `string \| null` | - | ID of the associated trigger (controlled). |
+| `handle` | `AlertDialog.Handle \| undefined` | - | Handle for detached triggers via `AlertDialog.createHandle()`. |
+| `children` | `ReactNode \| ((context: { payload?: unknown }) => ReactNode)` | - | Trigger and content, or render function receiving trigger payload. |
+
+### AlertDialogTrigger
+
+The button or element that opens the alert dialog. Must be used within `AlertDialog`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Trigger content. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Custom element (e.g. `Button`) to render as the trigger. |
+
+### AlertDialogContent
+
+The popup surface that contains the dialog. Renders inside a portal with overlay. Must be used within `AlertDialog`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "sm"` | `"default"` | Maximum width / layout of the dialog. |
+| `className` | `string` | - | Additional CSS classes. |
+| (Base UI Popup) | - | - | Accepts Base UI Popup props (e.g. `render`, `style`). |
+
+### AlertDialogHeader
+
+Header section that wraps title and description. Use for layout and alignment.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes. |
+| (div) | - | - | Standard `div` props. |
+
+### AlertDialogTitle
+
+The title of the alert. Must be used within `AlertDialogHeader` (or content) for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Title text. |
+| `className` | `string` | - | Additional CSS classes. |
+
+### AlertDialogDescription
+
+Optional description or body text. Must be used within `AlertDialogHeader` (or content).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Description text. |
+| `className` | `string` | - | Additional CSS classes. |
+
+### AlertDialogFooter
+
+Footer container for actions. Typically holds `AlertDialogCancel` and `AlertDialogAction`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes. |
+| (div) | - | - | Standard `div` props. |
+
+### AlertDialogAction
+
+Primary action button. Renders as a `Button`; accepts all [Button](/docs/components/button) props (e.g. `variant`, `size`).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Button variant. Use `"destructive"` for dangerous actions. |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Button size. |
+| (Button) | - | - | All other Button props. |
+
+### AlertDialogCancel
+
+Secondary button that closes the dialog without confirming. Renders as a `Button` via the Base UI Close component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"outline"` | Button variant. |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Button size. |
+| (Base UI Close) | - | - | Base UI Close props (e.g. `render`, `className`). |
+
+### AlertDialogMedia
+
+Optional area in the header for an icon or image. Use for emphasis (e.g. warning icon, avatar).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes. |
+| (div) | - | - | Standard `div` props. |
+
+### AlertDialogPortal
+
+Renders the overlay and content into a portal. Used internally by `AlertDialogContent`; use when customizing structure.
+
+### AlertDialogOverlay
+
+The backdrop behind the dialog. Used internally by `AlertDialogContent`; use when customizing structure.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes. |
