@@ -5,12 +5,13 @@ import { AspectRatio } from "@kaotypr/ui/aspect-ratio"
 
 export function AspectRatioPortrait() {
   return (
-    <AspectRatio ratio={9 / 16} className="bg-muted w-full max-w-[10rem] rounded-lg">
+    <AspectRatio ratio={9 / 16} className="bg-muted w-full max-w-[10rem] overflow-hidden rounded-lg">
       <Image
-        src="https://avatar.vercel.sh/shadcn1"
-        alt="Photo"
-        fill
-        className="rounded-lg object-cover grayscale dark:brightness-20"
+        src="https://avatar.vercel.sh/portrait"
+        alt="Avatar"
+        width={400}
+        height={711}
+        className="size-full object-cover"
       />
     </AspectRatio>
   )
