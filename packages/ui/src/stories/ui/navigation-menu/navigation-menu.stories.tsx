@@ -26,9 +26,7 @@ This component is built on top of [Base UI Navigation Menu](https://base-ui.com/
 - [NavigationMenuItem](?path=/story/ui-navigationmenu-navigationmenuitem--default): An individual navigation menu item.
 - [NavigationMenuTrigger](?path=/story/ui-navigationmenu-navigationmenutrigger--default): Opens the navigation menu popup when hovered or clicked.
 - [NavigationMenuContent](?path=/story/ui-navigationmenu-navigationmenucontent--default): A container for the content of the navigation menu item.
-- [NavigationMenuLink](?path=/story/ui-navigationmenu-navigationmenulink--default): A link in the navigation menu for navigation.
-- [NavigationMenuIndicator](?path=/story/ui-navigationmenu-navigationmenuindicator--default): An icon that indicates that the trigger button opens a menu.
-- [NavigationMenuPositioner](?path=/story/ui-navigationmenu-navigationmenupositioner--default): Positions the navigation menu against the currently active trigger.`,
+- [NavigationMenuLink](?path=/story/ui-navigationmenu-navigationmenulink--default): A link in the navigation menu for navigation.`,
 			},
 		},
 	},
