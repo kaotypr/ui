@@ -245,7 +245,12 @@ export const RenderAsCustomElement: Story = {
 							<InputGroupButton
 								size="icon-xs"
 								variant="ghost"
-								render={<ComboboxTrigger render={<div className="cursor-pointer" />} nativeButton={false} />}
+								render={
+									<ComboboxTrigger
+										render={<div className="cursor-pointer" />}
+										nativeButton={false}
+									/>
+								}
 							>
 								<CaretUpDownIcon className="size-4" />
 							</InputGroupButton>

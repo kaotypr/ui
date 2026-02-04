@@ -231,9 +231,7 @@ export const RenderWithState: Story = {
 						<button
 							{...props}
 							className={`rounded-md border px-4 py-2 transition-colors ${
-								state.open
-									? "border-primary bg-primary/10 text-primary"
-									: "hover:bg-accent"
+								state.open ? "border-primary bg-primary/10 text-primary" : "hover:bg-accent"
 							}`}
 						>
 							{state.open ? "Menu is open" : "Click to open menu"}

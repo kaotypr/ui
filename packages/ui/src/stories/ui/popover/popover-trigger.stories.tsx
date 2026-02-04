@@ -285,9 +285,7 @@ export const RenderWithState: Story = {
 						<button
 							{...props}
 							className={`rounded px-4 py-2 font-medium transition-colors ${
-								state.open
-									? "bg-blue-700 text-white"
-									: "bg-blue-600 text-white hover:bg-blue-700"
+								state.open ? "bg-blue-700 text-white" : "bg-blue-600 text-white hover:bg-blue-700"
 							}`}
 						>
 							{state.open ? "Popover Open" : "Click to Open"}

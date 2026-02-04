@@ -249,9 +249,7 @@ export const RenderWithState: Story = {
 						<button
 							{...props}
 							className={`rounded px-4 py-2 font-medium transition-colors ${
-								state.open
-									? "bg-gray-700 text-white"
-									: "bg-gray-600 text-white hover:bg-gray-700"
+								state.open ? "bg-gray-700 text-white" : "bg-gray-600 text-white hover:bg-gray-700"
 							}`}
 						>
 							{state.open ? "Dialog Open" : "Open Dialog"}

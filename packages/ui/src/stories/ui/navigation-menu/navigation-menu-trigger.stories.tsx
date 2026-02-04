@@ -136,10 +136,7 @@ export const RenderAsCustomElement: Story = {
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>
-					<NavigationMenuTrigger
-						render={<div className="cursor-pointer" />}
-						nativeButton={false}
-					>
+					<NavigationMenuTrigger render={<div className="cursor-pointer" />} nativeButton={false}>
 						Click this div
 					</NavigationMenuTrigger>
 					<NavigationMenuContent>

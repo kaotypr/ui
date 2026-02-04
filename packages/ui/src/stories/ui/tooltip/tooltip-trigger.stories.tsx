@@ -257,10 +257,7 @@ export const RenderWithState: Story = {
 		<Tooltip>
 			<TooltipTrigger
 				render={(props, state) => (
-					<Button
-						{...props}
-						variant={state.open ? "default" : "outline"}
-					>
+					<Button {...props} variant={state.open ? "default" : "outline"}>
 						<InfoIcon />
 						{state.open ? "Tooltip is open" : "Hover me"}
 					</Button>

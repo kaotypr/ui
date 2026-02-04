@@ -220,10 +220,7 @@ export const RenderWithState: Story = {
 			<Sheet open={open} onOpenChange={setOpen}>
 				<SheetTrigger
 					render={(props, state) => (
-						<Button
-							{...props}
-							variant={state.popupOpen ? "default" : "outline"}
-						>
+						<Button {...props} variant={state.popupOpen ? "default" : "outline"}>
 							{state.popupOpen ? "Sheet is open" : "Open Sheet"}
 						</Button>
 					)}

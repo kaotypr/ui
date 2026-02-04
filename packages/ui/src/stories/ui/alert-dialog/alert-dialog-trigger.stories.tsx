@@ -129,9 +129,7 @@ export const RenderWithState: Story = {
 					<button
 						{...props}
 						className={`rounded px-4 py-2 font-medium ${
-							state.open
-								? "bg-red-700 text-white"
-								: "bg-red-600 text-white hover:bg-red-700"
+							state.open ? "bg-red-700 text-white" : "bg-red-600 text-white hover:bg-red-700"
 						}`}
 					>
 						{state.open ? "Dialog Open..." : "Delete Account"}

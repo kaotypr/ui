@@ -116,8 +116,7 @@ export const RenderWithState: Story = {
 					)}
 				/>
 				<AccordionContent>
-					The trigger uses a render function to access the `open` state and display
-					dynamic content.
+					The trigger uses a render function to access the `open` state and display dynamic content.
 				</AccordionContent>
 			</AccordionItem>
 		</Accordion>

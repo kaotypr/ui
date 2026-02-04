@@ -220,9 +220,7 @@ export const RenderWithState: Story = {
 						<button
 							{...props}
 							className={`flex h-9 w-[180px] items-center justify-between rounded-lg border px-3 py-2 text-sm transition-colors ${
-								state.open
-									? "border-primary bg-primary/10"
-									: "hover:bg-accent"
+								state.open ? "border-primary bg-primary/10" : "hover:bg-accent"
 							}`}
 						>
 							{props.children}
