@@ -1,0 +1,93 @@
+---
+title: Progress
+description: Displays the status of a task that takes a long time.
+---
+
+## Usage
+
+<ComponentPreview name="progress-demo" />
+
+## Import
+
+```tsx
+import {
+  Progress,
+  ProgressTrack,
+  ProgressIndicator,
+  ProgressLabel,
+  ProgressValue,
+} from "@kaotypr/ui/progress"
+```
+
+## Examples
+
+### With Label
+
+<ComponentPreview name="progress-label" />
+
+### Controlled
+
+<ComponentPreview name="progress-controlled" />
+
+## API Reference
+
+This component is built on top of [Base UI Progress](https://base-ui.com/react/components/progress).
+
+### Progress
+
+The root component that wraps the progress bar. By default it renders a track and indicator; you can add `ProgressLabel` and `ProgressValue` for accessible labels and value display.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number \| null` | `null` | The current value. The component is indeterminate when value is `null`. |
+| `min` | `number` | `0` | The minimum value. |
+| `max` | `number` | `100` | The maximum value. |
+| `getAriaValueText` | `(formattedValue: string \| null, value: number \| null) => string` | - | Returns a human-readable text alternative for the current value. |
+| `aria-valuetext` | `string` | - | A string that provides a user-friendly name for the current value. |
+| `locale` | `Intl.LocalesArgument` | - | The locale used when formatting the value. |
+| `format` | `Intl.NumberFormatOptions` | - | Options to format the value. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root HTML element or compose with another component. |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element. |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element. |
+
+### ProgressTrack
+
+Contains the progress bar indicator. Rendered by default inside `Progress`; use when customizing layout.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the track HTML element. |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element. |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element. |
+
+### ProgressIndicator
+
+Visualizes the completion status. Rendered by default inside `Progress`; use when customizing appearance.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the indicator HTML element. |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element. |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element. |
+
+### ProgressLabel
+
+An accessible label for the progress bar. Must be used within `Progress`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The label content. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the label HTML element. |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element. |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element. |
+
+### ProgressValue
+
+Displays the current value (e.g. percentage). Must be used within `Progress`. Accepts a render function as children for custom formatting.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `((formattedValue: string \| null, value: number \| null) => ReactNode) \| ReactNode` | - | Optional function receiving formatted and raw value, or static content. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the value HTML element. |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element. |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element. |

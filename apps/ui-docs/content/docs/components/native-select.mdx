@@ -1,0 +1,83 @@
+---
+title: Native Select
+description: A styled native HTML select element with customizable size variants and option groups.
+---
+
+## Usage
+
+<ComponentPreview name="native-select-demo" />
+
+## Import
+
+```tsx
+import {
+  NativeSelect,
+  NativeSelectOption,
+  NativeSelectOptGroup,
+} from "@kaotypr/ui/native-select"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="native-select-demo" />
+
+### With Option Groups
+
+<ComponentPreview name="native-select-groups" />
+
+### Disabled
+
+<ComponentPreview name="native-select-disabled" />
+
+### Invalid
+
+<ComponentPreview name="native-select-invalid" />
+
+## API Reference
+
+This component wraps the native HTML `<select>` element with custom styling and provides a consistent design system appearance. It accepts all standard [HTML select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+
+### NativeSelect
+
+The root component that wraps the native select element and renders a caret icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default"` | `"default"` | The size variant of the select element |
+| `value` | `string \| number \| string[]` | - | The controlled value of the select element |
+| `defaultValue` | `string \| number \| string[]` | - | The default value of the select element (uncontrolled) |
+| `multiple` | `boolean` | `false` | When true, allows multiple options to be selected |
+| `disabled` | `boolean` | `false` | When true, prevents user interaction with the select element |
+| `required` | `boolean` | `false` | When true, the select element is required for form submission |
+| `name` | `string` | - | The name attribute of the select element (for form submission) |
+| `id` | `string` | - | The id attribute of the select element |
+| `className` | `string` | - | Additional CSS class names applied to the wrapper element |
+| `onChange` | `(event: React.ChangeEvent<HTMLSelectElement>) => void` | - | Event handler called when the select value changes |
+| `onFocus` | `(event: React.FocusEvent<HTMLSelectElement>) => void` | - | Event handler called when the select receives focus |
+| `onBlur` | `(event: React.FocusEvent<HTMLSelectElement>) => void` | - | Event handler called when the select loses focus |
+| `aria-label` | `string` | - | An accessible label for the select element |
+| `aria-invalid` | `boolean \| "true" \| "false"` | - | Indicates that the select value is invalid |
+| `aria-required` | `boolean \| "true" \| "false"` | - | Indicates that the select element is required |
+
+All other standard HTML `<select>` attributes (e.g. `autoComplete`, `autoFocus`, `form`) are also supported.
+
+### NativeSelectOption
+
+Represents a single option within the select dropdown. Must be used within a `NativeSelect` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string \| number` | - | The value of the option (submitted with the form) |
+| `disabled` | `boolean` | `false` | When true, prevents the option from being selected |
+| `label` | `string` | - | The label text for the option; if not provided, the option's children are used |
+
+### NativeSelectOptGroup
+
+Groups related options together within the select dropdown. Must be used within a `NativeSelect` component and contain `NativeSelectOption` components.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | **Required** | The label text for the option group |
+| `disabled` | `boolean` | `false` | When true, prevents all options within the group from being selected |

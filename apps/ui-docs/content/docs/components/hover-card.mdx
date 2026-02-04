@@ -1,0 +1,67 @@
+---
+title: Hover Card
+description: A popup that appears when a link or trigger is hovered, showing a preview for sighted users.
+---
+
+## Usage
+
+<ComponentPreview name="hover-card-demo" />
+
+## Import
+
+```tsx
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@kaotypr/ui/hover-card"
+```
+
+## Examples
+
+### Different Sides
+
+<ComponentPreview name="hover-card-sides" />
+
+## API Reference
+
+This component is built on top of [Base UI Preview Card](https://base-ui.com/react/components/preview-card).
+
+### HoverCard
+
+The root component that wraps the trigger and content. Manages open state and coordinates between trigger and popup.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean, eventDetails: PreviewCard.Root.ChangeEventDetails) => void` | - | Called when the hover card opens or closes |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Called after open/close animations complete |
+| `defaultTriggerId` | `string \| null` | - | ID of the trigger for initially open state (uncontrolled) |
+| `triggerId` | `string \| null` | - | ID of the trigger for controlled mode |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the root element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline style for the root element |
+
+### HoverCardTrigger
+
+The element that opens the hover card on hover. Must be used within `HoverCard`. Renders as an anchor by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delay` | `number` | `600` | Delay in ms before the hover card opens |
+| `closeDelay` | `number` | `300` | Delay in ms before the hover card closes |
+| `payload` | `any` | - | Data passed to the content when opened |
+| `handle` | `PreviewCard.Handle` | - | Handle to associate with a specific preview card |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the default anchor (e.g. `<span />` or function for state) |
+| `className` | `string` | - | Additional CSS classes |
+| `style` | `CSSProperties` | - | Inline styles |
+
+### HoverCardContent
+
+The popup container for the hover card. Must be used within `HoverCard`. Positioned relative to the trigger with optional side and alignment.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Side of the trigger to align the popup; may flip to avoid overflow |
+| `sideOffset` | `number` | `4` | Distance in pixels between trigger and popup |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment of the popup along the side |
+| `alignOffset` | `number` | `4` | Extra offset in pixels along the alignment axis |
+| `className` | `string` | - | Additional CSS classes (e.g. width, padding) |
+| `children` | `ReactNode` | - | Content of the hover card |

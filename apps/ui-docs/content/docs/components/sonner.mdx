@@ -1,0 +1,66 @@
+---
+title: Sonner
+description: Toast notifications for displaying temporary messages to users.
+---
+
+## Usage
+
+<ComponentPreview name="sonner-demo" />
+
+## Import
+
+```tsx
+import { Toaster } from "@kaotypr/ui/sonner"
+```
+
+## Notes
+
+- Render `<Toaster />` once near the root of your app (e.g. in your layout).
+- This component is built on top of [Sonner](https://sonner.emilkowal.ski/). The `toast` API comes from `sonner`.
+
+## Examples
+
+### Toast Types
+
+<ComponentPreview name="sonner-types" />
+
+### With Description
+
+<ComponentPreview name="sonner-description" />
+
+### Positions
+
+<ComponentPreview name="sonner-position" />
+
+## API Reference
+
+This component is built on top of [Sonner](https://sonner.emilkowal.ski/). For the complete set of options, see the upstream docs.
+
+### Toaster
+
+Wraps Sonner’s `Toaster` and provides:
+
+- Theme integration via `next-themes` by default (you can override via the `theme` prop)
+- Default icons for toast types
+- CSS variables mapped to your design tokens
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `theme` | `"light" \| "dark" \| "system"` | `"system"` | Theme of the toaster. Defaults to the current `next-themes` theme. |
+| `richColors` | `boolean` | `false` | When true, toasts use richer colors for better visual distinction. |
+| `expand` | `boolean` | `false` | When true, toasts are expanded by default (instead of only on hover). |
+| `visibleToasts` | `number` | `3` | Maximum number of visible toasts when `expand` is enabled. |
+| `position` | `"top-left" \| "top-center" \| "top-right" \| "bottom-left" \| "bottom-center" \| "bottom-right"` | `"bottom-right"` | Where toasts are rendered on the screen. |
+| `closeButton` | `boolean` | `false` | When true, each toast displays a close button. |
+| `id` | `string` | - | Unique identifier for the toaster instance (useful for multiple toasters). |
+| `offset` | `number \| string \| Record<string, any>` | `"32px"` | Offset from screen edge. |
+| `mobileOffset` | `number \| string \| Record<string, any>` | `"16px"` | Offset on mobile screens (width < 600px). |
+| `swipeDirections` | `string[]` | - | Directions that allow swipe-to-dismiss (defaults depend on `position`). |
+| `dir` | `"ltr" \| "rtl"` | `"ltr"` | Reading direction. |
+| `hotkey` | `string` | `"⌥/alt + T"` | Keyboard shortcut to focus the toast area. |
+| `invert` | `boolean` | `false` | When true, inverts theme colors for better contrast. |
+| `toastOptions` | `object` | - | Default options applied to all toasts (e.g. duration, className). |
+| `gap` | `number` | `14` | Gap between toasts in pixels. |
+| `icons` | `object` | - | Custom icons for toast types (success, error, info, warning, loading). |
+| `className` | `string` | - | Additional CSS class names to apply. |
+

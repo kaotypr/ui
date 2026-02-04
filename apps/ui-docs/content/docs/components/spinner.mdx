@@ -1,0 +1,64 @@
+---
+title: Spinner
+description: An animated loading spinner icon for indicating progress.
+---
+
+## Usage
+
+<ComponentPreview name="spinner-demo" />
+
+## Import
+
+```tsx
+import { Spinner } from "@kaotypr/ui/spinner"
+```
+
+## Examples
+
+### Sizes
+
+<ComponentPreview name="spinner-size" />
+
+### In a Button
+
+<ComponentPreview name="spinner-button" />
+
+### In a Badge
+
+<ComponentPreview name="spinner-badge" />
+
+### In an Input Group
+
+<ComponentPreview name="spinner-input-group" />
+
+### Empty State / Loading Screen
+
+<ComponentPreview name="spinner-empty" />
+
+### Custom Icon
+
+<ComponentPreview name="spinner-custom" />
+
+## API Reference
+
+This component renders a Phosphor icon (`SpinnerGapIcon`) from [`@phosphor-icons/react`](https://phosphoricons.com/).
+
+### Spinner
+
+A presentational spinner that renders an animated SVG icon.
+
+It accepts all standard SVG props via `React.ComponentProps<"svg">`. In addition, it applies:
+
+- `role="status"`
+- `aria-label="Loading"`
+- `className="size-4 animate-spin"`
+
+You can override `className`, `role`, and `aria-label` by passing your own props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional class names to apply (e.g. `size-6 text-muted-foreground`) |
+| `role` | `string` | `"status"` | ARIA role attribute |
+| `aria-label` | `string` | `"Loading"` | Accessible label announced to assistive technology |
+| `...props` | `React.ComponentProps<"svg">` | - | Any additional SVG props (e.g. `width`, `height`, `color`) |
+

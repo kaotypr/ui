@@ -1,0 +1,62 @@
+---
+title: Switch
+description: A control that indicates whether a setting is on or off.
+---
+
+## Usage
+
+<ComponentPreview name="switch-demo" />
+
+## Import
+
+```tsx
+import { Switch } from "@kaotypr/ui/switch"
+```
+
+## Examples
+
+### Sizes
+
+<ComponentPreview name="switch-sizes" />
+
+### With Description
+
+<ComponentPreview name="switch-description" />
+
+### Choice Card
+
+<ComponentPreview name="switch-choice-card" />
+
+### Disabled
+
+<ComponentPreview name="switch-disabled" />
+
+### Invalid
+
+<ComponentPreview name="switch-invalid" />
+
+## API Reference
+
+This component is built on top of [Base UI Switch](https://base-ui.com/react/components/switch).
+
+### Switch
+
+A toggle control used to represent boolean on/off state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default"` | `"default"` | Visual size of the switch |
+| `checked` | `boolean` | - | Controlled checked state |
+| `defaultChecked` | `boolean` | `false` | Uncontrolled initial checked state |
+| `onCheckedChange` | `(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void` | - | Called when the checked state changes |
+| `disabled` | `boolean` | `false` | Whether the component should ignore user interaction |
+| `readOnly` | `boolean` | `false` | Whether the user should be unable to toggle the switch |
+| `required` | `boolean` | `false` | Whether the switch must be on before submitting a form |
+| `name` | `string` | - | Identifies the field when a form is submitted |
+| `value` | `string` | - | Value submitted with a form when checked (defaults to `"on"` in Base UI) |
+| `uncheckedValue` | `string` | - | Value submitted with a form when unchecked |
+| `id` | `string` | - | The id of the switch element |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the underlying element, or compose with another component |
+| `nativeButton` | `boolean` | `false` | Whether the rendered element is a native `<button>` when using `render` |
+| `className` | `string` | - | Additional CSS classes |
+| `style` | `React.CSSProperties` | - | Inline styles |

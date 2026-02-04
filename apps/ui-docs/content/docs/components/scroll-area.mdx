@@ -1,0 +1,55 @@
+---
+title: Scroll Area
+description: A scroll container with custom scrollbars for vertical or horizontal overflow.
+---
+
+## Usage
+
+<ComponentPreview name="scroll-area-demo" />
+
+## Import
+
+```tsx
+import { ScrollArea, ScrollBar } from "@kaotypr/ui/scroll-area"
+```
+
+## Examples
+
+### Default
+
+Vertical scroll area. The scrollbar appears when content overflows.
+
+<ComponentPreview name="scroll-area-demo" />
+
+### Horizontal
+
+Horizontal scroll area with explicit `ScrollBar`. Use when content flows horizontally (e.g. image galleries, horizontal lists).
+
+<ComponentPreview name="scroll-area-horizontal-demo" />
+
+## API Reference
+
+This component is built on top of [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area).
+
+### ScrollArea
+
+The root scroll container. Renders a viewport with a default vertical scrollbar. Add `<ScrollBar orientation="horizontal" />` as a child for horizontal scrolling, or both for two-axis scrolling.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `overflowEdgeThreshold` | `number \| Partial<{ xStart: number, xEnd: number, yStart: number, yEnd: number }>` | `0` | The threshold in pixels before overflow edge attributes are applied |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root HTML element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### ScrollBar
+
+A vertical or horizontal scrollbar for the scroll area. Must be used inside `ScrollArea`. Omit for vertical-only scrolling (a vertical scrollbar is included by default); add for horizontal or both directions.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` | Whether the scrollbar controls vertical or horizontal scroll |
+| `keepMounted` | `boolean` | `false` | Whether to keep the scrollbar in the DOM when the viewport is not scrollable |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the scrollbar element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |

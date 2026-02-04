@@ -1,0 +1,43 @@
+---
+title: Separator
+description: A visual divider used to separate content sections.
+---
+
+## Usage
+
+<ComponentPreview name="separator-demo" />
+
+## Import
+
+```tsx
+import { Separator } from "@kaotypr/ui/separator"
+```
+
+## Examples
+
+### List
+
+<ComponentPreview name="separator-list" />
+
+### Menu
+
+<ComponentPreview name="separator-menu" />
+
+### Vertical
+
+<ComponentPreview name="separator-vertical" />
+
+## API Reference
+
+This component is built on top of [Base UI Separator](https://base-ui.com/react/components/separator).
+
+### Separator
+
+An accessible separator that supports horizontal and vertical orientations.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The orientation of the separator. |
+| `render` | `ReactElement \| ((props: HTMLProps, state: Separator.State) => ReactElement)` | - | Replace the underlying element or compose it with another component. |
+| `className` | `string \| ((state: Separator.State) => string \| undefined)` | - | CSS class, or a function that returns a class based on component state. |
+| `style` | `CSSProperties \| ((state: Separator.State) => CSSProperties \| undefined)` | - | Inline styles, or a function that returns styles based on component state. |

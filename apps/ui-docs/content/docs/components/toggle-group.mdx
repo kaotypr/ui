@@ -1,0 +1,76 @@
+---
+title: Toggle Group
+description: A group of toggle buttons that allows users to select one or multiple options.
+---
+
+## Usage
+
+<ComponentPreview name="toggle-group-demo" />
+
+## Import
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "@kaotypr/ui/toggle-group"
+```
+
+## Examples
+
+### Outline
+
+<ComponentPreview name="toggle-group-outline" />
+
+### Disabled
+
+<ComponentPreview name="toggle-group-disabled" />
+
+### Sizes
+
+<ComponentPreview name="toggle-group-sizes" />
+
+### Spacing
+
+<ComponentPreview name="toggle-group-spacing" />
+
+### Vertical
+
+<ComponentPreview name="toggle-group-vertical" />
+
+## API Reference
+
+This component is built on top of [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group) and [Base UI Toggle](https://base-ui.com/react/components/toggle).
+
+### ToggleGroup
+
+The root component that wraps all toggle group items and manages selection state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any[]` | - | The controlled pressed state of the group represented by an array of pressed item values |
+| `defaultValue` | `any[]` | - | The uncontrolled initial pressed state of the group represented by an array of pressed item values |
+| `onValueChange` | `(groupValue: any[], eventDetails: Toggle.Group.ChangeEventDetails) => void` | - | Event handler called when the group’s pressed values change |
+| `multiple` | `boolean` | `false` | Whether multiple items can be pressed at the same time |
+| `disabled` | `boolean` | `false` | Whether the toggle group should ignore user interaction |
+| `loopFocus` | `boolean` | `true` | Whether to loop keyboard focus when navigating with arrow keys |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the underlying element, or compose with another component |
+| `variant` | `"default" \| "outline"` | `"default"` | Visual variant applied to items in the group (items can override) |
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` | Size applied to items in the group (items can override) |
+| `spacing` | `number` | `0` | Gap between items (set to `0` for a connected appearance) |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout direction of the group |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### ToggleGroupItem
+
+A single toggle button within a toggle group. Must be used within `ToggleGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | **Required** | Unique value that identifies the item within the group |
+| `variant` | `"default" \| "outline"` | `"default"` | Visual variant for the item (falls back to the group’s `variant`) |
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` | Size of the item (falls back to the group’s `size`) |
+| `pressed` | `boolean` | - | Controlled pressed state (primarily for standalone usage) |
+| `defaultPressed` | `boolean` | `false` | Uncontrolled initial pressed state (primarily for standalone usage) |
+| `onPressedChange` | `(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void` | - | Event handler called when pressed state changes |
+| `nativeButton` | `boolean` | `true` | Whether to render a native `<button>` when replacing via `render` |
+| `disabled` | `boolean` | `false` | Whether the item should ignore user interaction |
+| `className` | `string` | - | Additional CSS class names to apply |
+

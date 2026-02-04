@@ -1,0 +1,56 @@
+---
+title: Date Range Picker
+description: Select a start and end date using a dual-month calendar, with optional time selection.
+---
+
+## Usage
+
+<ComponentPreview name="date-range-picker-demo" />
+
+## Import
+
+```tsx
+import { DateRangePicker, type DateRangeValue } from "@kaotypr/ui/date-range-picker"
+```
+
+## Examples
+
+### Controlled
+
+<ComponentPreview name="date-range-picker-controlled" />
+
+### With Constraints
+
+<ComponentPreview name="date-range-picker-with-constraints" />
+
+### With Time
+
+<ComponentPreview name="date-range-picker-with-time" />
+
+## API Reference
+
+This component is built on top of [React Day Picker](https://daypicker.dev/) (via the `Calendar` component), and [date-fns](https://date-fns.org/) for formatting and date utilities.
+
+### DateRangePicker
+
+A popover-based date range picker with an outline trigger button, a range calendar, and optional time inputs.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `DateRangeValue` | - | Controlled value for the selected range. Accepts `Date` objects or ISO strings. |
+| `defaultValue` | `DateRangeValue` | - | Uncontrolled initial value. Accepts `Date` objects or ISO strings. |
+| `onValueChange` | `(value: DateRangeValue \| undefined) => void` | - | Called when the range changes. Preserves the input type: Dates in, Dates out; strings in, strings out. |
+| `placeholder` | `string` | `"Pick a date range"` | Placeholder shown when nothing is selected. |
+| `placeholderFrom` | `string` | `"Start"` | Placeholder shown for the start date during partial selection. |
+| `placeholderTo` | `string` | `"End"` | Placeholder shown for the end date during partial selection. |
+| `showTime` | `boolean` | `false` | Whether to show time inputs below the calendar. |
+| `showHours` | `boolean` | `true` | Whether to show hours in the time inputs (when `showTime`). |
+| `showMinutes` | `boolean` | `true` | Whether to show minutes in the time inputs (when `showTime`). |
+| `showSeconds` | `boolean` | `false` | Whether to show seconds in the time inputs (when `showTime`). |
+| `timePickerProps` | `DateRangePickerTimeProps` | - | Props forwarded to both embedded `TimePicker` instances (from/to). |
+| `clearable` | `boolean` | `true` | Whether to show clear affordances when a value is present. |
+| `disabled` | `boolean` | `false` | Disables the trigger and the time inputs. |
+| `calendarProps` | `Omit<React.ComponentProps<typeof Calendar>, "selected" \| "onSelect" \| "mode">` | - | Props forwarded to the calendar. `mode`, `selected`, and `onSelect` are controlled internally. |
+| `className` | `string` | - | Additional classes for the trigger button. |
+| `contentClassName` | `string` | - | Additional classes for the popover content. |
+

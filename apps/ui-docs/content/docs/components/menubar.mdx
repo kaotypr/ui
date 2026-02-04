@@ -1,0 +1,227 @@
+---
+title: Menubar
+description: A menu bar providing commands and options for your application, with support for items, submenus, checkboxes, and radio groups.
+---
+
+## Usage
+
+<ComponentPreview name="menubar-demo" />
+
+## Import
+
+```tsx
+import {
+  Menubar,
+  MenubarPortal,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarGroup,
+  MenubarSeparator,
+  MenubarLabel,
+  MenubarItem,
+  MenubarShortcut,
+  MenubarCheckboxItem,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent,
+} from "@kaotypr/ui/menubar"
+```
+
+## Examples
+
+### With Icons
+
+<ComponentPreview name="menubar-icons" />
+
+### Submenu
+
+<ComponentPreview name="menubar-submenu" />
+
+### Checkbox Items
+
+<ComponentPreview name="menubar-checkbox" />
+
+### Radio Group
+
+<ComponentPreview name="menubar-radio" />
+
+## API Reference
+
+This component is built on top of [Base UI Menubar](https://base-ui.com/react/components/menubar). Menu content parts use [Base UI Menu](https://base-ui.com/react/components/menu).
+
+### Menubar
+
+The root component that wraps all menubar menus. Renders a horizontal (or vertical) bar of menu triggers.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `loopFocus` | `boolean` | `true` | Whether to loop keyboard focus back to the first item when the end of the list is reached |
+| `modal` | `boolean` | `true` | When true, document scroll is locked and pointer interactions outside the menubar are disabled |
+| `disabled` | `boolean` | `false` | Whether the whole menubar is disabled |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The orientation of the menubar |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### MenubarMenu
+
+Groups all parts of a single menu within the menubar. Wraps a trigger and its content. Must be used within `Menubar`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | The controlled open state of the menu |
+| `defaultOpen` | `boolean` | `false` | The uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean, eventDetails) => void` | - | Event handler called when the menu is opened or closed |
+| `modal` | `boolean` | `true` | When true, document scroll is locked and pointer interactions outside the menu are disabled |
+| `loopFocus` | `boolean` | `true` | Whether arrow keys loop focus from last to first item |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Menu orientation and arrow key direction |
+| `disabled` | `boolean` | `false` | Whether the component ignores user interaction |
+
+### MenubarTrigger
+
+The button that opens the menu. Must be used within `MenubarMenu`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content (e.g. "File", "Edit") |
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using `render` |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### MenubarContent
+
+The container for menu items. Must be used within `MenubarMenu`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | How to align the popup relative to the trigger |
+| `alignOffset` | `number` | `-4` | Additional offset along the alignment axis in pixels |
+| `sideOffset` | `number` | `8` | Distance between the trigger and the popup in pixels |
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### MenubarItem
+
+An individual interactive item in the menu. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | The visual variant of the menu item |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `true` | Whether to close the menu when the item is clicked |
+| `onClick` | `MouseEventHandler<HTMLDivElement>` | - | Click handler for the menu item |
+| `label` | `string` | - | Overrides the text used for keyboard text navigation |
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### MenubarCheckboxItem
+
+A menu item that toggles a setting on or off. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | - | The controlled checked state |
+| `defaultChecked` | `boolean` | `false` | The uncontrolled initial checked state |
+| `onCheckedChange` | `(checked: boolean, eventDetails) => void` | - | Event handler called when the item is toggled |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `true` | Whether to close the menu when the item is clicked |
+| `label` | `string` | - | Overrides the text used for keyboard text navigation |
+
+### MenubarRadioGroup
+
+Groups `MenubarRadioItem` components so that only one can be selected at a time. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The controlled value of the selected item |
+| `defaultValue` | `string` | - | The uncontrolled initial value |
+| `onValueChange` | `(value: string) => void` | - | Event handler called when the selection changes |
+
+### MenubarRadioItem
+
+A menu item that works like a radio button within a `MenubarRadioGroup`. Must be used within `MenubarRadioGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | **Required** | The value of this radio item |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `true` | Whether to close the menu when the item is clicked |
+| `label` | `string` | - | Overrides the text used for keyboard text navigation |
+
+### MenubarLabel
+
+An accessible label for a group of menu items. Must be used within `MenubarContent`, often inside `MenubarGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `className` | `string` | - | CSS class applied to the element |
+
+### MenubarSeparator
+
+A visual separator between menu groups. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+
+### MenubarShortcut
+
+Displays keyboard shortcuts for menu items. Typically used as a child of `MenubarItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The shortcut text (e.g. "⌘N") |
+| `className` | `string` | - | CSS class applied to the element |
+
+### MenubarGroup
+
+Groups related menu items together. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Menu items and optional `MenubarLabel` |
+
+### MenubarSub
+
+Groups all parts of a submenu. Must be used within `MenubarContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | The controlled open state of the submenu |
+| `defaultOpen` | `boolean` | `false` | The uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Event handler called when the submenu is opened or closed |
+
+### MenubarSubTrigger
+
+A menu item that opens a submenu. Must be used within `MenubarSub`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `className` | `string` | - | CSS class applied to the element |
+
+### MenubarSubContent
+
+The container for submenu items. Must be used within `MenubarSub`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### MenubarPortal
+
+Renders the popup in a portal. Use when you need the menu content in a different part of the DOM (e.g. to avoid overflow clipping).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `container` | `HTMLElement \| null` | `document.body` | The DOM node to render the portal into |
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |

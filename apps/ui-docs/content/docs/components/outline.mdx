@@ -1,0 +1,52 @@
+---
+title: Outline
+description: Bordered list items using the Item component's outline variant, ideal for grouped lists and selection UIs.
+---
+
+## Usage
+
+<ComponentPreview name="outline-item-group" />
+
+## Import
+
+```tsx
+import {
+  Item,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@kaotypr/ui/item"
+```
+
+## Examples
+
+### Item Group with Outline
+
+Use `ItemGroup` with `Item` components set to `variant="outline"` for a list with visible borders and consistent spacing. For more Item variants and composition (icons, images, links, separators), see [Item](/components/item).
+
+## API Reference
+
+The outline pattern is built with the [Item](/components/item) component. Use `variant="outline"` on `Item` for bordered styling (`border-border`).
+
+### Item (outline variant)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline" \| "muted"` | `"default"` | Use `"outline"` for bordered list items |
+| `size` | `"default" \| "sm" \| "xs"` | `"default"` | Size of the item |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element (e.g. `<a href="#" />`) |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### ItemGroup
+
+Container for grouping outline items. See [Item API](/components/item#itemgroup) for full props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | The items to group |
+
+For all subcomponents (ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemHeader, ItemFooter) and full API details, see the [Item](/components/item) documentation.

@@ -1,0 +1,138 @@
+---
+title: Sheet
+description: A slide-out panel that opens from the edge of the screen.
+---
+
+## Usage
+
+<ComponentPreview name="sheet-demo" />
+
+## Import
+
+```tsx
+import {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+  SheetPortal,
+  SheetOverlay,
+} from "@kaotypr/ui/sheet"
+```
+
+## Examples
+
+### Side
+
+<ComponentPreview name="sheet-side" />
+
+### Without close button
+
+<ComponentPreview name="sheet-no-close-button" />
+
+## API Reference
+
+This component is built on top of [Base UI Dialog](https://base-ui.com/react/components/dialog).
+
+### Sheet
+
+The root component that controls the sheet open state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultOpen` | `boolean` | `false` | Whether the sheet is initially open (uncontrolled) |
+| `open` | `boolean` | - | Whether the sheet is currently open (controlled) |
+| `onOpenChange` | `(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void` | - | Event handler called when the sheet is opened or closed |
+| `modal` | `boolean \| "trap-focus"` | `true` | Whether the sheet is modal. When `false`, interaction outside is allowed |
+| `disablePointerDismissal` | `boolean` | `false` | Whether the sheet should ignore outside clicks |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after open/close animations complete |
+
+### SheetTrigger
+
+A button that opens the sheet. Must be used within a `Sheet`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the underlying element or compose with another component |
+| `handle` | `Dialog.Handle<Payload>` | - | Handle to associate the trigger with a sheet |
+| `nativeButton` | `boolean` | `true` | When using `render`, whether the rendered element is a native `<button>` |
+| `payload` | `Payload` | - | Payload to pass to the sheet when it opens |
+| `id` | `string` | - | ID of the trigger (also used to identify the active trigger in controlled mode) |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetContent
+
+The sheet panel content. Must be used within a `Sheet` (and typically with `SheetTrigger`).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | Which side of the screen the sheet slides in from |
+| `showCloseButton` | `boolean` | `true` | Whether to show the default close button in the top-right corner |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `initialFocus` | `boolean \| RefObject<HTMLElement> \| ((openType: InteractionType) => boolean \| void \| HTMLElement \| null)` | - | Which element to focus when the sheet opens |
+| `finalFocus` | `boolean \| RefObject<HTMLElement> \| ((closeType: InteractionType) => boolean \| void \| HTMLElement \| null)` | - | Which element to focus when the sheet closes |
+
+### SheetHeader
+
+Container for the title and description. Must be used within `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetFooter
+
+Container for action buttons at the bottom of the sheet. Must be used within `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetTitle
+
+Heading that labels the sheet. Must be used within `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetDescription
+
+Paragraph with additional context. Must be used within `SheetContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetClose
+
+A button that closes the sheet. Must be used within a `Sheet`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `nativeButton` | `boolean` | `true` | When using `render`, whether the rendered element is a native `<button>` |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetOverlay
+
+Backdrop overlay displayed beneath the sheet content. Must be used within a `Sheet`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `forceRender` | `boolean` | `false` | Whether the backdrop is forced to render even when nested |
+| `className` | `string` | - | Additional CSS class names to apply |
+
+### SheetPortal
+
+Portal used to mount the sheet content into a different part of the DOM. Must be used within a `Sheet`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `container` | `HTMLElement \| ShadowRoot \| RefObject \| null` | - | Parent element to render the portal into |
+| `keepMounted` | `boolean` | `false` | Keep the portal mounted in the DOM while the sheet is closed |
+| `className` | `string` | - | Additional CSS class names to apply |
+

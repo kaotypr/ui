@@ -1,0 +1,110 @@
+---
+title: Pagination
+description: A component for navigating through paginated content with page numbers, previous/next buttons, and ellipsis.
+---
+
+## Usage
+
+<ComponentPreview name="pagination-demo" />
+
+## Import
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@kaotypr/ui/pagination"
+```
+
+## Examples
+
+### Simple
+
+<ComponentPreview name="pagination-simple" />
+
+### Icons Only
+
+<ComponentPreview name="pagination-icons-only" />
+
+## API Reference
+
+Pagination is a composed component built from semantic HTML (`<nav>`, `<ul>`, `<li>`) and the Button component for links. It does not wrap a third-party library.
+
+### Pagination
+
+The root component that wraps all pagination content. Renders as a `<nav>` with `aria-label="pagination"`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Pagination content (typically `PaginationContent`) |
+| ... | `React.ComponentProps<"nav">` | - | All native `<nav>` props |
+
+### PaginationContent
+
+The container for pagination items. Must be used within `Pagination`. Renders as a `<ul>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Pagination items to display |
+| ... | `React.ComponentProps<"ul">` | - | All native `<ul>` props |
+
+### PaginationItem
+
+Wrapper for individual pagination elements (links, buttons, ellipsis). Must be used within `PaginationContent`. Renders as a `<li>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | The element to wrap (link, button, or ellipsis) |
+| ... | `React.ComponentProps<"li">` | - | All native `<li>` props |
+
+### PaginationLink
+
+A clickable page number link. Must be used within `PaginationItem`. Renders as an `<a>` styled via Button (ghost or outline when active).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isActive` | `boolean` | `false` | Whether this link is the current page |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"icon"` | Button size |
+| `href` | `string` | - | Link URL |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Link content (e.g. page number) |
+| ... | `React.ComponentProps<"a">` | - | All native `<a>` props (e.g. `onClick`) |
+
+### PaginationPrevious
+
+Button to go to the previous page. Must be used within `PaginationItem`. Includes a left caret icon and "Previous" text (hidden on small screens).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | Link URL for previous page |
+| `className` | `string` | - | Additional CSS class names |
+| `aria-disabled` | `"true" \| "false"` | - | Use `"true"` on first page; pair with `pointer-events-none opacity-50` for disabled styling |
+| ... | `PaginationLink` props | - | Same as PaginationLink (inherits from it) |
+
+### PaginationNext
+
+Button to go to the next page. Must be used within `PaginationItem`. Includes a right caret icon and "Next" text (hidden on small screens).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | Link URL for next page |
+| `className` | `string` | - | Additional CSS class names |
+| `aria-disabled` | `"true" \| "false"` | - | Use `"true"` on last page; pair with `pointer-events-none opacity-50` for disabled styling |
+| ... | `PaginationLink` props | - | Same as PaginationLink (inherits from it) |
+
+### PaginationEllipsis
+
+Visual indicator for skipped pages. Must be used within `PaginationItem`. Renders a three-dots icon with "More pages" for screen readers.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| ... | `React.ComponentProps<"span">` | - | All native `<span>` props |

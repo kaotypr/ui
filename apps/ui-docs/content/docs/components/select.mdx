@@ -1,0 +1,148 @@
+---
+title: Select
+description: A form component for choosing a predefined value from a dropdown menu.
+---
+
+## Usage
+
+<ComponentPreview name="select-demo" />
+
+## Import
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@kaotypr/ui/select"
+```
+
+## Examples
+
+### With Groups
+
+<ComponentPreview name="select-groups" />
+
+### Disabled
+
+<ComponentPreview name="select-disabled" />
+
+### Invalid
+
+<ComponentPreview name="select-invalid" />
+
+### Scrollable
+
+<ComponentPreview name="select-scrollable" />
+
+### Align Item with Trigger
+
+<ComponentPreview name="select-align-item" />
+
+## API Reference
+
+This component is built on top of [Base UI Select](https://base-ui.com/react/components/select).
+
+### Select
+
+The root component that wraps all select parts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `Value \| Value[] \| null` | - | The controlled value of the select |
+| `defaultValue` | `Value \| Value[] \| null` | - | The uncontrolled initial value |
+| `onValueChange` | `(value, eventDetails) => void` | - | Event handler called when the value changes |
+| `open` | `boolean` | - | Whether the popup is open (controlled) |
+| `defaultOpen` | `boolean` | `false` | Whether the popup is initially open |
+| `onOpenChange` | `(open, eventDetails) => void` | - | Event handler called when the popup opens or closes |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after open/close animations complete |
+| `disabled` | `boolean` | `false` | Whether the component ignores user interaction |
+| `readOnly` | `boolean` | `false` | Whether the user cannot change the selection |
+| `required` | `boolean` | `false` | Whether a value is required before form submission |
+| `multiple` | `boolean` | `false` | Whether multiple items can be selected |
+| `modal` | `boolean` | `true` | Whether the select enters a modal state when open |
+| `name` | `string` | - | Identifies the field when the form is submitted |
+| `items` | `Record<string, ReactNode> \| { label: ReactNode, value: any }[]` | - | Item data; when set, SelectValue shows the selected item's label |
+| `itemToStringLabel` | `(itemValue: Value) => string` | - | Converts object values to a string for the trigger display |
+| `itemToStringValue` | `(itemValue: Value) => string` | - | Converts object values to a string for form submission |
+| `isItemEqualToValue` | `(itemValue: Value, value: Value) => boolean` | - | Custom comparison for matching selected value |
+| `highlightItemOnHover` | `boolean` | `true` | Whether hovering highlights items |
+| `id` | `string` | - | The id of the select |
+| `inputRef` | `Ref<HTMLInputElement>` | - | Ref for the hidden input element |
+
+### SelectTrigger
+
+The button that opens the select popup. Must be used within `Select`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "default"` | `"default"` | Trigger height and border radius |
+| `children` | `ReactNode` | - | Trigger content (typically `SelectValue`) |
+| `className` | `string` | - | CSS class applied to the element |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### SelectValue
+
+Displays the currently selected item's label. When `Select` has an `items` prop, the label is derived automatically. Must be used within `SelectTrigger`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `placeholder` | `ReactNode` | - | Content shown when no value is selected |
+| `className` | `string` | - | CSS class applied to the element |
+
+### SelectContent
+
+Container for the dropdown list. Must be used within `Select`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Preferred side of the trigger |
+| `sideOffset` | `number` | `4` | Distance from the trigger |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Alignment with the trigger |
+| `alignOffset` | `number` | `0` | Offset from the alignment edge |
+| `alignItemWithTrigger` | `boolean` | `true` | Whether to align the highlighted item with the trigger |
+| `className` | `string` | - | CSS class applied to the popup |
+
+### SelectItem
+
+An option in the dropdown. Must be used within `SelectContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | **Required** | The value of the option |
+| `disabled` | `boolean` | `false` | Whether the item is disabled |
+| `children` | `ReactNode` | - | Item label/content |
+| `className` | `string` | - | CSS class applied to the element |
+
+### SelectGroup
+
+Groups related items with a label. Must be used within `SelectContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Group content (typically `SelectLabel` and `SelectItem`s) |
+| `className` | `string` | - | CSS class applied to the element |
+
+### SelectLabel
+
+Label for a group. Must be used within `SelectGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Label text |
+| `className` | `string` | - | CSS class applied to the element |
+
+### SelectSeparator
+
+Visual separator between groups. Must be used within `SelectContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |

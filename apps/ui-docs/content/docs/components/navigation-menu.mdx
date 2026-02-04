@@ -1,0 +1,129 @@
+---
+title: Navigation Menu
+description: A collection of links and menus for website navigation, with dropdown panels that open on hover or click.
+---
+
+## Usage
+
+<ComponentPreview name="navigation-menu-demo" />
+
+## Import
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@kaotypr/ui/navigation-menu"
+```
+
+## Examples
+
+### Vertical
+
+Use vertical orientation for sidebar-style navigation.
+
+<ComponentPreview name="navigation-menu-vertical" />
+
+### Controlled
+
+Control the open item programmatically with `value` and `onValueChange`.
+
+<ComponentPreview name="navigation-menu-controlled" />
+
+### Rich Content
+
+Display grouped links with headings inside dropdown content.
+
+<ComponentPreview name="navigation-menu-with-rich-content" />
+
+## API Reference
+
+This component is built on top of [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu).
+
+### NavigationMenu
+
+The root component that wraps all navigation menu items and manages open state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | `null` | The controlled value of the item that is currently open |
+| `defaultValue` | `any` | `null` | The uncontrolled value of the item that should be initially open |
+| `onValueChange` | `(value: any, eventDetails: ChangeEventDetails) => void` | - | Callback fired when the value changes |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Called after animations complete when the menu closes |
+| `delay` | `number` | `50` | Delay in ms before opening the menu |
+| `closeDelay` | `number` | `50` | Delay in ms before closing the menu |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The orientation of the navigation menu |
+| `dir` | `"ltr" \| "rtl"` | - | The reading direction |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the root element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the root element |
+
+### NavigationMenuList
+
+Contains the list of navigation menu items. Must be used within `NavigationMenu`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the list element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the list element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the list element |
+
+### NavigationMenuItem
+
+An individual navigation menu item. Must be used within `NavigationMenuList`. Can wrap a trigger + content (dropdown) or a single link.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | - | Unique value identifying this item for controlled mode |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the item element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the item element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the item element |
+
+### NavigationMenuTrigger
+
+Opens the dropdown panel when hovered or clicked. Must be used within `NavigationMenuItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using `render` |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the trigger element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the trigger element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the trigger element |
+
+### NavigationMenuContent
+
+The content shown in the dropdown panel. Must be used within `NavigationMenuItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the content element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the content element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the content element |
+
+### NavigationMenuLink
+
+A link inside the menu or dropdown. Must be used within `NavigationMenuItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | Link destination (when rendering as anchor) |
+| `closeOnClick` | `boolean` | `false` | Whether to close the menu when the link is clicked |
+| `active` | `boolean` | `false` | Whether the link represents the current page |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the link element (e.g. with Next.js `Link`) or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class for the link element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Inline styles for the link element |
+
+### navigationMenuTriggerStyle
+
+A CVA style helper for styling a link to match the trigger appearance (e.g. for top-level nav links that are not dropdowns).
+
+```tsx
+<NavigationMenuLink className={navigationMenuTriggerStyle()} href="/docs">
+  Docs
+</NavigationMenuLink>
+```

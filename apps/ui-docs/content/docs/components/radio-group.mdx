@@ -1,0 +1,69 @@
+---
+title: Radio Group
+description: A group of radio buttons that allows users to select a single option from a set of mutually exclusive choices.
+---
+
+## Usage
+
+<ComponentPreview name="radio-group-demo" />
+
+## Import
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@kaotypr/ui/radio-group"
+```
+
+## Examples
+
+### Choice Card
+
+<ComponentPreview name="radio-group-choice-card" />
+
+### With Description
+
+<ComponentPreview name="radio-group-description" />
+
+### Disabled
+
+<ComponentPreview name="radio-group-disabled" />
+
+### Fieldset
+
+<ComponentPreview name="radio-group-fieldset" />
+
+### Invalid
+
+<ComponentPreview name="radio-group-invalid" />
+
+## API Reference
+
+This component is built on top of [Base UI Radio Group](https://base-ui.com/react/components/radio-group) and [Base UI Radio](https://base-ui.com/react/components/radio).
+
+### RadioGroup
+
+The root component that wraps all radio options. Renders as a `div` by default; use the `render` prop to render as a `fieldset` or other element.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | - | The controlled value of the selected radio item |
+| `defaultValue` | `any` | - | The uncontrolled initial value of the selected radio item |
+| `onValueChange` | `(value: any, eventDetails: RadioGroup.ChangeEventDetails) => void` | - | Called when the selected value changes |
+| `name` | `string` | - | Form field name for submission |
+| `required` | `boolean` | `false` | Whether the user must select an option before submitting |
+| `disabled` | `boolean` | `false` | Whether the component ignores user interaction |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the root element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the root element |
+
+### RadioGroupItem
+
+A single radio option within the group. Must be used inside `RadioGroup`. Uses Base UI Radio under the hood; the indicator (filled circle when selected) is built-in.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | **Required** | Value for this option when selected |
+| `disabled` | `boolean` | `false` | Whether this item ignores user interaction |
+| `required` | `boolean` | `false` | Whether this option must be selected before submitting |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the root element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the root element |

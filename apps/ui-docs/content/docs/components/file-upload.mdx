@@ -1,0 +1,48 @@
+---
+title: File Upload
+description: A file upload list pattern built with Item and Progress to show upload progress and file metadata.
+---
+
+## Usage
+
+<ComponentPreview name="file-upload-list" />
+
+## Import
+
+This pattern uses [Item](/components/item) and [Progress](/components/progress). Import the building blocks:
+
+```tsx
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@kaotypr/ui/item"
+import { Progress } from "@kaotypr/ui/progress"
+```
+
+## Examples
+
+### File Upload List
+
+Display a list of files with name, progress bar, and time remaining using Item and Progress.
+
+<ComponentPreview name="file-upload-list" />
+
+## API Reference
+
+File upload is a **pattern** composed of existing components, not a single primitive. Use the following:
+
+| Component | Purpose |
+|-----------|---------|
+| [Item](/components/item) | Row container for each file (name, progress, actions) |
+| [ItemGroup](/components/item) | Wraps the list of file rows |
+| [ItemMedia](/components/item) | Icon or thumbnail for the file |
+| [ItemContent](/components/item) | Holds file name and optional metadata |
+| [ItemTitle](/components/item) | File name text |
+| [ItemActions](/components/item) | Time remaining or remove button |
+| [Progress](/components/progress) | Upload progress bar |
+
+For full prop APIs, see [Item](/components/item) and [Progress](/components/progress).

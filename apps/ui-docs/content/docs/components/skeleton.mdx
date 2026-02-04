@@ -1,0 +1,50 @@
+---
+title: Skeleton
+description: A loading placeholder component that displays a pulsing animation to indicate content is being loaded.
+---
+
+## Usage
+
+<ComponentPreview name="skeleton-demo" />
+
+## Import
+
+```tsx
+import { Skeleton } from "@kaotypr/ui/skeleton"
+```
+
+## Examples
+
+### Avatar
+
+<ComponentPreview name="skeleton-avatar" />
+
+### Text
+
+<ComponentPreview name="skeleton-text" />
+
+### Form
+
+<ComponentPreview name="skeleton-form" />
+
+### Table
+
+<ComponentPreview name="skeleton-table" />
+
+### Card
+
+<ComponentPreview name="skeleton-card" />
+
+## API Reference
+
+Skeleton is a styling primitive that renders a `<div>` with `animate-pulse`, a muted background, and rounded corners. You control the shape and size using `className` (for example: `h-4 w-32`, `rounded-full`, `aspect-video`).
+
+### Skeleton
+
+Renders a pulsing placeholder. Accepts all standard `<div>` HTML attributes.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes (recommended way to set size and shape) |
+| `children` | `ReactNode` | - | Optional content to render inside the skeleton |
+| ... | `React.ComponentProps<"div">` | - | Any other HTML div attributes |

@@ -1,0 +1,147 @@
+---
+title: Input Group
+description: A container for grouping input fields with addons, buttons, and text elements.
+---
+
+## Usage
+
+<ComponentPreview name="input-group-demo" />
+
+## Import
+
+```tsx
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupInput,
+  InputGroupTextarea,
+} from "@kaotypr/ui/input-group"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="input-group-basic" />
+
+### With Icon
+
+<ComponentPreview name="input-group-icon" />
+
+### Inline Start
+
+<ComponentPreview name="input-group-inline-start" />
+
+### Inline End
+
+<ComponentPreview name="input-group-inline-end" />
+
+### Block Start
+
+<ComponentPreview name="input-group-block-start" />
+
+### Block End
+
+<ComponentPreview name="input-group-block-end" />
+
+### With Text Addon
+
+<ComponentPreview name="input-group-text" />
+
+### With Button
+
+<ComponentPreview name="input-group-button" />
+
+### With Addons
+
+<ComponentPreview name="input-group-with-addons" />
+
+### With Buttons
+
+<ComponentPreview name="input-group-with-buttons" />
+
+### Textarea
+
+<ComponentPreview name="input-group-textarea" />
+
+### With Tooltip
+
+<ComponentPreview name="input-group-with-tooltip" />
+
+## API Reference
+
+This component is a custom composite. Addons use class-variance-authority (CVA) for alignment variants; buttons use the shared [Button](/docs/components/button) component with input-group-specific sizes.
+
+### InputGroup
+
+The root container. Renders a `div` with `role="group"`. Use `data-disabled="true"` or `aria-invalid="true"` on the root to style disabled or invalid state for the whole group.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Addons, input/textarea, and other content |
+
+All standard `div` HTML attributes are supported.
+
+### InputGroupAddon
+
+A container for icons, text, or buttons around the input. Must be used within `InputGroup`. Clicking the addon (except on buttons) focuses the input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` | Position relative to the input: left, right, above, or below |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Icons, text, buttons, or other content |
+
+### InputGroupButton
+
+A button for use inside an addon. Must be used within `InputGroupAddon`. Inherits from [Button](/docs/components/button) with input-group-specific sizes.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"xs" \| "sm" \| "icon-xs" \| "icon-sm"` | `"xs"` | Compact size for use in the input group |
+| `variant` | `ButtonVariant` | `"ghost"` | Button variant (e.g. ghost, outline) |
+| `type` | `"button" \| "submit" \| "reset"` | `"button"` | Native button type |
+
+Other [Button](/docs/components/button) props (e.g. `onClick`, `disabled`) are supported.
+
+### InputGroupText
+
+Static text or icons inside an addon. Use for prefixes/suffixes like `https://`, `@example.com`, or units. Must be used within `InputGroupAddon`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Text or icon content |
+
+### InputGroupInput
+
+An input styled for the group (no border/ring; inherits group focus and invalid styles). Must be used within `InputGroup`. Accepts all native `<input>` props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `string` | `"text"` | Input type (text, password, number, etc.) |
+| `placeholder` | `string` | - | Placeholder text |
+| `value` | `string \| number` | - | Controlled value |
+| `defaultValue` | `string \| number` | - | Uncontrolled default |
+| `disabled` | `boolean` | `false` | Disables the input; use with `data-disabled="true"` on `InputGroup` for full group styling |
+| `readOnly` | `boolean` | `false` | Read-only state |
+| `required` | `boolean` | `false` | Required state |
+| `aria-invalid` | `boolean \| "true" \| "false" \| "grammar" \| "spelling"` | - | Invalid state; set on both input and `InputGroup` for group styling |
+
+### InputGroupTextarea
+
+A textarea styled for the group. Use with `InputGroupAddon align="block-start"` or `align="block-end"` for labels or character counts above/below. Must be used within `InputGroup`. Accepts all native `<textarea>` props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `placeholder` | `string` | - | Placeholder text |
+| `value` | `string` | - | Controlled value |
+| `defaultValue` | `string` | - | Uncontrolled default |
+| `rows` | `number` | - | Visible rows |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `readOnly` | `boolean` | `false` | Read-only state |
+| `required` | `boolean` | `false` | Required state |
+| `aria-invalid` | `boolean \| "true" \| "false" \| "grammar" \| "spelling"` | - | Invalid state |

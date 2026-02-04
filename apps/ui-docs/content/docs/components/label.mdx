@@ -1,0 +1,50 @@
+---
+title: Label
+description: A styled label element for form inputs and other form controls, with accessible association via htmlFor.
+---
+
+## Usage
+
+<ComponentPreview name="label-demo" />
+
+## Import
+
+```tsx
+import { Label } from "@kaotypr/ui/label"
+```
+
+## Examples
+
+### With Checkbox
+
+<ComponentPreview name="label-demo" />
+
+### With Input
+
+<ComponentPreview name="label-with-input" />
+
+### Required Field
+
+<ComponentPreview name="label-required" />
+
+### Multiple Fields
+
+<ComponentPreview name="label-multiple-fields" />
+
+## API Reference
+
+Label is a styled native `<label>` element. It accepts all standard [HTML label attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+
+### Label
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `htmlFor` | `string` | - | The id of the form element this label is associated with. Clicking the label will focus the associated element. |
+| `form` | `string` | - | The id of the form element this label belongs to. |
+| `children` | `ReactNode` | - | The content to display inside the label. |
+| `className` | `string` | - | Additional CSS class names to apply. |
+| `style` | `CSSProperties` | - | CSS properties applied to the element. |
+| `aria-label` | `string` | - | An accessible label for the label element itself. |
+| `aria-labelledby` | `string` | - | Identifies the element(s) that label this element. |
+
+When the associated form control is disabled, the label automatically receives disabled styling (reduced opacity and `cursor-not-allowed`) via the `peer-disabled:` and `group-data-[disabled=true]:` classes.

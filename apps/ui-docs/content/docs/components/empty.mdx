@@ -1,0 +1,120 @@
+---
+title: Empty
+description: A component for displaying empty states when there is no content to show.
+---
+
+## Usage
+
+<ComponentPreview name="empty-demo" />
+
+## Import
+
+```tsx
+import {
+  Empty,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+} from "@kaotypr/ui/empty"
+```
+
+## Examples
+
+### With outline
+
+Empty state with a dashed border for visual containment.
+
+<ComponentPreview name="empty-outline" />
+
+### With background
+
+Empty state with a muted background to distinguish it from the page.
+
+<ComponentPreview name="empty-background" />
+
+### In a card
+
+Empty state with header, description, and action buttons in a card layout.
+
+<ComponentPreview name="empty-card" />
+
+### With avatar
+
+Use `EmptyMedia` with `variant="default"` to show an avatar or other media instead of an icon.
+
+<ComponentPreview name="empty-avatar" />
+
+### With avatar group
+
+Display multiple avatars in the empty state for scenarios like "no team members" or "no collaborators".
+
+<ComponentPreview name="empty-avatar-group" />
+
+### With input group
+
+Combine with an input or search to let users take action directly from the empty state (e.g. 404 with search).
+
+<ComponentPreview name="empty-input-group" />
+
+## API Reference
+
+The Empty component is a custom composition with no external dependency. Use the subcomponents to build empty states that fit your layout and copy.
+
+### Empty
+
+The root container. Renders a centered, dashed-border area with flex layout for header and optional content.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Typically `EmptyHeader` and optionally `EmptyContent` |
+
+All other `div` props are supported.
+
+### EmptyHeader
+
+Groups the empty state header: media, title, and description. Use inside `Empty`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Usually `EmptyMedia`, `EmptyTitle`, and `EmptyDescription` |
+
+### EmptyMedia
+
+Container for the icon or media. Use inside `EmptyHeader`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "icon"` | `"default"` | `default` — no background; `icon` — muted background and rounded box |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Icon (e.g. from Phosphor) or avatar/media |
+
+### EmptyTitle
+
+The heading text for the empty state. Use inside `EmptyHeader`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Title text |
+
+### EmptyDescription
+
+Supporting text or instructions. Renders as a div with muted styling; links get underline and hover styles. Use inside `EmptyHeader` or near `EmptyContent` as needed.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Description text; can include `<a>` elements |
+
+### EmptyContent
+
+Optional area for actions (buttons, links) or extra content. Use inside `Empty` after `EmptyHeader`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Buttons, links, or other content |

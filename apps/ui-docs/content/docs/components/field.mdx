@@ -1,0 +1,170 @@
+---
+title: Field
+description: A flexible form field component that provides structure for labels, descriptions, inputs, and error messages.
+---
+
+## Usage
+
+<ComponentPreview name="field-demo" />
+
+## Import
+
+```tsx
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+} from "@kaotypr/ui/field"
+```
+
+## Examples
+
+### Input
+
+<ComponentPreview name="field-input" />
+
+### Checkbox
+
+<ComponentPreview name="field-checkbox" />
+
+### Radio
+
+<ComponentPreview name="field-radio" />
+
+### Select
+
+<ComponentPreview name="field-select" />
+
+### Switch
+
+<ComponentPreview name="field-switch" />
+
+### Slider
+
+<ComponentPreview name="field-slider" />
+
+### Textarea
+
+<ComponentPreview name="field-textarea" />
+
+### Fieldset
+
+<ComponentPreview name="field-fieldset" />
+
+### Field Group
+
+<ComponentPreview name="field-group" />
+
+### Choice Card
+
+<ComponentPreview name="field-choice-card" />
+
+### Responsive Layout
+
+<ComponentPreview name="field-responsive" />
+
+## API Reference
+
+The Field component is a custom composition built with class-variance-authority. It does not wrap a third-party library.
+
+### Field
+
+The root component that wraps a single form field. Provides layout variants and invalid state styling.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` | Layout: vertical stacks label and content, horizontal places them side by side, responsive adapts by screen size |
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props |
+
+### FieldSet
+
+A `<fieldset>` element for grouping related form fields. Use with `FieldLegend` for semantic structure.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"fieldset">` | - | All standard fieldset props |
+
+### FieldLegend
+
+A `<legend>` for fieldset groups. Must be used within `FieldSet`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"legend" \| "label"` | `"legend"` | `legend` uses larger text, `label` uses smaller text |
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"legend">` | - | All standard legend props |
+
+### FieldGroup
+
+A container for grouping multiple fields with consistent spacing. Supports nested groups.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props |
+
+### FieldLabel
+
+Label for form fields. Extends the base Label component with field-specific styling. Use `htmlFor` to associate with an input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<typeof Label>` | - | All Label props (e.g. `htmlFor`) |
+
+### FieldTitle
+
+A non-label title for fields that don’t need label semantics (e.g. when the control is inside the label).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props |
+
+### FieldContent
+
+Container for the field’s input(s). Wraps controls for consistent spacing and layout.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props |
+
+### FieldDescription
+
+Help or context text for the field. Supports links and multiple descriptions per field.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"p">` | - | All standard paragraph props |
+
+### FieldError
+
+Validation error message. Renders as a single message or a list when given multiple errors. Set `data-invalid="true"` on the parent `Field` to show invalid styling.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `errors` | `Array<{ message?: string } \| undefined>` | - | Error objects; multiple entries are shown as a bullet list (duplicates by message are deduplicated) |
+| `children` | `ReactNode` | - | Custom content; when set, `errors` is ignored |
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props (has `role="alert"`) |
+
+### FieldSeparator
+
+Visual separator between field groups. Optionally show text in the center (e.g. “or”).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Optional text shown in the center of the line |
+| `className` | `string` | - | Additional CSS classes |
+| … | `React.ComponentProps<"div">` | - | All standard div props |

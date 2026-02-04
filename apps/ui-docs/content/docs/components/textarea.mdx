@@ -1,0 +1,59 @@
+---
+title: Textarea
+description: A native textarea element for multi-line text input.
+---
+
+## Usage
+
+<ComponentPreview name="textarea-demo" />
+
+## Import
+
+```tsx
+import { Textarea } from "@kaotypr/ui/textarea"
+```
+
+## Examples
+
+### With Button
+
+<ComponentPreview name="textarea-button" />
+
+### With Field
+
+<ComponentPreview name="textarea-field" />
+
+### Disabled
+
+<ComponentPreview name="textarea-disabled" />
+
+### Invalid
+
+<ComponentPreview name="textarea-invalid" />
+
+## API Reference
+
+This component wraps a native [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) element and accepts all standard textarea props.
+
+### Textarea
+
+A styled textarea element.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The controlled value of the textarea |
+| `defaultValue` | `string` | - | The uncontrolled initial value of the textarea |
+| `onChange` | `(event: React.ChangeEvent<HTMLTextAreaElement>) => void` | - | Called when the value changes |
+| `placeholder` | `string` | - | Placeholder text shown when empty |
+| `disabled` | `boolean` | `false` | Whether the textarea is disabled |
+| `readOnly` | `boolean` | `false` | Whether the textarea is read-only |
+| `required` | `boolean` | `false` | Whether the textarea is required |
+| `rows` | `number` | - | Number of visible text lines |
+| `cols` | `number` | - | Visible width in character columns |
+| `maxLength` | `number` | - | Maximum allowed characters |
+| `minLength` | `number` | - | Minimum required characters |
+| `autoComplete` | `string` | - | Browser autocomplete hint |
+| `name` | `string` | - | Form field name |
+| `id` | `string` | - | Element id (useful for labels) |
+| `aria-invalid` | `boolean \| "true" \| "false"` | - | Marks the value as invalid for accessibility and styling |
+| `className` | `string` | - | Additional class names |

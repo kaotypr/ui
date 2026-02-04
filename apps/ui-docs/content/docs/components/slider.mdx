@@ -1,0 +1,66 @@
+---
+title: Slider
+description: An easily stylable slider for selecting numeric values (single or range).
+---
+
+## Usage
+
+<ComponentPreview name="slider-demo" />
+
+## Import
+
+```tsx
+import { Slider } from "@kaotypr/ui/slider"
+```
+
+## Examples
+
+### Controlled
+
+<ComponentPreview name="slider-controlled" />
+
+### Range
+
+<ComponentPreview name="slider-range" />
+
+### Multiple thumbs
+
+<ComponentPreview name="slider-multiple" />
+
+### Vertical
+
+<ComponentPreview name="slider-vertical" />
+
+### Disabled
+
+<ComponentPreview name="slider-disabled" />
+
+## API Reference
+
+This component is built on top of [Base UI Slider](https://base-ui.com/react/components/slider).
+
+### Slider
+
+The root slider component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | - | Identifies the field when a form is submitted. |
+| `defaultValue` | `number \| number[]` | - | The uncontrolled value when initially rendered. Use `value` for a controlled slider. |
+| `value` | `number \| number[]` | - | The controlled value. For range sliders, provide an array (for example `[20, 80]`). |
+| `onValueChange` | `(value: number \| number[], eventDetails: Slider.Root.ChangeEventDetails) => void` | - | Called when the slider’s value changes. `eventDetails.reason` indicates the interaction that triggered the change. |
+| `onValueCommitted` | `(value: number \| number[], eventDetails: Slider.Root.CommitEventDetails) => void` | - | Called when the value is committed (for example on pointer up). `eventDetails.reason` indicates the interaction that triggered the commit. |
+| `min` | `number` | `0` | The minimum allowed value. |
+| `max` | `number` | `100` | The maximum allowed value. |
+| `step` | `number` | `1` | The value granularity for discrete sliders. |
+| `largeStep` | `number` | `10` | The step used for PageUp/PageDown (or Shift + Arrow). |
+| `minStepsBetweenValues` | `number` | `0` | The minimum number of steps allowed between values in a range slider. |
+| `disabled` | `boolean` | `false` | Whether the slider should ignore user interaction. |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The component orientation. |
+| `thumbAlignment` | `"center" \| "edge" \| "edge-client-only"` | `"edge"` | How the thumb aligns relative to the track at min/max values. |
+| `thumbCollisionBehavior` | `"none" \| "push" \| "swap"` | `"push"` | How thumbs behave when they collide in a multi-thumb slider. |
+| `locale` | `Intl.LocalesArgument` | - | Locale used by `Intl.NumberFormat` when formatting the value. Defaults to the runtime locale. |
+| `format` | `Intl.NumberFormatOptions` | - | Options used to format the input value. |
+| `render` | `ReactElement \| ((props, state) => ReactElement)` | - | Replace the default element or compose with another component. The function form receives `(props, state)`. |
+| `className` | `string \| ((state: Slider.Root.State) => string \| undefined)` | - | CSS class applied to the root, or a function that returns a class based on component state. |
+| `style` | `CSSProperties \| ((state: Slider.Root.State) => CSSProperties \| undefined)` | - | Style applied to the root, or a function that returns styles based on component state. |

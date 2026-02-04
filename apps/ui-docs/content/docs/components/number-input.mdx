@@ -1,0 +1,89 @@
+---
+title: Number Input
+description: A numeric input field with increment/decrement steppers, formatting, and min/max constraints.
+---
+
+## Usage
+
+<ComponentPreview name="number-input-demo" />
+
+## Import
+
+```tsx
+import { NumberInput } from "@kaotypr/ui/number-input"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="number-input-demo" />
+
+### Controlled
+
+<ComponentPreview name="number-input-controlled" />
+
+### With Stepper
+
+<ComponentPreview name="number-input-with-stepper" />
+
+### With Min and Max
+
+<ComponentPreview name="number-input-min-max" />
+
+### Decimal Places
+
+<ComponentPreview name="number-input-decimal" />
+
+### Thousand Separator
+
+<ComponentPreview name="number-input-thousand-separator" />
+
+### With Prefix
+
+<ComponentPreview name="number-input-with-prefix" />
+
+### With Suffix
+
+<ComponentPreview name="number-input-with-suffix" />
+
+### Percentage
+
+<ComponentPreview name="number-input-percentage" />
+
+### Disabled
+
+<ComponentPreview name="number-input-disabled" />
+
+## API Reference
+
+This component is built on top of [`react-number-format`](https://s-yadav.github.io/react-number-format/).
+
+### NumberInput
+
+A controlled or uncontrolled numeric input with formatting, keyboard navigation, and increment/decrement steppers.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `stepper` | `number` | `undefined` | Amount to increment or decrement when using the steppers or arrow keys. Defaults to `1` when not provided. |
+| `placeholder` | `string` | `undefined` | Placeholder text displayed when the input is empty. |
+| `defaultValue` | `number` | `undefined` | Initial value for the input when used in uncontrolled mode. |
+| `value` | `number` | `undefined` | Controlled value for the input. Use with `onValueChange`. |
+| `min` | `number` | `-Infinity` | Minimum allowed value. Values below this are clamped on blur. |
+| `max` | `number` | `Infinity` | Maximum allowed value. Values above this are clamped on blur. |
+| `suffix` | `string` | `undefined` | String appended to the formatted value (e.g. `" kg"`, `"%"`). |
+| `prefix` | `string` | `undefined` | String prepended to the formatted value (e.g. `"$"`, `"€"`). |
+| `onValueChange` | `(value: number \| undefined) => void` | `undefined` | Callback invoked when the numeric value changes. Receives the parsed number or `undefined` when the input is cleared. |
+| `fixedDecimalScale` | `boolean` | `false` | When `true`, enforces trailing zeros so the number of decimal places always equals `decimalScale`. |
+| `decimalScale` | `number` | `0` | Maximum number of digits allowed after the decimal point. |
+| `thousandSeparator` | `boolean \| string` | `undefined` | Enables thousand separators. When `true`, uses `","`; when a string, uses that string as the separator. |
+| `disabled` | `boolean` | `false` | Disables the input and steppers. |
+| `readOnly` | `boolean` | `false` | Renders a read-only input that cannot be edited. |
+| `required` | `boolean` | `false` | Marks the field as required in forms. |
+| `autoFocus` | `boolean` | `false` | Automatically focuses the input when it mounts. |
+| `name` | `string` | `undefined` | Name attribute for form submissions. |
+| `id` | `string` | `undefined` | ID attribute for associating labels and describing elements. |
+| `className` | `string` | `undefined` | Additional CSS class names applied to the root container. |
+
+All other props supported by `react-number-format`'s `NumericFormat` component are also forwarded to the underlying input.
+

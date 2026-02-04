@@ -1,0 +1,166 @@
+---
+title: Dialog
+description: A popup that opens on top of the entire page, with optional overlay, title, description, and actions.
+---
+
+## Usage
+
+<ComponentPreview name="dialog-demo" />
+
+## Import
+
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+  DialogOverlay,
+  DialogPortal,
+} from "@kaotypr/ui/dialog"
+```
+
+## Examples
+
+### No Close Button
+
+<ComponentPreview name="dialog-no-close-button" />
+
+### Close Button in Footer
+
+<ComponentPreview name="dialog-close-button" />
+
+### Sticky Footer
+
+<ComponentPreview name="dialog-sticky-footer" />
+
+### Scrollable Content
+
+<ComponentPreview name="dialog-scrollable-content" />
+
+## API Reference
+
+This component is built on top of [Base UI Dialog](https://base-ui.com/react/components/dialog).
+
+### Dialog
+
+The root component that wraps all dialog parts. Manages open state and modal behavior.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | The controlled open state of the dialog |
+| `defaultOpen` | `boolean` | `false` | The uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void` | - | Event handler called when the dialog is opened or closed |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after open/close animations complete |
+| `modal` | `boolean \| "trap-focus"` | `true` | When `true`, focus is trapped and page scroll is locked. Use `"trap-focus"` to trap focus only, or `false` for non-modal |
+| `disablePointerDismissal` | `boolean` | `false` | When `true`, the dialog does not close on outside clicks |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DialogTrigger
+
+A button or element that opens the dialog. Must be used within a `Dialog` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content (e.g. a Button) |
+| `handle` | `Dialog.Handle` | - | Handle to associate this trigger with a specific dialog |
+| `payload` | `Payload` | - | Payload passed to the dialog when opened |
+| `id` | `string` | - | ID used for the active trigger in controlled mode |
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using `render` |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the default button element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DialogPortal
+
+Renders the dialog content in a portal (e.g. `document.body`). Used internally by `DialogContent`; use when composing overlay and content manually.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `container` | `HTMLElement \| ShadowRoot \| RefObject \| null` | `document.body` | Parent element to render the portal into |
+| `keepMounted` | `boolean` | `false` | Keep the portal in the DOM when the dialog is closed |
+| `className` | `string \| (state) => string` | - | CSS class applied to the portal wrapper |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the portal wrapper |
+
+### DialogOverlay
+
+The backdrop shown behind the dialog. Included by default inside `DialogContent`; use with `DialogPortal` when customizing layout.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `forceRender` | `boolean` | `false` | Force the overlay to render even when nested dialogs are open |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the backdrop element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the overlay |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the overlay |
+
+### DialogContent
+
+The dialog panel (popup). Renders inside a portal with an overlay by default. Must be used within a `Dialog` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showCloseButton` | `boolean` | `true` | Whether to show the close (X) button in the top-right corner |
+| `initialFocus` | `boolean \| RefObject<HTMLElement> \| (openType) => HTMLElement \| null` | - | Element to focus when the dialog opens |
+| `finalFocus` | `boolean \| RefObject<HTMLElement> \| (closeType) => HTMLElement \| null` | - | Element to focus when the dialog closes |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the popup element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the popup |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the popup |
+
+### DialogHeader
+
+A layout container for the dialog title and description. Custom component from @kaotypr/ui.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the header div |
+| All `<div>` props | - | - | Passed through to the underlying element |
+
+### DialogTitle
+
+The heading that labels the dialog. Must be used within `DialogContent` for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The title text |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the title element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the title |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the title |
+
+### DialogDescription
+
+Optional paragraph that describes the dialog. Must be used within `DialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The description content (supports links with built-in styling) |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the description element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the description |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the description |
+
+### DialogFooter
+
+A layout container for action buttons at the bottom of the dialog. Custom component from @kaotypr/ui.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showCloseButton` | `boolean` | `false` | When `true`, renders a "Close" button that closes the dialog |
+| `className` | `string` | - | CSS class applied to the footer div |
+| All `<div>` props | - | - | Passed through to the underlying element |
+
+### DialogClose
+
+A button or element that closes the dialog when activated. Must be used within `DialogContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The close trigger (e.g. a Button) |
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using `render` |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the default button (e.g. `<Button variant="outline" />`) |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |

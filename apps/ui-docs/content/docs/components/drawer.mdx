@@ -1,0 +1,150 @@
+---
+title: Drawer
+description: A panel that slides in from the edge of the screen, built for mobile and touch-friendly interactions.
+---
+
+## Usage
+
+<ComponentPreview name="drawer-demo" />
+
+## Import
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@kaotypr/ui/drawer"
+```
+
+## Examples
+
+### Sides
+
+Open the drawer from any edge: top, right, bottom, or left.
+
+<ComponentPreview name="drawer-sides" />
+
+### Dialog (Responsive)
+
+Use a dialog on desktop and a drawer on smaller screens for the same content.
+
+<ComponentPreview name="drawer-dialog" />
+
+### Scrollable Content
+
+Use overflow on a middle section so the header and footer stay fixed while content scrolls.
+
+<ComponentPreview name="drawer-scrollable-content" />
+
+## API Reference
+
+This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
+
+### Drawer
+
+The root component that controls the drawer's open state and behavior.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Controlled open state |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Called when the drawer opens or closes |
+| `modal` | `boolean` | `true` | Whether the drawer is modal (traps focus, blocks interaction outside) |
+| `direction` | `"bottom" \| "left" \| "right" \| "top"` | `"bottom"` | Direction from which the drawer slides in |
+| `dismissible` | `boolean` | `true` | Whether the drawer can be closed by clicking outside or pressing Escape |
+| `handleOnly` | `boolean` | `false` | Whether the drawer can only be closed by dragging the handle |
+| `container` | `HTMLElement` | `document.body` | Element to portal the drawer into |
+| `snapPoints` | `number[]` | - | Snap points as fractions (0–1) for height/width |
+| `activeSnapPoint` | `number \| string \| null` | - | Controlled active snap point (use with `setActiveSnapPoint`) |
+| `setActiveSnapPoint` | `(point: number \| string \| null) => void` | - | Setter for active snap point (provided by Vaul when using snap points) |
+| `repositionInputs` | `boolean` | `true` | Reposition inputs when the drawer opens to avoid keyboard overlap |
+| `fadeFromIndex` | `number` | - | Index of the snap point from which content fades out |
+| `snapToSequentialPoint` | `boolean` | - | Whether dragging snaps to the next/previous snap point |
+| `onAnimationEnd` | `(open: boolean) => void` | - | Called when the open/close animation finishes |
+
+### DrawerTrigger
+
+The element that opens the drawer (e.g. a button). Must be used within `Drawer`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `asChild` | `boolean` | `false` | Compose with another component instead of rendering a button |
+| `children` | `ReactNode` | - | Trigger content |
+
+### DrawerPortal
+
+Portals the overlay and content into `container`. Used internally by `DrawerContent`; use when building custom layouts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `container` | `HTMLElement` | - | Target element for the portal |
+
+### DrawerOverlay
+
+The backdrop behind the drawer. Rendered by `DrawerContent` by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+
+### DrawerContent
+
+The sliding panel. Renders `DrawerPortal`, `DrawerOverlay`, and the content with a drag handle for bottom/top directions.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Panel content |
+
+### DrawerHeader
+
+Header section of the drawer (title, description). Renders a `div` with layout styles.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Header content |
+
+### DrawerFooter
+
+Footer section of the drawer (actions). Renders a `div` with layout styles.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Footer content |
+
+### DrawerTitle
+
+Accessible title announced when the drawer opens. Must be used within `DrawerContent` for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Title text |
+
+### DrawerDescription
+
+Optional accessible description announced when the drawer opens.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Description text |
+
+### DrawerClose
+
+Closes the drawer when activated (e.g. a button). Must be used within `DrawerContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `asChild` | `boolean` | `false` | Compose with another component instead of rendering a button |
+| `children` | `ReactNode` | - | Close trigger content |
