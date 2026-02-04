@@ -1,15 +1,15 @@
 "use client"
 
-import * as React from "react"
 import { Card, CardContent } from "@kaotypr/ui/card"
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@kaotypr/ui/carousel"
+import * as React from "react"
 
 export default function CarouselDApiDemo() {
   const [api, setApi] = React.useState<CarouselApi>()

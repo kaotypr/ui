@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { DataCombobox, type DataComboboxOption } from "@kaotypr/ui/data-combobox"
+import * as React from "react"
 
 const allUsers = [
   { label: "Alice Johnson", value: "alice" },
@@ -26,7 +26,7 @@ export default function DataComboboxAsyncSearch() {
     // Simulate API call with 500ms delay
     setTimeout(() => {
       const filtered = allUsers.filter((user) =>
-        user.label.toLowerCase().includes(search.toLowerCase())
+        user.label.toLowerCase().includes(search.toLowerCase()),
       )
       setFilteredUsers(filtered)
       setLoading(false)

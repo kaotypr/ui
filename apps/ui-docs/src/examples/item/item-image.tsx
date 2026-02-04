@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import {
   Item,
   ItemContent,
@@ -9,6 +8,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@kaotypr/ui/item"
+import Image from "next/image"
 
 const music = [
   {

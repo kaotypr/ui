@@ -1,15 +1,14 @@
 "use client"
 
-import * as React from "react"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaotypr/ui/card"
 import {
+  type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
 } from "@kaotypr/ui/chart"
+import * as React from "react"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 export const description = "An interactive bar chart"
 

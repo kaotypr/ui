@@ -3,5 +3,5 @@
 import { NumberInput } from "@kaotypr/ui/number-input"
 
 export default function NumberInputDisabled() {
-	return <NumberInput defaultValue={42} disabled />
+  return <NumberInput defaultValue={42} disabled />
 }

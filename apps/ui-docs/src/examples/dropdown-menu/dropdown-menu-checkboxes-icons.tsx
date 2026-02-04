@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   DropdownMenu,
@@ -11,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import { BellIcon, ChatCircleIcon, EnvelopeIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function DropdownMenuCheckboxesIcons() {
   const [notifications, setNotifications] = React.useState({

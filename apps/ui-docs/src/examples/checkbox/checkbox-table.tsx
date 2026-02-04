@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Checkbox } from "@kaotypr/ui/checkbox"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@kaotypr/ui/table"
+import * as React from "react"
 
 const tableData = [
   {

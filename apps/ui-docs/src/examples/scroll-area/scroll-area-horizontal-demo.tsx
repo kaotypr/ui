@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
-import Image from "next/image"
 import { ScrollArea, ScrollBar } from "@kaotypr/ui/scroll-area"
+import Image from "next/image"
+import * as React from "react"
 
 export interface Artwork {
   artist: string

@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   InputGroup,
   InputGroupAddon,
@@ -9,6 +8,7 @@ import {
 } from "@kaotypr/ui/input-group"
 import { Popover, PopoverContent, PopoverTrigger } from "@kaotypr/ui/popover"
 import { CheckIcon, CopyIcon, InfoIcon, StarIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 

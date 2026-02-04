@@ -1,6 +1,6 @@
 "use client"
 
-import { ChartContainer, type ChartConfig } from "@kaotypr/ui/chart"
+import { type ChartConfig, ChartContainer } from "@kaotypr/ui/chart"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 const chartData = [

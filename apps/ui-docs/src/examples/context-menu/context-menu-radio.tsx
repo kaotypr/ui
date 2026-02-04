@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   ContextMenu,
   ContextMenuContent,
@@ -11,6 +10,7 @@ import {
   ContextMenuSeparator,
   ContextMenuTrigger,
 } from "@kaotypr/ui/context-menu"
+import * as React from "react"
 
 export function ContextMenuRadio() {
   const [user, setUser] = React.useState("pedro")

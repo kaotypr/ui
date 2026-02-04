@@ -35,7 +35,9 @@ async function loadExamplesIndex() {
 
     return nameToPath
   } catch {
-    console.warn("Could not load examples index, ComponentPreview tags will be removed without replacement")
+    console.warn(
+      "Could not load examples index, ComponentPreview tags will be removed without replacement",
+    )
     return new Map()
   }
 }

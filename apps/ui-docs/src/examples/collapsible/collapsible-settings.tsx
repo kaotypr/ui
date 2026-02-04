@@ -1,12 +1,12 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@kaotypr/ui/card"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@kaotypr/ui/collapsible"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Input } from "@kaotypr/ui/input"
 import { ArrowsInIcon, ArrowsOutIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CollapsibleSettings() {
   const [isOpen, setIsOpen] = React.useState(false)

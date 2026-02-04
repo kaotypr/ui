@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
 import { Input } from "@kaotypr/ui/input"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger } from "@kaotypr/ui/select"
 import { ArrowRightIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 const CURRENCIES = [
   { label: "US Dollar", value: "$" },

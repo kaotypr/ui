@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { Progress } from "@kaotypr/ui/progress"
+import * as React from "react"
 
 export default function ProgressDemo() {
   const [progress, setProgress] = React.useState(13)

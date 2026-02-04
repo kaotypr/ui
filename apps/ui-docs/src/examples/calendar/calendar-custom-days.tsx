@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
 import { Calendar, CalendarDayButton } from "@kaotypr/ui/calendar"
 import { Card, CardContent } from "@kaotypr/ui/card"
 import { addDays } from "date-fns"
-import { type DateRange } from "react-day-picker"
+import * as React from "react"
+import type { DateRange } from "react-day-picker"
 
 export function CalendarCustomDays() {
   const [range, setRange] = React.useState<DateRange | undefined>({

@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { DateRangePicker, type DateRangeValue } from "@kaotypr/ui/date-range-picker"
 import { addDays, differenceInDays } from "date-fns"
+import * as React from "react"
 
 export default function DateRangePickerWithConstraints() {
   const today = new Date()
@@ -33,9 +33,7 @@ export default function DateRangePickerWithConstraints() {
     <div className="flex flex-col gap-6">
       <div className="space-y-2">
         <p className="text-sm font-medium">No past dates</p>
-        <p className="text-sm text-muted-foreground">
-          Only future dates can be selected
-        </p>
+        <p className="text-sm text-muted-foreground">Only future dates can be selected</p>
         <DateRangePicker
           placeholder="Select future dates only"
           calendarProps={{
@@ -46,12 +44,8 @@ export default function DateRangePickerWithConstraints() {
       </div>
 
       <div className="space-y-2">
-        <p className="text-sm font-medium">
-          Max range: {maxRangeDays} days
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Select a range up to {maxRangeDays} days
-        </p>
+        <p className="text-sm font-medium">Max range: {maxRangeDays} days</p>
+        <p className="text-sm text-muted-foreground">Select a range up to {maxRangeDays} days</p>
         <DateRangePicker
           value={dateRange}
           onValueChange={handleValueChange}
@@ -61,16 +55,12 @@ export default function DateRangePickerWithConstraints() {
           }}
           className="w-[320px]"
         />
-        {error && (
-          <p className="text-sm text-destructive">{error}</p>
-        )}
+        {error && <p className="text-sm text-destructive">{error}</p>}
       </div>
 
       <div className="space-y-2">
         <p className="text-sm font-medium">Booking window</p>
-        <p className="text-sm text-muted-foreground">
-          Select dates within the next 90 days
-        </p>
+        <p className="text-sm text-muted-foreground">Select dates within the next 90 days</p>
         <DateRangePicker
           placeholder="Select within 90 days"
           calendarProps={{

@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Field, FieldDescription, FieldTitle } from "@kaotypr/ui/field"
 import { Slider } from "@kaotypr/ui/slider"
+import * as React from "react"
 
 export default function FieldSlider() {
   const [value, setValue] = React.useState([200, 800])

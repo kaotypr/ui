@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
 import {
@@ -27,6 +26,7 @@ import {
   TagIcon,
   TrashIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 export default function ButtonGroupDemo() {
   const [label, setLabel] = React.useState("personal")

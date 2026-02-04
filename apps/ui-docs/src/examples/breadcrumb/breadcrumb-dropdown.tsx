@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,6 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import { CaretDownIcon, DotIcon } from "@phosphor-icons/react"
+import Link from "next/link"
 
 export function BreadcrumbDropdown() {
   return (

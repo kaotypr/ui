@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@kaotypr/ui/avatar"
 import { Button } from "@kaotypr/ui/button"
 import {
@@ -14,6 +13,7 @@ import {
   ItemTitle,
 } from "@kaotypr/ui/item"
 import { PlusIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 const people = [
   {

@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   Sidebar,
   SidebarContent,
@@ -20,6 +19,7 @@ import {
   PaperPlaneTiltIcon,
   SquareIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 const projects = [
   {

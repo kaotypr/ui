@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   DropdownMenu,
@@ -22,8 +21,8 @@ import {
 import {
   BellIcon,
   CreditCardIcon,
-  DownloadSimpleIcon,
   DotsThreeIcon,
+  DownloadSimpleIcon,
   EnvelopeIcon,
   EyeIcon,
   FileCodeIcon,
@@ -46,6 +45,7 @@ import {
   TranslateIcon,
   UserIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function DropdownMenuComplex() {
   const [notifications, setNotifications] = React.useState({

@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,6 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@kaotypr/ui/navigation-menu"
+import { useState } from "react"
 
 export function NavigationMenuControlled() {
   const [value, setValue] = useState<string | null>(null)

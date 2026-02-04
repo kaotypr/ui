@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Field, FieldContent, FieldDescription, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { Label } from "@kaotypr/ui/label"
 import {
@@ -12,6 +11,7 @@ import {
   SelectValue,
 } from "@kaotypr/ui/select"
 import { Switch } from "@kaotypr/ui/switch"
+import * as React from "react"
 
 const items = [
   { label: "Select a fruit", value: null },

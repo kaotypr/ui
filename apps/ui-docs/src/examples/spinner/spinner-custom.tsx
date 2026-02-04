@@ -1,8 +1,7 @@
 "use client"
 
-import { CircleNotchIcon } from "@phosphor-icons/react"
-
 import { cn } from "@kaotypr/ui/lib/utils"
+import { CircleNotchIcon } from "@phosphor-icons/react"
 
 function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   return (

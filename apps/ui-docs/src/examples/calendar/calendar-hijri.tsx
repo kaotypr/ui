@@ -1,12 +1,11 @@
 "use client"
 
-import * as React from "react"
 import { Button, buttonVariants } from "@kaotypr/ui/button"
-import { CaretDownIcon, CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react"
-import { getDefaultClassNames, type DayButton } from "react-day-picker"
-import { DayPicker } from "react-day-picker/persian"
-
 import { cn } from "@kaotypr/ui/lib/utils"
+import { CaretDownIcon, CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react"
+import * as React from "react"
+import { type DayButton, getDefaultClassNames } from "react-day-picker"
+import { DayPicker } from "react-day-picker/persian"
 
 export default function CalendarHijri() {
   const [date, setDate] = React.useState<Date | undefined>(new Date(2025, 5, 12))

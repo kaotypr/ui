@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Calendar } from "@kaotypr/ui/calendar"
 import { Card, CardContent } from "@kaotypr/ui/card"
+import * as React from "react"
 
 export function CalendarBookedDates() {
   const [date, setDate] = React.useState<Date | undefined>(new Date(new Date().getFullYear(), 0, 6))

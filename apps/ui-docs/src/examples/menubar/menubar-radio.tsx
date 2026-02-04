@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   Menubar,
   MenubarContent,
@@ -11,6 +10,7 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from "@kaotypr/ui/menubar"
+import * as React from "react"
 
 export function MenubarRadio() {
   const [user, setUser] = React.useState("benoit")

@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { Calendar } from "@kaotypr/ui/calendar"
 import { Card, CardContent, CardFooter } from "@kaotypr/ui/card"
 import { addDays } from "date-fns"
+import * as React from "react"
 
 export function CalendarWithPresets() {
   const [date, setDate] = React.useState<Date | undefined>(

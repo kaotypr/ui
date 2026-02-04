@@ -5,12 +5,7 @@ import { Input } from "@kaotypr/ui/input"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { Kbd, KbdGroup } from "@kaotypr/ui/kbd"
 import { Spinner } from "@kaotypr/ui/spinner"
-import {
-  CheckIcon,
-  InfoIcon,
-  MagnifyingGlassIcon,
-  SparkleIcon,
-} from "@phosphor-icons/react"
+import { CheckIcon, InfoIcon, MagnifyingGlassIcon, SparkleIcon } from "@phosphor-icons/react"
 
 export function InputGroupWithKbd() {
   return (

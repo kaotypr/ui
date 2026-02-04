@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   Command,
   CommandDialog,
@@ -20,6 +19,7 @@ import {
   SmileyIcon,
   UserIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)

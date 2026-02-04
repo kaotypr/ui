@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   Command,
@@ -21,6 +20,7 @@ import {
   SmileyIcon,
   UserIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CommandWithGroups() {
   const [open, setOpen] = React.useState(false)

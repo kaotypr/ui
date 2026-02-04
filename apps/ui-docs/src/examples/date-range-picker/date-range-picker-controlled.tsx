@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { DateRangePicker, type DateRangeValue } from "@kaotypr/ui/date-range-picker"
 import { format } from "date-fns"
+import * as React from "react"
 
 export default function DateRangePickerControlled() {
   const [dateRange, setDateRange] = React.useState<DateRangeValue | undefined>({
@@ -26,12 +26,8 @@ export default function DateRangePickerControlled() {
       />
       <div className="rounded-md border p-4 text-sm">
         <p className="font-medium">Selected Range:</p>
-        <p className="text-muted-foreground">
-          From: {formatDate(dateRange?.from)}
-        </p>
-        <p className="text-muted-foreground">
-          To: {formatDate(dateRange?.to)}
-        </p>
+        <p className="text-muted-foreground">From: {formatDate(dateRange?.from)}</p>
+        <p className="text-muted-foreground">To: {formatDate(dateRange?.to)}</p>
       </div>
     </div>
   )

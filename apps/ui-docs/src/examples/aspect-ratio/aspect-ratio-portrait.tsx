@@ -1,11 +1,14 @@
 "use client"
 
-import Image from "next/image"
 import { AspectRatio } from "@kaotypr/ui/aspect-ratio"
+import Image from "next/image"
 
 export function AspectRatioPortrait() {
   return (
-    <AspectRatio ratio={9 / 16} className="bg-muted w-full max-w-[10rem] overflow-hidden rounded-lg">
+    <AspectRatio
+      ratio={9 / 16}
+      className="bg-muted w-full max-w-[10rem] overflow-hidden rounded-lg"
+    >
       <Image
         src="https://avatar.vercel.sh/portrait"
         alt="Avatar"

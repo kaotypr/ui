@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   DropdownMenu,
@@ -12,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
 import { BuildingIcon, CreditCardIcon, WalletIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function DropdownMenuRadioIcons() {
   const [paymentMethod, setPaymentMethod] = React.useState("card")

@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { AspectRatio } from "@kaotypr/ui/aspect-ratio"
+import Image from "next/image"
 
 export default function AspectRatioDemo() {
   return (

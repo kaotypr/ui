@@ -13,7 +13,7 @@ import {
   SidebarProvider,
 } from "@kaotypr/ui/sidebar"
 import { ChartPieIcon, MapTrifoldIcon, PlusIcon, SquareIcon } from "@phosphor-icons/react"
-import { toast, Toaster } from "sonner"
+import { Toaster, toast } from "sonner"
 
 export default function AppSidebar() {
   return (

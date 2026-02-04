@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   Sidebar,
@@ -23,6 +22,7 @@ import {
   SidebarSimpleIcon,
   SquareIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 const projects = [
   {

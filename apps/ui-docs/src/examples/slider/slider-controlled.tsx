@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Label } from "@kaotypr/ui/label"
 import { Slider } from "@kaotypr/ui/slider"
+import * as React from "react"
 
 export function SliderControlled() {
   const [value, setValue] = React.useState([0.3, 0.7])

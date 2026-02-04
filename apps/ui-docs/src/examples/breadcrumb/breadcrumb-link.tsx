@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@kaotypr/ui/breadcrumb"
+import Link from "next/link"
 
 export function BreadcrumbLinkDemo() {
   return (

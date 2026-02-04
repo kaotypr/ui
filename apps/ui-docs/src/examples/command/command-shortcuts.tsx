@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   Command,
@@ -13,6 +12,7 @@ import {
   CommandShortcut,
 } from "@kaotypr/ui/command"
 import { CreditCardIcon, GearIcon, UserIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CommandWithShortcuts() {
   const [open, setOpen] = React.useState(false)

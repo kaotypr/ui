@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { DatePicker } from "@kaotypr/ui/date-picker"
+import * as React from "react"
 
 export function DatePickerControlled() {
   const [date, setDate] = React.useState<Date | string | undefined>(new Date())

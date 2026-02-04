@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   DropdownMenu,
@@ -11,6 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
+import * as React from "react"
 
 export function DropdownMenuRadioGroupDemo() {
   const [position, setPosition] = React.useState("bottom")

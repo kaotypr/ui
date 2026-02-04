@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@kaotypr/ui/breadcrumb"
 import { CircleIcon } from "@phosphor-icons/react"
+import Link from "next/link"
 
 export function BreadcrumbSeparatorDemo() {
   return (

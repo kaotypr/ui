@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@kaotypr/ui/input-otp"
+import * as React from "react"
 
 export function InputOTPInvalid() {
   const [value, setValue] = React.useState("000000")

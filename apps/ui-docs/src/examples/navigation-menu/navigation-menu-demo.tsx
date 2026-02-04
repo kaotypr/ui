@@ -1,7 +1,5 @@
 "use client"
 
-import * as React from "react"
-import Link from "next/link"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +10,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@kaotypr/ui/navigation-menu"
 import { WarningCircleIcon } from "@phosphor-icons/react"
+import Link from "next/link"
+import type * as React from "react"
 
 const components: { title: string; href: string; description: string }[] = [
   {

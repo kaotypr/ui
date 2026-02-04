@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   Command,
@@ -28,6 +27,8 @@ import {
   HouseIcon,
   ImageIcon,
   ListIcon,
+  MagnifyingGlassMinusIcon,
+  MagnifyingGlassPlusIcon,
   PlusIcon,
   QuestionIcon,
   ScissorsIcon,
@@ -35,9 +36,8 @@ import {
   TrashIcon,
   TrayIcon,
   UserIcon,
-  MagnifyingGlassPlusIcon,
-  MagnifyingGlassMinusIcon,
 } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CommandManyItems() {
   const [open, setOpen] = React.useState(false)

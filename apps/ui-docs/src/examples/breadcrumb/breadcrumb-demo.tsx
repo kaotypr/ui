@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -18,6 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@kaotypr/ui/dropdown-menu"
+import Link from "next/link"
 
 export function BreadcrumbDemo() {
   return (

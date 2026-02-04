@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import {
   Command,
@@ -11,6 +10,7 @@ import {
   CommandItem,
   CommandList,
 } from "@kaotypr/ui/command"
+import * as React from "react"
 
 export function CommandBasic() {
   const [open, setOpen] = React.useState(false)

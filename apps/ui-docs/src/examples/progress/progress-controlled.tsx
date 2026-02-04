@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Progress } from "@kaotypr/ui/progress"
 import { Slider } from "@kaotypr/ui/slider"
+import * as React from "react"
 
 export function ProgressControlled() {
   const [value, setValue] = React.useState(50)

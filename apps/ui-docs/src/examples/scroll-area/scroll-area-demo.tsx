@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { ScrollArea } from "@kaotypr/ui/scroll-area"
 import { Separator } from "@kaotypr/ui/separator"
+import * as React from "react"
 
 const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`)
 

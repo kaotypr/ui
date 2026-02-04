@@ -1,12 +1,12 @@
 "use client"
 
 import {
+  type ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
 } from "@kaotypr/ui/chart"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 

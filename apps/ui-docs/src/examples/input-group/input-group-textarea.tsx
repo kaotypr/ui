@@ -7,7 +7,7 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@kaotypr/ui/input-group"
-import { FileJsIcon, CopyIcon, CaretLeftIcon, ArrowClockwiseIcon } from "@phosphor-icons/react"
+import { ArrowClockwiseIcon, CaretLeftIcon, CopyIcon, FileJsIcon } from "@phosphor-icons/react"
 
 export default function InputGroupTextareaExample() {
   return (

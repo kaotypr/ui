@@ -1,9 +1,9 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@kaotypr/ui/collapsible"
 import { CaretUpDownIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export default function CollapsibleDemo() {
   const [isOpen, setIsOpen] = React.useState(false)

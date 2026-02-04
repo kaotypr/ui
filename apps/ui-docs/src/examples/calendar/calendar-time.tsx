@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from "react"
 import { Calendar } from "@kaotypr/ui/calendar"
 import { Card, CardContent, CardFooter } from "@kaotypr/ui/card"
 import { Field, FieldGroup, FieldLabel } from "@kaotypr/ui/field"
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@kaotypr/ui/input-group"
 import { ClockIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export function CalendarWithTime() {
   const [date, setDate] = React.useState<Date | undefined>(

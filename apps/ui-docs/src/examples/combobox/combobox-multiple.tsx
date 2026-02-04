@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import {
   Combobox,
   ComboboxChip,
@@ -13,6 +12,7 @@ import {
   ComboboxValue,
   useComboboxAnchor,
 } from "@kaotypr/ui/combobox"
+import * as React from "react"
 
 const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const
 

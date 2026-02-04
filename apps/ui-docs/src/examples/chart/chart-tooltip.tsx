@@ -1,8 +1,7 @@
 "use client"
 
-import * as React from "react"
-
 import { cn } from "@kaotypr/ui/lib/utils"
+import type * as React from "react"
 
 export function ChartTooltipDemo() {
   return (

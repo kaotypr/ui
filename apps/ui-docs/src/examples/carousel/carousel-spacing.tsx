@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Card, CardContent } from "@kaotypr/ui/card"
 import {
   Carousel,
@@ -9,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@kaotypr/ui/carousel"
+import * as React from "react"
 
 export default function CarouselSpacing() {
   return (

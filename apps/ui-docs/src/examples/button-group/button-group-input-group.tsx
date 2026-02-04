@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Button } from "@kaotypr/ui/button"
 import { ButtonGroup } from "@kaotypr/ui/button-group"
 import {
@@ -11,6 +10,7 @@ import {
 } from "@kaotypr/ui/input-group"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@kaotypr/ui/tooltip"
 import { MusicNotesIcon, PlusIcon } from "@phosphor-icons/react"
+import * as React from "react"
 
 export default function ButtonGroupInputGroup() {
   const [voiceEnabled, setVoiceEnabled] = React.useState(false)

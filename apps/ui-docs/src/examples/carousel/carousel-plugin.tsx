@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { Card, CardContent } from "@kaotypr/ui/card"
 import {
   Carousel,
@@ -10,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@kaotypr/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import * as React from "react"
 
 export default function CarouselPlugin() {
   const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
