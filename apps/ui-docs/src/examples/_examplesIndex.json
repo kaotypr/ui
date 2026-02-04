@@ -707,6 +707,60 @@
       "tags": []
     }
   ],
+  "data-combobox": [
+    {
+      "name": "data-combobox-async-search",
+      "filePath": "src/examples/data-combobox/data-combobox-async-search.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-combobox-clearable",
+      "filePath": "src/examples/data-combobox/data-combobox-clearable.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-combobox-demo",
+      "filePath": "src/examples/data-combobox/data-combobox-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-combobox-with-groups",
+      "filePath": "src/examples/data-combobox/data-combobox-with-groups.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-combobox-with-search",
+      "filePath": "src/examples/data-combobox/data-combobox-with-search.tsx",
+      "tags": []
+    }
+  ],
+  "data-multi-combobox": [
+    {
+      "name": "data-multi-combobox-async-search",
+      "filePath": "src/examples/data-multi-combobox/data-multi-combobox-async-search.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-multi-combobox-clearable",
+      "filePath": "src/examples/data-multi-combobox/data-multi-combobox-clearable.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-multi-combobox-collapsible-badges",
+      "filePath": "src/examples/data-multi-combobox/data-multi-combobox-collapsible-badges.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-multi-combobox-demo",
+      "filePath": "src/examples/data-multi-combobox/data-multi-combobox-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "data-multi-combobox-with-groups",
+      "filePath": "src/examples/data-multi-combobox/data-multi-combobox-with-groups.tsx",
+      "tags": []
+    }
+  ],
   "data-table": [
     {
       "name": "data-table-basic",
@@ -813,6 +867,28 @@
     {
       "name": "date-picker-time-seconds",
       "filePath": "src/examples/date-picker/date-picker-time-seconds.tsx",
+      "tags": []
+    }
+  ],
+  "date-range-picker": [
+    {
+      "name": "date-range-picker-controlled",
+      "filePath": "src/examples/date-range-picker/date-range-picker-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-range-picker-demo",
+      "filePath": "src/examples/date-range-picker/date-range-picker-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-range-picker-with-constraints",
+      "filePath": "src/examples/date-range-picker/date-range-picker-with-constraints.tsx",
+      "tags": []
+    },
+    {
+      "name": "date-range-picker-with-time",
+      "filePath": "src/examples/date-range-picker/date-range-picker-with-time.tsx",
       "tags": []
     }
   ],
@@ -1367,6 +1443,21 @@
       "name": "label-demo",
       "filePath": "src/examples/label/label-demo.tsx",
       "tags": []
+    },
+    {
+      "name": "label-multiple-fields",
+      "filePath": "src/examples/label/label-multiple-fields.tsx",
+      "tags": []
+    },
+    {
+      "name": "label-required",
+      "filePath": "src/examples/label/label-required.tsx",
+      "tags": []
+    },
+    {
+      "name": "label-with-input",
+      "filePath": "src/examples/label/label-with-input.tsx",
+      "tags": []
     }
   ],
   "menubar": [
@@ -1396,13 +1487,6 @@
       "tags": []
     }
   ],
-  "muted": [
-    {
-      "name": "muted-item-group",
-      "filePath": "src/examples/muted/muted-item-group.tsx",
-      "tags": []
-    }
-  ],
   "native-select": [
     {
       "name": "native-select-demo",
@@ -1427,8 +1511,75 @@
   ],
   "navigation-menu": [
     {
+      "name": "navigation-menu-controlled",
+      "filePath": "src/examples/navigation-menu/navigation-menu-controlled.tsx",
+      "tags": []
+    },
+    {
       "name": "navigation-menu-demo",
       "filePath": "src/examples/navigation-menu/navigation-menu-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "navigation-menu-vertical",
+      "filePath": "src/examples/navigation-menu/navigation-menu-vertical.tsx",
+      "tags": []
+    },
+    {
+      "name": "navigation-menu-with-rich-content",
+      "filePath": "src/examples/navigation-menu/navigation-menu-with-rich-content.tsx",
+      "tags": []
+    }
+  ],
+  "number-input": [
+    {
+      "name": "number-input-controlled",
+      "filePath": "src/examples/number-input/number-input-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-decimal",
+      "filePath": "src/examples/number-input/number-input-decimal.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-demo",
+      "filePath": "src/examples/number-input/number-input-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-disabled",
+      "filePath": "src/examples/number-input/number-input-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-min-max",
+      "filePath": "src/examples/number-input/number-input-min-max.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-percentage",
+      "filePath": "src/examples/number-input/number-input-percentage.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-thousand-separator",
+      "filePath": "src/examples/number-input/number-input-thousand-separator.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-with-prefix",
+      "filePath": "src/examples/number-input/number-input-with-prefix.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-with-stepper",
+      "filePath": "src/examples/number-input/number-input-with-stepper.tsx",
+      "tags": []
+    },
+    {
+      "name": "number-input-with-suffix",
+      "filePath": "src/examples/number-input/number-input-with-suffix.tsx",
       "tags": []
     }
   ],
@@ -1924,6 +2075,63 @@
     {
       "name": "textarea-invalid",
       "filePath": "src/examples/textarea/textarea-invalid.tsx",
+      "tags": []
+    }
+  ],
+  "time-picker": [
+    {
+      "name": "time-picker-clearable",
+      "filePath": "src/examples/time-picker/time-picker-clearable.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-controlled",
+      "filePath": "src/examples/time-picker/time-picker-controlled.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-default-value",
+      "filePath": "src/examples/time-picker/time-picker-default-value.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-demo",
+      "filePath": "src/examples/time-picker/time-picker-demo.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-disabled",
+      "filePath": "src/examples/time-picker/time-picker-disabled.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-hours-only",
+      "filePath": "src/examples/time-picker/time-picker-hours-only.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-meridiem",
+      "filePath": "src/examples/time-picker/time-picker-meridiem.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-meridiem-seconds",
+      "filePath": "src/examples/time-picker/time-picker-meridiem-seconds.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-min-max",
+      "filePath": "src/examples/time-picker/time-picker-min-max.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-with-seconds",
+      "filePath": "src/examples/time-picker/time-picker-with-seconds.tsx",
+      "tags": []
+    },
+    {
+      "name": "time-picker-with-steps",
+      "filePath": "src/examples/time-picker/time-picker-with-steps.tsx",
       "tags": []
     }
   ],
