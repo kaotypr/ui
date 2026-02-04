@@ -93,6 +93,15 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			},
 			action: "onValueChange",
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		loopFocus: {
 			description:
 				"Whether to loop keyboard focus back to the first item when the end of the list is reached while using the arrow keys.",
@@ -385,6 +394,77 @@ export const Uncontrolled: Story = {
 			description: {
 				story:
 					"Uncontrolled toggle group using defaultValue prop. The 'bold' option is initially selected.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string[]>([])
+
+		return (
+			<ToggleGroup
+				value={value}
+				onValueChange={setValue}
+				render={<div className="flex gap-1 rounded-lg border p-1" />}
+			>
+				<ToggleGroupItem value="bold" aria-label="Bold">
+					<TextBIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="italic" aria-label="Italic">
+					<TextItalicIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="underline" aria-label="Underline">
+					<TextUnderlineIcon />
+				</ToggleGroupItem>
+			</ToggleGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default element with a custom container.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string[]>([])
+
+		return (
+			<ToggleGroup
+				value={value}
+				onValueChange={setValue}
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`inline-flex rounded-md ${
+							state.disabled ? "opacity-50 cursor-not-allowed" : ""
+						}`}
+					/>
+				)}
+			>
+				<ToggleGroupItem value="bold" aria-label="Bold">
+					<TextBIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="italic" aria-label="Italic">
+					<TextItalicIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="underline" aria-label="Underline">
+					<TextUnderlineIcon />
+				</ToggleGroupItem>
+			</ToggleGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `disabled` (boolean), `multiple` (boolean), `value` (any[]).",
 			},
 		},
 	},

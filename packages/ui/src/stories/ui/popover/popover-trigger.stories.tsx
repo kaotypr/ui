@@ -95,6 +95,15 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			},
 			control: { type: "text" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -227,6 +236,80 @@ export const CustomStyling: Story = {
 		docs: {
 			description: {
 				story: "Trigger with custom styling applied via className.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger
+					render={<span className="cursor-pointer text-blue-600 underline hover:text-blue-800" />}
+					nativeButton={false}
+				>
+					Click for more info
+				</PopoverTrigger>
+				<PopoverContent>
+					<PopoverHeader>
+						<PopoverTitle>Custom Element Trigger</PopoverTitle>
+						<PopoverDescription>
+							The trigger is rendered as a span element instead of a button.
+						</PopoverDescription>
+					</PopoverHeader>
+				</PopoverContent>
+			</Popover>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`rounded px-4 py-2 font-medium transition-colors ${
+								state.open
+									? "bg-blue-700 text-white"
+									: "bg-blue-600 text-white hover:bg-blue-700"
+							}`}
+						>
+							{state.open ? "Popover Open" : "Click to Open"}
+						</button>
+					)}
+				/>
+				<PopoverContent>
+					<PopoverHeader>
+						<PopoverTitle>State-Aware Trigger</PopoverTitle>
+						<PopoverDescription>
+							The trigger text and style change based on the popover's open state.
+						</PopoverDescription>
+					</PopoverHeader>
+				</PopoverContent>
+			</Popover>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) indicating if the popover is currently open.",
 			},
 		},
 	},

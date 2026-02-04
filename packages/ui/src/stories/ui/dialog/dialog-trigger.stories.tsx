@@ -64,6 +64,15 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			},
 			control: { type: "boolean" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -186,6 +195,90 @@ export const MultipleTriggers: Story = {
 		docs: {
 			description: {
 				story: "Multiple trigger buttons that can open the same dialog.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger
+					render={<span className="cursor-pointer text-blue-600 underline hover:text-blue-800" />}
+					nativeButton={false}
+				>
+					Click to open settings
+				</DialogTrigger>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>Settings</DialogTitle>
+						<DialogDescription>
+							The trigger is rendered as a span link instead of a button.
+						</DialogDescription>
+					</DialogHeader>
+					<DialogFooter>
+						<Button variant="outline" onClick={() => setOpen(false)}>
+							Close
+						</Button>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Dialog open={open} onOpenChange={setOpen}>
+				<DialogTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`rounded px-4 py-2 font-medium transition-colors ${
+								state.open
+									? "bg-gray-700 text-white"
+									: "bg-gray-600 text-white hover:bg-gray-700"
+							}`}
+						>
+							{state.open ? "Dialog Open" : "Open Dialog"}
+						</button>
+					)}
+				/>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>State-Aware Trigger</DialogTitle>
+						<DialogDescription>
+							The trigger text and style change based on the dialog's open state.
+						</DialogDescription>
+					</DialogHeader>
+					<DialogFooter>
+						<Button variant="outline" onClick={() => setOpen(false)}>
+							Close
+						</Button>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) indicating if the dialog is currently open.",
 			},
 		},
 	},

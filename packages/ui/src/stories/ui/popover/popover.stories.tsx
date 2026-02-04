@@ -105,6 +105,15 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "select" },
 			options: [false, true, "trap-focus"],
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 	},
 } satisfies Meta<typeof Popover>
 

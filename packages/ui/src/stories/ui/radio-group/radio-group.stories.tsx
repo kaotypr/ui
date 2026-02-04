@@ -22,6 +22,15 @@ This component is built on top of [Base UI Radio Group](https://base-ui.com/reac
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		defaultValue: {
 			description:
 				"The uncontrolled value of the radio item that should be initially selected. To render a controlled radio group, use the value prop instead.",
@@ -251,6 +260,83 @@ export const Horizontal: Story = {
 		docs: {
 			description: {
 				story: "Radio group displayed horizontally using flexbox layout.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string>("option1")
+
+		return (
+			<RadioGroup
+				value={value}
+				onValueChange={setValue}
+				render={<fieldset className="space-y-3" />}
+			>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option1" id="render-option1" />
+					<Label htmlFor="render-option1">Option 1</Label>
+				</div>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option2" id="render-option2" />
+					<Label htmlFor="render-option2">Option 2</Label>
+				</div>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option3" id="render-option3" />
+					<Label htmlFor="render-option3">Option 3</Label>
+				</div>
+			</RadioGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default div element with a fieldset.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string>("option1")
+
+		return (
+			<RadioGroup
+				value={value}
+				onValueChange={setValue}
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`space-y-3 p-4 rounded-md border ${
+							state.disabled ? "opacity-50 bg-muted" : ""
+						}`}
+					/>
+				)}
+			>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option1" id="state-option1" />
+					<Label htmlFor="state-option1">Option 1</Label>
+				</div>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option2" id="state-option2" />
+					<Label htmlFor="state-option2">Option 2</Label>
+				</div>
+				<div className="flex items-center space-x-2">
+					<RadioGroupItem value="option3" id="state-option3" />
+					<Label htmlFor="state-option3">Option 3</Label>
+				</div>
+			</RadioGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `disabled` (boolean) and `required` (boolean).",
 			},
 		},
 	},

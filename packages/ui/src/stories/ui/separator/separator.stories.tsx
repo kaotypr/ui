@@ -234,3 +234,53 @@ export const MultipleSeparators: Story = {
 		},
 	},
 }
+
+export const RenderAsCustomElement: Story = {
+	render: (args) => (
+		<div className="w-64 space-y-4">
+			<div>
+				<h4 className="text-sm font-medium leading-none">Content Above</h4>
+			</div>
+			<Separator {...args} render={<hr />} />
+			<div>
+				<h4 className="text-sm font-medium leading-none">Content Below</h4>
+			</div>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default div element with an hr tag.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<div className="flex h-20 items-center gap-4">
+			<span className="text-sm">Left</span>
+			<Separator
+				orientation="vertical"
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`shrink-0 bg-border ${
+							state.orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]"
+						}`}
+					/>
+				)}
+			/>
+			<span className="text-sm">Right</span>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `orientation` ('horizontal' | 'vertical').",
+			},
+		},
+	},
+}

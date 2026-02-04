@@ -226,3 +226,50 @@ export const AllSizes: Story = {
 		},
 	},
 }
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Avatar render={<a href="#profile" aria-label="View user profile" className="block" />}>
+			<AvatarImage
+				src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
+				alt="User avatar"
+			/>
+			<AvatarFallback>JD</AvatarFallback>
+		</Avatar>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default span element. Here the avatar is rendered as a link to the user's profile.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<Avatar
+			render={(props, state) => (
+				<div
+					{...props}
+					className={`${props.className} ${state.imageLoadingStatus === "loaded" ? "ring-2 ring-green-500" : "ring-2 ring-gray-300"}`}
+				/>
+			)}
+		>
+			<AvatarImage
+				src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
+				alt="User avatar"
+			/>
+			<AvatarFallback>JD</AvatarFallback>
+		</Avatar>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `imageLoadingStatus` ('loading' | 'loaded' | 'error') indicating the current status of the avatar image.",
+			},
+		},
+	},
+}

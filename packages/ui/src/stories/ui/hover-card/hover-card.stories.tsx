@@ -22,6 +22,15 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		defaultOpen: {
 			description:
 				"Whether the preview card is initially open. To render a controlled preview card, use the open prop instead.",

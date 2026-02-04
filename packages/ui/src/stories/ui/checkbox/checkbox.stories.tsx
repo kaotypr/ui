@@ -141,6 +141,15 @@ const meta = {
 			},
 			control: { type: "text" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply",
@@ -437,6 +446,59 @@ export const States: Story = {
 		docs: {
 			description: {
 				story: "All checkbox states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Checkbox
+				render={<span role="checkbox" tabIndex={0} className="inline-flex" />}
+				nativeButton={false}
+			/>
+			<span>Custom span element as checkbox</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Checkbox
+				render={(props, state) => (
+					<button
+						{...props}
+						className={`size-5 rounded border-2 transition-colors ${
+							state.checked
+								? "border-green-600 bg-green-600"
+								: state.indeterminate
+									? "border-yellow-500 bg-yellow-500"
+									: "border-gray-400 bg-white"
+						}`}
+					>
+						{state.checked && <span className="text-white text-xs">✓</span>}
+						{state.indeterminate && <span className="text-white text-xs">−</span>}
+					</button>
+				)}
+			/>
+			<span>Custom styled checkbox with state</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `checked` (boolean), `indeterminate` (boolean), `disabled` (boolean), `readOnly` (boolean), and `required` (boolean).",
 			},
 		},
 	},

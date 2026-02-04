@@ -57,6 +57,15 @@ This component is built on top of [Base UI Menubar](https://base-ui.com/react/co
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		loopFocus: {
 			description:
 				"Whether to loop keyboard focus back to the first item when the end of the list is reached while using the arrow keys.",

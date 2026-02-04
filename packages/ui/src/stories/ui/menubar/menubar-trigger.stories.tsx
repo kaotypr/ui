@@ -24,6 +24,15 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		handle: {
 			description: "A handle to associate the trigger with a menu.",
 			table: {
@@ -182,6 +191,79 @@ export const Disabled: Story = {
 		docs: {
 			description: {
 				story: "Disabled trigger that cannot open the menu.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Menubar>
+				<MenubarMenu open={open} onOpenChange={setOpen}>
+					<MenubarTrigger
+						render={<div className="cursor-pointer" />}
+						nativeButton={false}
+						className="rounded-md border border-dashed px-4 py-2 hover:bg-accent"
+					>
+						Click this div
+					</MenubarTrigger>
+					<MenubarContent>
+						<MenubarItem>Copy</MenubarItem>
+						<MenubarItem>Cut</MenubarItem>
+						<MenubarItem>Paste</MenubarItem>
+					</MenubarContent>
+				</MenubarMenu>
+			</Menubar>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Menubar>
+				<MenubarMenu open={open} onOpenChange={setOpen}>
+					<MenubarTrigger
+						render={(props, state) => (
+							<button
+								{...props}
+								className={`rounded-sm px-3 py-1.5 text-sm font-medium transition-colors ${
+									state.open
+										? "bg-accent text-accent-foreground"
+										: "hover:bg-accent/50"
+								}`}
+							>
+								{state.open ? "Menu Open" : "File"}
+							</button>
+						)}
+					/>
+					<MenubarContent>
+						<MenubarItem>New</MenubarItem>
+						<MenubarItem>Open</MenubarItem>
+						<MenubarItem>Save</MenubarItem>
+					</MenubarContent>
+				</MenubarMenu>
+			</Menubar>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) and `disabled` (boolean).",
 			},
 		},
 	},

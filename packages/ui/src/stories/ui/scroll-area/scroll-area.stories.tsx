@@ -20,6 +20,15 @@ This component is built on top of [Base UI Scroll Area](https://base-ui.com/reac
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		overflowEdgeThreshold: {
 			description:
 				"The threshold in pixels that must be passed before the overflow edge attributes are applied. Accepts a single number for all edges or an object to configure them individually.",
@@ -165,6 +174,51 @@ export const WithOverflowThreshold: Story = {
 			description: {
 				story:
 					"Scroll area with custom overflow edge threshold. The threshold determines when overflow edge attributes are applied.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: (args) => (
+		<ScrollArea
+			{...args}
+			render={<section className="h-[300px] w-[350px] rounded-md border p-4" />}
+		>
+			{longContent}
+		</ScrollArea>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default div element with a different HTML tag.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: (args) => (
+		<ScrollArea
+			{...args}
+			render={(props, state) => (
+				<div
+					{...props}
+					className={`h-[300px] w-[350px] rounded-md border p-4 ${
+						state.scrolling ? "border-primary" : ""
+					}`}
+				/>
+			)}
+		>
+			{longContent}
+		</ScrollArea>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `scrolling` (boolean), `xHiddenUntilScrolls` (boolean), `yHiddenUntilScrolls` (boolean).",
 			},
 		},
 	},

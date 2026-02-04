@@ -62,6 +62,15 @@ This component is built on top of [Base UI Combobox.Trigger](https://base-ui.com
 			},
 			control: { type: "boolean" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Props
 		children: {
 			description: "The content to display inside the trigger.",
@@ -208,6 +217,121 @@ export const Disabled: Story = {
 		docs: {
 			description: {
 				story: "ComboboxTrigger in a disabled state.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string | null>(null)
+
+		return (
+			<div className="w-[300px]">
+				<Combobox
+					items={fruits}
+					value={value}
+					onValueChange={(newValue) => {
+						setValue(newValue as string | null)
+					}}
+				>
+					<InputGroup className="w-auto">
+						<InputGroupInput
+							placeholder="Select a fruit..."
+							readOnly
+							value={value ? fruits.find((f) => f.value === value)?.label || "" : ""}
+						/>
+						<InputGroupAddon align="inline-end">
+							<InputGroupButton
+								size="icon-xs"
+								variant="ghost"
+								render={<ComboboxTrigger render={<div className="cursor-pointer" />} nativeButton={false} />}
+							>
+								<CaretUpDownIcon className="size-4" />
+							</InputGroupButton>
+						</InputGroupAddon>
+					</InputGroup>
+					<ComboboxContent>
+						<ComboboxList>
+							{(item: (typeof fruits)[number]) => (
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
+							)}
+						</ComboboxList>
+						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
+					</ComboboxContent>
+				</Combobox>
+				<p className="text-muted-foreground mt-4 text-xs">
+					The trigger is rendered as a div element instead of a button using the `render` prop.
+				</p>
+			</div>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string | null>(null)
+
+		return (
+			<div className="w-[300px]">
+				<Combobox
+					items={fruits}
+					value={value}
+					onValueChange={(newValue) => {
+						setValue(newValue as string | null)
+					}}
+				>
+					<InputGroup className="w-auto">
+						<InputGroupInput
+							placeholder="Select a fruit..."
+							readOnly
+							value={value ? fruits.find((f) => f.value === value)?.label || "" : ""}
+						/>
+						<InputGroupAddon align="inline-end">
+							<ComboboxTrigger
+								render={(props, state) => (
+									<InputGroupButton
+										{...props}
+										size="icon-xs"
+										variant="ghost"
+										className={state.open ? "bg-accent" : ""}
+									>
+										<CaretUpDownIcon
+											className={`size-4 transition-transform duration-200 ${state.open ? "rotate-180" : ""}`}
+										/>
+									</InputGroupButton>
+								)}
+							/>
+						</InputGroupAddon>
+					</InputGroup>
+					<ComboboxContent>
+						<ComboboxList>
+							{(item: (typeof fruits)[number]) => (
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
+							)}
+						</ComboboxList>
+						<ComboboxEmpty>No fruits found.</ComboboxEmpty>
+					</ComboboxContent>
+				</Combobox>
+				<p className="text-muted-foreground mt-4 text-xs">
+					The trigger uses a render function to access state. The icon rotates based on open state.
+				</p>
+			</div>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) and `popupOpen` (boolean).",
 			},
 		},
 	},

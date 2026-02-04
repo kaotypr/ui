@@ -23,6 +23,15 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		handle: {
 			description: "A handle to associate the trigger with a menu.",
 			table: {
@@ -175,6 +184,75 @@ export const Disabled: Story = {
 		docs: {
 			description: {
 				story: "Disabled trigger that cannot open the menu.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<DropdownMenu open={open} onOpenChange={setOpen}>
+				<DropdownMenuTrigger
+					render={<div className="cursor-pointer" />}
+					nativeButton={false}
+					className="rounded-md border border-dashed px-4 py-2 hover:bg-accent"
+				>
+					Click this div to open menu
+				</DropdownMenuTrigger>
+				<DropdownMenuContent>
+					<DropdownMenuItem>Copy</DropdownMenuItem>
+					<DropdownMenuItem>Cut</DropdownMenuItem>
+					<DropdownMenuItem>Paste</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<DropdownMenu open={open} onOpenChange={setOpen}>
+				<DropdownMenuTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`rounded-md border px-4 py-2 transition-colors ${
+								state.open
+									? "border-primary bg-primary/10 text-primary"
+									: "hover:bg-accent"
+							}`}
+						>
+							{state.open ? "Menu is open" : "Click to open menu"}
+						</button>
+					)}
+				/>
+				<DropdownMenuContent>
+					<DropdownMenuItem>Copy</DropdownMenuItem>
+					<DropdownMenuItem>Cut</DropdownMenuItem>
+					<DropdownMenuItem>Paste</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) and `disabled` (boolean).",
 			},
 		},
 	},

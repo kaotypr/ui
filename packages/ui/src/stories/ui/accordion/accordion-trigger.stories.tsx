@@ -78,3 +78,56 @@ export const Default: Story = {
 		</Accordion>
 	),
 }
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Accordion className="w-[400px]">
+			<AccordionItem value="item-1">
+				<AccordionTrigger
+					render={<div className="cursor-pointer p-4 font-medium hover:underline" />}
+				>
+					Custom div trigger (click me)
+				</AccordionTrigger>
+				<AccordionContent>
+					The trigger is rendered as a custom div element instead of a button.
+				</AccordionContent>
+			</AccordionItem>
+		</Accordion>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element with a custom element. Set `nativeButton={false}` if the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<Accordion className="w-[400px]">
+			<AccordionItem value="item-1">
+				<AccordionTrigger
+					render={(props, state) => (
+						<button {...props} className="w-full p-4 text-left font-medium">
+							{state.open ? "▼ Collapse" : "▶ Expand"} - Click to toggle
+						</button>
+					)}
+				/>
+				<AccordionContent>
+					The trigger uses a render function to access the `open` state and display
+					dynamic content.
+				</AccordionContent>
+			</AccordionItem>
+		</Accordion>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean), `disabled` (boolean), and `transitionStatus` ('entering' | 'exiting' | undefined).",
+			},
+		},
+	},
+}

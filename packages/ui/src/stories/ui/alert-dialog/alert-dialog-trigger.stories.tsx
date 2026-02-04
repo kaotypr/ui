@@ -44,6 +44,15 @@ const meta = {
 			},
 			control: { type: "text" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 	},
 } satisfies Meta<typeof AlertDialogTrigger>
 
@@ -75,6 +84,79 @@ export const Default: Story = {
 		docs: {
 			description: {
 				story: "Basic trigger that opens an alert dialog when clicked.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<AlertDialog>
+			<AlertDialogTrigger
+				render={<span className="cursor-pointer text-red-600 underline hover:text-red-800" />}
+			>
+				Delete this item
+			</AlertDialogTrigger>
+			<AlertDialogContent>
+				<AlertDialogHeader>
+					<AlertDialogTitle>Delete item?</AlertDialogTitle>
+					<AlertDialogDescription>
+						This action cannot be undone. Are you sure you want to delete this item?
+					</AlertDialogDescription>
+				</AlertDialogHeader>
+				<AlertDialogFooter>
+					<AlertDialogCancel>Cancel</AlertDialogCancel>
+					<AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+				</AlertDialogFooter>
+			</AlertDialogContent>
+		</AlertDialog>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Here the trigger is rendered as a styled span link.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<AlertDialog>
+			<AlertDialogTrigger
+				render={(props, state) => (
+					<button
+						{...props}
+						className={`rounded px-4 py-2 font-medium ${
+							state.open
+								? "bg-red-700 text-white"
+								: "bg-red-600 text-white hover:bg-red-700"
+						}`}
+					>
+						{state.open ? "Dialog Open..." : "Delete Account"}
+					</button>
+				)}
+			/>
+			<AlertDialogContent>
+				<AlertDialogHeader>
+					<AlertDialogTitle>Delete account?</AlertDialogTitle>
+					<AlertDialogDescription>
+						This will permanently delete your account and all associated data.
+					</AlertDialogDescription>
+				</AlertDialogHeader>
+				<AlertDialogFooter>
+					<AlertDialogCancel>Cancel</AlertDialogCancel>
+					<AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+				</AlertDialogFooter>
+			</AlertDialogContent>
+		</AlertDialog>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) indicating if the dialog is currently open.",
 			},
 		},
 	},

@@ -424,3 +424,69 @@ export const WithForm: Story = {
 		},
 	},
 }
+
+export const RenderAsCustomElement: Story = {
+	render: (args) => {
+		const [value, setValue] = React.useState<number>(50)
+
+		return (
+			<div className="w-64">
+				<Slider
+					{...args}
+					value={value}
+					onValueChange={(newValue) => {
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
+						setValue(numValue)
+						args.onValueChange?.(newValue, {} as any)
+					}}
+					render={<div className="cursor-pointer" />}
+				/>
+			</div>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default span element with a div.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: (args) => {
+		const [value, setValue] = React.useState<number>(50)
+
+		return (
+			<div className="w-64">
+				<Slider
+					{...args}
+					value={value}
+					onValueChange={(newValue) => {
+						const numValue = Array.isArray(newValue) ? newValue[0] : newValue
+						setValue(numValue)
+						args.onValueChange?.(newValue, {} as any)
+					}}
+					render={(props, state) => (
+						<span
+							{...props}
+							className={`relative flex w-full touch-none select-none items-center ${
+								state.disabled ? "opacity-50 cursor-not-allowed" : ""
+							}`}
+						/>
+					)}
+				/>
+				<p className="mt-2 text-sm text-muted-foreground">Current value: {value}</p>
+			</div>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `activeThumbIndex` (number | -1), `disabled` (boolean), `dragging` (boolean), `orientation` ('horizontal' | 'vertical'), `max` (number), `min` (number), `minStepsBetweenValues` (number), `step` (number), `values` (number[]).",
+			},
+		},
+	},
+}

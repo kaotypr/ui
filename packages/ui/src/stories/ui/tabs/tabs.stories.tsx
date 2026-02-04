@@ -35,6 +35,15 @@ This component is built on top of [Base UI Tabs](https://base-ui.com/react/compo
 			options: ["horizontal", "vertical"],
 		},
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		defaultValue: {
 			description:
 				"The default value. Use when the component is not controlled. When the value is null, no Tab will be active.",

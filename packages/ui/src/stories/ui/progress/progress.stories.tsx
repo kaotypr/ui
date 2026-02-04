@@ -24,6 +24,15 @@ This component is built on top of [Base UI Progress](https://base-ui.com/react/c
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		value: {
 			description: "The current value. The component is indeterminate when value is null.",
 			table: {
@@ -279,6 +288,60 @@ export const Animated: Story = {
 		docs: {
 			description: {
 				story: "Animated progress bar that increments over time.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: (args) => (
+		<div className="w-64">
+			<Progress {...args} render={<section className="flex flex-wrap gap-3" />}>
+				<ProgressLabel>Progress</ProgressLabel>
+				<ProgressValue />
+			</Progress>
+		</div>
+	),
+	args: {
+		value: 45,
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default div element with a different HTML tag.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: (args) => (
+		<div className="w-64">
+			<Progress
+				{...args}
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`flex flex-wrap gap-3 ${
+							state.status === "complete" ? "text-green-600" : ""
+						}`}
+					/>
+				)}
+			>
+				<ProgressLabel>{args.value === 100 ? "Complete!" : "Progress"}</ProgressLabel>
+				<ProgressValue />
+			</Progress>
+		</div>
+	),
+	args: {
+		value: 100,
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `status` ('indeterminate' | 'progressing' | 'complete'), `value` (number | null), `max` (number), and `min` (number).",
 			},
 		},
 	},

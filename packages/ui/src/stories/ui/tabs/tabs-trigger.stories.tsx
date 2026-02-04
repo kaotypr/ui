@@ -18,6 +18,15 @@ This component is built on top of [Base UI Tabs Tab](https://base-ui.com/react/c
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		value: {
 			description: "The value of the Tab.",
 			table: {
@@ -301,6 +310,106 @@ export const CustomStyling: Story = {
 		docs: {
 			description: {
 				story: "Tab trigger with custom styling applied via className prop.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Tabs defaultValue="overview" className="w-[400px]">
+			<TabsList>
+				<TabsTrigger
+					value="overview"
+					render={<div className="cursor-pointer" />}
+					nativeButton={false}
+				>
+					Overview (div)
+				</TabsTrigger>
+				<TabsTrigger value="account">Account</TabsTrigger>
+				<TabsTrigger value="settings">Settings</TabsTrigger>
+			</TabsList>
+			<TabsContent value="overview">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Overview</h3>
+					<p className="mt-2 text-sm text-muted-foreground">
+						This tab trigger is rendered as a div element.
+					</p>
+				</div>
+			</TabsContent>
+			<TabsContent value="account">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Account</h3>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
+				</div>
+			</TabsContent>
+			<TabsContent value="settings">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Settings</h3>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
+				</div>
+			</TabsContent>
+		</Tabs>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<Tabs defaultValue="overview" className="w-[400px]">
+			<TabsList>
+				<TabsTrigger
+					value="overview"
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
+								state.selected
+									? "bg-primary text-primary-foreground shadow"
+									: "bg-background hover:bg-muted"
+							}`}
+						>
+							{state.selected ? "Selected" : "Overview"}
+						</button>
+					)}
+				/>
+				<TabsTrigger value="account">Account</TabsTrigger>
+				<TabsTrigger value="settings">Settings</TabsTrigger>
+			</TabsList>
+			<TabsContent value="overview">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Overview</h3>
+					<p className="mt-2 text-sm text-muted-foreground">
+						The first tab uses render function to access selected state.
+					</p>
+				</div>
+			</TabsContent>
+			<TabsContent value="account">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Account</h3>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
+				</div>
+			</TabsContent>
+			<TabsContent value="settings">
+				<div className="mt-4 rounded-lg border p-4">
+					<h3 className="text-sm font-semibold">Settings</h3>
+					<p className="mt-2 text-sm text-muted-foreground">Default tab trigger button.</p>
+				</div>
+			</TabsContent>
+		</Tabs>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `selected` (boolean), `disabled` (boolean).",
 			},
 		},
 	},

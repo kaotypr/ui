@@ -79,6 +79,15 @@ const meta = {
 			},
 			action: "onPressedChange",
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		nativeButton: {
 			description:
 				"Whether the component renders a native `<button>` element when replacing it via the `render` prop. Set to `false` if the rendered element is not a button (e.g. `<div>`).",
@@ -345,6 +354,61 @@ export const States: Story = {
 		docs: {
 			description: {
 				story: "All toggle states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Toggle
+			render={<div className="cursor-pointer" />}
+			nativeButton={false}
+			aria-label="Toggle bold"
+		>
+			<TextBolderIcon />
+			<span>Custom div toggle</span>
+		</Toggle>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [pressed, setPressed] = useState(false)
+		return (
+			<Toggle
+				pressed={pressed}
+				onPressedChange={setPressed}
+				render={(props, state) => (
+					<button
+						{...props}
+						className={`inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
+							state.pressed
+								? "bg-primary text-primary-foreground"
+								: "bg-transparent hover:bg-muted"
+						}`}
+					>
+						<TextBolderIcon />
+						<span>{state.pressed ? "Pressed" : "Not pressed"}</span>
+					</button>
+				)}
+				aria-label="Toggle bold"
+			/>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `pressed` (boolean), `disabled` (boolean).",
 			},
 		},
 	},

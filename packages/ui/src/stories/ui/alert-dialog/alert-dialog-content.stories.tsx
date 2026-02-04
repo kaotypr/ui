@@ -37,6 +37,15 @@ const meta = {
 			control: { type: "radio" },
 			options: ["default", "sm"],
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		className: {
 			description: "Additional class names to apply to the content container.",
 			table: {

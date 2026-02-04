@@ -53,6 +53,25 @@ Must be used within a Tooltip component.`,
 			},
 			control: { type: "number" },
 		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
+		nativeButton: {
+			description:
+				"Whether the component renders a native `<button>` element when replacing it via the `render` prop. Set to `false` if the rendered element is not a button (e.g. `<div>`).",
+			table: {
+				type: { summary: "boolean" },
+				defaultValue: { summary: "true" },
+				category: "Base UI Props",
+			},
+			control: { type: "boolean" },
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -204,6 +223,59 @@ export const AsNativeButton: Story = {
 		docs: {
 			description: {
 				story: "TooltipTrigger used as a native button element without the ` prop.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Tooltip>
+			<TooltipTrigger
+				render={<span className="cursor-help underline decoration-dotted" />}
+				nativeButton={false}
+			>
+				Hover this text
+			</TooltipTrigger>
+			<TooltipContent>
+				<p>Tooltip attached to a span element</p>
+			</TooltipContent>
+		</Tooltip>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<Tooltip>
+			<TooltipTrigger
+				render={(props, state) => (
+					<Button
+						{...props}
+						variant={state.open ? "default" : "outline"}
+					>
+						<InfoIcon />
+						{state.open ? "Tooltip is open" : "Hover me"}
+					</Button>
+				)}
+			/>
+			<TooltipContent>
+				<p>Tooltip using render function to access open state</p>
+			</TooltipContent>
+		</Tooltip>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean).",
 			},
 		},
 	},

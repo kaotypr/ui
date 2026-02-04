@@ -28,6 +28,15 @@ const meta = {
 			options: ["sm", "default"],
 		},
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		name: {
 			description: "Identifies the field when a form is submitted.",
 			table: {
@@ -374,6 +383,54 @@ export const States: Story = {
 		docs: {
 			description: {
 				story: "All switch states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Switch render={<div className="cursor-pointer" />} nativeButton={false} />
+			<span>Custom div switch</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [checked, setChecked] = useState(false)
+		return (
+			<label className="flex items-center gap-2 cursor-pointer">
+				<Switch
+					checked={checked}
+					onCheckedChange={setChecked}
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 ${
+								state.checked ? "bg-primary" : "bg-input"
+							}`}
+						/>
+					)}
+				/>
+				<span>{checked ? "Switch is ON" : "Switch is OFF"}</span>
+			</label>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `checked` (boolean), `disabled` (boolean), `readOnly` (boolean), and `required` (boolean).",
 			},
 		},
 	},

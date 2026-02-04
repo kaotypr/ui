@@ -26,6 +26,15 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		handle: {
 			description:
 				"A handle to associate the trigger with a sheet. Can be created with the Dialog.createHandle() method.",
@@ -164,6 +173,77 @@ export const CustomStyling: Story = {
 		docs: {
 			description: {
 				story: "Sheet trigger with custom styling applied via className.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Sheet open={open} onOpenChange={setOpen}>
+				<SheetTrigger
+					render={<div className="cursor-pointer" />}
+					nativeButton={false}
+					className="rounded-md border border-dashed p-4 hover:bg-accent"
+				>
+					Click this div to open sheet
+				</SheetTrigger>
+				<SheetContent>
+					<SheetHeader>
+						<SheetTitle>Sheet Title</SheetTitle>
+						<SheetDescription>
+							The trigger is rendered as a div element instead of a button.
+						</SheetDescription>
+					</SheetHeader>
+				</SheetContent>
+			</Sheet>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Sheet open={open} onOpenChange={setOpen}>
+				<SheetTrigger
+					render={(props, state) => (
+						<Button
+							{...props}
+							variant={state.popupOpen ? "default" : "outline"}
+						>
+							{state.popupOpen ? "Sheet is open" : "Open Sheet"}
+						</Button>
+					)}
+				/>
+				<SheetContent>
+					<SheetHeader>
+						<SheetTitle>Sheet Title</SheetTitle>
+						<SheetDescription>
+							The trigger uses a render function to access the popup state.
+						</SheetDescription>
+					</SheetHeader>
+				</SheetContent>
+			</Sheet>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `popupOpen` (boolean).",
 			},
 		},
 	},
