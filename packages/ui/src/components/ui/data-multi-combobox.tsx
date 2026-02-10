@@ -606,8 +606,6 @@ export function DataMultiCombobox({
 				disabled={disabled}
 				name={name}
 				id={id}
-				render={<div />}
-				nativeButton={false}
 			>
 				{badgesContent}
 				<div className="flex items-center ml-2 shrink-0 opacity-50">
