@@ -43,6 +43,15 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		defaultOpen: {
 			description:
 				"Whether the menu is initially open. To render a controlled menu, use the open prop instead.",
@@ -63,12 +72,10 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the menu is opened or closed.",
+			description: "Event handler called when the menu is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Menu.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Menu.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -106,8 +113,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onOpenChangeComplete: {
-			description:
-				"Event handler called after any animations complete when the menu is closed.",
+			description: "Event handler called after any animations complete when the menu is closed.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -116,8 +122,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			action: "onOpenChangeComplete",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -196,8 +201,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default dropdown menu with common actions and keyboard shortcuts.",
+				story: "Default dropdown menu with common actions and keyboard shortcuts.",
 			},
 		},
 	},
@@ -241,8 +245,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Dropdown menu with grouped items and labels for better organization.",
+				story: "Dropdown menu with grouped items and labels for better organization.",
 			},
 		},
 	},
@@ -294,8 +297,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled dropdown menu where the open state is managed externally.",
+				story: "Controlled dropdown menu where the open state is managed externally.",
 			},
 		},
 	},

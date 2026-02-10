@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import {
-	Card,
-	CardHeader,
-	CardTitle,
-	CardDescription,
-	CardContent,
-} from "~/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "~/components/ui/card"
 
 const meta = {
 	title: "UI/Card/CardTitle",
@@ -16,8 +10,7 @@ const meta = {
 		layout: "centered",
 		docs: {
 			description: {
-				component:
-					"The main title text of the card. Typically used inside CardHeader.",
+				component: "The main title text of the card. Typically used inside CardHeader.",
 			},
 		},
 	},
@@ -52,9 +45,7 @@ export const Default: Story = {
 		<Card className="w-[350px]">
 			<CardHeader>
 				<CardTitle {...args}>Card Title</CardTitle>
-				<CardDescription>
-					This is a description that appears below the title.
-				</CardDescription>
+				<CardDescription>This is a description that appears below the title.</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<p className="text-sm text-muted-foreground">Card content goes here.</p>
@@ -75,12 +66,9 @@ export const LongTitle: Story = {
 		<Card className="w-[350px]">
 			<CardHeader>
 				<CardTitle {...args}>
-					This is a longer card title that demonstrates how the component handles
-					text wrapping
+					This is a longer card title that demonstrates how the component handles text wrapping
 				</CardTitle>
-				<CardDescription>
-					The title will wrap to multiple lines if needed.
-				</CardDescription>
+				<CardDescription>The title will wrap to multiple lines if needed.</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<p className="text-sm text-muted-foreground">Card content goes here.</p>

@@ -1,0 +1,66 @@
+---
+title: Checkbox
+description: A checkbox for selecting one or more options from a set.
+---
+
+## Usage
+
+<ComponentPreview name="checkbox-demo" />
+
+## Import
+
+```tsx
+import { Checkbox } from "@kaotypr/ui/checkbox"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="checkbox-basic" />
+
+### With Description
+
+<ComponentPreview name="checkbox-description" />
+
+### Disabled
+
+<ComponentPreview name="checkbox-disabled" />
+
+### Group
+
+<ComponentPreview name="checkbox-group" />
+
+### Invalid
+
+<ComponentPreview name="checkbox-invalid" />
+
+### In a Table
+
+<ComponentPreview name="checkbox-table" />
+
+## API Reference
+
+This component is built on top of [Base UI Checkbox](https://base-ui.com/react/components/checkbox).
+
+### Checkbox
+
+The checkbox root component. Renders a native control under the hood for form submission and accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `string` | - | Identifies the field when a form is submitted |
+| `defaultChecked` | `boolean` | `false` | Whether the checkbox is initially ticked. Use `checked` for controlled mode |
+| `checked` | `boolean` | - | Whether the checkbox is currently ticked (controlled) |
+| `onCheckedChange` | `(checked: boolean, eventDetails: Checkbox.Root.ChangeEventDetails) => void` | - | Called when the checkbox is ticked or unticked |
+| `indeterminate` | `boolean` | `false` | Whether the checkbox is in a mixed state (neither ticked nor unticked) |
+| `value` | `string` | - | The value of the selected checkbox when used in a form |
+| `uncheckedValue` | `string` | - | The value submitted when the checkbox is unchecked |
+| `disabled` | `boolean` | `false` | Whether the component should ignore user interaction |
+| `readOnly` | `boolean` | `false` | Whether the user cannot tick or untick the checkbox |
+| `required` | `boolean` | `false` | Whether the user must tick the checkbox before form submission |
+| `id` | `string` | - | The id of the underlying input element |
+| `parent` | `boolean` | `false` | Whether the checkbox controls a group of child checkboxes (use in a Checkbox Group) |
+| `nativeButton` | `boolean` | `false` | Whether the component renders a native `<button>` when using the `render` prop |
+| `className` | `string` | - | Additional CSS class names |
+| `style` | `React.CSSProperties` | - | Inline styles |

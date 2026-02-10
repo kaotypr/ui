@@ -57,6 +57,15 @@ This component is built on top of [Base UI Menubar](https://base-ui.com/react/co
 	},
 	argTypes: {
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		loopFocus: {
 			description:
 				"Whether to loop keyboard focus back to the first item when the end of the list is reached while using the arrow keys.",
@@ -114,8 +123,7 @@ This component is built on top of [Base UI Menubar](https://base-ui.com/react/co
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Menubar.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Menubar.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -282,8 +290,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menubar menu with grouped items and labels for better organization.",
+				story: "Menubar menu with grouped items and labels for better organization.",
 			},
 		},
 	},

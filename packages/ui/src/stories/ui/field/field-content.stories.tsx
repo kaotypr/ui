@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	Field,
-	FieldLabel,
-	FieldContent,
-} from "~/components/ui/field"
+import { Field, FieldLabel, FieldContent } from "~/components/ui/field"
 import { Input } from "~/components/ui/input"
 import { Textarea } from "~/components/ui/textarea"
 
@@ -60,11 +56,7 @@ export const WithTextarea: Story = {
 		<Field>
 			<FieldLabel htmlFor="message">Message</FieldLabel>
 			<FieldContent {...args}>
-				<Textarea
-					id="message"
-					placeholder="Enter your message"
-					rows={4}
-				/>
+				<Textarea id="message" placeholder="Enter your message" rows={4} />
 			</FieldContent>
 		</Field>
 	),

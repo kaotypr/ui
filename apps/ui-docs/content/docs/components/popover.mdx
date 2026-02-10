@@ -1,0 +1,114 @@
+---
+title: Popover
+description: An accessible popup anchored to a trigger, built on Base UI Popover.
+---
+
+## Usage
+
+<ComponentPreview name="popover-demo" />
+
+## Import
+
+```tsx
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@kaotypr/ui/popover"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="popover-basic" />
+
+### Alignments
+
+<ComponentPreview name="popover-alignments" />
+
+### With Form
+
+<ComponentPreview name="popover-form" />
+
+## API Reference
+
+This component is built on top of [Base UI Popover](https://base-ui.com/react/components/popover).
+
+### Popover
+
+The root component that wraps the trigger and content.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Whether the popover is currently open (controlled) |
+| `defaultOpen` | `boolean` | `false` | Whether the popover is initially open (uncontrolled) |
+| `onOpenChange` | `(open: boolean, eventDetails: ChangeEventDetails) => void` | - | Event handler called when the popover is opened or closed |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after animations complete when opened or closed |
+| `defaultTriggerId` | `string \| null` | - | ID of the trigger for initially open popover |
+| `triggerId` | `string \| null` | - | ID of the active trigger in controlled mode |
+| `modal` | `boolean \| "trap-focus"` | `false` | When true, limits interaction to the popover and locks document scroll |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### PopoverTrigger
+
+The element that opens the popover (typically a button). Must be used within a `Popover` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `handle` | `Popover.Handle` | - | Handle to associate this trigger with the popover |
+| `nativeButton` | `boolean` | `true` | Whether the rendered element is a native button (set `false` when using `render` with a non-button) |
+| `payload` | `any` | - | Payload passed to the popover when opened |
+| `openOnHover` | `boolean` | `false` | Whether the popover also opens on hover |
+| `delay` | `number` | `300` | Delay in ms before opening on hover (requires `openOnHover`) |
+| `closeDelay` | `number` | `0` | Delay in ms before closing when opened on hover |
+| `id` | `string` | - | ID of the trigger (used for controlled active trigger) |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the trigger element or compose with another component |
+| `className` | `string` | - | Additional CSS class names |
+| `style` | `CSSProperties` | - | Style applied to the element |
+
+### PopoverContent
+
+Container for the popover contents. Must be used within a `Popover` component. Renders in a portal with positioning.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | Which side of the anchor to align the popup to |
+| `sideOffset` | `number` | `4` | Distance in pixels between the anchor and the popup |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | How to align the popup relative to the specified side |
+| `alignOffset` | `number` | `0` | Additional offset in pixels along the alignment axis |
+| `initialFocus` | `boolean \| RefObject \| ((openType) => HTMLElement \| null \| void)` | - | Element to focus when the popover opens |
+| `finalFocus` | `boolean \| RefObject \| ((closeType) => HTMLElement \| null \| void)` | - | Element to focus when the popover closes |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the popup element |
+| `className` | `string` | - | Additional CSS class names |
+
+### PopoverHeader
+
+A container for the popover header (title and description). Must be used within `PopoverContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+
+### PopoverTitle
+
+A heading that labels the popover. Must be used within `PopoverContent`. Uses Base UI's `Title` for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the title element |
+| `className` | `string` | - | Additional CSS class names |
+
+### PopoverDescription
+
+A paragraph with additional information about the popover. Must be used within `PopoverContent`. Uses Base UI's `Description` for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the description element |
+| `className` | `string` | - | Additional CSS class names |

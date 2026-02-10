@@ -171,8 +171,7 @@ export const MultipleGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Multiple CommandGroups with separators between them.",
+				story: "Multiple CommandGroups with separators between them.",
 			},
 		},
 	},

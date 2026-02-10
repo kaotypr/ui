@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	NativeSelect,
-	NativeSelectOption,
-} from "~/components/ui/native-select"
+import { NativeSelect, NativeSelectOption } from "~/components/ui/native-select"
 
 const meta = {
 	title: "UI/NativeSelect/NativeSelectOption",

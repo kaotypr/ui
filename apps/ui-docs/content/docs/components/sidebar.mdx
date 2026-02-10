@@ -1,0 +1,258 @@
+---
+title: Sidebar
+description: A collapsible sidebar layout for navigation and related content.
+---
+
+## Usage
+
+<ComponentPreview name="sidebar-demo" />
+
+## Import
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
+} from "@kaotypr/ui/sidebar"
+```
+
+## Examples
+
+### Controlled
+
+<ComponentPreview name="sidebar-controlled" />
+
+### Menu
+
+<ComponentPreview name="sidebar-menu" />
+
+### Menu Sub-items
+
+<ComponentPreview name="sidebar-menu-sub" />
+
+### Menu Actions
+
+<ComponentPreview name="sidebar-menu-action" />
+
+### Menu Badges
+
+<ComponentPreview name="sidebar-menu-badge" />
+
+### Collapsible Menu
+
+<ComponentPreview name="sidebar-menu-collapsible" />
+
+### Groups
+
+<ComponentPreview name="sidebar-group" />
+
+### Group Actions
+
+<ComponentPreview name="sidebar-group-action" />
+
+### Collapsible Groups
+
+<ComponentPreview name="sidebar-group-collapsible" />
+
+### Header
+
+<ComponentPreview name="sidebar-header" />
+
+### Footer
+
+<ComponentPreview name="sidebar-footer" />
+
+### RSC-friendly loading state
+
+<ComponentPreview name="sidebar-rsc" />
+
+## API Reference
+
+This component set is implemented in `@kaotypr/ui` and uses Base UI utilities like `mergeProps` and `useRender` to support render composition on selected sub-components.
+
+### SidebarProvider
+
+Context provider that controls sidebar open/collapsed state, supports controlled/uncontrolled usage, persists state via a cookie, and adds a keyboard shortcut (Cmd/Ctrl+B).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultOpen` | `boolean` | `true` | Initial open state (uncontrolled) |
+| `open` | `boolean` | - | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Called when open state changes |
+| `className` | `string` | - | Additional CSS class names |
+| `style` | `React.CSSProperties` | - | Inline styles |
+| `children` | `React.ReactNode` | - | Provider contents |
+
+### Sidebar
+
+The sidebar container. On mobile it renders as a sheet/drawer; on desktop it supports multiple variants and collapsible behaviors.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"left" \| "right"` | `"left"` | Which side of the screen the sidebar appears on |
+| `variant` | `"sidebar" \| "floating" \| "inset"` | `"sidebar"` | Visual style variant |
+| `collapsible` | `"offExamples" \| "icon" \| "none"` | `"offExamples"` | Collapse behavior: hide, icon-only, or disable collapsing |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `React.ReactNode` | - | Sidebar contents |
+
+### SidebarTrigger
+
+Button that toggles the sidebar open/closed state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<typeof Button>` | - | Inherits props from `Button` |
+
+### SidebarRail
+
+Interactive rail for toggling the sidebar on desktop.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<"button">` | - | Button props |
+
+### SidebarInset
+
+Main content wrapper that responds to sidebar variant/state (useful for the `inset` layout).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<"main">` | - | Main element props |
+
+### SidebarHeader / SidebarFooter / SidebarContent / SidebarGroup / SidebarGroupContent / SidebarMenu / SidebarMenuItem / SidebarMenuSub / SidebarMenuSubItem
+
+Layout primitives for structuring the sidebar.
+
+| Component | Props |
+|----------|-------|
+| `SidebarHeader` | `React.ComponentProps<"div">` |
+| `SidebarFooter` | `React.ComponentProps<"div">` |
+| `SidebarContent` | `React.ComponentProps<"div">` |
+| `SidebarGroup` | `React.ComponentProps<"div">` |
+| `SidebarGroupContent` | `React.ComponentProps<"div">` |
+| `SidebarMenu` | `React.ComponentProps<"ul">` |
+| `SidebarMenuItem` | `React.ComponentProps<"li">` |
+| `SidebarMenuSub` | `React.ComponentProps<"ul">` |
+| `SidebarMenuSubItem` | `React.ComponentProps<"li">` |
+
+### SidebarInput
+
+Sidebar-styled input.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<typeof Input>` | - | Inherits props from `Input` |
+
+### SidebarSeparator
+
+Sidebar-styled separator.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<typeof Separator>` | - | Inherits props from `Separator` |
+
+### SidebarGroupLabel
+
+Group label with optional render composition.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement \| ((props, state) => React.ReactElement)` | - | Replace/compose the rendered element |
+| `...props` | `React.ComponentProps<"div">` | - | Div props |
+
+### SidebarGroupAction
+
+Group-level action button with optional render composition.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `React.ReactElement \| ((props, state) => React.ReactElement)` | - | Replace/compose the rendered element |
+| `...props` | `React.ComponentProps<"button">` | - | Button props |
+
+### SidebarMenuButton
+
+Menu item button with variants/sizes, active state, and optional tooltip (shown when collapsed in icon mode).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `isActive` | `boolean` | `false` | Marks the item as active |
+| `variant` | `"default" \| "outline"` | `"default"` | Visual variant |
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` | Size |
+| `tooltip` | `string \| React.ComponentProps<typeof TooltipContent>` | - | Tooltip content/props |
+| `render` | `React.ReactElement \| ((props, state) => React.ReactElement)` | - | Replace/compose the rendered element |
+| `...props` | `React.ComponentProps<"button">` | - | Button props |
+
+### SidebarMenuAction
+
+Secondary action button for a menu item (optionally only visible on hover).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showOnHover` | `boolean` | `false` | Only show the action on hover/focus within |
+| `render` | `React.ReactElement \| ((props, state) => React.ReactElement)` | - | Replace/compose the rendered element |
+| `...props` | `React.ComponentProps<"button">` | - | Button props |
+
+### SidebarMenuBadge
+
+Badge element for a menu item (e.g. counts).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<"div">` | - | Div props |
+
+### SidebarMenuSkeleton
+
+Loading skeleton for menu items.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `showIcon` | `boolean` | `false` | Whether to render an icon skeleton |
+| `...props` | `React.ComponentProps<"div">` | - | Div props |
+
+### SidebarMenuSubButton
+
+Submenu link/button with active state and optional render composition.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "md"` | `"md"` | Size |
+| `isActive` | `boolean` | `false` | Marks the item as active |
+| `render` | `React.ReactElement \| ((props, state) => React.ReactElement)` | - | Replace/compose the rendered element |
+| `...props` | `React.ComponentProps<"a">` | - | Anchor props |
+
+### useSidebar
+
+Hook to read and control sidebar state. Must be used within `SidebarProvider`.
+
+| Returns | Type |
+|---------|------|
+| `state` | `"expanded" \| "collapsed"` |
+| `open` | `boolean` |
+| `setOpen` | `(open: boolean) => void` |
+| `openMobile` | `boolean` |
+| `setOpenMobile` | `(open: boolean) => void` |
+| `isMobile` | `boolean` |
+| `toggleSidebar` | `() => void` |
+

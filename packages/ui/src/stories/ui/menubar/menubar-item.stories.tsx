@@ -8,12 +8,7 @@ import {
 	MenubarItem,
 	MenubarShortcut,
 } from "~/components/ui/menubar"
-import {
-	CopyIcon,
-	ScissorsIcon,
-	ClipboardTextIcon,
-	TrashIcon,
-} from "@phosphor-icons/react"
+import { CopyIcon, ScissorsIcon, ClipboardTextIcon, TrashIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Menubar/MenubarItem",
@@ -32,8 +27,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Props
 		inset: {
-			description:
-				"When true, adds left padding to align with items that have icons.",
+			description: "When true, adds left padding to align with items that have icons.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -81,8 +75,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -305,8 +298,7 @@ export const WithInset: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menu item with inset prop to align with items that have icons.",
+				story: "Menu item with inset prop to align with items that have icons.",
 			},
 		},
 	},

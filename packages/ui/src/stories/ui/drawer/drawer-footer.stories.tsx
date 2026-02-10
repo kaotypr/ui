@@ -54,14 +54,10 @@ export const Default: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter {...args}>
 						<Button>Submit</Button>
@@ -76,8 +72,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default drawer footer with primary and secondary action buttons.",
+				story: "Default drawer footer with primary and secondary action buttons.",
 			},
 		},
 	},
@@ -95,14 +90,10 @@ export const SingleButton: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Simple Footer</DrawerTitle>
-						<DrawerDescription>
-							Footer with a single action button.
-						</DrawerDescription>
+						<DrawerDescription>Footer with a single action button.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter>
 						<DrawerClose asChild>
@@ -116,8 +107,7 @@ export const SingleButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer footer with a single full-width button.",
+				story: "Drawer footer with a single full-width button.",
 			},
 		},
 	},
@@ -135,14 +125,10 @@ export const MultipleButtons: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Multiple Actions</DrawerTitle>
-						<DrawerDescription>
-							Footer with multiple action buttons.
-						</DrawerDescription>
+						<DrawerDescription>Footer with multiple action buttons.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter>
 						<Button variant="outline">Save Draft</Button>
@@ -158,8 +144,7 @@ export const MultipleButtons: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer footer with multiple action buttons.",
+				story: "Drawer footer with multiple action buttons.",
 			},
 		},
 	},
@@ -177,14 +162,10 @@ export const WithCustomStyling: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Custom Styled Footer</DrawerTitle>
-						<DrawerDescription>
-							The footer can be customized with className.
-						</DrawerDescription>
+						<DrawerDescription>The footer can be customized with className.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter className="border-t pt-4">
 						<Button>Submit</Button>
@@ -199,8 +180,7 @@ export const WithCustomStyling: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer footer with custom styling applied via className.",
+				story: "Drawer footer with custom styling applied via className.",
 			},
 		},
 	},

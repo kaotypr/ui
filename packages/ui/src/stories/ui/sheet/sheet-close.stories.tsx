@@ -116,8 +116,7 @@ export const WithAsChild: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet close button using the asChild prop to compose with a custom button element.",
+				story: "Sheet close button using the asChild prop to compose with a custom button element.",
 			},
 		},
 	},
@@ -140,9 +139,7 @@ export const InFooter: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<div className="flex gap-2">
 						<SheetClose>
@@ -157,8 +154,7 @@ export const InFooter: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet close button placed in the footer alongside other action buttons.",
+				story: "Sheet close button placed in the footer alongside other action buttons.",
 			},
 		},
 	},

@@ -49,14 +49,12 @@ export const Default: Story = {
 						<DrawerHeader>
 							<DrawerTitle>Manual Portal Usage</DrawerTitle>
 							<DrawerDescription>
-								The portal is typically included automatically by DrawerContent.
-								This example shows manual portal usage.
+								The portal is typically included automatically by DrawerContent. This example shows
+								manual portal usage.
 							</DrawerDescription>
 						</DrawerHeader>
 						<div className="p-4">
-							<p className="text-sm text-muted-foreground">
-								Drawer content goes here.
-							</p>
+							<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 						</div>
 						<div className="p-4">
 							<DrawerClose asChild>

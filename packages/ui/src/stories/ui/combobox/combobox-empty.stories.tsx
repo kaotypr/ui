@@ -82,9 +82,7 @@ export const Default: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty {...args}>No fruits found.</ComboboxEmpty>
@@ -122,9 +120,7 @@ export const WithIcon: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty {...args}>
@@ -167,18 +163,14 @@ export const WithSuggestion: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem value={item.value}>
-									{item.label}
-								</ComboboxItem>
+								<ComboboxItem value={item.value}>{item.label}</ComboboxItem>
 							)}
 						</ComboboxList>
 						<ComboboxEmpty {...args}>
 							<div className="flex flex-col items-center gap-1 py-2 text-center">
 								<WarningIcon className="text-muted-foreground size-5" />
 								<span className="font-medium">No matches found</span>
-								<span className="text-muted-foreground text-xs">
-									Try a different search term
-								</span>
+								<span className="text-muted-foreground text-xs">Try a different search term</span>
 							</div>
 						</ComboboxEmpty>
 					</ComboboxContent>

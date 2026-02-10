@@ -203,7 +203,9 @@ export const Responsive: Story = {
 	render: () => (
 		<div className="w-full max-w-2xl">
 			<Table>
-				<TableCaption>A responsive table that scrolls horizontally on smaller screens.</TableCaption>
+				<TableCaption>
+					A responsive table that scrolls horizontally on smaller screens.
+				</TableCaption>
 				<TableHeader>
 					<TableRow>
 						<TableHead>Invoice</TableHead>
@@ -242,7 +244,8 @@ export const Responsive: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Table wrapped in a container to demonstrate responsive horizontal scrolling behavior.",
+				story:
+					"Table wrapped in a container to demonstrate responsive horizontal scrolling behavior.",
 			},
 		},
 	},

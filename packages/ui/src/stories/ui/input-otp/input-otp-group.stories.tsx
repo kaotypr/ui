@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
-import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSlot,
-	InputOTPSeparator,
-} from "~/components/ui/input-otp"
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "~/components/ui/input-otp"
 
 const meta = {
 	title: "UI/InputOTP/InputOTPGroup",
@@ -44,11 +39,7 @@ export const Default: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup {...args}>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />
@@ -78,11 +69,7 @@ export const SingleGroup: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup {...args}>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />
@@ -97,8 +84,7 @@ export const SingleGroup: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Single InputOTPGroup containing all 6 slots without any separator.",
+				story: "Single InputOTPGroup containing all 6 slots without any separator.",
 			},
 		},
 	},
@@ -109,11 +95,7 @@ export const ThreeGroups: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={9}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={9} value={value} onChange={setValue}>
 				<InputOTPGroup {...args}>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />
@@ -137,8 +119,7 @@ export const ThreeGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Three InputOTPGroup components, each containing 3 slots, separated by dashes.",
+				story: "Three InputOTPGroup components, each containing 3 slots, separated by dashes.",
 			},
 		},
 	},
@@ -149,11 +130,7 @@ export const WithInvalidState: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup {...args} aria-invalid="true">
 					<InputOTPSlot index={0} aria-invalid="true" />
 					<InputOTPSlot index={1} aria-invalid="true" />

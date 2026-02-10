@@ -28,8 +28,7 @@ This component is built on top of [Base UI Tabs Panel](https://base-ui.com/react
 			control: { type: "text" },
 		},
 		keepMounted: {
-			description:
-				"Whether to keep the HTML element in the DOM while the panel is hidden.",
+			description: "Whether to keep the HTML element in the DOM while the panel is hidden.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -94,8 +93,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default tab content panel that is displayed when its corresponding tab is active.",
+				story: "Default tab content panel that is displayed when its corresponding tab is active.",
 			},
 		},
 	},
@@ -116,7 +114,8 @@ export const KeepMounted: Story = {
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Overview</h3>
 					<p className="mt-2 text-sm text-muted-foreground">
-						This panel remains mounted in the DOM even when hidden. Useful for preserving state or animations.
+						This panel remains mounted in the DOM even when hidden. Useful for preserving state or
+						animations.
 					</p>
 				</div>
 			</TabsContent>
@@ -124,7 +123,8 @@ export const KeepMounted: Story = {
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
 					<p className="mt-2 text-sm text-muted-foreground">
-						This panel remains mounted in the DOM even when hidden. Useful for preserving state or animations.
+						This panel remains mounted in the DOM even when hidden. Useful for preserving state or
+						animations.
 					</p>
 				</div>
 			</TabsContent>
@@ -132,7 +132,8 @@ export const KeepMounted: Story = {
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Settings</h3>
 					<p className="mt-2 text-sm text-muted-foreground">
-						This panel remains mounted in the DOM even when hidden. Useful for preserving state or animations.
+						This panel remains mounted in the DOM even when hidden. Useful for preserving state or
+						animations.
 					</p>
 				</div>
 			</TabsContent>
@@ -203,8 +204,7 @@ export const WithRichContent: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tab content panel with rich content including headings, paragraphs, and lists.",
+				story: "Tab content panel with rich content including headings, paragraphs, and lists.",
 			},
 		},
 	},
@@ -221,19 +221,28 @@ export const CustomStyling: Story = {
 				<TabsTrigger value="account">Account</TabsTrigger>
 				<TabsTrigger value="settings">Settings</TabsTrigger>
 			</TabsList>
-			<TabsContent value="overview" className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
+			<TabsContent
+				value="overview"
+				className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4"
+			>
 				<h3 className="text-sm font-semibold text-blue-900">Overview</h3>
 				<p className="mt-2 text-sm text-blue-700">
 					Tab content with custom styling applied via className.
 				</p>
 			</TabsContent>
-			<TabsContent value="account" className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
+			<TabsContent
+				value="account"
+				className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4"
+			>
 				<h3 className="text-sm font-semibold text-blue-900">Account</h3>
 				<p className="mt-2 text-sm text-blue-700">
 					Tab content with custom styling applied via className.
 				</p>
 			</TabsContent>
-			<TabsContent value="settings" className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4">
+			<TabsContent
+				value="settings"
+				className="mt-4 rounded-lg border-2 border-blue-200 bg-blue-50 p-4"
+			>
 				<h3 className="text-sm font-semibold text-blue-900">Settings</h3>
 				<p className="mt-2 text-sm text-blue-700">
 					Tab content with custom styling applied via className.

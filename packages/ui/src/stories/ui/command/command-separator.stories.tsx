@@ -48,8 +48,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).`,
 	argTypes: {
 		// cmdk Props
 		alwaysRender: {
-			description:
-				"Whether to always render the separator, even when filtered.",
+			description: "Whether to always render the separator, even when filtered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -97,9 +96,7 @@ export const Default: Story = {
 										</CommandItem>
 									))}
 								</CommandGroup>
-								{index < groupedCommands.length - 1 && (
-									<CommandSeparator {...args} />
-								)}
+								{index < groupedCommands.length - 1 && <CommandSeparator {...args} />}
 							</React.Fragment>
 						))}
 					</CommandList>
@@ -110,8 +107,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default CommandSeparator between command groups.",
+				story: "Default CommandSeparator between command groups.",
 			},
 		},
 	},
@@ -140,9 +136,7 @@ export const AlwaysRender: Story = {
 										</CommandItem>
 									))}
 								</CommandGroup>
-								{index < groupedCommands.length - 1 && (
-									<CommandSeparator alwaysRender />
-								)}
+								{index < groupedCommands.length - 1 && <CommandSeparator alwaysRender />}
 							</React.Fragment>
 						))}
 					</CommandList>
@@ -153,8 +147,7 @@ export const AlwaysRender: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandSeparator with alwaysRender enabled, keeping it visible even when filtered.",
+				story: "CommandSeparator with alwaysRender enabled, keeping it visible even when filtered.",
 			},
 		},
 	},
@@ -183,9 +176,7 @@ export const WithCustomStyling: Story = {
 										</CommandItem>
 									))}
 								</CommandGroup>
-								{index < groupedCommands.length - 1 && (
-									<CommandSeparator className="my-2" />
-								)}
+								{index < groupedCommands.length - 1 && <CommandSeparator className="my-2" />}
 							</React.Fragment>
 						))}
 					</CommandList>

@@ -20,8 +20,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 	argTypes: {
 		// Sonner Props
 		theme: {
-			description:
-				"The theme of the toaster. Can be 'light', 'dark', or 'system'.",
+			description: "The theme of the toaster. Can be 'light', 'dark', or 'system'.",
 			table: {
 				type: { summary: '"light" | "dark" | "system"' },
 				defaultValue: { summary: '"system"' },
@@ -31,8 +30,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			options: ["light", "dark", "system"],
 		},
 		richColors: {
-			description:
-				"When true, toasts will use richer colors for better visual distinction.",
+			description: "When true, toasts will use richer colors for better visual distinction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -41,8 +39,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "boolean" },
 		},
 		expand: {
-			description:
-				"When true, toasts will be expanded by default instead of only on hover.",
+			description: "When true, toasts will be expanded by default instead of only on hover.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -51,8 +48,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "boolean" },
 		},
 		visibleToasts: {
-			description:
-				"The maximum number of visible toasts when expand is true.",
+			description: "The maximum number of visible toasts when expand is true.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "3" },
@@ -61,8 +57,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "number" },
 		},
 		id: {
-			description:
-				"A unique identifier for the toaster. Useful when rendering multiple toasters.",
+			description: "A unique identifier for the toaster. Useful when rendering multiple toasters.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -71,8 +66,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "text" },
 		},
 		position: {
-			description:
-				"The position where toasts will be rendered on the screen.",
+			description: "The position where toasts will be rendered on the screen.",
 			table: {
 				type: {
 					summary:
@@ -92,8 +86,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			],
 		},
 		closeButton: {
-			description:
-				"When true, each toast will display a close button.",
+			description: "When true, each toast will display a close button.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -142,8 +135,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			options: ["ltr", "rtl"],
 		},
 		hotkey: {
-			description:
-				"The keyboard shortcut to focus the toast area. Default is '⌥/alt + T'.",
+			description: "The keyboard shortcut to focus the toast area. Default is '⌥/alt + T'.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: '"⌥/alt + T"' },
@@ -152,8 +144,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "text" },
 		},
 		invert: {
-			description:
-				"When true, inverts the theme colors for better contrast.",
+			description: "When true, inverts the theme colors for better contrast.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -162,8 +153,7 @@ This component is built on top of [Sonner](https://sonner.emilkowal.ski/).`,
 			control: { type: "boolean" },
 		},
 		toastOptions: {
-			description:
-				"Default options for all toasts. Can include duration, className, etc.",
+			description: "Default options for all toasts. Can include duration, className, etc.",
 			table: {
 				type: { summary: "object" },
 				defaultValue: { summary: "undefined" },
@@ -212,42 +202,25 @@ export const Default: Story = {
 		<div className="flex flex-col items-center gap-4">
 			<Toaster {...args} />
 			<div className="flex flex-wrap items-center gap-2">
-				<Button
-					onClick={() => toast("Hello, world!")}
-					variant="default"
-				>
+				<Button onClick={() => toast("Hello, world!")} variant="default">
 					Default Toast
 				</Button>
 				<Button
-					onClick={() =>
-						toast.success("Operation completed successfully!")
-					}
+					onClick={() => toast.success("Operation completed successfully!")}
 					variant="default"
 				>
 					Success Toast
 				</Button>
-				<Button
-					onClick={() => toast.error("Something went wrong!")}
-					variant="destructive"
-				>
+				<Button onClick={() => toast.error("Something went wrong!")} variant="destructive">
 					Error Toast
 				</Button>
-				<Button
-					onClick={() => toast.info("Here's some information")}
-					variant="outline"
-				>
+				<Button onClick={() => toast.info("Here's some information")} variant="outline">
 					Info Toast
 				</Button>
-				<Button
-					onClick={() => toast.warning("Please be careful")}
-					variant="outline"
-				>
+				<Button onClick={() => toast.warning("Please be careful")} variant="outline">
 					Warning Toast
 				</Button>
-				<Button
-					onClick={() => toast.loading("Processing...")}
-					variant="secondary"
-				>
+				<Button onClick={() => toast.loading("Processing...")} variant="secondary">
 					Loading Toast
 				</Button>
 			</div>
@@ -256,8 +229,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default toaster with buttons to trigger different toast types.",
+				story: "Default toaster with buttons to trigger different toast types.",
 			},
 		},
 	},
@@ -281,8 +253,7 @@ export const ToastTypes: Story = {
 				<Button
 					onClick={() =>
 						toast.success("Success!", {
-							description:
-								"Your action was completed successfully.",
+							description: "Your action was completed successfully.",
 						})
 					}
 					variant="default"
@@ -335,8 +306,7 @@ export const ToastTypes: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates all available toast types with descriptions.",
+				story: "Demonstrates all available toast types with descriptions.",
 			},
 		},
 	},
@@ -388,10 +358,7 @@ export const WithCloseButton: Story = {
 		<div className="flex flex-col items-center gap-4">
 			<Toaster closeButton />
 			<div className="flex flex-wrap items-center gap-2">
-				<Button
-					onClick={() => toast("Toast with close button")}
-					variant="default"
-				>
+				<Button onClick={() => toast("Toast with close button")} variant="default">
 					Show Toast
 				</Button>
 				<Button
@@ -410,8 +377,7 @@ export const WithCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toasts with close buttons enabled for manual dismissal.",
+				story: "Toasts with close buttons enabled for manual dismissal.",
 			},
 		},
 	},
@@ -437,8 +403,7 @@ export const Expanded: Story = {
 				<Button
 					onClick={() =>
 						toast("Expanded toast", {
-							description:
-								"This toast is expanded by default instead of only on hover.",
+							description: "This toast is expanded by default instead of only on hover.",
 						})
 					}
 					variant="outline"
@@ -451,8 +416,7 @@ export const Expanded: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toasts that are expanded by default, showing up to 5 visible toasts.",
+				story: "Toasts that are expanded by default, showing up to 5 visible toasts.",
 			},
 		},
 	},
@@ -463,28 +427,13 @@ export const CustomDuration: Story = {
 		<div className="flex flex-col items-center gap-4">
 			<Toaster />
 			<div className="flex flex-col gap-2">
-				<Button
-					onClick={() =>
-						toast("Short duration toast", { duration: 2000 })
-					}
-					variant="default"
-				>
+				<Button onClick={() => toast("Short duration toast", { duration: 2000 })} variant="default">
 					2 Seconds
 				</Button>
-				<Button
-					onClick={() =>
-						toast("Long duration toast", { duration: 10000 })
-					}
-					variant="default"
-				>
+				<Button onClick={() => toast("Long duration toast", { duration: 10000 })} variant="default">
 					10 Seconds
 				</Button>
-				<Button
-					onClick={() =>
-						toast("Persistent toast", { duration: Infinity })
-					}
-					variant="outline"
-				>
+				<Button onClick={() => toast("Persistent toast", { duration: Infinity })} variant="outline">
 					Persistent (No Auto-dismiss)
 				</Button>
 			</div>
@@ -493,8 +442,7 @@ export const CustomDuration: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toasts with custom durations, including persistent toasts that don't auto-dismiss.",
+				story: "Toasts with custom durations, including persistent toasts that don't auto-dismiss.",
 			},
 		},
 	},
@@ -543,8 +491,7 @@ export const WithActions: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toasts with action buttons and optional cancel buttons for user interaction.",
+				story: "Toasts with action buttons and optional cancel buttons for user interaction.",
 			},
 		},
 	},
@@ -555,28 +502,16 @@ export const RichColors: Story = {
 		<div className="flex flex-col items-center gap-4">
 			<Toaster richColors />
 			<div className="flex flex-wrap items-center gap-2">
-				<Button
-					onClick={() => toast.success("Success with rich colors")}
-					variant="default"
-				>
+				<Button onClick={() => toast.success("Success with rich colors")} variant="default">
 					Success
 				</Button>
-				<Button
-					onClick={() => toast.error("Error with rich colors")}
-					variant="destructive"
-				>
+				<Button onClick={() => toast.error("Error with rich colors")} variant="destructive">
 					Error
 				</Button>
-				<Button
-					onClick={() => toast.info("Info with rich colors")}
-					variant="outline"
-				>
+				<Button onClick={() => toast.info("Info with rich colors")} variant="outline">
 					Info
 				</Button>
-				<Button
-					onClick={() => toast.warning("Warning with rich colors")}
-					variant="outline"
-				>
+				<Button onClick={() => toast.warning("Warning with rich colors")} variant="outline">
 					Warning
 				</Button>
 			</div>
@@ -585,8 +520,7 @@ export const RichColors: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toasts with rich colors enabled for better visual distinction.",
+				story: "Toasts with rich colors enabled for better visual distinction.",
 			},
 		},
 	},

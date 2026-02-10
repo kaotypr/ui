@@ -18,8 +18,7 @@ const meta = {
 	argTypes: {
 		// Base UI Props
 		name: {
-			description:
-				"Identifies the field when a form is submitted.",
+			description: "Identifies the field when a form is submitted.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -48,12 +47,10 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the checkbox is ticked or unticked.",
+			description: "Event handler called when the checkbox is ticked or unticked.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Checkbox.Root.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Checkbox.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -61,8 +58,7 @@ const meta = {
 			action: "onCheckedChange",
 		},
 		indeterminate: {
-			description:
-				"Whether the checkbox is in a mixed state: neither ticked, nor unticked.",
+			description: "Whether the checkbox is in a mixed state: neither ticked, nor unticked.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -110,8 +106,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -120,8 +115,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		readOnly: {
-			description:
-				"Whether the user should be unable to tick or untick the checkbox.",
+			description: "Whether the user should be unable to tick or untick the checkbox.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -130,8 +124,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must tick the checkbox before submitting a form.",
+			description: "Whether the user must tick the checkbox before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -147,6 +140,15 @@ const meta = {
 				category: "Base UI Props",
 			},
 			control: { type: "text" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		// Styling
 		className: {
@@ -185,8 +187,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default checkbox in an uncontrolled state with a label.",
+				story: "Default checkbox in an uncontrolled state with a label.",
 			},
 		},
 	},
@@ -229,8 +230,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled checkbox using `checked` and `onCheckedChange` props with React state.",
+				story: "Controlled checkbox using `checked` and `onCheckedChange` props with React state.",
 			},
 		},
 	},
@@ -252,8 +252,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Disabled checkboxes in both unchecked and checked states.",
+				story: "Disabled checkboxes in both unchecked and checked states.",
 			},
 		},
 	},
@@ -350,8 +349,7 @@ export const Required: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Required checkbox that must be checked before form submission.",
+				story: "Required checkbox that must be checked before form submission.",
 			},
 		},
 	},
@@ -373,8 +371,7 @@ export const ReadOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Read-only checkboxes that cannot be toggled by user interaction.",
+				story: "Read-only checkboxes that cannot be toggled by user interaction.",
 			},
 		},
 	},
@@ -388,8 +385,8 @@ export const WithForm: Story = {
 				const formData = new FormData(e.currentTarget)
 				alert(
 					`Form submitted with:\n- stayLoggedIn: ${formData.get(
-						"stayLoggedIn"
-					)}\n- newsletter: ${formData.get("newsletter")}`
+						"stayLoggedIn",
+					)}\n- newsletter: ${formData.get("newsletter")}`,
 				)
 			}}
 			className="flex flex-col gap-4"
@@ -402,10 +399,7 @@ export const WithForm: Story = {
 				<Checkbox name="newsletter" value="subscribe" />
 				<span>Subscribe to newsletter</span>
 			</label>
-			<button
-				type="submit"
-				className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-			>
+			<button type="submit" className="px-4 py-2 bg-primary text-primary-foreground rounded-md">
 				Submit
 			</button>
 		</form>
@@ -413,8 +407,7 @@ export const WithForm: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Checkboxes integrated in a form with `name` and `value` props for form submission.",
+				story: "Checkboxes integrated in a form with `name` and `value` props for form submission.",
 			},
 		},
 	},
@@ -453,6 +446,59 @@ export const States: Story = {
 		docs: {
 			description: {
 				story: "All checkbox states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Checkbox
+				render={<span role="checkbox" tabIndex={0} className="inline-flex" />}
+				nativeButton={false}
+			/>
+			<span>Custom span element as checkbox</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Checkbox
+				render={(props, state) => (
+					<button
+						{...props}
+						className={`size-5 rounded border-2 transition-colors ${
+							state.checked
+								? "border-green-600 bg-green-600"
+								: state.indeterminate
+									? "border-yellow-500 bg-yellow-500"
+									: "border-gray-400 bg-white"
+						}`}
+					>
+						{state.checked && <span className="text-white text-xs">✓</span>}
+						{state.indeterminate && <span className="text-white text-xs">−</span>}
+					</button>
+				)}
+			/>
+			<span>Custom styled checkbox with state</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `checked` (boolean), `indeterminate` (boolean), `disabled` (boolean), `readOnly` (boolean), and `required` (boolean).",
 			},
 		},
 	},

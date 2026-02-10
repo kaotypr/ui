@@ -55,7 +55,8 @@ const meta = {
 			control: { type: "text" },
 		},
 		children: {
-			description: "The card content, typically composed of CardHeader, CardContent, and CardFooter.",
+			description:
+				"The card content, typically composed of CardHeader, CardContent, and CardFooter.",
 			table: {
 				type: { summary: "React.ReactNode" },
 				defaultValue: { summary: "undefined" },
@@ -84,8 +85,7 @@ export const Default: Story = {
 			</CardHeader>
 			<CardContent>
 				<p className="text-sm text-muted-foreground">
-					This is the main content area of the card. You can place any content
-					here.
+					This is the main content area of the card. You can place any content here.
 				</p>
 			</CardContent>
 			<CardFooter>
@@ -147,9 +147,7 @@ export const WithImage: Story = {
 			/>
 			<CardHeader>
 				<CardTitle>Card with Image</CardTitle>
-				<CardDescription>
-					A card that includes an image at the top.
-				</CardDescription>
+				<CardDescription>A card that includes an image at the top.</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<p className="text-sm text-muted-foreground">
@@ -174,9 +172,7 @@ export const Simple: Story = {
 	render: (args) => (
 		<Card {...args} className="w-[350px]">
 			<CardContent className="pt-6">
-				<p className="text-sm">
-					A simple card with only content, no header or footer.
-				</p>
+				<p className="text-sm">A simple card with only content, no header or footer.</p>
 			</CardContent>
 		</Card>
 	),
@@ -257,7 +253,8 @@ export const Interactive: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Card with multiple interactive elements including header action and footer buttons.",
+				story:
+					"Card with multiple interactive elements including header action and footer buttons.",
 			},
 		},
 	},

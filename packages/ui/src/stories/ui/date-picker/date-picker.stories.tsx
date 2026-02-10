@@ -32,8 +32,7 @@ This component is built on top of [React Day Picker](https://daypicker.dev/), an
 	argTypes: {
 		// Value control
 		value: {
-			description:
-				"The controlled value of the selected date. Can be a Date object or ISO string.",
+			description: "The controlled value of the selected date. Can be a Date object or ISO string.",
 			table: {
 				type: { summary: "Date | string" },
 				defaultValue: { summary: "undefined" },
@@ -146,8 +145,7 @@ This component is built on top of [React Day Picker](https://daypicker.dev/), an
 				'Props to pass to the underlying Calendar component. Excludes "selected", "onSelect", and "mode" which are managed internally.',
 			table: {
 				type: {
-					summary:
-						'Omit<CalendarProps, "selected" | "onSelect" | "mode">',
+					summary: 'Omit<CalendarProps, "selected" | "onSelect" | "mode">',
 				},
 				category: "Props",
 			},
@@ -239,8 +237,7 @@ export const Clearable: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Set `clearable` to true to show a clear button when a date is selected.",
+				story: "Set `clearable` to true to show a clear button when a date is selected.",
 			},
 		},
 	},
@@ -278,8 +275,7 @@ export const WithTime: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Enable time selection with `showTime`. By default, shows hours and minutes inputs.",
+				story: "Enable time selection with `showTime`. By default, shows hours and minutes inputs.",
 			},
 		},
 	},
@@ -296,8 +292,7 @@ export const WithTimeAndSeconds: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Add seconds input with `showSeconds` when `showTime` is enabled.",
+				story: "Add seconds input with `showSeconds` when `showTime` is enabled.",
 			},
 		},
 	},
@@ -314,8 +309,7 @@ export const HoursOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Show only hours by setting `showMinutes` to false when `showTime` is enabled.",
+				story: "Show only hours by setting `showMinutes` to false when `showTime` is enabled.",
 			},
 		},
 	},
@@ -326,13 +320,9 @@ const ControlledWrapper = () => {
 
 	return (
 		<div className="flex flex-col gap-4">
-			<DatePicker
-				value={date}
-				onValueChange={setDate}
-				placeholder="Controlled date picker"
-			/>
+			<DatePicker value={date} onValueChange={setDate} placeholder="Controlled date picker" />
 			<div className="text-sm text-muted-foreground">
-				Selected: {date instanceof Date ? date.toISOString() : date ?? "None"}
+				Selected: {date instanceof Date ? date.toISOString() : (date ?? "None")}
 			</div>
 		</div>
 	)
@@ -344,25 +334,18 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Example of controlled state using `value` and `onValueChange`.",
+				story: "Example of controlled state using `value` and `onValueChange`.",
 			},
 		},
 	},
 }
 
 const ISOStringWrapper = () => {
-	const [date, setDate] = useState<Date | string | undefined>(
-		new Date().toISOString()
-	)
+	const [date, setDate] = useState<Date | string | undefined>(new Date().toISOString())
 
 	return (
 		<div className="flex flex-col gap-4">
-			<DatePicker
-				value={date}
-				onValueChange={setDate}
-				placeholder="ISO string value"
-			/>
+			<DatePicker value={date} onValueChange={setDate} placeholder="ISO string value" />
 			<div className="text-sm text-muted-foreground">
 				Value type: {typeof date}
 				<br />
@@ -455,8 +438,7 @@ export const MultipleMonths: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Display multiple months with `calendarProps.numberOfMonths`.",
+				story: "Display multiple months with `calendarProps.numberOfMonths`.",
 			},
 		},
 	},
@@ -472,8 +454,7 @@ export const WithWeekNumbers: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Show week numbers with `calendarProps.showWeekNumber`.",
+				story: "Show week numbers with `calendarProps.showWeekNumber`.",
 			},
 		},
 	},
@@ -487,8 +468,7 @@ export const CustomWidth: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Use `className` to customize the trigger button width and styling.",
+				story: "Use `className` to customize the trigger button width and styling.",
 			},
 		},
 	},
@@ -507,8 +487,7 @@ export const With12HourFormat: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.",
+				story: "Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.",
 			},
 		},
 	},
@@ -530,8 +509,7 @@ export const WithStepIntervals: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Customize step intervals for hours, minutes, and seconds using `timePickerProps`.",
+				story: "Customize step intervals for hours, minutes, and seconds using `timePickerProps`.",
 			},
 		},
 	},

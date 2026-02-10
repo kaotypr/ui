@@ -28,9 +28,17 @@ const meta = {
 			options: ["sm", "default"],
 		},
 		// Base UI Props
-		name: {
+		render: {
 			description:
-				"Identifies the field when a form is submitted.",
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
+		name: {
+			description: "Identifies the field when a form is submitted.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -59,12 +67,10 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the switch is activated or deactivated.",
+			description: "Event handler called when the switch is activated or deactivated.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -73,7 +79,7 @@ const meta = {
 		},
 		value: {
 			description:
-				"The value submitted with the form when the switch is on. By default, switch submits the \"on\" value, matching native checkbox behavior.",
+				'The value submitted with the form when the switch is on. By default, switch submits the "on" value, matching native checkbox behavior.',
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -102,8 +108,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -112,8 +117,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		readOnly: {
-			description:
-				"Whether the user should be unable to activate or deactivate the switch.",
+			description: "Whether the user should be unable to activate or deactivate the switch.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -122,8 +126,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must activate the switch before submitting a form.",
+			description: "Whether the user must activate the switch before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -177,8 +180,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default switch in an uncontrolled state with a label.",
+				story: "Default switch in an uncontrolled state with a label.",
 			},
 		},
 	},
@@ -221,8 +223,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled switch using `checked` and `onCheckedChange` props with React state.",
+				story: "Controlled switch using `checked` and `onCheckedChange` props with React state.",
 			},
 		},
 	},
@@ -266,8 +267,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Disabled switches in both unchecked and checked states.",
+				story: "Disabled switches in both unchecked and checked states.",
 			},
 		},
 	},
@@ -289,8 +289,7 @@ export const ReadOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Read-only switches that cannot be toggled by user interaction.",
+				story: "Read-only switches that cannot be toggled by user interaction.",
 			},
 		},
 	},
@@ -309,8 +308,7 @@ export const Required: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Required switch that must be checked before form submission.",
+				story: "Required switch that must be checked before form submission.",
 			},
 		},
 	},
@@ -324,8 +322,8 @@ export const WithForm: Story = {
 				const formData = new FormData(e.currentTarget)
 				alert(
 					`Form submitted with:\n- notifications: ${formData.get(
-						"notifications"
-					)}\n- darkMode: ${formData.get("darkMode")}`
+						"notifications",
+					)}\n- darkMode: ${formData.get("darkMode")}`,
 				)
 			}}
 			className="flex flex-col gap-4"
@@ -338,10 +336,7 @@ export const WithForm: Story = {
 				<Switch name="darkMode" value="on" />
 				<span>Enable dark mode</span>
 			</label>
-			<button
-				type="submit"
-				className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-			>
+			<button type="submit" className="px-4 py-2 bg-primary text-primary-foreground rounded-md">
 				Submit
 			</button>
 		</form>
@@ -349,8 +344,7 @@ export const WithForm: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Switches integrated in a form with `name` and `value` props for form submission.",
+				story: "Switches integrated in a form with `name` and `value` props for form submission.",
 			},
 		},
 	},
@@ -389,6 +383,54 @@ export const States: Story = {
 		docs: {
 			description: {
 				story: "All switch states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<label className="flex items-center gap-2 cursor-pointer">
+			<Switch render={<div className="cursor-pointer" />} nativeButton={false} />
+			<span>Custom div switch</span>
+		</label>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [checked, setChecked] = useState(false)
+		return (
+			<label className="flex items-center gap-2 cursor-pointer">
+				<Switch
+					checked={checked}
+					onCheckedChange={setChecked}
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 ${
+								state.checked ? "bg-primary" : "bg-input"
+							}`}
+						/>
+					)}
+				/>
+				<span>{checked ? "Switch is ON" : "Switch is OFF"}</span>
+			</label>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `checked` (boolean), `disabled` (boolean), `readOnly` (boolean), and `required` (boolean).",
 			},
 		},
 	},

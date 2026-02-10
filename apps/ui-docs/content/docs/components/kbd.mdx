@@ -1,0 +1,56 @@
+---
+title: Kbd
+description: A keyboard key indicator component used to display keyboard shortcuts and key combinations.
+---
+
+## Usage
+
+<ComponentPreview name="kbd-demo" />
+
+## Import
+
+```tsx
+import { Kbd, KbdGroup } from "@kaotypr/ui/kbd"
+```
+
+## Examples
+
+### KbdGroup
+
+<ComponentPreview name="kbd-group" />
+
+### In a Button
+
+<ComponentPreview name="kbd-button" />
+
+### In Tooltip
+
+<ComponentPreview name="kbd-tooltip" />
+
+### In Input Group
+
+<ComponentPreview name="kbd-input-group" />
+
+## API Reference
+
+The Kbd components are custom UI primitives for displaying keyboard keys and shortcuts. They render semantic `<kbd>` elements with consistent styling.
+
+### Kbd
+
+Renders a single keyboard key indicator. Accepts all standard `<kbd>` HTML attributes.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The key label to display (e.g. "Ctrl", "Enter", "⌘") |
+| `className` | `string` | - | Additional CSS classes |
+| ... | `React.ComponentProps<"kbd">` | - | Any other HTML kbd attributes |
+
+### KbdGroup
+
+A container for grouping multiple `Kbd` components and separators (e.g. `+`) into a single shortcut. Renders a flex container. Accepts all standard `<div>` HTML attributes.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | `Kbd` components and separator elements (e.g. `<span>+</span>`) |
+| `className` | `string` | - | Additional CSS classes |
+| ... | `React.ComponentProps<"div">` | - | Any other HTML div attributes |

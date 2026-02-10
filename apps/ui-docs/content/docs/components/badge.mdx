@@ -1,0 +1,71 @@
+---
+title: Badge
+description: A small status descriptor for UI elements. Badges highlight an item's status for quick recognition.
+---
+
+## Usage
+
+<ComponentPreview name="badge-demo" />
+
+## Import
+
+```tsx
+import { Badge, badgeVariants } from "@kaotypr/ui/badge"
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="badge-variants" />
+
+### Custom Colors
+
+<ComponentPreview name="badge-colors" />
+
+### With Icon
+
+<ComponentPreview name="badge-icon" />
+
+Use `data-icon="inline-start"` or `data-icon="inline-end"` on the icon element for proper spacing.
+
+### As Link
+
+<ComponentPreview name="badge-link" />
+
+Render the badge as an anchor using the `render` prop. Hover styles are applied automatically.
+
+### With Spinner
+
+<ComponentPreview name="badge-spinner" />
+
+## API Reference
+
+This component uses [Base UI's useRender](https://base-ui.com/react/utils/use-render) for flexible rendering (e.g. as `<a>` or `<button>`).
+
+### Badge
+
+Renders a small status descriptor. By default renders as a `<span>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` | The visual variant of the badge |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Customize the rendered element (e.g. `<a href="#">` or `<button>`) |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Content to display inside the badge |
+
+All other props are forwarded to the underlying element (span, or the element from `render`).
+
+### badgeVariants
+
+A `class-variance-authority` (cva) helper. Use it when you need to apply badge styles to a custom element:
+
+```tsx
+import { badgeVariants } from "@kaotypr/ui/badge"
+
+<span className={badgeVariants({ variant: "secondary" })}>Custom</span>
+```
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` | The visual variant |

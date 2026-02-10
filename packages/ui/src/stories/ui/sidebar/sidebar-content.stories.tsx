@@ -10,13 +10,7 @@ import {
 	SidebarMenuButton,
 	SidebarSeparator,
 } from "~/components/ui/sidebar"
-import {
-	HouseIcon,
-	FileIcon,
-	GearIcon,
-	UserIcon,
-	BellIcon,
-} from "@phosphor-icons/react"
+import { HouseIcon, FileIcon, GearIcon, UserIcon, BellIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Sidebar/SidebarContent",
@@ -223,8 +217,7 @@ export const WithMultipleGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sidebar content organized into multiple groups with separators between them.",
+				story: "Sidebar content organized into multiple groups with separators between them.",
 			},
 		},
 	},

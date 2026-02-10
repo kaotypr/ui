@@ -77,8 +77,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk) an
 			control: { type: "boolean" },
 		},
 		defaultOpen: {
-			description:
-				"Whether the dialog is initially open (uncontrolled).",
+			description: "Whether the dialog is initially open (uncontrolled).",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -87,8 +86,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk) an
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the dialog open state changes.",
+			description: "Event handler called when the dialog open state changes.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -167,8 +165,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default CommandDialog with a button to open it and a command menu inside.",
+				story: "Default CommandDialog with a button to open it and a command menu inside.",
 			},
 		},
 	},
@@ -216,8 +213,7 @@ export const WithCustomTitle: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandDialog with custom title and description text.",
+				story: "CommandDialog with custom title and description text.",
 			},
 		},
 	},
@@ -234,11 +230,7 @@ export const WithCloseButton: Story = {
 		return (
 			<>
 				<Button onClick={() => setOpen(true)}>Open Command Menu</Button>
-				<CommandDialog
-					open={open}
-					onOpenChange={setOpen}
-					showCloseButton
-				>
+				<CommandDialog open={open} onOpenChange={setOpen} showCloseButton>
 					<Command value={value} onValueChange={setValue}>
 						<CommandInput placeholder="Type a command or search..." />
 						<CommandList>
@@ -264,8 +256,7 @@ export const WithCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandDialog with a visible close button in the top-right corner.",
+				story: "CommandDialog with a visible close button in the top-right corner.",
 			},
 		},
 	},

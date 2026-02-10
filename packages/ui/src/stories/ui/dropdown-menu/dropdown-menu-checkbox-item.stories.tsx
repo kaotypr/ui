@@ -54,12 +54,10 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		onCheckedChange: {
-			description:
-				"Event handler called when the checkbox item is ticked or unticked.",
+			description: "Event handler called when the checkbox item is ticked or unticked.",
 			table: {
 				type: {
-					summary:
-						"(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
+					summary: "(checked: boolean, eventDetails: Menu.CheckboxItem.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -85,8 +83,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -131,12 +128,8 @@ export const Default: Story = {
 					>
 						Show line numbers
 					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem checked={true}>
-						Word wrap
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem checked={false}>
-						Minimap
-					</DropdownMenuCheckboxItem>
+					<DropdownMenuCheckboxItem checked={true}>Word wrap</DropdownMenuCheckboxItem>
+					<DropdownMenuCheckboxItem checked={false}>Minimap</DropdownMenuCheckboxItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
 		)
@@ -161,12 +154,8 @@ export const Uncontrolled: Story = {
 					<DropdownMenuCheckboxItem defaultChecked={false}>
 						Show line numbers
 					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem defaultChecked={true}>
-						Word wrap
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem defaultChecked={false}>
-						Minimap
-					</DropdownMenuCheckboxItem>
+					<DropdownMenuCheckboxItem defaultChecked={true}>Word wrap</DropdownMenuCheckboxItem>
+					<DropdownMenuCheckboxItem defaultChecked={false}>Minimap</DropdownMenuCheckboxItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
 		)

@@ -12,13 +12,7 @@ import {
 	SidebarMenuAction,
 	SidebarRail,
 } from "~/components/ui/sidebar"
-import {
-	HouseIcon,
-	FileIcon,
-	GearIcon,
-	TrashIcon,
-	BellIcon,
-} from "@phosphor-icons/react"
+import { HouseIcon, FileIcon, GearIcon, TrashIcon, BellIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Sidebar/SidebarMenuButton",
@@ -66,8 +60,7 @@ The menu button supports active states, variants, sizes, and tooltips that appea
 			options: ["default", "sm", "lg"],
 		},
 		tooltip: {
-			description:
-				"Tooltip text or props. Tooltip appears when sidebar is collapsed.",
+			description: "Tooltip text or props. Tooltip appears when sidebar is collapsed.",
 			table: {
 				type: { summary: "string | TooltipContentProps" },
 				defaultValue: { summary: "undefined" },
@@ -282,8 +275,8 @@ export const WithAction: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							Menu buttons with action buttons. Hover over the second item to see
-							the action button appear.
+							Menu buttons with action buttons. Hover over the second item to see the action button
+							appear.
 						</p>
 					</div>
 				</main>
@@ -293,8 +286,7 @@ export const WithAction: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menu buttons with action buttons that can appear on hover or always visible.",
+				story: "Menu buttons with action buttons that can appear on hover or always visible.",
 			},
 		},
 	},
@@ -437,8 +429,7 @@ export const WithTooltip: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							When the sidebar is collapsed to icon-only mode, hover over the
-							icons to see tooltips.
+							When the sidebar is collapsed to icon-only mode, hover over the icons to see tooltips.
 						</p>
 					</div>
 				</main>

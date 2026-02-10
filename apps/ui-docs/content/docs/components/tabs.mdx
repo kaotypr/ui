@@ -1,0 +1,83 @@
+---
+title: Tabs
+description: A component for toggling between related panels on the same page.
+---
+
+## Usage
+
+<ComponentPreview name="tabs-demo" />
+
+## Import
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@kaotypr/ui/tabs"
+```
+
+## Examples
+
+### With Icons
+
+<ComponentPreview name="tabs-icons" />
+
+### Line Variant
+
+<ComponentPreview name="tabs-line" />
+
+### Vertical
+
+<ComponentPreview name="tabs-vertical" />
+
+### Disabled
+
+<ComponentPreview name="tabs-disabled" />
+
+## API Reference
+
+This component is built on top of [Base UI Tabs](https://base-ui.com/react/components/tabs).
+
+### Tabs
+
+The root component that wraps the tabs list and panels.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | The component orientation (layout flow direction). |
+| `defaultValue` | `Tabs.Tab.Value \| null` | - | The uncontrolled active tab value. When `null`, no tab will be active. |
+| `value` | `Tabs.Tab.Value \| null` | - | The controlled active tab value. When `null`, no tab will be active. |
+| `onValueChange` | `(value: Tabs.Tab.Value, eventDetails: Tabs.Root.ChangeEventDetails<"none", { activationDirection: Tabs.Tab.ActivationDirection }>) => void` | - | Callback invoked when a new value is being set. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the underlying element, or compose it with another component. |
+| `className` | `string` | - | Additional CSS class names to apply. |
+
+### TabsList
+
+Groups the individual tab buttons. Must be used within a `Tabs` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "line"` | `"default"` | The visual variant of the tabs list. |
+| `activateOnFocus` | `boolean` | `false` | Whether to automatically change the active tab on arrow key focus (instead of requiring Enter/Space). |
+| `loopFocus` | `boolean` | `true` | Whether to loop keyboard focus when reaching the start/end of the list. |
+| `className` | `string` | - | Additional CSS class names to apply. |
+
+### TabsTrigger
+
+An individual interactive tab button that toggles the corresponding panel. Must be used within a `Tabs` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `Tabs.Tab.Value` | **Required** | The value of the tab. Must match the corresponding `TabsContent` value. |
+| `disabled` | `boolean` | `false` | Whether the tab is disabled. |
+| `nativeButton` | `boolean` | `true` | Whether to render a native `<button>` when using the `render` prop. Set to `false` if the rendered element is not a button. |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the underlying element, or compose it with another component. |
+| `className` | `string` | - | Additional CSS class names to apply. |
+
+### TabsContent
+
+A panel displayed when the corresponding tab is active. Must be used within a `Tabs` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `Tabs.Tab.Value` | **Required** | The value of the panel. It will be shown when the tab with the corresponding value is active. |
+| `keepMounted` | `boolean` | `false` | Whether to keep the element in the DOM while the panel is hidden. |
+| `className` | `string` | - | Additional CSS class names to apply. |
+

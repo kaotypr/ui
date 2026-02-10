@@ -20,8 +20,7 @@ Must be used within a Tooltip component.`,
 	argTypes: {
 		// Base UI Props
 		handle: {
-			description:
-				"A handle to associate the trigger with a tooltip.",
+			description: "A handle to associate the trigger with a tooltip.",
 			table: {
 				type: { summary: "Tooltip.Handle<Payload>" },
 				defaultValue: { summary: "undefined" },
@@ -29,8 +28,7 @@ Must be used within a Tooltip component.`,
 			},
 		},
 		payload: {
-			description:
-				"A payload to pass to the tooltip when it is opened.",
+			description: "A payload to pass to the tooltip when it is opened.",
 			table: {
 				type: { summary: "Payload" },
 				defaultValue: { summary: "undefined" },
@@ -38,8 +36,7 @@ Must be used within a Tooltip component.`,
 			},
 		},
 		delay: {
-			description:
-				"How long to wait before opening the tooltip. Specified in milliseconds.",
+			description: "How long to wait before opening the tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "600" },
@@ -48,14 +45,32 @@ Must be used within a Tooltip component.`,
 			control: { type: "number" },
 		},
 		closeDelay: {
-			description:
-				"How long to wait before closing the tooltip. Specified in milliseconds.",
+			description: "How long to wait before closing the tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
 				category: "Base UI Props",
 			},
 			control: { type: "number" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
+		nativeButton: {
+			description:
+				"Whether the component renders a native `<button>` element when replacing it via the `render` prop. Set to `false` if the rendered element is not a button (e.g. `<div>`).",
+			table: {
+				type: { summary: "boolean" },
+				defaultValue: { summary: "true" },
+				category: "Base UI Props",
+			},
+			control: { type: "boolean" },
 		},
 		// Styling
 		className: {
@@ -71,8 +86,7 @@ Must be used within a Tooltip component.`,
 			description: "Inline styles to apply.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Tooltip.Trigger.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Tooltip.Trigger.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -102,8 +116,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default tooltip trigger using a Button component with the ` prop.",
+				story: "Default tooltip trigger using a Button component with the ` prop.",
 			},
 		},
 	},
@@ -126,8 +139,7 @@ export const WithCustomDelay: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tooltip trigger with a custom delay of 1000ms before the tooltip appears.",
+				story: "Tooltip trigger with a custom delay of 1000ms before the tooltip appears.",
 			},
 		},
 	},
@@ -210,8 +222,57 @@ export const AsNativeButton: Story = {
 	parameters: {
 		docs: {
 			description: {
+				story: "TooltipTrigger used as a native button element without the ` prop.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Tooltip>
+			<TooltipTrigger
+				render={<span className="cursor-help underline decoration-dotted" />}
+				nativeButton={false}
+			>
+				Hover this text
+			</TooltipTrigger>
+			<TooltipContent>
+				<p>Tooltip attached to a span element</p>
+			</TooltipContent>
+		</Tooltip>
+	),
+	parameters: {
+		docs: {
+			description: {
 				story:
-					"TooltipTrigger used as a native button element without the ` prop.",
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<Tooltip>
+			<TooltipTrigger
+				render={(props, state) => (
+					<Button {...props} variant={state.open ? "default" : "outline"}>
+						<InfoIcon />
+						{state.open ? "Tooltip is open" : "Hover me"}
+					</Button>
+				)}
+			/>
+			<TooltipContent>
+				<p>Tooltip using render function to access open state</p>
+			</TooltipContent>
+		</Tooltip>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean).",
 			},
 		},
 	},

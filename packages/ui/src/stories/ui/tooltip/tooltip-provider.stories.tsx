@@ -20,8 +20,7 @@ Must be used as a parent component to provide delay configuration for child Tool
 	argTypes: {
 		// Base UI Props
 		delay: {
-			description:
-				"How long to wait before opening a tooltip. Specified in milliseconds.",
+			description: "How long to wait before opening a tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "undefined" },
@@ -30,8 +29,7 @@ Must be used as a parent component to provide delay configuration for child Tool
 			control: { type: "number" },
 		},
 		closeDelay: {
-			description:
-				"How long to wait before closing a tooltip. Specified in milliseconds.",
+			description: "How long to wait before closing a tooltip. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "undefined" },

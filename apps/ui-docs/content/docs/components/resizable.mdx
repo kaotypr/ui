@@ -1,0 +1,75 @@
+---
+title: Resizable
+description: A set of components for creating resizable panel layouts that can be adjusted by dragging.
+---
+
+## Usage
+
+<ComponentPreview name="resizable-demo" />
+
+## Import
+
+```tsx
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from "@kaotypr/ui/resizable"
+```
+
+## Examples
+
+### Vertical
+
+<ComponentPreview name="resizable-vertical" />
+
+### With Handle
+
+<ComponentPreview name="resizable-handle" />
+
+## API Reference
+
+This component is built on top of [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels).
+
+### ResizablePanelGroup
+
+Wraps a set of resizable Panel components. Group content can be resized horizontally or vertically. Must contain `ResizablePanel` and `ResizableHandle` components as direct children.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Specifies the resizable orientation |
+| `defaultLayout` | `number[]` | - | Default layout for the Group. Allows layouts to be remembered between page reloads |
+| `disabled` | `boolean` | `false` | Disable resize functionality |
+| `disableCursor` | `boolean` | `false` | Disable custom mouse cursor styles for drag state on Panels and Separators in this group |
+| `id` | `string` | - | Uniquely identifies this group within an application. Falls back to useId when not provided |
+| `onLayoutChange` | `(layout: number[]) => void` | - | Called when the Group's layout is changing (e.g. each time the pointer is moved during drag) |
+| `onLayoutChanged` | `(layout: number[]) => void` | - | Called after the Group's layout has changed (e.g. when the pointer is released) |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `style` | `React.CSSProperties` | - | Inline styles to apply |
+
+### ResizablePanel
+
+Wraps resizable content and can be configured with min/max size constraints and collapsible behavior. Must be used within a `ResizablePanelGroup`. Panel elements must be direct DOM children of their parent Group.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultSize` | `number` | - | Default size of Panel within its parent group (percentage). Auto-assigned based on total number of Panels when not provided |
+| `minSize` | `number` | `0` | Minimum size of Panel within its parent group (percentage) |
+| `maxSize` | `number` | `100` | Maximum size of Panel within its parent group (percentage) |
+| `collapsible` | `boolean` | `false` | Whether this panel can be collapsed. When resized below minSize, it collapses to collapsedSize |
+| `collapsedSize` | `number` | `0` | Panel size when collapsed (percentage) |
+| `id` | `string` | - | Uniquely identifies this panel within the parent group. Falls back to useId when not provided |
+| `onResize` | `(panelSize, id, prevPanelSize) => void` | - | Called when panel sizes change. Receives panel size (percentage and pixels), id, and previous panel size |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `style` | `React.CSSProperties` | - | Inline styles to apply |
+
+### ResizableHandle
+
+A separator between panels that enables resizing. Recommended for improved keyboard accessibility. Must be used within a `ResizablePanelGroup`. Separator elements must be direct DOM children of their parent Group.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `withHandle` | `boolean` | `false` | Whether to show a visible handle indicator on the separator |
+| `id` | `string` | - | Uniquely identifies the separator within the parent group. Falls back to useId when not provided |
+| `className` | `string` | - | Additional CSS class names to apply |
+| `style` | `React.CSSProperties` | - | Inline styles to apply |

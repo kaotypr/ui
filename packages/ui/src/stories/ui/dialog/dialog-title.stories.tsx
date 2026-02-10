@@ -26,6 +26,15 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 		},
 	},
 	argTypes: {
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -90,8 +99,7 @@ export const LongTitle: Story = {
 				<DialogContent>
 					<DialogHeader>
 						<DialogTitle>
-							This is a very long dialog title that wraps to multiple lines
-							when needed
+							This is a very long dialog title that wraps to multiple lines when needed
 						</DialogTitle>
 						<DialogDescription>
 							The title will wrap gracefully to accommodate longer text.

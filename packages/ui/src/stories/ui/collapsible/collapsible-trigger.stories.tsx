@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CaretDownIcon } from "@phosphor-icons/react"
 
-import {
-	Collapsible,
-	CollapsibleTrigger,
-	CollapsibleContent,
-} from "~/components/ui/collapsible"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "~/components/ui/collapsible"
 
 const meta = {
 	title: "UI/Collapsible/CollapsibleTrigger",
@@ -30,6 +26,15 @@ const meta = {
 				category: "Base UI Props",
 			},
 			control: { type: "boolean" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		className: {
 			description: "Additional CSS class names to apply",
@@ -78,8 +83,7 @@ export const Default: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						Yes. Free to use for personal and commercial projects. No
-						attribution required.
+						Yes. Free to use for personal and commercial projects. No attribution required.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -88,8 +92,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default trigger button with text and an icon that rotates when the panel is open.",
+				story: "Default trigger button with text and an icon that rotates when the panel is open.",
 			},
 		},
 	},
@@ -108,8 +111,7 @@ export const WithCustomStyling: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						This trigger has custom styling with primary background color and
-						enhanced padding.
+						This trigger has custom styling with primary background color and enhanced padding.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -147,8 +149,74 @@ export const Minimal: Story = {
 	parameters: {
 		docs: {
 			description: {
+				story: "Minimal trigger with reduced padding and subtle styling for compact layouts.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<div className="w-[350px]">
+			<Collapsible>
+				<CollapsibleTrigger
+					render={<div className="cursor-pointer" />}
+					nativeButton={false}
+					className="flex w-full items-center justify-between rounded-md border px-4 py-2 text-left font-medium transition-colors hover:bg-accent"
+				>
+					<span>Click this div to toggle</span>
+					<CaretDownIcon className="h-4 w-4 transition-transform duration-200 data-[panel-open]:rotate-180" />
+				</CollapsibleTrigger>
+				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+					<div className="px-4 py-2 text-sm text-muted-foreground">
+						The trigger is rendered as a div element instead of a button.
+					</div>
+				</CollapsibleContent>
+			</Collapsible>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
 				story:
-					"Minimal trigger with reduced padding and subtle styling for compact layouts.",
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<div className="w-[350px]">
+			<Collapsible>
+				<CollapsibleTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`flex w-full items-center justify-between rounded-md border px-4 py-2 text-left font-medium transition-colors ${
+								state.open ? "bg-accent border-accent" : "hover:bg-accent/50"
+							}`}
+						>
+							<span>{state.open ? "Click to collapse" : "Click to expand"}</span>
+							<CaretDownIcon
+								className={`h-4 w-4 transition-transform duration-200 ${state.open ? "rotate-180" : ""}`}
+							/>
+						</button>
+					)}
+				/>
+				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
+					<div className="px-4 py-2 text-sm text-muted-foreground">
+						The trigger uses a render function to access the `open` state.
+					</div>
+				</CollapsibleContent>
+			</Collapsible>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean), `disabled` (boolean), and `transitionStatus` ('entering' | 'exiting' | undefined).",
 			},
 		},
 	},

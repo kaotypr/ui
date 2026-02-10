@@ -55,8 +55,7 @@ This component is built on top of [Base UI Combobox.Item](https://base-ui.com/re
 			control: { type: "boolean" },
 		},
 		index: {
-			description:
-				"The index of the item in the list. Improves performance when specified.",
+			description: "The index of the item in the list. Improves performance when specified.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "undefined" },
@@ -65,8 +64,7 @@ This component is built on top of [Base UI Combobox.Item](https://base-ui.com/re
 			control: { type: "number" },
 		},
 		onClick: {
-			description:
-				"An optional click handler for the item when selected.",
+			description: "An optional click handler for the item when selected.",
 			table: {
 				type: { summary: "MouseEventHandler<HTMLDivElement>" },
 				defaultValue: { summary: "undefined" },
@@ -198,10 +196,7 @@ export const DisabledItem: Story = {
 					<ComboboxContent>
 						<ComboboxList>
 							{(item: (typeof fruits)[number]) => (
-								<ComboboxItem
-									value={item.value}
-									disabled={item.value === "banana"}
-								>
+								<ComboboxItem value={item.value} disabled={item.value === "banana"}>
 									{item.label}
 									{item.value === "banana" && " (unavailable)"}
 								</ComboboxItem>
@@ -248,9 +243,7 @@ export const WithDescription: Story = {
 								<ComboboxItem value={item.value}>
 									<div className="flex flex-col gap-0.5">
 										<span className="font-medium">{item.label}</span>
-										<span className="text-muted-foreground text-xs">
-											{item.description}
-										</span>
+										<span className="text-muted-foreground text-xs">{item.description}</span>
 									</div>
 								</ComboboxItem>
 							)}

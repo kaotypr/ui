@@ -48,8 +48,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "boolean" },
 		},
 		payload: {
-			description:
-				"A payload to pass to the popover when it is opened.",
+			description: "A payload to pass to the popover when it is opened.",
 			table: {
 				type: { summary: "any" },
 				defaultValue: { summary: "undefined" },
@@ -58,8 +57,7 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 			control: { type: "object" },
 		},
 		openOnHover: {
-			description:
-				"Whether the popover should also open when the trigger is hovered.",
+			description: "Whether the popover should also open when the trigger is hovered.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -96,6 +94,15 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 				category: "Base UI Props",
 			},
 			control: { type: "text" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		// Styling
 		className: {
@@ -158,9 +165,7 @@ export const WithIcon: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>Information</PopoverTitle>
-						<PopoverDescription>
-							Trigger with an icon to provide visual context.
-						</PopoverDescription>
+						<PopoverDescription>Trigger with an icon to provide visual context.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>
@@ -198,8 +203,7 @@ export const OpenOnHover: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger that opens the popover on hover with custom delay settings.",
+				story: "Trigger that opens the popover on hover with custom delay settings.",
 			},
 		},
 	},
@@ -222,9 +226,7 @@ export const CustomStyling: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>Custom Styled Trigger</PopoverTitle>
-						<PopoverDescription>
-							The trigger can be styled with custom classes.
-						</PopoverDescription>
+						<PopoverDescription>The trigger can be styled with custom classes.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>
@@ -234,6 +236,78 @@ export const CustomStyling: Story = {
 		docs: {
 			description: {
 				story: "Trigger with custom styling applied via className.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger
+					render={<span className="cursor-pointer text-blue-600 underline hover:text-blue-800" />}
+					nativeButton={false}
+				>
+					Click for more info
+				</PopoverTrigger>
+				<PopoverContent>
+					<PopoverHeader>
+						<PopoverTitle>Custom Element Trigger</PopoverTitle>
+						<PopoverDescription>
+							The trigger is rendered as a span element instead of a button.
+						</PopoverDescription>
+					</PopoverHeader>
+				</PopoverContent>
+			</Popover>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+
+		return (
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`rounded px-4 py-2 font-medium transition-colors ${
+								state.open ? "bg-blue-700 text-white" : "bg-blue-600 text-white hover:bg-blue-700"
+							}`}
+						>
+							{state.open ? "Popover Open" : "Click to Open"}
+						</button>
+					)}
+				/>
+				<PopoverContent>
+					<PopoverHeader>
+						<PopoverTitle>State-Aware Trigger</PopoverTitle>
+						<PopoverDescription>
+							The trigger text and style change based on the popover's open state.
+						</PopoverDescription>
+					</PopoverHeader>
+				</PopoverContent>
+			</Popover>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean) indicating if the popover is currently open.",
 			},
 		},
 	},

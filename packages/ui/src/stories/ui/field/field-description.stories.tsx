@@ -1,10 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	Field,
-	FieldLabel,
-	FieldDescription,
-	FieldContent,
-} from "~/components/ui/field"
+import { Field, FieldLabel, FieldDescription, FieldContent } from "~/components/ui/field"
 import { Input } from "~/components/ui/input"
 
 const meta = {
@@ -44,9 +39,7 @@ export const Default: Story = {
 			<FieldContent>
 				<Input id="email" type="email" placeholder="Enter your email" />
 			</FieldContent>
-			<FieldDescription {...args}>
-				We'll never share your email with anyone else.
-			</FieldDescription>
+			<FieldDescription {...args}>We'll never share your email with anyone else.</FieldDescription>
 		</Field>
 	),
 	parameters: {
@@ -66,8 +59,7 @@ export const WithLink: Story = {
 				<Input id="password" type="password" placeholder="Enter password" />
 			</FieldContent>
 			<FieldDescription {...args}>
-				Must be at least 8 characters.{" "}
-				<a href="#password-requirements">View requirements</a>
+				Must be at least 8 characters. <a href="#password-requirements">View requirements</a>
 			</FieldDescription>
 		</Field>
 	),
@@ -87,12 +79,8 @@ export const MultipleDescriptions: Story = {
 			<FieldContent>
 				<Input id="username" placeholder="johndoe" />
 			</FieldContent>
-			<FieldDescription {...args}>
-				Choose a unique username for your account.
-			</FieldDescription>
-			<FieldDescription {...args}>
-				This will be visible to other users.
-			</FieldDescription>
+			<FieldDescription {...args}>Choose a unique username for your account.</FieldDescription>
+			<FieldDescription {...args}>This will be visible to other users.</FieldDescription>
 		</Field>
 	),
 	parameters: {

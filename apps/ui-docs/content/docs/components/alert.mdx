@@ -1,0 +1,86 @@
+---
+title: Alert
+description: A component for displaying important messages to users with optional title, description, icon, and action.
+---
+
+## Usage
+
+<ComponentPreview name="alert-demo" />
+
+## Import
+
+```tsx
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  AlertAction,
+} from "@kaotypr/ui/alert"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="alert-basic" />
+
+### Destructive
+
+<ComponentPreview name="alert-destructive" />
+
+### With Action
+
+<ComponentPreview name="alert-action" />
+
+### Custom Colors
+
+<ComponentPreview name="alert-colors" />
+
+## API Reference
+
+The Alert component is a custom composition built with class-variance-authority (CVA). It does not wrap a third-party library.
+
+### Alert
+
+The root container for the alert. Renders a `div` with `role="alert"` for accessibility.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive"` | `"default"` | The visual variant of the alert |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | The contents of the alert (e.g. icon, AlertTitle, AlertDescription, AlertAction) |
+
+Also accepts all standard `div` HTML attributes.
+
+### AlertTitle
+
+The heading element that labels the alert. Must be used inside an `Alert` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The title content; can include links |
+| `className` | `string` | - | Additional CSS class names |
+
+Also accepts all standard `div` HTML attributes.
+
+### AlertDescription
+
+The description text providing additional details. Must be used inside an `Alert` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The description content; supports multiple paragraphs and links |
+| `className` | `string` | - | Additional CSS class names |
+
+Also accepts all standard `div` HTML attributes.
+
+### AlertAction
+
+Optional slot for an action (e.g. dismiss or primary button) positioned in the top-right corner. Must be used inside an `Alert` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Typically a `Button` or icon button |
+| `className` | `string` | - | Additional CSS class names |
+
+Also accepts all standard `div` HTML attributes.

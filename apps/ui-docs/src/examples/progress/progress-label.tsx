@@ -1,0 +1,12 @@
+"use client"
+
+import { Progress, ProgressLabel, ProgressValue } from "@kaotypr/ui/progress"
+
+export function ProgressWithLabel() {
+  return (
+    <Progress value={56} className="w-full max-w-sm">
+      <ProgressLabel>Upload progress</ProgressLabel>
+      <ProgressValue />
+    </Progress>
+  )
+}

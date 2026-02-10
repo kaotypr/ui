@@ -2,11 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
 import { CaretDownIcon } from "@phosphor-icons/react"
 
-import {
-	Collapsible,
-	CollapsibleTrigger,
-	CollapsibleContent,
-} from "~/components/ui/collapsible"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "~/components/ui/collapsible"
 
 const meta = {
 	title: "UI/Collapsible",
@@ -43,12 +39,10 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the panel is opened or closed.",
+			description: "Event handler called when the panel is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Collapsible.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Collapsible.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -56,14 +50,22 @@ const meta = {
 			action: "onOpenChange",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
 				category: "Base UI Props",
 			},
 			control: { type: "boolean" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		className: {
 			description: "Additional CSS class names to apply",
@@ -100,8 +102,7 @@ export const Default: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						Yes. Free to use for personal and commercial projects. No
-						attribution required.
+						Yes. Free to use for personal and commercial projects. No attribution required.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -110,8 +111,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default collapsible with a trigger button and collapsible content.",
+				story: "Default collapsible with a trigger button and collapsible content.",
 			},
 		},
 	},
@@ -127,8 +127,7 @@ export const Uncontrolled: Story = {
 				</CollapsibleTrigger>
 				<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						This project is licensed under the MIT License. You can use it
-						freely in your projects.
+						This project is licensed under the MIT License. You can use it freely in your projects.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -140,8 +139,7 @@ export const Uncontrolled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Uncontrolled collapsible that starts open using the `defaultOpen` prop.",
+				story: "Uncontrolled collapsible that starts open using the `defaultOpen` prop.",
 			},
 		},
 	},
@@ -166,8 +164,8 @@ export const Controlled: Story = {
 					</CollapsibleTrigger>
 					<CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
 						<div className="px-4 py-2 text-sm text-muted-foreground">
-							Install the package and import the components you need. Check
-							the documentation for detailed examples.
+							Install the package and import the components you need. Check the documentation for
+							detailed examples.
 						</div>
 					</CollapsibleContent>
 				</Collapsible>
@@ -177,8 +175,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled collapsible using the `open` and `onOpenChange` props with React state.",
+				story: "Controlled collapsible using the `open` and `onOpenChange` props with React state.",
 			},
 		},
 	},
@@ -206,8 +203,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Collapsible with the `disabled` prop set to true, preventing user interaction.",
+				story: "Collapsible with the `disabled` prop set to true, preventing user interaction.",
 			},
 		},
 	},

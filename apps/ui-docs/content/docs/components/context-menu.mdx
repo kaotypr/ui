@@ -1,0 +1,204 @@
+---
+title: Context Menu
+description: A menu that appears at the pointer on right click or long press.
+---
+
+## Usage
+
+<ComponentPreview name="context-menu-demo" />
+
+## Import
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+} from "@kaotypr/ui/context-menu"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="context-menu-basic" />
+
+### With Groups and Labels
+
+<ComponentPreview name="context-menu-groups" />
+
+### With Icons
+
+<ComponentPreview name="context-menu-icons" />
+
+### With Shortcuts
+
+<ComponentPreview name="context-menu-shortcuts" />
+
+### Submenu
+
+<ComponentPreview name="context-menu-submenu" />
+
+### Checkboxes
+
+<ComponentPreview name="context-menu-checkboxes" />
+
+### Radio Group
+
+<ComponentPreview name="context-menu-radio" />
+
+### Destructive Item
+
+<ComponentPreview name="context-menu-destructive" />
+
+### Sides
+
+<ComponentPreview name="context-menu-sides" />
+
+## API Reference
+
+This component is built on top of [Base UI Context Menu](https://base-ui.com/react/components/context-menu).
+
+### ContextMenu
+
+The root component that wraps the trigger and content. Opens on right click or long press.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Whether the menu is currently open (controlled) |
+| `defaultOpen` | `boolean` | `false` | Whether the menu is initially open (uncontrolled) |
+| `onOpenChange` | `(open: boolean, eventDetails) => void` | - | Event handler called when the menu is opened or closed |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after close animations complete |
+| `highlightItemOnHover` | `boolean` | `true` | Whether moving the pointer over items highlights them |
+| `closeParentOnEsc` | `boolean` | `false` | Whether Escape closes the entire menu from a submenu |
+| `loopFocus` | `boolean` | `true` | Whether arrow keys loop focus at list boundaries |
+| `disabled` | `boolean` | `false` | Whether the component ignores user interaction |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Visual orientation and arrow-key direction |
+
+### ContextMenuTrigger
+
+The area that opens the menu on right click or long press. Must be used within `ContextMenu`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content |
+| `className` | `string` | - | CSS class applied to the element |
+
+### ContextMenuContent
+
+The container for menu items. Must be used within `ContextMenu`. Renders in a portal with positioning.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | How to align the popup relative to the specified side |
+| `alignOffset` | `number` | `4` | Offset along the alignment axis in pixels |
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"right"` | Which side of the anchor to align the popup against |
+| `sideOffset` | `number` | `0` | Distance between the anchor and the popup in pixels |
+| `className` | `string` | - | CSS class applied to the popup |
+
+### ContextMenuItem
+
+An individual interactive item in the menu. Must be used within `ContextMenuContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Visual variant; use `destructive` for dangerous actions |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `true` | Whether to close the menu when the item is clicked |
+| `label` | `string` | - | Override for keyboard text navigation matching |
+| `onClick` | `MouseEventHandler` | - | Click handler |
+
+### ContextMenuCheckboxItem
+
+A menu item that toggles a setting on or off. Must be used within `ContextMenuContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | - | Whether the item is checked (controlled) |
+| `defaultChecked` | `boolean` | `false` | Whether the item is initially checked (uncontrolled) |
+| `onCheckedChange` | `(checked: boolean, eventDetails) => void` | - | Event handler when the checkbox is toggled |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `false` | Whether to close the menu when the item is clicked |
+| `label` | `string` | - | Override for keyboard text navigation matching |
+
+### ContextMenuRadioGroup
+
+Groups radio items so only one can be selected. Must be used within `ContextMenuGroup`. Use with `ContextMenuRadioItem`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | - | The selected value (controlled) |
+| `defaultValue` | `any` | - | The initial selected value (uncontrolled) |
+| `onValueChange` | `(value: any) => void` | - | Event handler when selection changes |
+
+### ContextMenuRadioItem
+
+A menu item that behaves like a radio option. Must be used within `ContextMenuRadioGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | **Required** | Value for this option |
+| `disabled` | `boolean` | `false` | Whether the item ignores user interaction |
+| `closeOnClick` | `boolean` | `false` | Whether to close the menu when the item is clicked |
+| `label` | `string` | - | Override for keyboard text navigation matching |
+
+### ContextMenuLabel
+
+An accessible label for a group of menu items. Use within `ContextMenuGroup`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | - | When true, adds left padding to align with inset items |
+
+### ContextMenuSeparator
+
+A visual separator between menu groups.
+
+### ContextMenuShortcut
+
+Displays a keyboard shortcut next to a menu item. Use inside `ContextMenuItem` (or similar) as a sibling to the label.
+
+### ContextMenuGroup
+
+Groups related menu items. Use with `ContextMenuLabel` to add a group heading.
+
+### ContextMenuSub
+
+Root for a submenu. Contains `ContextMenuSubTrigger` and `ContextMenuSubContent`.
+
+### ContextMenuSubTrigger
+
+An item that opens a submenu. Must be used within `ContextMenuSub`. Renders a caret icon.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | - | When true, adds left padding to align with items that have icons |
+
+### ContextMenuSubContent
+
+The container for submenu items. Must be used within `ContextMenuSub`. Positions to the side of the trigger.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `alignOffset` | `number` | `4` | Offset along the alignment axis |
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"right"` | Side of the trigger to show the submenu |
+| `sideOffset` | `number` | `0` | Distance from the trigger |
+| `className` | `string` | - | CSS class applied to the popup |
+
+### ContextMenuPortal
+
+Optional wrapper to control where the menu content is portaled. Used internally by `ContextMenuContent`.

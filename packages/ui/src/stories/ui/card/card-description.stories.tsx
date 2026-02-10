@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import {
-	Card,
-	CardHeader,
-	CardTitle,
-	CardDescription,
-	CardContent,
-} from "~/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "~/components/ui/card"
 
 const meta = {
 	title: "UI/Card/CardDescription",
@@ -53,8 +47,7 @@ export const Default: Story = {
 			<CardHeader>
 				<CardTitle>Card Title</CardTitle>
 				<CardDescription {...args}>
-					This is a description that provides additional context about the card
-					content.
+					This is a description that provides additional context about the card content.
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
@@ -77,9 +70,9 @@ export const LongDescription: Story = {
 			<CardHeader>
 				<CardTitle>Card Title</CardTitle>
 				<CardDescription {...args}>
-					This is a longer description that demonstrates how the component handles
-					extended text content. The description will wrap naturally and maintain
-					readability with appropriate line height and spacing.
+					This is a longer description that demonstrates how the component handles extended text
+					content. The description will wrap naturally and maintain readability with appropriate
+					line height and spacing.
 				</CardDescription>
 			</CardHeader>
 			<CardContent>

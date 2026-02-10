@@ -1,0 +1,90 @@
+---
+title: Tooltip
+description: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+---
+
+## Usage
+
+<ComponentPreview name="tooltip-demo" />
+
+## Import
+
+```tsx
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@kaotypr/ui/tooltip"
+```
+
+## Examples
+
+### Sides
+
+<ComponentPreview name="tooltip-sides" />
+
+### With keyboard shortcut
+
+<ComponentPreview name="tooltip-keyboard" />
+
+### Disabled
+
+<ComponentPreview name="tooltip-disabled" />
+
+## API Reference
+
+This component is built on top of [Base UI Tooltip](https://base-ui.com/react/components/tooltip).
+
+### Tooltip
+
+The root component that controls tooltip state. Wraps Base UI `Tooltip.Root` and automatically includes a `TooltipProvider`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultOpen` | `boolean` | `false` | Whether the tooltip is initially open. To render a controlled tooltip, use the `open` prop instead. |
+| `open` | `boolean` | - | Whether the tooltip is currently open (controlled). |
+| `onOpenChange` | `(open: boolean, eventDetails: Tooltip.Root.ChangeEventDetails) => void` | - | Event handler called when the tooltip is opened or closed. |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after any animations complete when the tooltip is opened or closed. |
+| `actionsRef` | `React.RefObject<Tooltip.Root.Actions>` | - | A ref to imperative actions (`close`, `unmount`). |
+| `disabled` | `boolean` | `false` | Whether the tooltip is disabled. |
+| `disableHoverablePopup` | `boolean` | `false` | Whether the tooltip contents can be hovered without closing the tooltip. |
+| `trackCursorAxis` | `"none" \| "both" \| "x" \| "y"` | `"none"` | Determines which axis the tooltip should track the cursor on. |
+| `defaultTriggerId` | `string \| null` | - | ID of the trigger associated with the tooltip (uncontrolled). Useful with `defaultOpen`. |
+| `triggerId` | `string \| null` | - | ID of the trigger associated with the tooltip (controlled). |
+| `handle` | `Tooltip.Handle<Payload>` | - | Handle to associate the tooltip with an external trigger. Create with `Tooltip.createHandle()`. |
+
+### TooltipProvider
+
+Provides a shared delay for multiple tooltips. The grouping logic ensures that once a tooltip becomes visible, adjacent tooltips will be shown instantly.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delay` | `number` | `0` | How long to wait before opening a tooltip, in milliseconds. |
+| `closeDelay` | `number` | - | How long to wait before closing a tooltip, in milliseconds. |
+| `timeout` | `number` | `400` | Another tooltip will open instantly if the previous tooltip is closed within this timeout (ms). |
+
+### TooltipTrigger
+
+An element to attach the tooltip to. Renders a `button` element by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | - | The trigger content. |
+| `delay` | `number` | `600` | How long to wait before opening the tooltip (ms). |
+| `closeDelay` | `number` | `0` | How long to wait before closing the tooltip (ms). |
+| `handle` | `Tooltip.Handle<Payload>` | - | Handle to associate the trigger with a tooltip. |
+| `payload` | `Payload` | - | A payload to pass to the tooltip when it is opened. |
+| `render` | `React.ReactElement \| (props, state) => React.ReactElement` | - | Replace the rendered element (or compose with another component). |
+| `nativeButton` | `boolean` | `true` | When using `render`, whether to render a native `<button>` element. Set to `false` if the rendered element is not a button. |
+| `className` | `string \| ((state: Tooltip.Trigger.State) => string \| undefined)` | - | CSS class, or a function that returns one based on state. |
+| `style` | `React.CSSProperties \| ((state: Tooltip.Trigger.State) => React.CSSProperties \| undefined)` | - | Inline style, or a function that returns one based on state. |
+
+### TooltipContent
+
+A container for the tooltip contents.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `React.ReactNode` | - | Tooltip content. |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"top"` | Which side of the trigger to align the tooltip against. May flip to avoid collisions. |
+| `sideOffset` | `number \| OffsetFunction` | `4` | Distance between the trigger and the tooltip (px). |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | How to align the tooltip relative to the specified side. |
+| `alignOffset` | `number \| OffsetFunction` | `0` | Additional offset along the alignment axis (px). |
+| `className` | `string \| ((state: Tooltip.Popup.State) => string \| undefined)` | - | CSS class, or a function that returns one based on state. |
+| `style` | `React.CSSProperties \| ((state: Tooltip.Popup.State) => React.CSSProperties \| undefined)` | - | Inline style, or a function that returns one based on state. |

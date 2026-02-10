@@ -65,9 +65,7 @@ export const Default: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -85,9 +83,7 @@ export const WithoutIcon: Story = {
 		<Empty {...args}>
 			<EmptyHeader>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -108,12 +104,13 @@ export const WithContent: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 			<EmptyContent>
-				<button type="button" className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground">
+				<button
+					type="button"
+					className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground"
+				>
 					Create Item
 				</button>
 			</EmptyContent>
@@ -137,7 +134,8 @@ export const CustomWidth: Story = {
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
 				<EmptyDescription>
-					This empty state has a custom width to demonstrate how it adapts to different container sizes.
+					This empty state has a custom width to demonstrate how it adapts to different container
+					sizes.
 				</EmptyDescription>
 			</EmptyHeader>
 		</Empty>

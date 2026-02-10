@@ -1,0 +1,123 @@
+---
+title: Table
+description: A responsive table component for displaying structured data.
+---
+
+## Usage
+
+<ComponentPreview name="table-demo" />
+
+## Import
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@kaotypr/ui/table"
+```
+
+## Examples
+
+### With Actions
+
+<ComponentPreview name="table-actions" />
+
+### With Footer
+
+<ComponentPreview name="table-footer" />
+
+## API Reference
+
+The `Table` component family is a styled wrapper around native table elements (`<table>`, `<thead>`, `<tbody>`, etc.). Each component accepts the same props as its underlying HTML element.
+
+### Table
+
+The root table component. It wraps the `<table>` in a horizontally scrollable container for responsive layouts.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply to the `<table>` element |
+| `children` | `React.ReactNode` | - | The table content including header/body/footer and caption |
+| `...props` | `React.ComponentProps<"table">` | - | Any native `<table>` attributes (e.g. `role`, `aria-*`) |
+
+### TableHeader
+
+The header section of the table. Renders as a `<thead>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | Header rows, typically containing `TableHead` cells |
+| `...props` | `React.ComponentProps<"thead">` | - | Any native `<thead>` attributes |
+
+### TableBody
+
+The body section of the table. Renders as a `<tbody>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | Data rows, typically containing `TableCell` cells |
+| `...props` | `React.ComponentProps<"tbody">` | - | Any native `<tbody>` attributes |
+
+### TableFooter
+
+The footer section of the table. Renders as a `<tfoot>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | Footer rows containing summary information |
+| `...props` | `React.ComponentProps<"tfoot">` | - | Any native `<tfoot>` attributes |
+
+### TableRow
+
+A single table row. Renders as a `<tr>`.
+
+To style a selected row, set `data-state="selected"` on the row.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | Cells within the row (`TableHead` and/or `TableCell`) |
+| `...props` | `React.ComponentProps<"tr">` | - | Any native `<tr>` attributes (including `data-*`) |
+
+### TableHead
+
+A header cell. Renders as a `<th>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | The header cell content |
+| `colSpan` | `number` | - | Number of columns the header cell should span |
+| `rowSpan` | `number` | - | Number of rows the header cell should span |
+| `...props` | `React.ComponentProps<"th">` | - | Any native `<th>` attributes |
+
+### TableCell
+
+A data cell. Renders as a `<td>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | The cell content |
+| `colSpan` | `number` | - | Number of columns the cell should span |
+| `rowSpan` | `number` | - | Number of rows the cell should span |
+| `...props` | `React.ComponentProps<"td">` | - | Any native `<td>` attributes |
+
+### TableCaption
+
+A caption describing the table’s contents. Renders as a `<caption>`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names to apply |
+| `children` | `React.ReactNode` | - | The caption text/content |
+| `...props` | `React.ComponentProps<"caption">` | - | Any native `<caption>` attributes |

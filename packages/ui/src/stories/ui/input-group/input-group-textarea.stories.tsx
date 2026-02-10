@@ -175,7 +175,8 @@ export const WithBlockEndAddon: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Textarea with a block-end aligned addon (below the textarea) showing character count.",
+				story:
+					"Textarea with a block-end aligned addon (below the textarea) showing character count.",
 			},
 		},
 	},

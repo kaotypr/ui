@@ -67,8 +67,7 @@ This component is built on top of [Base UI Select](https://base-ui.com/react/com
 			control: { type: "text" },
 		},
 		onValueChange: {
-			description:
-				"Event handler called when the value of the select changes.",
+			description: "Event handler called when the value of the select changes.",
 			table: {
 				type: {
 					summary:
@@ -99,12 +98,10 @@ This component is built on top of [Base UI Select](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the select popup is opened or closed.",
+			description: "Event handler called when the select popup is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Select.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Select.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -203,8 +200,7 @@ This component is built on top of [Base UI Select](https://base-ui.com/react/com
 			action: "onOpenChangeComplete",
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -223,8 +219,7 @@ This component is built on top of [Base UI Select](https://base-ui.com/react/com
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must choose a value before submitting a form.",
+			description: "Whether the user must choose a value before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -309,8 +304,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled select using React state. The value is managed by the component state.",
+				story: "Controlled select using React state. The value is managed by the component state.",
 			},
 		},
 	},
@@ -342,8 +336,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Select with grouped items and labels to organize options into categories.",
+				story: "Select with grouped items and labels to organize options into categories.",
 			},
 		},
 	},
@@ -370,8 +363,7 @@ export const Multiple: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Select with multiple selection enabled. Users can select multiple items.",
+				story: "Select with multiple selection enabled. Users can select multiple items.",
 			},
 		},
 	},

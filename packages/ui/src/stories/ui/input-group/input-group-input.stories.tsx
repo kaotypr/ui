@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { MagnifyingGlassIcon } from "@phosphor-icons/react"
 
-import {
-	InputGroup,
-	InputGroupAddon,
-	InputGroupInput,
-} from "~/components/ui/input-group"
+import { InputGroup, InputGroupAddon, InputGroupInput } from "~/components/ui/input-group"
 
 const meta = {
 	title: "UI/InputGroup/InputGroupInput",

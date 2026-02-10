@@ -1,0 +1,75 @@
+---
+title: Collapsible
+description: A panel controlled by a button that expands and collapses to show or hide content.
+---
+
+## Usage
+
+<ComponentPreview name="collapsible-demo" />
+
+## Import
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@kaotypr/ui/collapsible"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="collapsible-basic" />
+
+### File Tree
+
+<ComponentPreview name="collapsible-file-tree" />
+
+### Settings
+
+<ComponentPreview name="collapsible-settings" />
+
+## API Reference
+
+This component is built on top of [Base UI Collapsible](https://base-ui.com/react/components/collapsible).
+
+### Collapsible
+
+The root component that wraps the trigger and content.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | The controlled open state. Use with `onOpenChange` for controlled behavior |
+| `defaultOpen` | `boolean` | `false` | The initial open state for uncontrolled usage |
+| `onOpenChange` | `(open: boolean, eventDetails: Collapsible.Root.ChangeEventDetails) => void` | - | Event handler called when the panel is opened or closed |
+| `disabled` | `boolean` | `false` | Whether the component should ignore user interaction |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the component's HTML element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element, or a function that returns a class based on state |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element, or a function that returns a style object based on state |
+
+### CollapsibleTrigger
+
+The button that toggles the visibility of the collapsible content. Must be used within a `Collapsible` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content |
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using the `render` prop. Set to `false` if the rendered element is not a button |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the component's HTML element (e.g. with a `Button`) or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element, or a function that returns a class based on state |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element, or a function that returns a style object based on state |
+
+### CollapsibleContent
+
+The content area that is shown or hidden when the collapsible is toggled. Must be used within a `Collapsible` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The panel content |
+| `hiddenUntilFound` | `boolean` | `false` | Allows the browser's built-in page search to find and expand the panel contents. Overrides `keepMounted` |
+| `keepMounted` | `boolean` | `false` | Whether to keep the element in the DOM while the panel is hidden. Ignored when `hiddenUntilFound` is used |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the component's HTML element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element, or a function that returns a class based on state |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element, or a function that returns a style object based on state |

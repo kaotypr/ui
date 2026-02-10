@@ -34,8 +34,7 @@ This component is built on top of [Base UI Select Value](https://base-ui.com/rea
 			control: { type: "text" },
 		},
 		children: {
-			description:
-				"Accepts a function that returns a ReactNode to format the selected value.",
+			description: "Accepts a function that returns a ReactNode to format the selected value.",
 			table: {
 				type: { summary: "ReactNode | ((value: any) => ReactNode)" },
 				defaultValue: { summary: "undefined" },
@@ -109,9 +108,7 @@ export const CustomFormatter: Story = {
 		<Select>
 			<SelectTrigger className="w-[200px]">
 				<SelectValue placeholder="Select a language">
-					{(value: string) =>
-						value ? `Selected: ${value.toUpperCase()}` : null
-					}
+					{(value: string) => (value ? `Selected: ${value.toUpperCase()}` : null)}
 				</SelectValue>
 			</SelectTrigger>
 			<SelectContent>
@@ -124,8 +121,7 @@ export const CustomFormatter: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Custom formatter function to format the selected value display.",
+				story: "Custom formatter function to format the selected value display.",
 			},
 		},
 	},

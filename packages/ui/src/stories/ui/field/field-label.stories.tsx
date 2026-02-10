@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	Field,
-	FieldLabel,
-	FieldContent,
-} from "~/components/ui/field"
+import { Field, FieldLabel, FieldContent } from "~/components/ui/field"
 import { Input } from "~/components/ui/input"
 import { Checkbox } from "~/components/ui/checkbox"
 
@@ -61,8 +57,7 @@ export const WithCheckbox: Story = {
 	render: (args) => (
 		<Field>
 			<FieldLabel {...args} htmlFor="terms">
-				<Checkbox id="terms" />
-				I agree to the terms and conditions
+				<Checkbox id="terms" />I agree to the terms and conditions
 			</FieldLabel>
 		</Field>
 	),
@@ -82,12 +77,7 @@ export const Required: Story = {
 				Email <span className="text-destructive">*</span>
 			</FieldLabel>
 			<FieldContent>
-				<Input
-					id="required-field"
-					type="email"
-					placeholder="Enter your email"
-					required
-				/>
+				<Input id="required-field" type="email" placeholder="Enter your email" required />
 			</FieldContent>
 		</Field>
 	),

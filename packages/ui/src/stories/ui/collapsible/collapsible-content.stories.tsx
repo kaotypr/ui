@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CaretDownIcon } from "@phosphor-icons/react"
 
-import {
-	Collapsible,
-	CollapsibleTrigger,
-	CollapsibleContent,
-} from "~/components/ui/collapsible"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "~/components/ui/collapsible"
 
 const meta = {
 	title: "UI/Collapsible/CollapsibleContent",
@@ -23,7 +19,7 @@ const meta = {
 	argTypes: {
 		hiddenUntilFound: {
 			description:
-				"Allows the browser's built-in page search to find and expand the panel contents. Overrides the `keepMounted` prop and uses `hidden=\"until-found\"` to hide the element without removing it from the DOM.",
+				'Allows the browser\'s built-in page search to find and expand the panel contents. Overrides the `keepMounted` prop and uses `hidden="until-found"` to hide the element without removing it from the DOM.',
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -40,6 +36,15 @@ const meta = {
 				category: "Base UI Props",
 			},
 			control: { type: "boolean" },
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		className: {
 			description: "Additional CSS class names to apply",
@@ -88,8 +93,7 @@ export const Default: Story = {
 					className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 				>
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						This is the default collapsible content. It animates smoothly when
-						opening and closing.
+						This is the default collapsible content. It animates smoothly when opening and closing.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -98,8 +102,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default collapsible content with smooth animation when opening and closing.",
+				story: "Default collapsible content with smooth animation when opening and closing.",
 			},
 		},
 	},
@@ -135,8 +138,7 @@ export const WithRichContent: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Collapsible content with rich formatting including paragraphs and lists.",
+				story: "Collapsible content with rich formatting including paragraphs and lists.",
 			},
 		},
 	},
@@ -156,8 +158,8 @@ export const KeepMounted: Story = {
 					className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 				>
 					<div className="px-4 py-2 text-sm text-muted-foreground">
-						This content remains in the DOM even when hidden, which can be
-						useful for preserving component state or improving performance.
+						This content remains in the DOM even when hidden, which can be useful for preserving
+						component state or improving performance.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>
@@ -169,8 +171,7 @@ export const KeepMounted: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Content with `keepMounted` prop set to true, keeping it in the DOM when hidden.",
+				story: "Content with `keepMounted` prop set to true, keeping it in the DOM when hidden.",
 			},
 		},
 	},
@@ -189,8 +190,7 @@ export const WithCustomPadding: Story = {
 					className="overflow-hidden rounded-b-md border-x border-b bg-muted/50 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down"
 				>
 					<div className="px-6 py-4 text-sm text-foreground">
-						Content with custom padding and background styling for enhanced
-						visual separation.
+						Content with custom padding and background styling for enhanced visual separation.
 					</div>
 				</CollapsibleContent>
 			</Collapsible>

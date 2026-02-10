@@ -1,0 +1,86 @@
+---
+title: Data Multi Combobox
+description: A data-driven multi-select combobox with badges, grouping, async search, and infinite scroll support.
+---
+
+## Usage
+
+<ComponentPreview name="data-multi-combobox-demo" />
+
+## Import
+
+```tsx
+import {
+  DataMultiCombobox,
+  type DataMultiComboboxOption,
+  type DataMultiComboboxProps,
+} from "@kaotypr/ui/data-multi-combobox"
+```
+
+## Examples
+
+### Clearable
+
+<ComponentPreview name="data-multi-combobox-clearable" />
+
+### With Groups
+
+<ComponentPreview name="data-multi-combobox-with-groups" />
+
+### Collapsible Badges
+
+<ComponentPreview name="data-multi-combobox-collapsible-badges" />
+
+### Async Search
+
+<ComponentPreview name="data-multi-combobox-async-search" />
+
+## API Reference
+
+This component is built on top of [Base UI Combobox](https://base-ui.com/react/components/combobox).
+
+### DataMultiComboboxOption
+
+The option shape used by `DataMultiCombobox`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | **Required** | Label displayed in the list and badges |
+| `value` | `string` | **Required** | Stable option value stored in the selection array |
+| `disabled` | `boolean` | `false` | Disables the option |
+| `group` | `string` | - | Optional group label for grouped rendering |
+
+### DataMultiCombobox
+
+A data-driven multi-select combobox that stores selection as a `string[]` and renders selected items as removable badges.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `DataMultiComboboxOption[]` | **Required** | Options to display |
+| `value` | `string[]` | - | Controlled selected values |
+| `defaultValue` | `string[]` | - | Uncontrolled initial selected values |
+| `defaultValueOptions` | `DataMultiComboboxOption[]` | - | Initial option objects used to render labels when selected values are not present in `data` |
+| `onValueChange` | `(value: string[], options: DataMultiComboboxOption[]) => void` | - | Called when selection changes |
+| `searchValue` | `string` | - | Controlled search input value |
+| `onSearch` | `(search: string) => void` | - | Called on search changes; when provided, internal filtering is disabled (you own filtering via `data`) |
+| `debounceTime` | `number` | `0` | Debounce (ms) for calling `onSearch` |
+| `placeholder` | `string` | `"Select options..."` | Placeholder shown when no values are selected |
+| `searchPlaceholder` | `string` | `"Search..."` | Placeholder for the search input |
+| `maxDisplayedItems` | `number` | `3` | Maximum badges shown before collapsing into a `+N more` badge |
+| `defaultExpanded` | `boolean` | `false` | Whether badges start expanded (show all) |
+| `clearable` | `boolean` | `false` | Shows a clear-all control when there are selections |
+| `disabled` | `boolean` | `false` | Disables interaction |
+| `loading` | `boolean` | `false` | Shows loading state (supports custom loading content) |
+| `enableResponsive` | `boolean` | `false` | Uses a Drawer on mobile viewports instead of a popover |
+| `onLoadMore` | `() => void` | - | Called when the infinite-scroll sentinel becomes visible |
+| `hasMore` | `boolean` | `false` | Whether more data is available for infinite scroll |
+| `renderItem` | `(option: DataMultiComboboxOption, isSelected: boolean) => React.ReactNode` | - | Custom item renderer (useful for richer list items) |
+| `emptyMessage` | `React.ReactNode` | `"No results found."` | Empty state content when there are no matches |
+| `loadingContent` | `React.ReactNode` | - | Custom loading indicator/content |
+| `side` | `"top" \| "bottom"` | `"bottom"` | Preferred side for the dropdown |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Dropdown alignment |
+| `className` | `string` | - | Additional classes for the trigger |
+| `contentClassName` | `string` | - | Additional classes for the dropdown content |
+| `name` | `string` | - | Name attribute for form submissions |
+| `id` | `string` | - | Id attribute for the trigger |
+

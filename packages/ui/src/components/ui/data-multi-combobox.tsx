@@ -1,12 +1,7 @@
 "use client"
 
 import * as React from "react"
-import {
-	CheckIcon,
-	CaretUpDownIcon,
-	MagnifyingGlassIcon,
-	XIcon,
-} from "@phosphor-icons/react"
+import { CheckIcon, CaretUpDownIcon, MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react"
 import { Combobox as ComboboxPrimitive } from "@base-ui/react"
 
 import { cn } from "~/lib/utils"
@@ -56,10 +51,7 @@ export interface DataMultiComboboxProps {
 	hasMore?: boolean
 
 	// Custom rendering
-	renderItem?: (
-		option: DataMultiComboboxOption,
-		isSelected: boolean,
-	) => React.ReactNode
+	renderItem?: (option: DataMultiComboboxOption, isSelected: boolean) => React.ReactNode
 	emptyMessage?: React.ReactNode
 	loadingContent?: React.ReactNode
 
@@ -81,10 +73,7 @@ interface ComboboxItemProps {
 	item: DataMultiComboboxOption
 	isSelected: boolean
 	onToggle: (value: string) => void
-	renderItem?: (
-		option: DataMultiComboboxOption,
-		isSelected: boolean,
-	) => React.ReactNode
+	renderItem?: (option: DataMultiComboboxOption, isSelected: boolean) => React.ReactNode
 }
 
 const ComboboxItem = React.memo(function ComboboxItem({
@@ -120,9 +109,7 @@ const ComboboxItem = React.memo(function ComboboxItem({
 					<div
 						className={cn(
 							"flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
-							isSelected
-								? "bg-primary text-primary-foreground"
-								: "opacity-50",
+							isSelected ? "bg-primary text-primary-foreground" : "opacity-50",
 						)}
 					>
 						{isSelected && <CheckIcon className="h-3 w-3" />}
@@ -155,13 +142,10 @@ const SelectionBadge = React.memo(function SelectionBadge({
 		[option.value, onRemove],
 	)
 
-	const handlePointerDown = React.useCallback(
-		(e: React.PointerEvent) => {
-			e.stopPropagation()
-			e.preventDefault()
-		},
-		[],
-	)
+	const handlePointerDown = React.useCallback((e: React.PointerEvent) => {
+		e.stopPropagation()
+		e.preventDefault()
+	}, [])
 
 	const handleKeyDown = React.useCallback(
 		(e: React.KeyboardEvent) => {
@@ -228,40 +212,37 @@ export function DataMultiCombobox({
 	const [open, setOpen] = React.useState(false)
 
 	// Handle open/close with reason filtering for multi-select behavior
-	const handleOpenChange = React.useCallback(
-		(nextOpen: boolean, details: { reason: string }) => {
-			// Always allow opening
-			if (nextOpen) {
-				setOpen(true)
-				return
-			}
+	const handleOpenChange = React.useCallback((nextOpen: boolean, details: { reason: string }) => {
+		// Always allow opening
+		if (nextOpen) {
+			setOpen(true)
+			return
+		}
 
-			// Only close on explicit dismiss actions (escape, outside click, trigger click)
-			// Don't close on item selection to keep popover open for multi-select
-			if (
-				details.reason === "escape-key" ||
-				details.reason === "outside-press" ||
-				details.reason === "trigger-press"
-			) {
-				setOpen(false)
-			}
-		},
-		[],
-	)
+		// Only close on explicit dismiss actions (escape, outside click, trigger click)
+		// Don't close on item selection to keep popover open for multi-select
+		if (
+			details.reason === "escape-key" ||
+			details.reason === "outside-press" ||
+			details.reason === "trigger-press"
+		) {
+			setOpen(false)
+		}
+	}, [])
 
 	// Value state management (array for multi-select)
 	const [uncontrolledValue, setUncontrolledValue] = React.useState<string[]>(
 		defaultValue || defaultValueOptions?.map((o) => o.value) || [],
 	)
-	const [cachedOptions, setCachedOptions] = React.useState<
-		Map<string, DataMultiComboboxOption>
-	>(() => {
-		const map = new Map<string, DataMultiComboboxOption>()
-		defaultValueOptions?.forEach((opt) => {
-			map.set(opt.value, opt)
-		})
-		return map
-	})
+	const [cachedOptions, setCachedOptions] = React.useState<Map<string, DataMultiComboboxOption>>(
+		() => {
+			const map = new Map<string, DataMultiComboboxOption>()
+			defaultValueOptions?.forEach((opt) => {
+				map.set(opt.value, opt)
+			})
+			return map
+		},
+	)
 	const isControlledValue = controlledValue !== undefined
 	const selectedValues = isControlledValue ? controlledValue : uncontrolledValue
 
@@ -278,10 +259,7 @@ export function DataMultiCombobox({
 	cachedOptionsRef.current = cachedOptions
 
 	// Create a Set for O(1) selection lookups
-	const selectedValuesSet = React.useMemo(
-		() => new Set(selectedValues),
-		[selectedValues],
-	)
+	const selectedValuesSet = React.useMemo(() => new Set(selectedValues), [selectedValues])
 
 	// Search state management
 	const [inputValue, setInputValue] = React.useState(searchValue || "")
@@ -342,9 +320,7 @@ export function DataMultiCombobox({
 		}
 
 		const lowerSearch = inputValue.toLowerCase()
-		return data.filter((item) =>
-			item.label.toLowerCase().includes(lowerSearch),
-		)
+		return data.filter((item) => item.label.toLowerCase().includes(lowerSearch))
 	}, [data, inputValue, onSearch])
 
 	// Group data
@@ -408,9 +384,7 @@ export function DataMultiCombobox({
 			// Get all selected options for callback
 			const newOptions = newValues.map((val) => {
 				const found = currentData.find((item) => item.value === val)
-				return (
-					found || currentCachedOptions.get(val) || { label: val, value: val }
-				)
+				return found || currentCachedOptions.get(val) || { label: val, value: val }
 			})
 
 			onValueChange?.(newValues, newOptions)
@@ -435,9 +409,7 @@ export function DataMultiCombobox({
 
 			const newOptions = newValues.map((val) => {
 				const found = currentData.find((item) => item.value === val)
-				return (
-					found || currentCachedOptions.get(val) || { label: val, value: val }
-				)
+				return found || currentCachedOptions.get(val) || { label: val, value: val }
 			})
 
 			onValueChange?.(newValues, newOptions)
@@ -460,14 +432,11 @@ export function DataMultiCombobox({
 	)
 
 	// Toggle expansion of badges
-	const handleToggleExpand = React.useCallback(
-		(e: React.MouseEvent | React.KeyboardEvent) => {
-			e.stopPropagation()
-			e.preventDefault()
-			setIsExpanded((prev) => !prev)
-		},
-		[],
-	)
+	const handleToggleExpand = React.useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
+		e.stopPropagation()
+		e.preventDefault()
+		setIsExpanded((prev) => !prev)
+	}, [])
 
 	// Infinite scroll observer
 	const observer = React.useRef<IntersectionObserver | null>(null)
@@ -544,13 +513,8 @@ export function DataMultiCombobox({
 				{optionsList}
 
 				{hasMore && (
-					<div
-						ref={lastElementRef}
-						className="py-2 text-center text-sm text-muted-foreground"
-					>
-						{loading ? (
-							loadingContent || <Spinner className="mx-auto size-4" />
-						) : null}
+					<div ref={lastElementRef} className="py-2 text-center text-sm text-muted-foreground">
+						{loading ? loadingContent || <Spinner className="mx-auto size-4" /> : null}
 					</div>
 				)}
 
@@ -575,9 +539,7 @@ export function DataMultiCombobox({
 	// Memoized badges rendering
 	const badgesContent = React.useMemo(() => {
 		if (selectedOptions.length === 0) {
-			return (
-				<span className="text-muted-foreground truncate">{placeholder}</span>
-			)
+			return <span className="text-muted-foreground truncate">{placeholder}</span>
 		}
 
 		const displayedItems = isExpanded
@@ -644,8 +606,6 @@ export function DataMultiCombobox({
 				disabled={disabled}
 				name={name}
 				id={id}
-				render={<div />}
-				nativeButton={false}
 			>
 				{badgesContent}
 				<div className="flex items-center ml-2 shrink-0 opacity-50">
@@ -687,12 +647,9 @@ export function DataMultiCombobox({
 	)
 
 	// Memoized search input change handler
-	const handleInputChange = React.useCallback(
-		(e: React.ChangeEvent<HTMLInputElement>) => {
-			setInputValue(e.target.value)
-		},
-		[],
-	)
+	const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+		setInputValue(e.target.value)
+	}, [])
 
 	// Stable noop handlers for ComboboxPrimitive.Root
 	const noopOpenChange = React.useCallback(() => {}, [])

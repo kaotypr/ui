@@ -35,8 +35,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		children: {
-			description:
-				"The footer content, typically buttons or other action elements.",
+			description: "The footer content, typically buttons or other action elements.",
 			table: {
 				type: { summary: "React.ReactNode" },
 				defaultValue: { summary: "undefined" },

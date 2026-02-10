@@ -85,14 +85,9 @@ export const Default: Story = {
 				>
 					<ComboboxChips {...args} ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -121,11 +116,7 @@ export const Default: Story = {
 
 export const WithPreselectedValues: Story = {
 	render: () => {
-		const [value, setValue] = React.useState<string[]>([
-			"apple",
-			"banana",
-			"grape",
-		])
+		const [value, setValue] = React.useState<string[]>(["apple", "banana", "grape"])
 		const chipsRef = useComboboxAnchor()
 
 		return (
@@ -140,14 +131,9 @@ export const WithPreselectedValues: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -188,22 +174,15 @@ export const CustomStyling: Story = {
 						setValue(newValue as string[])
 					}}
 				>
-					<ComboboxChips
-						ref={chipsRef}
-						className="border-primary/50 focus-within:border-primary"
-					>
+					<ComboboxChips ref={chipsRef} className="border-primary/50 focus-within:border-primary">
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip
-										key={val}
-										className="bg-primary/10 text-primary"
-									>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return (
+								<ComboboxChip key={val} className="bg-primary/10 text-primary">
+									{fruit?.label || val}
+								</ComboboxChip>
+							)
+						})}
 						<ComboboxChipsInput placeholder="Add fruits..." />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -253,14 +232,9 @@ export const ManySelections: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find((f) => f.value === val)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>

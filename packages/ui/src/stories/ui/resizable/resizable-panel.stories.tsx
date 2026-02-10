@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import {
-	ResizablePanelGroup,
-	ResizablePanel,
-	ResizableHandle,
-} from "~/components/ui/resizable"
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "~/components/ui/resizable"
 
 const meta = {
 	title: "UI/Resizable/ResizablePanel",
@@ -34,8 +30,7 @@ Must be used within a ResizablePanelGroup component. Panel elements must be dire
 			control: { type: "number" },
 		},
 		minSize: {
-			description:
-				"Minimum size of Panel within its parent group; defaults to 0%.",
+			description: "Minimum size of Panel within its parent group; defaults to 0%.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -44,8 +39,7 @@ Must be used within a ResizablePanelGroup component. Panel elements must be dire
 			control: { type: "number" },
 		},
 		maxSize: {
-			description:
-				"Maximum size of Panel within its parent group; defaults to 100%.",
+			description: "Maximum size of Panel within its parent group; defaults to 100%.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "100" },
@@ -129,9 +123,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 1</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -140,9 +132,7 @@ export const Default: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 2</p>
-							<p className="text-xs text-muted-foreground">
-								Drag the handle to resize
-							</p>
+							<p className="text-xs text-muted-foreground">Drag the handle to resize</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -155,8 +145,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default ResizablePanel with 50% default size within a ResizablePanelGroup.",
+				story: "Default ResizablePanel with 50% default size within a ResizablePanelGroup.",
 			},
 		},
 	},
@@ -170,9 +159,7 @@ export const WithMinMaxSize: Story = {
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Panel 1</p>
-							<p className="text-xs text-muted-foreground">
-								Min: 20%, Max: 80%
-							</p>
+							<p className="text-xs text-muted-foreground">Min: 20%, Max: 80%</p>
 						</div>
 					</div>
 				</ResizablePanel>
@@ -201,18 +188,11 @@ export const Collapsible: Story = {
 	render: () => (
 		<div className="w-[600px] h-[300px] border rounded-lg p-4">
 			<ResizablePanelGroup>
-				<ResizablePanel
-					defaultSize={50}
-					collapsible
-					minSize={10}
-					collapsedSize={5}
-				>
+				<ResizablePanel defaultSize={50} collapsible minSize={10} collapsedSize={5}>
 					<div className="flex h-full items-center justify-center rounded-lg border bg-muted p-6">
 						<div className="text-center">
 							<p className="text-sm font-medium">Collapsible Panel</p>
-							<p className="text-xs text-muted-foreground">
-								Drag to collapse (min: 10%)
-							</p>
+							<p className="text-xs text-muted-foreground">Drag to collapse (min: 10%)</p>
 						</div>
 					</div>
 				</ResizablePanel>

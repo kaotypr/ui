@@ -33,8 +33,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Separator.State) => string | undefined)",
+					summary: "string | ((state: Separator.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -46,8 +45,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Separator.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Separator.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -59,8 +57,7 @@ This component is built on top of [Base UI Separator](https://base-ui.com/react/
 				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render.",
 			table: {
 				type: {
-					summary:
-						"ReactElement | ((props: HTMLProps, state: Separator.State) => ReactElement)",
+					summary: "ReactElement | ((props: HTMLProps, state: Separator.State) => ReactElement)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -233,6 +230,56 @@ export const MultipleSeparators: Story = {
 		docs: {
 			description: {
 				story: "Multiple separators used to create distinct sections.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: (args) => (
+		<div className="w-64 space-y-4">
+			<div>
+				<h4 className="text-sm font-medium leading-none">Content Above</h4>
+			</div>
+			<Separator {...args} render={<hr />} />
+			<div>
+				<h4 className="text-sm font-medium leading-none">Content Below</h4>
+			</div>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default div element with an hr tag.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<div className="flex h-20 items-center gap-4">
+			<span className="text-sm">Left</span>
+			<Separator
+				orientation="vertical"
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`shrink-0 bg-border ${
+							state.orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]"
+						}`}
+					/>
+				)}
+			/>
+			<span className="text-sm">Right</span>
+		</div>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `orientation` ('horizontal' | 'vertical').",
 			},
 		},
 	},

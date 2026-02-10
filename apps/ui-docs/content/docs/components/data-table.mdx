@@ -1,0 +1,170 @@
+---
+title: Data Table
+description: A flexible data table with server-side pagination, row selection, column resizing, and pinning, built on TanStack Table v8.
+---
+
+## Usage
+
+<ComponentPreview name="data-table-demo" />
+
+## Import
+
+```tsx
+import {
+  DataTable,
+  type DataTableClassNames,
+  type DataTablePaginationState,
+} from "@kaotypr/ui/data-table"
+```
+
+Column and row types come from TanStack Table:
+
+```tsx
+import type { ColumnDef, Row } from "@tanstack/react-table"
+```
+
+## Examples
+
+### Basic Table
+
+Minimal table with column definitions and data. No pagination or selection.
+
+<ComponentPreview name="data-table-basic" />
+
+### With Pagination
+
+Enable pagination and control it with `pagination` and `onPaginationChange` for server-side or client-side paging.
+
+<ComponentPreview name="data-table-pagination" />
+
+### With Row Selection
+
+Add checkboxes and get selected rows via `onRowSelectionChange`.
+
+<ComponentPreview name="data-table-selection" />
+
+### With Borders
+
+Use `bordered` for vertical borders between columns.
+
+<ComponentPreview name="data-table-bordered" />
+
+### With Column Pinning
+
+Pin columns to the left or right for wide tables. Use column IDs in `columnPinning.left` and `columnPinning.right`. The selection column ID is `"select"` when row selection is enabled.
+
+<ComponentPreview name="data-table-column-pinning" />
+
+### With Row Click Events
+
+Handle single and double clicks on rows.
+
+<ComponentPreview name="data-table-row-click" />
+
+### Loading State
+
+Show a loading overlay while data is fetched.
+
+<ComponentPreview name="data-table-loading" />
+
+### Empty State
+
+Customize the message or component when there is no data.
+
+<ComponentPreview name="data-table-empty" />
+
+### With Column Resizing
+
+Allow users to resize columns. Use `columnResizeMode`: `"onChange"` (live) or `"onEnd"` (on mouse up).
+
+```tsx
+<DataTable<Person>
+  columns={columns}
+  data={data}
+  enableColumnResizing
+  columnResizeMode="onChange"
+/>
+```
+
+## API Reference
+
+This component is built on [TanStack Table v8](https://tanstack.com/table/v8).
+
+### DataTable
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` | `ColumnDef<TData, unknown>[]` | **Required** | Column definitions (TanStack Table) |
+| `data` | `TData[]` | **Required** | Row data |
+| `enablePagination` | `boolean` | `false` | Show pagination controls (page size select, prev/next) |
+| `pagination` | `DataTablePaginationState` | `{ pageSize: 10, pageIndex: 0 }` | Current page and page size |
+| `onPaginationChange` | `(pagination: DataTablePaginationState) => void` | - | Called when page or page size changes |
+| `enableRowSelection` | `boolean` | `false` | Add a checkbox column and allow row selection |
+| `onRowSelectionChange` | `(selectedRows: TData[]) => void` | - | Called with selected row data when selection changes |
+| `enableColumnResizing` | `boolean` | `false` | Allow resizing columns by dragging header edges |
+| `columnResizeMode` | `"onChange" \| "onEnd"` | `"onChange"` | When to apply resize (live vs on mouse up) |
+| `columnPinning` | `ColumnPinningState` | `{ left: [], right: [] }` | Column IDs to pin left or right |
+| `onRowClick` | `(row: Row<TData>) => void` | - | Called when a row is clicked |
+| `onRowDoubleClick` | `(row: Row<TData>) => void` | - | Called when a row is double-clicked |
+| `bordered` | `boolean` | `false` | Show borders between columns |
+| `classNames` | `DataTableClassNames` | - | Class names for table parts (see below) |
+| `pageSizeLabel` | `string` | `"Rows per page"` | Label for the page size select |
+| `loading` | `boolean` | `false` | Show loading overlay over the table |
+| `showPage` | `boolean` | `true` | Show "Page N" text in pagination |
+| `stickyHeader` | `boolean` | `true` | Keep header sticky when scrolling |
+| `emptyMessage` | `React.ReactNode` | - | Message or component when `data` is empty |
+
+### DataTablePaginationState
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `pageIndex` | `number` | Zero-based current page index |
+| `pageSize` | `number` | Number of rows per page |
+
+### DataTableClassNames
+
+Optional class names for styling table parts:
+
+| Key | Description |
+|-----|-------------|
+| `root` | Root container div |
+| `tableWrapper` | Wrapper around the table (scroll container) |
+| `table` | Table element |
+| `header` | Table header |
+| `headerRow` | Header row |
+| `headerCell` | Header cell |
+| `body` | Table body |
+| `row` | Body row |
+| `cell` | Body cell |
+| `pagination` | Pagination wrapper |
+| `paginationButton` | Prev/Next buttons |
+| `rowsPerPageSelect` | Page size select container |
+| `pageInfo` | "Page N" text |
+| `noResults` | Empty state message/cell |
+
+### Column definitions
+
+Use [TanStack Table `ColumnDef`](https://tanstack.com/table/v8/docs/api/core/column-def) for `columns`. When `enableRowSelection` is true, a `"select"` column is prepended automatically. You can pin it via `columnPinning.left: ["select", ...]`. For resizable columns, set `size` (and optionally `minSize`, `maxSize`) on the column def.
+
+### Custom Column Alignment
+
+Use the `header` and `cell` properties to customize alignment:
+
+```tsx
+const columns: ColumnDef<Data, unknown>[] = [
+  {
+    accessorKey: "name",
+    header: () => <div className="text-left">Name</div>,
+    cell: ({ cell }) => <div className="text-left">{cell.getValue() as string}</div>,
+  },
+  {
+    accessorKey: "amount",
+    header: () => <div className="text-right">Amount</div>,
+    cell: ({ cell }) => (
+      <div className="text-right font-mono">
+        ${(cell.getValue() as number).toFixed(2)}
+      </div>
+    ),
+  },
+]
+```

@@ -29,8 +29,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).`,
 	argTypes: {
 		// Vaul Props
 		asChild: {
-			description:
-				"When true, merges props with the child element instead of rendering a div.",
+			description: "When true, merges props with the child element instead of rendering a div.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -67,14 +66,10 @@ export const Default: Story = {
 				<DrawerContent {...args}>
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter>
 						<Button>Submit</Button>
@@ -89,8 +84,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default drawer content with header, body, and footer sections.",
+				story: "Default drawer content with header, body, and footer sections.",
 			},
 		},
 	},
@@ -108,28 +102,20 @@ export const WithCustomStyling: Story = {
 				<DrawerContent className="max-h-[60vh]">
 					<DrawerHeader>
 						<DrawerTitle>Custom Styled Content</DrawerTitle>
-						<DrawerDescription>
-							The content can be customized with className.
-						</DrawerDescription>
+						<DrawerDescription>The content can be customized with className.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4 space-y-4 overflow-y-auto">
 						<div className="rounded-md border p-4">
 							<p className="text-sm font-medium">Section 1</p>
-							<p className="text-xs text-muted-foreground mt-1">
-								Content in section 1
-							</p>
+							<p className="text-xs text-muted-foreground mt-1">Content in section 1</p>
 						</div>
 						<div className="rounded-md border p-4">
 							<p className="text-sm font-medium">Section 2</p>
-							<p className="text-xs text-muted-foreground mt-1">
-								Content in section 2
-							</p>
+							<p className="text-xs text-muted-foreground mt-1">Content in section 2</p>
 						</div>
 						<div className="rounded-md border p-4">
 							<p className="text-sm font-medium">Section 3</p>
-							<p className="text-xs text-muted-foreground mt-1">
-								Content in section 3
-							</p>
+							<p className="text-xs text-muted-foreground mt-1">Content in section 3</p>
 						</div>
 					</div>
 					<DrawerFooter>
@@ -144,8 +130,7 @@ export const WithCustomStyling: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer content with custom styling applied via className.",
+				story: "Drawer content with custom styling applied via className.",
 			},
 		},
 	},
@@ -163,9 +148,7 @@ export const ScrollableContent: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Long Content</DrawerTitle>
-						<DrawerDescription>
-							This drawer contains scrollable content.
-						</DrawerDescription>
+						<DrawerDescription>This drawer contains scrollable content.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4 space-y-4 overflow-y-auto max-h-[50vh]">
 						{Array.from({ length: 20 }).map((_, i) => (
@@ -189,8 +172,7 @@ export const ScrollableContent: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer content with scrollable content area for long lists.",
+				story: "Drawer content with scrollable content area for long lists.",
 			},
 		},
 	},

@@ -1,0 +1,137 @@
+---
+title: Time Picker
+description: A popover-based time selection control with flexible formatting and granularity.
+---
+
+## Usage
+
+<ComponentPreview name="time-picker-demo" />
+
+## Import
+
+```tsx
+import { TimePicker } from "@kaotypr/ui/time-picker"
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="time-picker-demo" />
+
+### Default Value
+
+<ComponentPreview name="time-picker-default-value" />
+
+### Controlled
+
+<ComponentPreview name="time-picker-controlled" />
+
+### With Steps
+
+<ComponentPreview name="time-picker-with-steps" />
+
+### Min & Max Time
+
+<ComponentPreview name="time-picker-min-max" />
+
+### With Seconds
+
+<ComponentPreview name="time-picker-with-seconds" />
+
+### 12-hour Format
+
+<ComponentPreview name="time-picker-meridiem" />
+
+### 12-hour Format with Seconds
+
+<ComponentPreview name="time-picker-meridiem-seconds" />
+
+### Hours Only
+
+<ComponentPreview name="time-picker-hours-only" />
+
+### Disabled
+
+<ComponentPreview name="time-picker-disabled" />
+
+## API Reference
+
+The `TimePicker` is a fully controlled or uncontrolled time selection component built on top of the library's `Popover` and `ScrollArea` primitives.
+
+### TimePicker
+
+The main component that renders a trigger button and a popover with time selection columns.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The controlled value of the selected time. Uses `HH:mm`, `HH:mm:ss`, or `hh:mm A` / `hh:mm:ss A` format depending on `showSeconds` and `meridiem`. |
+| `defaultValue` | `string` | - | The initial value for uncontrolled usage, using the same format as `value`. |
+| `onValueChange` | `(value: string \| undefined) => void` | - | Called when the selected time changes. Receives the formatted time string or `undefined` when cleared. |
+| `meridiem` | `boolean` | `false` | When `true`, enables 12-hour time with `AM`/`PM`. When `false`, uses 24-hour time. |
+| `showHours` | `boolean` | `true` | Whether to show and allow selection of the hours column. |
+| `showMinutes` | `boolean` | `true` | Whether to show and allow selection of the minutes column. |
+| `showSeconds` | `boolean` | `false` | Whether to show and allow selection of the seconds column. |
+| `hourStep` | `number` | `1` | Step interval for hour options. For example, `2` will show every other hour. |
+| `minuteStep` | `number` | `1` | Step interval for minute options. For example, `15` will show minutes in 15-minute increments. |
+| `secondStep` | `number` | `1` | Step interval for second options. |
+| `minTime` | `string` | - | Minimum selectable time. Compared against the current value, using the same format as `value`. |
+| `maxTime` | `string` | - | Maximum selectable time. Compared against the current value, using the same format as `value`. |
+| `clearable` | `boolean` | `false` | Whether the current selection can be cleared via the clear icon in the trigger. |
+| `disabled` | `boolean` | `false` | Disables the trigger and prevents opening the popover or changing the value. |
+| `placeholder` | `string` | `"Select time"` | Placeholder text shown in the trigger when no time is selected. |
+| `className` | `string` | - | Additional CSS classes applied to the trigger button. |
+| `contentClassName` | `string` | - | Additional CSS classes applied to the popover content. |
+
+### TimePickerContent
+
+The internal component that renders the scrollable time columns. You can use this directly to build custom time picker UIs.
+
+```ts
+type TimeValue = {
+  hours?: number
+  minutes?: number
+  seconds?: number
+  meridiem?: "AM" | "PM"
+}
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `TimeValue` | - | The current time value as a structured object. |
+| `onValueChange` | `(value: TimeValue) => void` | - | Called when any part of the time selection changes. |
+| `useMeridiem` | `boolean` | - | Whether to render the 12-hour `AM`/`PM` column and interpret values in 12-hour format. |
+| `showHours` | `boolean` | - | Whether to render the hours column. |
+| `showMinutes` | `boolean` | - | Whether to render the minutes column. |
+| `showSeconds` | `boolean` | - | Whether to render the seconds column. |
+| `hourStep` | `number` | - | Step interval for hour options. |
+| `minuteStep` | `number` | - | Step interval for minute options. |
+| `secondStep` | `number` | - | Step interval for second options. |
+| `minTime` | `string` | - | Minimum selectable time, used to disable options before this value. |
+| `maxTime` | `string` | - | Maximum selectable time, used to disable options after this value. |
+| `disabled` | `boolean` | - | Disables all columns and prevents interaction. |
+| `className` | `string` | - | Additional CSS classes applied to the columns container. |
+
+### TimePickerColumn
+
+Low-level building block for a single scrollable column of options.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `options` | `{ value: string; label: string }[]` | - | Option items for the column. |
+| `value` | `string` | - | The currently selected option value. |
+| `onValueChange` | `(value: string) => void` | - | Called when an option in the column is selected. |
+| `isDisabled` | `(value: string) => boolean` | - | Optional function to determine whether a given option should be disabled. |
+| `disabled` | `boolean` | `false` | Disables all options in the column. |
+| `className` | `string` | - | Additional CSS classes applied to the scroll area. |
+| `aria-label` | `string` | - | Accessible label describing the column (e.g. `"Hours"`, `"Minutes"`). |
+
+### TimePickerSummary
+
+Displays a compact summary of the currently selected time below the columns.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `formattedValue` | `string` | - | The formatted time string to display. When omitted, a placeholder is shown. |
+| `className` | `string` | - | Additional CSS classes applied to the summary container. |
+

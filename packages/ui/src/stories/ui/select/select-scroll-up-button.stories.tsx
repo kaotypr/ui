@@ -125,8 +125,7 @@ export const WithManyItems: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Scroll up button with many items, making the content scrollable.",
+				story: "Scroll up button with many items, making the content scrollable.",
 			},
 		},
 	},

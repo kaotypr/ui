@@ -43,8 +43,7 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			options: ["default", "sm", "lg"],
 		},
 		spacing: {
-			description:
-				"The spacing between toggle group items. Set to 0 for connected appearance.",
+			description: "The spacing between toggle group items. Set to 0 for connected appearance.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "0" },
@@ -84,17 +83,24 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			control: { type: "object" },
 		},
 		onValueChange: {
-			description:
-				"Callback fired when the pressed states of the toggle group changes.",
+			description: "Callback fired when the pressed states of the toggle group changes.",
 			table: {
 				type: {
-					summary:
-						"(groupValue: any[], eventDetails: Toggle.Group.ChangeEventDetails) => void",
+					summary: "(groupValue: any[], eventDetails: Toggle.Group.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
 			},
 			action: "onValueChange",
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		loopFocus: {
 			description:
@@ -117,8 +123,7 @@ This component is built on top of [Base UI Toggle Group](https://base-ui.com/rea
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the toggle group should ignore user interaction.",
+			description: "Whether the toggle group should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -183,11 +188,7 @@ export const SingleSelection: Story = {
 		const [value, setValue] = React.useState<string[]>([])
 
 		return (
-			<ToggleGroup
-				value={value}
-				onValueChange={setValue}
-				multiple={false}
-			>
+			<ToggleGroup value={value} onValueChange={setValue} multiple={false}>
 				<ToggleGroupItem value="left" aria-label="Align left">
 					Left
 				</ToggleGroupItem>
@@ -203,8 +204,7 @@ export const SingleSelection: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with single selection mode. Only one item can be pressed at a time.",
+				story: "Toggle group with single selection mode. Only one item can be pressed at a time.",
 			},
 		},
 	},
@@ -231,8 +231,7 @@ export const WithSpacing: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with spacing between items for a separated appearance.",
+				story: "Toggle group with spacing between items for a separated appearance.",
 			},
 		},
 	},
@@ -259,8 +258,7 @@ export const OutlineVariant: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with outline variant showing borders around each item.",
+				story: "Toggle group with outline variant showing borders around each item.",
 			},
 		},
 	},
@@ -271,11 +269,7 @@ export const Vertical: Story = {
 		const [value, setValue] = React.useState<string[]>([])
 
 		return (
-			<ToggleGroup
-				value={value}
-				onValueChange={setValue}
-				orientation="vertical"
-			>
+			<ToggleGroup value={value} onValueChange={setValue} orientation="vertical">
 				<ToggleGroupItem value="bold" aria-label="Bold">
 					<TextBIcon />
 					<span>Bold</span>
@@ -294,8 +288,7 @@ export const Vertical: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group displayed vertically. Items stack on top of each other.",
+				story: "Toggle group displayed vertically. Items stack on top of each other.",
 			},
 		},
 	},
@@ -376,8 +369,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle group with disabled state. All items are non-interactive.",
+				story: "Toggle group with disabled state. All items are non-interactive.",
 			},
 		},
 	},
@@ -402,6 +394,77 @@ export const Uncontrolled: Story = {
 			description: {
 				story:
 					"Uncontrolled toggle group using defaultValue prop. The 'bold' option is initially selected.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string[]>([])
+
+		return (
+			<ToggleGroup
+				value={value}
+				onValueChange={setValue}
+				render={<div className="flex gap-1 rounded-lg border p-1" />}
+			>
+				<ToggleGroupItem value="bold" aria-label="Bold">
+					<TextBIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="italic" aria-label="Italic">
+					<TextItalicIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="underline" aria-label="Underline">
+					<TextUnderlineIcon />
+				</ToggleGroupItem>
+			</ToggleGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default element with a custom container.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [value, setValue] = React.useState<string[]>([])
+
+		return (
+			<ToggleGroup
+				value={value}
+				onValueChange={setValue}
+				render={(props, state) => (
+					<div
+						{...props}
+						className={`inline-flex rounded-md ${
+							state.disabled ? "opacity-50 cursor-not-allowed" : ""
+						}`}
+					/>
+				)}
+			>
+				<ToggleGroupItem value="bold" aria-label="Bold">
+					<TextBIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="italic" aria-label="Italic">
+					<TextItalicIcon />
+				</ToggleGroupItem>
+				<ToggleGroupItem value="underline" aria-label="Underline">
+					<TextUnderlineIcon />
+				</ToggleGroupItem>
+			</ToggleGroup>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `disabled` (boolean), `multiple` (boolean), `value` (any[]).",
 			},
 		},
 	},

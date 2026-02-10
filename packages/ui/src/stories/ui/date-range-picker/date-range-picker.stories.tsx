@@ -157,8 +157,7 @@ This component is built on top of [React Day Picker](https://daypicker.dev/), an
 				'Props to pass to the underlying Calendar component. Excludes "selected", "onSelect", and "mode" which are managed internally. The "numberOfMonths" defaults to 2.',
 			table: {
 				type: {
-					summary:
-						'Omit<CalendarProps, "selected" | "onSelect" | "mode">',
+					summary: 'Omit<CalendarProps, "selected" | "onSelect" | "mode">',
 				},
 				category: "Props",
 			},
@@ -222,7 +221,8 @@ export const WithDefaultValue: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Date range picker with a default value set to a week-long range starting from today.",
+				story:
+					"Date range picker with a default value set to a week-long range starting from today.",
 			},
 		},
 	},
@@ -240,8 +240,7 @@ export const Clearable: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Set `clearable` to true to show a clear button when a date range is selected.",
+				story: "Set `clearable` to true to show a clear button when a date range is selected.",
 			},
 		},
 	},
@@ -293,8 +292,7 @@ export const WithTimeAndSeconds: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Add seconds input with `showSeconds` when `showTime` is enabled.",
+				story: "Add seconds input with `showSeconds` when `showTime` is enabled.",
 			},
 		},
 	},
@@ -313,8 +311,7 @@ export const HoursOnly: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Show only hours by setting `showMinutes` to false when `showTime` is enabled.",
+				story: "Show only hours by setting `showMinutes` to false when `showTime` is enabled.",
 			},
 		},
 	},
@@ -335,12 +332,9 @@ const ControlledWrapper = () => {
 			/>
 			<div className="text-sm text-muted-foreground">
 				<div>
-					From:{" "}
-					{range?.from instanceof Date ? range.from.toISOString() : range?.from ?? "None"}
+					From: {range?.from instanceof Date ? range.from.toISOString() : (range?.from ?? "None")}
 				</div>
-				<div>
-					To: {range?.to instanceof Date ? range.to.toISOString() : range?.to ?? "None"}
-				</div>
+				<div>To: {range?.to instanceof Date ? range.to.toISOString() : (range?.to ?? "None")}</div>
 			</div>
 		</div>
 	)
@@ -352,8 +346,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Example of controlled state using `value` and `onValueChange`.",
+				story: "Example of controlled state using `value` and `onValueChange`.",
 			},
 		},
 	},
@@ -367,11 +360,7 @@ const ISOStringWrapper = () => {
 
 	return (
 		<div className="flex flex-col gap-4">
-			<DateRangePicker
-				value={range}
-				onValueChange={setRange}
-				placeholder="ISO string values"
-			/>
+			<DateRangePicker value={range} onValueChange={setRange} placeholder="ISO string values" />
 			<div className="text-sm text-muted-foreground">
 				<div>From type: {typeof range?.from}</div>
 				<div>From: {range?.from?.toString() ?? "None"}</div>
@@ -499,8 +488,7 @@ export const WithWeekNumbers: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Show week numbers with `calendarProps.showWeekNumber`.",
+				story: "Show week numbers with `calendarProps.showWeekNumber`.",
 			},
 		},
 	},
@@ -514,8 +502,7 @@ export const CustomWidth: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Use `className` to customize the trigger button width and styling.",
+				story: "Use `className` to customize the trigger button width and styling.",
 			},
 		},
 	},
@@ -536,8 +523,7 @@ export const With12HourFormat: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.",
+				story: "Enable 12-hour format with AM/PM selection using `timePickerProps.meridiem`.",
 			},
 		},
 	},
@@ -561,8 +547,7 @@ export const WithStepIntervals: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Customize step intervals for hours, minutes, and seconds using `timePickerProps`.",
+				story: "Customize step intervals for hours, minutes, and seconds using `timePickerProps`.",
 			},
 		},
 	},
@@ -608,8 +593,7 @@ export const BookingExample: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"A booking example with custom placeholders and past dates disabled.",
+				story: "A booking example with custom placeholders and past dates disabled.",
 			},
 		},
 	},
@@ -627,8 +611,7 @@ export const ReportFilterExample: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"A report filter example pre-filled with the last 30 days.",
+				story: "A report filter example pre-filled with the last 30 days.",
 			},
 		},
 	},
@@ -650,7 +633,8 @@ const PartialSelectionWrapper = () => {
 				placeholderTo="End date"
 			/>
 			<div className="text-sm text-muted-foreground">
-				Partial selection: Only start date is selected initially. Select an end date in the calendar.
+				Partial selection: Only start date is selected initially. Select an end date in the
+				calendar.
 			</div>
 		</div>
 	)

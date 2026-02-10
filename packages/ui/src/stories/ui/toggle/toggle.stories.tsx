@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
 import { Toggle } from "~/components/ui/toggle"
-import {
-	TextBolderIcon,
-	TextItalicIcon,
-	TextUnderlineIcon,
-} from "@phosphor-icons/react"
+import { TextBolderIcon, TextItalicIcon, TextUnderlineIcon } from "@phosphor-icons/react"
 
 const meta = {
 	title: "UI/Toggle",
@@ -44,8 +40,7 @@ const meta = {
 		},
 		// Base UI Props
 		value: {
-			description:
-				"A unique string that identifies the toggle when used inside a toggle group.",
+			description: "A unique string that identifies the toggle when used inside a toggle group.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -74,17 +69,24 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		onPressedChange: {
-			description:
-				"Callback fired when the pressed state is changed.",
+			description: "Callback fired when the pressed state is changed.",
 			table: {
 				type: {
-					summary:
-						"(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void",
+					summary: "(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
 			},
 			action: "onPressedChange",
+		},
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
 		},
 		nativeButton: {
 			description:
@@ -97,8 +99,7 @@ const meta = {
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -160,8 +161,7 @@ export const Pressed: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle that is pressed by default (uncontrolled).",
+				story: "Toggle that is pressed by default (uncontrolled).",
 			},
 		},
 	},
@@ -185,8 +185,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled toggle using `pressed` and `onPressedChange` props with React state.",
+				story: "Controlled toggle using `pressed` and `onPressedChange` props with React state.",
 			},
 		},
 	},
@@ -255,8 +254,7 @@ export const WithText: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle buttons with icons and text labels.",
+				story: "Toggle buttons with icons and text labels.",
 			},
 		},
 	},
@@ -276,8 +274,7 @@ export const Disabled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Disabled toggles in both unpressed and pressed states.",
+				story: "Disabled toggles in both unpressed and pressed states.",
 			},
 		},
 	},
@@ -291,25 +288,13 @@ export const FormattingToolbar: Story = {
 
 		return (
 			<div className="flex gap-1 rounded-lg border p-1">
-				<Toggle
-					pressed={bold}
-					onPressedChange={setBold}
-					aria-label="Toggle bold"
-				>
+				<Toggle pressed={bold} onPressedChange={setBold} aria-label="Toggle bold">
 					<TextBolderIcon />
 				</Toggle>
-				<Toggle
-					pressed={italic}
-					onPressedChange={setItalic}
-					aria-label="Toggle italic"
-				>
+				<Toggle pressed={italic} onPressedChange={setItalic} aria-label="Toggle italic">
 					<TextItalicIcon />
 				</Toggle>
-				<Toggle
-					pressed={underline}
-					onPressedChange={setUnderline}
-					aria-label="Toggle underline"
-				>
+				<Toggle pressed={underline} onPressedChange={setUnderline} aria-label="Toggle underline">
 					<TextUnderlineIcon />
 				</Toggle>
 			</div>
@@ -318,8 +303,7 @@ export const FormattingToolbar: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Example of multiple toggles used together in a formatting toolbar.",
+				story: "Example of multiple toggles used together in a formatting toolbar.",
 			},
 		},
 	},
@@ -331,11 +315,7 @@ export const OutlineVariant: Story = {
 			<Toggle variant="outline" aria-label="Toggle bold">
 				<TextBolderIcon />
 			</Toggle>
-			<Toggle
-				variant="outline"
-				defaultPressed
-				aria-label="Toggle italic"
-			>
+			<Toggle variant="outline" defaultPressed aria-label="Toggle italic">
 				<TextItalicIcon />
 			</Toggle>
 		</div>
@@ -343,8 +323,7 @@ export const OutlineVariant: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Toggle buttons with outline variant styling.",
+				story: "Toggle buttons with outline variant styling.",
 			},
 		},
 	},
@@ -365,11 +344,7 @@ export const States: Story = {
 				<Toggle disabled aria-label="Disabled unpressed toggle">
 					<TextBolderIcon />
 				</Toggle>
-				<Toggle
-					disabled
-					defaultPressed
-					aria-label="Disabled pressed toggle"
-				>
+				<Toggle disabled defaultPressed aria-label="Disabled pressed toggle">
 					<TextBolderIcon />
 				</Toggle>
 			</div>
@@ -378,8 +353,60 @@ export const States: Story = {
 	parameters: {
 		docs: {
 			description: {
+				story: "All toggle states displayed together for comparison.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<Toggle
+			render={<div className="cursor-pointer" />}
+			nativeButton={false}
+			aria-label="Toggle bold"
+		>
+			<TextBolderIcon />
+			<span>Custom div toggle</span>
+		</Toggle>
+	),
+	parameters: {
+		docs: {
+			description: {
 				story:
-					"All toggle states displayed together for comparison.",
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [pressed, setPressed] = useState(false)
+		return (
+			<Toggle
+				pressed={pressed}
+				onPressedChange={setPressed}
+				render={(props, state) => (
+					<button
+						{...props}
+						className={`inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
+							state.pressed ? "bg-primary text-primary-foreground" : "bg-transparent hover:bg-muted"
+						}`}
+					>
+						<TextBolderIcon />
+						<span>{state.pressed ? "Pressed" : "Not pressed"}</span>
+					</button>
+				)}
+				aria-label="Toggle bold"
+			/>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `pressed` (boolean), `disabled` (boolean).",
 			},
 		},
 	},

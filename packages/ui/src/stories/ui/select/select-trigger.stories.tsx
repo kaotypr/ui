@@ -35,6 +35,15 @@ This component is built on top of [Base UI Select Trigger](https://base-ui.com/r
 			options: ["sm", "default"],
 		},
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		nativeButton: {
 			description:
 				"Whether the component renders a native button element when replacing it via the render prop.",
@@ -46,8 +55,7 @@ This component is built on top of [Base UI Select Trigger](https://base-ui.com/r
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "undefined" },
@@ -167,6 +175,73 @@ export const CustomStyling: Story = {
 		docs: {
 			description: {
 				story: "Trigger with custom styling applied via className.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+		return (
+			<Select open={open} onOpenChange={setOpen}>
+				<SelectTrigger
+					render={<div className="cursor-pointer" />}
+					nativeButton={false}
+					className="w-[180px]"
+				>
+					<SelectValue placeholder="Click this div" />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectItem value="apple">Apple</SelectItem>
+					<SelectItem value="banana">Banana</SelectItem>
+					<SelectItem value="orange">Orange</SelectItem>
+				</SelectContent>
+			</Select>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState<boolean>(false)
+		return (
+			<Select open={open} onOpenChange={setOpen}>
+				<SelectTrigger
+					render={(props, state) => (
+						<button
+							{...props}
+							className={`flex h-9 w-[180px] items-center justify-between rounded-lg border px-3 py-2 text-sm transition-colors ${
+								state.open ? "border-primary bg-primary/10" : "hover:bg-accent"
+							}`}
+						>
+							{props.children}
+						</button>
+					)}
+				>
+					<SelectValue placeholder={open ? "Select open" : "Select a fruit"} />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectItem value="apple">Apple</SelectItem>
+					<SelectItem value="banana">Banana</SelectItem>
+					<SelectItem value="orange">Orange</SelectItem>
+				</SelectContent>
+			</Select>
+		)
+	},
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean), `disabled` (boolean), and `popupOpen` (boolean).",
 			},
 		},
 	},

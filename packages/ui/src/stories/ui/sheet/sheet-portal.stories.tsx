@@ -28,8 +28,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	argTypes: {
 		// Base UI Props
 		container: {
-			description:
-				"A parent element to render the portal element into.",
+			description: "A parent element to render the portal element into.",
 			table: {
 				type: { summary: "HTMLElement | ShadowRoot | RefObject | null" },
 				defaultValue: { summary: "undefined" },
@@ -38,8 +37,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			control: false,
 		},
 		keepMounted: {
-			description:
-				"Whether to keep the portal mounted in the DOM while the popup is hidden.",
+			description: "Whether to keep the portal mounted in the DOM while the popup is hidden.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

@@ -40,8 +40,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 	argTypes: {
 		// Vaul Props
 		defaultOpen: {
-			description:
-				"Whether the drawer is initially open. Use for uncontrolled drawers.",
+			description: "Whether the drawer is initially open. Use for uncontrolled drawers.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -60,8 +59,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the drawer is opened or closed.",
+			description: "Event handler called when the drawer is opened or closed.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -80,8 +78,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: { type: "boolean" },
 		},
 		container: {
-			description:
-				"The container element to portal the drawer into. Defaults to document.body.",
+			description: "The container element to portal the drawer into. Defaults to document.body.",
 			table: {
 				type: { summary: "HTMLElement" },
 				defaultValue: { summary: "document.body" },
@@ -90,8 +87,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: false,
 		},
 		direction: {
-			description:
-				"The direction from which the drawer slides in.",
+			description: "The direction from which the drawer slides in.",
 			table: {
 				type: { summary: '"bottom" | "left" | "right" | "top"' },
 				defaultValue: { summary: '"bottom"' },
@@ -101,8 +97,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			options: ["bottom", "left", "right", "top"],
 		},
 		onAnimationEnd: {
-			description:
-				"Event handler called when the drawer animation ends.",
+			description: "Event handler called when the drawer animation ends.",
 			table: {
 				type: { summary: "(open: boolean) => void" },
 				defaultValue: { summary: "undefined" },
@@ -111,8 +106,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			action: "onAnimationEnd",
 		},
 		dismissible: {
-			description:
-				"Whether the drawer can be dismissed by clicking outside or pressing Escape.",
+			description: "Whether the drawer can be dismissed by clicking outside or pressing Escape.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "true" },
@@ -121,8 +115,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: { type: "boolean" },
 		},
 		handleOnly: {
-			description:
-				"Whether the drawer can only be dismissed by dragging the handle.",
+			description: "Whether the drawer can only be dismissed by dragging the handle.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -171,8 +164,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: false,
 		},
 		fadeFromIndex: {
-			description:
-				"Index of the snap point from which to fade out content.",
+			description: "Index of the snap point from which to fade out content.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "undefined" },
@@ -181,8 +173,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).
 			control: { type: "number" },
 		},
 		snapToSequentialPoint: {
-			description:
-				"Whether to snap to sequential points when dragging.",
+			description: "Whether to snap to sequential points when dragging.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "undefined" },
@@ -217,14 +208,12 @@ export const Default: Story = {
 					<DrawerHeader>
 						<DrawerTitle>Are you absolutely sure?</DrawerTitle>
 						<DrawerDescription>
-							This action cannot be undone. This will permanently delete your
-							account and remove your data from our servers.
+							This action cannot be undone. This will permanently delete your account and remove
+							your data from our servers.
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<DrawerFooter>
 						<Button>Submit</Button>
@@ -291,8 +280,7 @@ export const LeftDirection: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer that slides in from the left side, useful for navigation menus.",
+				story: "Drawer that slides in from the left side, useful for navigation menus.",
 			},
 		},
 	},
@@ -318,9 +306,7 @@ export const RightDirection: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Settings</DrawerTitle>
-						<DrawerDescription>
-							Manage your account settings and preferences.
-						</DrawerDescription>
+						<DrawerDescription>Manage your account settings and preferences.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4 space-y-4">
 						<div>
@@ -345,8 +331,7 @@ export const RightDirection: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer that slides in from the right side, commonly used for settings panels.",
+				story: "Drawer that slides in from the right side, commonly used for settings panels.",
 			},
 		},
 	},
@@ -372,9 +357,7 @@ export const TopDirection: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Notifications</DrawerTitle>
-						<DrawerDescription>
-							You have 3 new notifications.
-						</DrawerDescription>
+						<DrawerDescription>You have 3 new notifications.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4 space-y-2">
 						<div className="rounded-md border p-3">
@@ -396,8 +379,7 @@ export const TopDirection: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Drawer that slides in from the top, useful for notifications or alerts.",
+				story: "Drawer that slides in from the top, useful for notifications or alerts.",
 			},
 		},
 	},
@@ -409,9 +391,7 @@ export const Controlled: Story = {
 
 		return (
 			<div className="space-y-4">
-				<Button onClick={() => setOpen(!open)}>
-					{open ? "Close Drawer" : "Open Drawer"}
-				</Button>
+				<Button onClick={() => setOpen(!open)}>{open ? "Close Drawer" : "Open Drawer"}</Button>
 				<Drawer
 					{...args}
 					open={open}
@@ -448,8 +428,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled drawer where the open state is managed externally.",
+				story: "Controlled drawer where the open state is managed externally.",
 			},
 		},
 	},
@@ -476,8 +455,8 @@ export const NonDismissible: Story = {
 					<DrawerHeader>
 						<DrawerTitle>Important Action Required</DrawerTitle>
 						<DrawerDescription>
-							This drawer cannot be dismissed by clicking outside or pressing Escape.
-							You must use the close button.
+							This drawer cannot be dismissed by clicking outside or pressing Escape. You must use
+							the close button.
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">

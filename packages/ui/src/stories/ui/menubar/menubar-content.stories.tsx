@@ -25,8 +25,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 	argTypes: {
 		// Props
 		align: {
-			description:
-				"How to align the popup relative to the specified side.",
+			description: "How to align the popup relative to the specified side.",
 			table: {
 				type: { summary: '"start" | "center" | "end"' },
 				defaultValue: { summary: '"start"' },
@@ -36,8 +35,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			options: ["start", "center", "end"],
 		},
 		alignOffset: {
-			description:
-				"Additional offset along the alignment axis in pixels.",
+			description: "Additional offset along the alignment axis in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "-4" },
@@ -46,8 +44,7 @@ This component is built on top of [Base UI Menu](https://base-ui.com/react/compo
 			control: { type: "number" },
 		},
 		sideOffset: {
-			description:
-				"Distance between the anchor and the popup in pixels.",
+			description: "Distance between the anchor and the popup in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "8" },
@@ -160,8 +157,7 @@ export const CustomOffset: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Menubar content with custom side and alignment offsets.",
+				story: "Menubar content with custom side and alignment offsets.",
 			},
 		},
 	},

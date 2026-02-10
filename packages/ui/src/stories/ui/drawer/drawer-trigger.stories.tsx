@@ -28,8 +28,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).`,
 	argTypes: {
 		// Vaul Props
 		asChild: {
-			description:
-				"When true, merges props with the child element instead of rendering a button.",
+			description: "When true, merges props with the child element instead of rendering a button.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -66,14 +65,10 @@ export const Default: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -87,8 +82,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default trigger button that opens the drawer when clicked.",
+				story: "Default trigger button that opens the drawer when clicked.",
 			},
 		},
 	},
@@ -113,9 +107,7 @@ export const WithAsChild: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -129,8 +121,7 @@ export const WithAsChild: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger using asChild prop to merge props with a custom button element.",
+				story: "Trigger using asChild prop to merge props with a custom button element.",
 			},
 		},
 	},
@@ -145,9 +136,7 @@ export const CustomElement: Story = {
 				<DrawerTrigger asChild>
 					<div className="cursor-pointer rounded-md border border-dashed p-8 text-center hover:bg-muted">
 						<p className="text-sm font-medium">Click anywhere in this area</p>
-						<p className="text-xs text-muted-foreground mt-1">
-							Custom trigger element
-						</p>
+						<p className="text-xs text-muted-foreground mt-1">Custom trigger element</p>
 					</div>
 				</DrawerTrigger>
 				<DrawerContent>
@@ -158,9 +147,7 @@ export const CustomElement: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -174,8 +161,7 @@ export const CustomElement: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Trigger can be any custom element when using the asChild prop.",
+				story: "Trigger can be any custom element when using the asChild prop.",
 			},
 		},
 	},

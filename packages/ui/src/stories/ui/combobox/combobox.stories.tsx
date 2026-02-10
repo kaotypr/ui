@@ -88,8 +88,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 	argTypes: {
 		// Base UI Props
 		name: {
-			description:
-				"Identifies the field when a form is submitted.",
+			description: "Identifies the field when a form is submitted.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -117,8 +116,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: false,
 		},
 		onValueChange: {
-			description:
-				"Event handler called when the selected value of the combobox changes.",
+			description: "Event handler called when the selected value of the combobox changes.",
 			table: {
 				type: {
 					summary:
@@ -152,8 +150,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			description: "Event handler called when the input value changes.",
 			table: {
 				type: {
-					summary:
-						"(inputValue: string, eventDetails: Combobox.Root.ChangeEventDetails) => void",
+					summary: "(inputValue: string, eventDetails: Combobox.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -180,12 +177,10 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		onOpenChange: {
-			description:
-				"Event handler called when the popup is opened or closed.",
+			description: "Event handler called when the popup is opened or closed.",
 			table: {
 				type: {
-					summary:
-						"(open: boolean, eventDetails: Combobox.Root.ChangeEventDetails) => void",
+					summary: "(open: boolean, eventDetails: Combobox.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -193,8 +188,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			action: "onOpenChange",
 		},
 		autoHighlight: {
-			description:
-				"Whether the first matching item is highlighted automatically while filtering.",
+			description: "Whether the first matching item is highlighted automatically while filtering.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -213,8 +207,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		filter: {
-			description:
-				"Filter function used to match items vs input query.",
+			description: "Filter function used to match items vs input query.",
 			table: {
 				type: {
 					summary:
@@ -246,8 +239,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		inline: {
-			description:
-				"Whether the list is rendered inline without using the popup.",
+			description: "Whether the list is rendered inline without using the popup.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -378,8 +370,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		virtualized: {
-			description:
-				"Whether the items are being externally virtualized.",
+			description: "Whether the items are being externally virtualized.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -388,8 +379,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -398,8 +388,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		readOnly: {
-			description:
-				"Whether the user should be unable to choose a different option from the popup.",
+			description: "Whether the user should be unable to choose a different option from the popup.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -408,8 +397,7 @@ This component is built on top of [Base UI Combobox](https://base-ui.com/react/c
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must choose a value before submitting a form.",
+			description: "Whether the user must choose a value before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -475,8 +463,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default combobox with a searchable input and dropdown list of fruits.",
+				story: "Default combobox with a searchable input and dropdown list of fruits.",
 			},
 		},
 	},
@@ -536,10 +523,7 @@ export const WithClear: Story = {
 						args.onValueChange?.(newValue as any, {} as any)
 					}}
 				>
-					<ComboboxInput
-						placeholder="Select a fruit..."
-						showClear
-					/>
+					<ComboboxInput placeholder="Select a fruit..." showClear />
 					<ComboboxContent>
 						<ComboboxList>
 							{fruits.map((item) => (
@@ -557,8 +541,7 @@ export const WithClear: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Combobox with a clear button to reset the selection.",
+				story: "Combobox with a clear button to reset the selection.",
 			},
 		},
 	},
@@ -584,16 +567,9 @@ export const Multiple: Story = {
 				>
 					<ComboboxChips ref={chipsRef}>
 						{value.map((val) => {
-								const fruit = fruits.find(
-									(f) => f.value === val,
-								)
-								return (
-									<ComboboxChip key={val}>
-										{fruit?.label || val}
-									</ComboboxChip>
-								)
-							})
-						}
+							const fruit = fruits.find((f) => f.value === val)
+							return <ComboboxChip key={val}>{fruit?.label || val}</ComboboxChip>
+						})}
 						<ComboboxChipsInput />
 					</ComboboxChips>
 					<ComboboxContent anchor={chipsRef}>
@@ -613,8 +589,7 @@ export const Multiple: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Combobox with multiple selection enabled, showing selected items as chips.",
+				story: "Combobox with multiple selection enabled, showing selected items as chips.",
 			},
 		},
 	},
@@ -658,8 +633,7 @@ export const Grouped: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Combobox with grouped items showing categories with labels.",
+				story: "Combobox with grouped items showing categories with labels.",
 			},
 		},
 	},

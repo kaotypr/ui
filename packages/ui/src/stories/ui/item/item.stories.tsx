@@ -140,11 +140,7 @@ export const WithImage: Story = {
 	render: (args) => (
 		<Item {...args}>
 			<ItemMedia variant="image">
-				<img
-					src="https://via.placeholder.com/40"
-					alt="Avatar"
-					className="rounded-sm"
-				/>
+				<img src="https://via.placeholder.com/40" alt="Avatar" className="rounded-sm" />
 			</ItemMedia>
 			<ItemContent>
 				<ItemTitle>John Doe</ItemTitle>

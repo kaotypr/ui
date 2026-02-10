@@ -41,8 +41,7 @@ Must be used within a Tooltip component.`,
 			control: { type: "number" },
 		},
 		align: {
-			description:
-				"How to align the popup relative to the specified side.",
+			description: "How to align the popup relative to the specified side.",
 			table: {
 				type: { summary: '"start" | "center" | "end"' },
 				defaultValue: { summary: '"center"' },
@@ -66,8 +65,7 @@ Must be used within a Tooltip component.`,
 			description: "Additional CSS class names to apply.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Tooltip.Popup.State) => string | undefined)",
+					summary: "string | ((state: Tooltip.Popup.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -78,8 +76,7 @@ Must be used within a Tooltip component.`,
 			description: "Inline styles to apply.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Tooltip.Popup.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Tooltip.Popup.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -109,8 +106,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default tooltip content positioned at the top center of the trigger.",
+				story: "Default tooltip content positioned at the top center of the trigger.",
 			},
 		},
 	},
@@ -225,8 +221,7 @@ export const WithCustomOffset: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tooltip content with custom sideOffset (12px) and alignOffset (8px).",
+				story: "Tooltip content with custom sideOffset (12px) and alignOffset (8px).",
 			},
 		},
 	},
@@ -273,8 +268,7 @@ export const WithAlignment: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tooltip content with different alignment options: start, center, and end.",
+				story: "Tooltip content with different alignment options: start, center, and end.",
 			},
 		},
 	},
@@ -291,9 +285,8 @@ export const LongContent: Story = {
 			</TooltipTrigger>
 			<TooltipContent {...args} className="max-w-xs">
 				<p>
-					This is a longer tooltip message that demonstrates how the
-					tooltip handles content that spans multiple lines. The
-					tooltip will automatically wrap the text and adjust its size
+					This is a longer tooltip message that demonstrates how the tooltip handles content that
+					spans multiple lines. The tooltip will automatically wrap the text and adjust its size
 					accordingly.
 				</p>
 			</TooltipContent>

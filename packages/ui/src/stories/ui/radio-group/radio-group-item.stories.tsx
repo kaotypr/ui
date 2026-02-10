@@ -30,8 +30,7 @@ This component is built on top of [Base UI Radio](https://base-ui.com/react/comp
 			control: { type: "text" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -40,8 +39,7 @@ This component is built on top of [Base UI Radio](https://base-ui.com/react/comp
 			control: { type: "boolean" },
 		},
 		required: {
-			description:
-				"Whether the user must select this option before submitting a form.",
+			description: "Whether the user must select this option before submitting a form.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },

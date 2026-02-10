@@ -1,0 +1,269 @@
+---
+title: Dropdown Menu
+description: A menu that appears when clicking a trigger element, with support for items, submenus, checkboxes, and radio groups.
+---
+
+## Usage
+
+<ComponentPreview name="dropdown-menu-demo" />
+
+## Import
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+} from "@kaotypr/ui/dropdown-menu"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="dropdown-menu-basic" />
+
+### With Icons
+
+<ComponentPreview name="dropdown-menu-icons" />
+
+### Keyboard Shortcuts
+
+<ComponentPreview name="dropdown-menu-shortcuts" />
+
+### Submenu
+
+<ComponentPreview name="dropdown-menu-submenu" />
+
+### Checkboxes
+
+<ComponentPreview name="dropdown-menu-checkboxes" />
+
+### Checkboxes with Icons
+
+<ComponentPreview name="dropdown-menu-checkboxes-icons" />
+
+### Radio Group
+
+<ComponentPreview name="dropdown-menu-radio-group" />
+
+### Radio Group with Icons
+
+<ComponentPreview name="dropdown-menu-radio-icons" />
+
+### Destructive Item
+
+<ComponentPreview name="dropdown-menu-destructive" />
+
+### With Avatar Trigger
+
+<ComponentPreview name="dropdown-menu-avatar" />
+
+### Complex
+
+<ComponentPreview name="dropdown-menu-complex" />
+
+## API Reference
+
+This component is built on top of [Base UI Menu](https://base-ui.com/react/components/menu).
+
+### DropdownMenu
+
+The root component that wraps all dropdown menu parts. Manages open state and menu behavior.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | The controlled open state of the menu |
+| `defaultOpen` | `boolean` | `false` | The uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean, eventDetails: Menu.Root.ChangeEventDetails) => void` | - | Event handler called when the menu is opened or closed |
+| `onOpenChangeComplete` | `(open: boolean) => void` | - | Event handler called after open/close animations complete |
+| `modal` | `boolean` | `true` | When true, document scroll is locked and pointer interactions outside the menu are disabled |
+| `highlightItemOnHover` | `boolean` | `true` | Whether hovering items highlights them (differentiates :hover from data-highlighted) |
+| `closeParentOnEsc` | `boolean` | `false` | In a submenu, whether Escape closes the entire menu or only the current submenu |
+| `loopFocus` | `boolean` | `true` | Whether arrow keys loop focus from last to first item |
+| `orientation` | `"vertical" \| "horizontal"` | `"vertical"` | Menu orientation and arrow key direction |
+| `disabled` | `boolean` | `false` | Whether the component ignores user interaction |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuPortal
+
+Renders the popup in a portal (e.g. for submenus). Use when you need the menu content in a different part of the DOM.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `container` | `HTMLElement \| null` | `document.body` | The DOM node to render the portal into |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the portal element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuTrigger
+
+The button or element that opens the menu. Must be used within a `DropdownMenu` component.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The trigger content (e.g. a Button) |
+| `nativeButton` | `boolean` | `true` | Whether the component renders a native `<button>` when using `render` |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the default button element (e.g. with a custom Button) |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuContent
+
+The container for menu items. Must be used within a `DropdownMenu` component. Positioned relative to the trigger.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment of the popup relative to the anchor |
+| `alignOffset` | `number` | `0` | Additional offset along the alignment axis (px) |
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"bottom"` | Side of the anchor to place the popup; may flip to avoid overflow |
+| `sideOffset` | `number` | `4` | Distance between anchor and popup (px) |
+| `className` | `string` | - | Additional CSS class names |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the popup element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuGroup
+
+Groups related menu items together. Use with `DropdownMenuLabel` for a labeled section.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the group element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuLabel
+
+An accessible label for a group of menu items. Not interactive.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `className` | `string` | - | Additional CSS class names |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the label element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuItem
+
+An individual interactive item in the menu. Must be used within `DropdownMenuContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `variant` | `"default" \| "destructive"` | `"default"` | Visual variant; use `"destructive"` for dangerous actions |
+| `disabled` | `boolean` | `false` | Whether the item is disabled |
+| `label` | `string` | - | Overrides the text used for keyboard type-ahead navigation |
+| `onClick` | `(event: React.MouseEvent) => void` | - | Click handler |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the item element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuCheckboxItem
+
+A menu item that toggles a checkbox state. Use for multi-select options.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean \| "indeterminate"` | - | Controlled checked state |
+| `defaultChecked` | `boolean` | - | Uncontrolled initial checked state |
+| `onCheckedChange` | `(checked: boolean) => void` | - | Called when the checked state changes |
+| `disabled` | `boolean` | `false` | Whether the item is disabled |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the item element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuRadioGroup
+
+Groups `DropdownMenuRadioItem` components so only one can be selected at a time.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The controlled value of the selected item |
+| `defaultValue` | `string` | - | The uncontrolled initial value |
+| `onValueChange` | `(value: string) => void` | - | Called when the selected value changes |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the group element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuRadioItem
+
+A menu item that participates in a radio group. Only one item in the group can be selected.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | **Required** | The value of this option |
+| `disabled` | `boolean` | `false` | Whether the item is disabled |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the item element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuSeparator
+
+A visual divider between menu groups.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the separator element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuShortcut
+
+Displays a keyboard shortcut hint. Use inside `DropdownMenuItem`; typically placed after the label.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| (span props) | - | - | Accepts all standard `span` HTML attributes |
+
+### DropdownMenuSub
+
+Groups all parts of a submenu: trigger, portal, and content. Must wrap `DropdownMenuSubTrigger`, optional `DropdownMenuPortal`, and `DropdownMenuSubContent`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | Controlled open state of the submenu |
+| `defaultOpen` | `boolean` | `false` | Uncontrolled initial open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Called when the submenu opens or closes |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the submenu root element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuSubTrigger
+
+A menu item that opens a submenu. Must be used within `DropdownMenuContent`, inside `DropdownMenuSub`. Renders a caret icon by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `inset` | `boolean` | `false` | When true, adds left padding to align with items that have icons |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the trigger element |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### DropdownMenuSubContent
+
+The container for submenu items. Positioned relative to the sub trigger. Use inside `DropdownMenuSub`, optionally wrapped in `DropdownMenuPortal`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the sub trigger |
+| `alignOffset` | `number` | `-3` | Additional offset along the alignment axis (px) |
+| `side` | `"top" \| "bottom" \| "left" \| "right" \| "inline-start" \| "inline-end"` | `"right"` | Side of the sub trigger to place the popup |
+| `sideOffset` | `number` | `0` | Distance between sub trigger and popup (px) |
+| `className` | `string` | - | Additional CSS class names |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the popup element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |

@@ -130,9 +130,7 @@ export const Default: Story = {
 						</div>
 						<div className="flex flex-col">
 							<span className="text-sm font-semibold">Acme Inc</span>
-							<span className="text-xs text-muted-foreground">
-								Dashboard
-							</span>
+							<span className="text-xs text-muted-foreground">Dashboard</span>
 						</div>
 					</div>
 				</SidebarHeader>
@@ -201,8 +199,8 @@ export const Default: Story = {
 					<div className="rounded-lg border p-4">
 						<h2 className="text-sm font-medium">Welcome</h2>
 						<p className="text-sm text-muted-foreground">
-							This is the main content area. The sidebar can be toggled using
-							the trigger button or the keyboard shortcut (Cmd/Ctrl+B).
+							This is the main content area. The sidebar can be toggled using the trigger button or
+							the keyboard shortcut (Cmd/Ctrl+B).
 						</p>
 					</div>
 				</main>
@@ -342,9 +340,7 @@ export const WithSubmenus: Story = {
 				</header>
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
-						<p className="text-sm text-muted-foreground">
-							Sidebar with nested submenu items.
-						</p>
+						<p className="text-sm text-muted-foreground">Sidebar with nested submenu items.</p>
 					</div>
 				</main>
 			</SidebarInset>
@@ -353,8 +349,7 @@ export const WithSubmenus: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sidebar with nested submenus demonstrating hierarchical navigation.",
+				story: "Sidebar with nested submenus demonstrating hierarchical navigation.",
 			},
 		},
 	},
@@ -415,8 +410,7 @@ export const FloatingVariant: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Floating variant of the sidebar with rounded corners and shadow effect.",
+				story: "Floating variant of the sidebar with rounded corners and shadow effect.",
 			},
 		},
 	},
@@ -464,8 +458,8 @@ export const InsetVariant: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							Inset variant where the main content has rounded corners and
-							shadow, creating a card-like appearance.
+							Inset variant where the main content has rounded corners and shadow, creating a
+							card-like appearance.
 						</p>
 					</div>
 				</main>
@@ -594,8 +588,8 @@ export const IconCollapsible: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							When collapsed, the sidebar shows only icons. Tooltips appear on
-							hover to show the full label.
+							When collapsed, the sidebar shows only icons. Tooltips appear on hover to show the
+							full label.
 						</p>
 					</div>
 				</main>
@@ -654,8 +648,7 @@ export const NonCollapsible: Story = {
 				<main className="flex flex-1 flex-col gap-4 p-4">
 					<div className="rounded-lg border p-4">
 						<p className="text-sm text-muted-foreground">
-							Sidebar that cannot be collapsed. Always remains visible at full
-							width.
+							Sidebar that cannot be collapsed. Always remains visible at full width.
 						</p>
 					</div>
 				</main>
@@ -668,8 +661,7 @@ export const NonCollapsible: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Non-collapsible sidebar that always remains visible at full width.",
+				story: "Non-collapsible sidebar that always remains visible at full width.",
 			},
 		},
 	},

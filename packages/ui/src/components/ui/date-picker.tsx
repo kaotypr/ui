@@ -61,7 +61,7 @@ function normalizeToDate(value: Date | string | undefined): Date | undefined {
 
 function outputValue(
 	date: Date | undefined,
-	originalValue: Date | string | undefined
+	originalValue: Date | string | undefined,
 ): Date | string | undefined {
 	if (!date) return undefined
 	// If original value was a string, return ISO string
@@ -127,7 +127,7 @@ export function DatePicker({
 }: DatePickerProps) {
 	const [open, setOpen] = React.useState(false)
 	const [uncontrolledValue, setUncontrolledValue] = React.useState<Date | undefined>(() =>
-		normalizeToDate(defaultValue)
+		normalizeToDate(defaultValue),
 	)
 
 	// Track original value type for output
@@ -149,7 +149,7 @@ export function DatePicker({
 			const output = outputValue(newDate, originalValueRef.current)
 			onValueChange?.(output)
 		},
-		[isControlled, onValueChange]
+		[isControlled, onValueChange],
 	)
 
 	const handleSelect = React.useCallback(
@@ -174,7 +174,7 @@ export function DatePicker({
 				setOpen(false)
 			}
 		},
-		[dateValue, showTime, handleDateChange]
+		[dateValue, showTime, handleDateChange],
 	)
 
 	const handleTimeChange = React.useCallback(
@@ -197,7 +197,7 @@ export function DatePicker({
 
 			handleDateChange(newDate)
 		},
-		[dateValue, handleDateChange]
+		[dateValue, handleDateChange],
 	)
 
 	const handleClear = React.useCallback(
@@ -205,7 +205,7 @@ export function DatePicker({
 			e.stopPropagation()
 			handleDateChange(undefined)
 		},
-		[handleDateChange]
+		[handleDateChange],
 	)
 
 	const displayValue = React.useMemo(() => {
@@ -227,38 +227,36 @@ export function DatePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger>
-				<Button
-					data-slot="date-picker"
-					variant="outline"
-					disabled={disabled}
-					className={cn(
-						"w-full justify-start text-left font-normal",
-						!dateValue && "text-muted-foreground",
-						className
-					)}
-				>
-					<CalendarDotIcon className="h-4 w-4" />
-					<span className="flex-1 truncate">{displayValue}</span>
-					{clearable && dateValue && (
-						<div
-							role="button"
-							tabIndex={0}
-							onClick={handleClear}
-							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
-						>
-							<XIcon className="h-4 w-4" />
-						</div>
-					)}
-				</Button>
-			</PopoverTrigger>
+			<PopoverTrigger
+				disabled={disabled}
+				render={
+					<Button
+						data-slot="date-picker"
+						variant="outline"
+						disabled={disabled}
+						className={cn(
+							"w-full justify-start text-left font-normal",
+							!dateValue && "text-muted-foreground",
+							className,
+						)}
+					>
+						<CalendarDotIcon className="h-4 w-4" />
+						<span className="flex-1 truncate">{displayValue}</span>
+						{clearable && dateValue && (
+							<div
+								role="button"
+								tabIndex={0}
+								onClick={handleClear}
+								className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
+							>
+								<XIcon className="h-4 w-4" />
+							</div>
+						)}
+					</Button>
+				}
+			></PopoverTrigger>
 			<PopoverContent className={cn("w-auto p-0", contentClassName)} align="start">
-				<Calendar
-					{...calendarProps}
-					mode="single"
-					selected={dateValue}
-					onSelect={handleSelect}
-				/>
+				<Calendar {...calendarProps} mode="single" selected={dateValue} onSelect={handleSelect} />
 				{showTime && (
 					<div
 						data-slot="date-picker-time"

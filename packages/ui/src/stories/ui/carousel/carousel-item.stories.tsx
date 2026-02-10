@@ -79,11 +79,7 @@ export const MultiplePerView: Story = {
 			<Carousel>
 				<CarouselContent>
 					{Array.from({ length: 6 }).map((_, index) => (
-						<CarouselItem
-							key={index}
-							{...args}
-							className="md:basis-1/2 lg:basis-1/3"
-						>
+						<CarouselItem key={index} {...args} className="md:basis-1/2 lg:basis-1/3">
 							<div className="flex aspect-square items-center justify-center rounded-md border bg-muted p-6">
 								<span className="text-4xl font-semibold">{index + 1}</span>
 							</div>
@@ -142,9 +138,7 @@ export const WithCustomContent: Story = {
 						<CarouselItem key={index} {...args}>
 							<div className="flex aspect-video flex-col items-center justify-center gap-2 rounded-md border bg-gradient-to-br from-primary/20 to-primary/5 p-6">
 								<span className="text-2xl font-semibold">Slide {index + 1}</span>
-								<span className="text-sm text-muted-foreground">
-									Custom styled content
-								</span>
+								<span className="text-sm text-muted-foreground">Custom styled content</span>
 							</div>
 						</CarouselItem>
 					))}

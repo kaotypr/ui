@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
-import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSlot,
-	InputOTPSeparator,
-} from "~/components/ui/input-otp"
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "~/components/ui/input-otp"
 
 const meta = {
 	title: "UI/InputOTP/InputOTPSeparator",
@@ -44,11 +39,7 @@ export const Default: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={6}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={6} value={value} onChange={setValue}>
 				<InputOTPGroup>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />
@@ -66,8 +57,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default InputOTPSeparator displaying a dash icon between two groups of OTP slots.",
+				story: "Default InputOTPSeparator displaying a dash icon between two groups of OTP slots.",
 			},
 		},
 	},
@@ -78,11 +68,7 @@ export const MultipleSeparators: Story = {
 		const [value, setValue] = useState("")
 
 		return (
-			<InputOTP
-				maxLength={9}
-				value={value}
-				onChange={setValue}
-			>
+			<InputOTP maxLength={9} value={value} onChange={setValue}>
 				<InputOTPGroup>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />
@@ -106,8 +92,7 @@ export const MultipleSeparators: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Multiple InputOTPSeparator components separating three groups of OTP slots.",
+				story: "Multiple InputOTPSeparator components separating three groups of OTP slots.",
 			},
 		},
 	},
@@ -122,11 +107,7 @@ export const WithoutSeparator: Story = {
 				<p className="text-sm text-muted-foreground">
 					For comparison, here's an OTP input without separators:
 				</p>
-				<InputOTP
-					maxLength={6}
-					value={value}
-					onChange={setValue}
-				>
+				<InputOTP maxLength={6} value={value} onChange={setValue}>
 					<InputOTPGroup>
 						<InputOTPSlot index={0} />
 						<InputOTPSlot index={1} />

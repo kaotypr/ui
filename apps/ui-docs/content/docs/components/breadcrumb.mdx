@@ -1,0 +1,119 @@
+---
+title: Breadcrumb
+description: A navigation component that shows the current page's location within a hierarchy.
+---
+
+## Usage
+
+<ComponentPreview name="breadcrumb-demo" />
+
+## Import
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@kaotypr/ui/breadcrumb"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="breadcrumb-basic" />
+
+### Link (Next.js / custom render)
+
+<ComponentPreview name="breadcrumb-link" />
+
+### Custom separator
+
+<ComponentPreview name="breadcrumb-separator" />
+
+### Dropdown
+
+<ComponentPreview name="breadcrumb-dropdown" />
+
+### Ellipsis
+
+<ComponentPreview name="breadcrumb-ellipsis" />
+
+## API Reference
+
+Breadcrumb is a custom composition of semantic HTML (`nav`, `ol`, `li`) with accessible attributes. `BreadcrumbLink` uses [Base UI useRender](https://base-ui.com/react/hooks/use-render) for flexible rendering (e.g. router links).
+
+### Breadcrumb
+
+The root `<nav>` that wraps the breadcrumb trail. Renders with `aria-label="breadcrumb"`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | - | Typically a single `BreadcrumbList` |
+| … | `ComponentProps<"nav">` | - | All native `<nav>` props |
+
+### BreadcrumbList
+
+The ordered list container for breadcrumb items. Must be used within `Breadcrumb`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | - | `BreadcrumbItem` and `BreadcrumbSeparator` nodes |
+| … | `ComponentProps<"ol">` | - | All native `<ol>` props |
+
+### BreadcrumbItem
+
+A single item in the breadcrumb trail. Wraps a `BreadcrumbLink` or `BreadcrumbPage`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | - | A link or page component |
+| … | `ComponentProps<"li">` | - | All native `<li>` props |
+
+### BreadcrumbLink
+
+A navigable link within a breadcrumb item. Supports the `render` prop for custom elements (e.g. Next.js `Link`).
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | URL for the link (when using default `<a>`) |
+| `render` | `ReactElement \| (props) => ReactElement` | - | Custom element or component (e.g. `<Link href="..." />`) |
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | - | Link content |
+| … | `ComponentProps<"a">` | - | Native anchor props when not using `render` |
+
+### BreadcrumbPage
+
+The current page indicator (non-interactive). Renders with `aria-current="page"` and `aria-disabled="true"`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | - | Current page label |
+| … | `ComponentProps<"span">` | - | All native `<span>` props |
+
+### BreadcrumbSeparator
+
+Visual separator between breadcrumb items. Renders with `role="presentation"` and `aria-hidden="true"`. Default content is `CaretRightIcon`; pass `children` to customize.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| `children` | `ReactNode` | `<CaretRightIcon />` | Custom separator (e.g. `/`, icon, or text) |
+| … | `ComponentProps<"li">` | - | All native `<li>` props |
+
+### BreadcrumbEllipsis
+
+Collapsed indicator for long breadcrumb trails. Renders a three-dot icon and includes screen reader text “More”.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | CSS class applied to the element |
+| … | `ComponentProps<"span">` | - | All native `<span>` props |

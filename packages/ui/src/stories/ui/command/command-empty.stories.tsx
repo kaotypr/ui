@@ -75,8 +75,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default CommandEmpty that appears when no results match the search query.",
+				story: "Default CommandEmpty that appears when no results match the search query.",
 			},
 		},
 	},
@@ -94,9 +93,7 @@ export const WithCustomMessage: Story = {
 						<CommandEmpty>
 							<div className="flex flex-col items-center gap-2 py-6">
 								<p className="text-sm font-medium">No matches found</p>
-								<p className="text-xs text-muted-foreground">
-									Try a different search term
-								</p>
+								<p className="text-xs text-muted-foreground">Try a different search term</p>
 							</div>
 						</CommandEmpty>
 						{fruits.map((fruit) => (
@@ -116,8 +113,7 @@ export const WithCustomMessage: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandEmpty with custom content and styling for the empty state.",
+				story: "CommandEmpty with custom content and styling for the empty state.",
 			},
 		},
 	},
@@ -130,16 +126,10 @@ export const AlwaysVisible: Story = {
 		// Use a filter that excludes all items to always show empty state
 		return (
 			<div className="w-[300px]">
-				<Command
-					value={value}
-					onValueChange={setValue}
-					filter={() => 0}
-				>
+				<Command value={value} onValueChange={setValue} filter={() => 0}>
 					<CommandInput placeholder="Type a command or search..." />
 					<CommandList>
-						<CommandEmpty>
-							No results found. Try searching for something else.
-						</CommandEmpty>
+						<CommandEmpty>No results found. Try searching for something else.</CommandEmpty>
 						{fruits.map((fruit) => (
 							<CommandItem
 								key={fruit.value}
@@ -157,8 +147,7 @@ export const AlwaysVisible: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandEmpty always visible when using a custom filter that excludes all items.",
+				story: "CommandEmpty always visible when using a custom filter that excludes all items.",
 			},
 		},
 	},

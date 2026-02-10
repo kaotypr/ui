@@ -359,8 +359,7 @@ export const States: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Different select states: default, disabled, required, and invalid.",
+				story: "Different select states: default, disabled, required, and invalid.",
 			},
 		},
 	},
@@ -385,8 +384,7 @@ export const WithOptGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Native select with option groups to organize related options.",
+				story: "Native select with option groups to organize related options.",
 			},
 		},
 	},
@@ -405,8 +403,7 @@ export const Multiple: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Native select with multiple selection enabled. Users can select multiple options.",
+				story: "Native select with multiple selection enabled. Users can select multiple options.",
 			},
 		},
 	},
@@ -471,8 +468,7 @@ export const Required: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Required native select that must have a value selected before form submission.",
+				story: "Required native select that must have a value selected before form submission.",
 			},
 		},
 	},

@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FolderOpenIcon } from "@phosphor-icons/react"
 
-import {
-	Empty,
-	EmptyHeader,
-	EmptyMedia,
-	EmptyTitle,
-	EmptyDescription,
-} from "~/components/ui/empty"
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "~/components/ui/empty"
 
 const meta = {
 	title: "UI/Empty/EmptyHeader",
@@ -33,7 +27,8 @@ const meta = {
 			control: { type: "text" },
 		},
 		children: {
-			description: "The contents of the header, typically EmptyMedia, EmptyTitle, and EmptyDescription.",
+			description:
+				"The contents of the header, typically EmptyMedia, EmptyTitle, and EmptyDescription.",
 			table: {
 				type: { summary: "React.ReactNode" },
 				defaultValue: { summary: "undefined" },
@@ -56,9 +51,7 @@ export const Default: Story = {
 					<FolderOpenIcon />
 				</EmptyMedia>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),
@@ -76,9 +69,7 @@ export const WithoutMedia: Story = {
 		<Empty>
 			<EmptyHeader {...args}>
 				<EmptyTitle>No items found</EmptyTitle>
-				<EmptyDescription>
-					Get started by creating a new item.
-				</EmptyDescription>
+				<EmptyDescription>Get started by creating a new item.</EmptyDescription>
 			</EmptyHeader>
 		</Empty>
 	),

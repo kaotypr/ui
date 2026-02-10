@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
-import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSlot,
-	InputOTPSeparator,
-} from "~/components/ui/input-otp"
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "~/components/ui/input-otp"
 
 const meta = {
 	title: "UI/InputOTP",
@@ -38,8 +33,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 			control: { type: "number" },
 		},
 		containerClassName: {
-			description:
-				"CSS class names to apply to the root container element.",
+			description: "CSS class names to apply to the root container element.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -49,8 +43,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 		},
 		// input-otp Props
 		value: {
-			description:
-				"The controlled value of the OTP input. Use with onChange handler.",
+			description: "The controlled value of the OTP input. Use with onChange handler.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -69,8 +62,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 			action: "onChange",
 		},
 		onComplete: {
-			description:
-				"Callback function called when the OTP input is complete (all slots filled).",
+			description: "Callback function called when the OTP input is complete (all slots filled).",
 			table: {
 				type: { summary: "(...args: any[]) => unknown" },
 				defaultValue: { summary: "undefined" },
@@ -94,8 +86,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 				"Virtual keyboard appearance on mobile devices. Controls which keyboard type is shown.",
 			table: {
 				type: {
-					summary:
-						'"numeric" | "text" | "decimal" | "tel" | "search" | "email" | "url"',
+					summary: '"numeric" | "text" | "decimal" | "tel" | "search" | "email" | "url"',
 				},
 				defaultValue: { summary: '"numeric"' },
 				category: "input-otp Props",
@@ -114,8 +105,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 			control: { type: "text" },
 		},
 		placeholder: {
-			description:
-				"Placeholder character displayed in empty slots when active.",
+			description: "Placeholder character displayed in empty slots when active.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -154,8 +144,7 @@ This component is built on top of [input-otp](https://input-otp.rodz.dev/).
 			control: { type: "text" },
 		},
 		autoFocus: {
-			description:
-				"Automatically focus the input when the component mounts.",
+			description: "Automatically focus the input when the component mounts.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -216,8 +205,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default OTP input with 6 slots grouped into two groups of 3, separated by a dash.",
+				story: "Default OTP input with 6 slots grouped into two groups of 3, separated by a dash.",
 			},
 		},
 	},
@@ -330,11 +318,7 @@ export const WithCompletion: Story = {
 						<InputOTPSlot index={5} />
 					</InputOTPGroup>
 				</InputOTP>
-				{value && (
-					<p className="text-sm text-muted-foreground">
-						Current value: {value}
-					</p>
-				)}
+				{value && <p className="text-sm text-muted-foreground">Current value: {value}</p>}
 			</div>
 		)
 	},
@@ -417,11 +401,7 @@ export const Controlled: Story = {
 export const Disabled: Story = {
 	render: ({ children, ...args }: any) => {
 		return (
-			<InputOTP
-				{...args}
-				maxLength={6}
-				disabled
-			>
+			<InputOTP {...args} maxLength={6} disabled>
 				<InputOTPGroup>
 					<InputOTPSlot index={0} />
 					<InputOTPSlot index={1} />

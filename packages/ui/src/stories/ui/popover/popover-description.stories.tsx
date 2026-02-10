@@ -25,6 +25,15 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 		},
 	},
 	argTypes: {
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -84,10 +93,9 @@ export const LongDescription: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Long Description</PopoverTitle>
 						<PopoverDescription>
-							This is a longer description that demonstrates how the component
-							handles multiple lines of text. The description will wrap
-							automatically to fit within the popover content area, ensuring
-							readability and proper spacing.
+							This is a longer description that demonstrates how the component handles multiple
+							lines of text. The description will wrap automatically to fit within the popover
+							content area, ensuring readability and proper spacing.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -97,8 +105,7 @@ export const LongDescription: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Description with longer text that wraps to multiple lines.",
+				story: "Description with longer text that wraps to multiple lines.",
 			},
 		},
 	},
@@ -117,8 +124,7 @@ export const CustomStyling: Story = {
 					<PopoverHeader>
 						<PopoverTitle>Custom Styled Description</PopoverTitle>
 						<PopoverDescription className="text-sm text-blue-800">
-							Description with custom styling including smaller font size and
-							custom color.
+							Description with custom styling including smaller font size and custom color.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
@@ -145,8 +151,8 @@ export const WithoutTitle: Story = {
 				</PopoverTrigger>
 				<PopoverContent>
 					<PopoverDescription>
-						Description can be used without a title if needed. This is useful
-						for simple informational popovers.
+						Description can be used without a title if needed. This is useful for simple
+						informational popovers.
 					</PopoverDescription>
 				</PopoverContent>
 			</Popover>
@@ -155,8 +161,7 @@ export const WithoutTitle: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Description used without a title for simple informational popovers.",
+				story: "Description used without a title for simple informational popovers.",
 			},
 		},
 	},

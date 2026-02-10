@@ -80,12 +80,8 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -112,12 +108,8 @@ export const WithValue: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -127,8 +119,7 @@ export const WithValue: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Navigation menu item with a custom value identifier for programmatic control.",
+				story: "Navigation menu item with a custom value identifier for programmatic control.",
 			},
 		},
 	},

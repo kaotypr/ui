@@ -28,8 +28,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).`,
 	argTypes: {
 		// Vaul Props
 		asChild: {
-			description:
-				"When true, merges props with the child element instead of rendering a button.",
+			description: "When true, merges props with the child element instead of rendering a button.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -66,14 +65,10 @@ export const Default: Story = {
 				<DrawerContent>
 					<DrawerHeader>
 						<DrawerTitle>Drawer Title</DrawerTitle>
-						<DrawerDescription>
-							Drawer description goes here.
-						</DrawerDescription>
+						<DrawerDescription>Drawer description goes here.</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose {...args}>
@@ -87,8 +82,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default close button that closes the drawer when clicked.",
+				story: "Default close button that closes the drawer when clicked.",
 			},
 		},
 	},
@@ -111,9 +105,7 @@ export const WithAsChild: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose>
@@ -127,8 +119,7 @@ export const WithAsChild: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Close button using asChild prop to merge props with a custom button element.",
+				story: "Close button using asChild prop to merge props with a custom button element.",
 			},
 		},
 	},
@@ -151,9 +142,7 @@ export const InFooter: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="flex gap-2 p-4">
 						<Button>Submit</Button>
@@ -168,8 +157,7 @@ export const InFooter: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Close button placed in the footer alongside other action buttons.",
+				story: "Close button placed in the footer alongside other action buttons.",
 			},
 		},
 	},

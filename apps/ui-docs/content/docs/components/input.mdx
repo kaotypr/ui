@@ -1,0 +1,84 @@
+---
+title: Input
+description: A native input element that works with Field and supports all standard HTML input attributes.
+---
+
+## Usage
+
+<ComponentPreview name="input-demo" />
+
+## Import
+
+```tsx
+import { Input } from "@kaotypr/ui/input"
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="input-basic" />
+
+### Disabled
+
+<ComponentPreview name="input-disabled" />
+
+### Invalid
+
+<ComponentPreview name="input-invalid" />
+
+### Required
+
+<ComponentPreview name="input-required" />
+
+### With Field
+
+<ComponentPreview name="input-field" />
+
+### With Input Group
+
+<ComponentPreview name="input-input-group" />
+
+### With Button Group
+
+<ComponentPreview name="input-button-group" />
+
+### File Input
+
+<ComponentPreview name="input-file" />
+
+### In a Form
+
+<ComponentPreview name="input-form" />
+
+## API Reference
+
+This component is built on top of [Base UI Input](https://base-ui.com/react/components/input). It accepts all standard HTML `<input>` attributes in addition to the props below.
+
+### Input
+
+A native input element with styling that integrates with Field and supports focus, invalid, and disabled states.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `"text" \| "email" \| "password" \| "number" \| "tel" \| "url" \| "search" \| "date" \| "time" \| "datetime-local" \| "month" \| "week" \| "file" \| "color" \| "range" \| ...` | `"text"` | The type of input element |
+| `value` | `string \| number \| string[]` | - | The controlled value of the input |
+| `defaultValue` | `string \| number \| string[]` | - | The default value (uncontrolled) |
+| `placeholder` | `string` | - | Placeholder text when the input is empty |
+| `disabled` | `boolean` | `false` | When true, prevents user interaction |
+| `required` | `boolean` | `false` | When true, the input is required |
+| `readOnly` | `boolean` | `false` | When true, the input is read-only |
+| `name` | `string` | - | The name attribute of the input |
+| `id` | `string` | - | The id attribute of the input |
+| `autoComplete` | `string` | - | The autocomplete attribute |
+| `maxLength` | `number` | - | Maximum number of characters allowed |
+| `minLength` | `number` | - | Minimum number of characters required |
+| `pattern` | `string` | - | Regular expression the value must match |
+| `onChange` | `(event: React.ChangeEvent<HTMLInputElement>) => void` | - | Called when the value changes |
+| `onFocus` | `(event: React.FocusEvent<HTMLInputElement>) => void` | - | Called when the input receives focus |
+| `onBlur` | `(event: React.FocusEvent<HTMLInputElement>) => void` | - | Called when the input loses focus |
+| `className` | `string \| (state: Input.State) => string` | - | CSS class for the element |
+| `style` | `CSSProperties \| (state: Input.State) => CSSProperties` | - | Inline styles for the element |
+| `aria-invalid` | `boolean \| "true" \| "false"` | - | Indicates that the value is invalid |
+| `aria-label` | `string` | - | Accessible label for the input |
+| `aria-describedby` | `string` | - | ID(s) of element(s) that describe the input |

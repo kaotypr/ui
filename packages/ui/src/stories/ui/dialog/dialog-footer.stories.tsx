@@ -28,8 +28,7 @@ This is a custom component added by @kaotypr/ui.`,
 	argTypes: {
 		// Props
 		showCloseButton: {
-			description:
-				"Whether to show a close button in the footer.",
+			description: "Whether to show a close button in the footer.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -66,9 +65,7 @@ export const Default: Story = {
 				<DialogContent>
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
-						<DialogDescription>
-							This dialog has a footer with action buttons.
-						</DialogDescription>
+						<DialogDescription>This dialog has a footer with action buttons.</DialogDescription>
 					</DialogHeader>
 					<DialogFooter {...args}>
 						<Button variant="outline" onClick={() => setOpen(false)}>
@@ -83,8 +80,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default dialog footer with action buttons.",
+				story: "Default dialog footer with action buttons.",
 			},
 		},
 	},
@@ -102,9 +98,7 @@ export const WithCloseButton: Story = {
 				<DialogContent>
 					<DialogHeader>
 						<DialogTitle>Dialog Title</DialogTitle>
-						<DialogDescription>
-							This dialog footer includes a close button.
-						</DialogDescription>
+						<DialogDescription>This dialog footer includes a close button.</DialogDescription>
 					</DialogHeader>
 					<DialogFooter showCloseButton>
 						<Button variant="outline">Cancel</Button>
@@ -117,8 +111,7 @@ export const WithCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Dialog footer with a close button enabled via showCloseButton prop.",
+				story: "Dialog footer with a close button enabled via showCloseButton prop.",
 			},
 		},
 	},
@@ -136,9 +129,7 @@ export const SingleButton: Story = {
 				<DialogContent>
 					<DialogHeader>
 						<DialogTitle>Information</DialogTitle>
-						<DialogDescription>
-							This dialog footer has only a single button.
-						</DialogDescription>
+						<DialogDescription>This dialog footer has only a single button.</DialogDescription>
 					</DialogHeader>
 					<DialogFooter>
 						<Button onClick={() => setOpen(false)}>Got it</Button>

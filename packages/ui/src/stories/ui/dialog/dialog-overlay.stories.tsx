@@ -30,8 +30,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	argTypes: {
 		// Base UI Props
 		forceRender: {
-			description:
-				"Whether the backdrop is forced to render even when nested.",
+			description: "Whether the backdrop is forced to render even when nested.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -71,8 +70,7 @@ export const Default: Story = {
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
 							<DialogDescription>
-								This dialog uses a custom overlay. The overlay is displayed
-								beneath the popup.
+								This dialog uses a custom overlay. The overlay is displayed beneath the popup.
 							</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
@@ -110,8 +108,7 @@ export const CustomStyling: Story = {
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
 							<DialogDescription>
-								This dialog has a custom overlay with increased opacity and
-								backdrop blur.
+								This dialog has a custom overlay with increased opacity and backdrop blur.
 							</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
@@ -149,8 +146,8 @@ export const ForceRender: Story = {
 						<DialogHeader>
 							<DialogTitle>Parent Dialog</DialogTitle>
 							<DialogDescription>
-								This dialog has forceRender enabled on the overlay, so it will
-								render even when nested dialogs are open.
+								This dialog has forceRender enabled on the overlay, so it will render even when
+								nested dialogs are open.
 							</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
@@ -162,8 +159,8 @@ export const ForceRender: Story = {
 									<DialogHeader>
 										<DialogTitle>Nested Dialog</DialogTitle>
 										<DialogDescription>
-											This is a nested dialog. The parent overlay is still
-											rendered due to forceRender.
+											This is a nested dialog. The parent overlay is still rendered due to
+											forceRender.
 										</DialogDescription>
 									</DialogHeader>
 									<DialogFooter>
@@ -185,8 +182,7 @@ export const ForceRender: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Overlay with forceRender enabled, so it renders even when nested dialogs are open.",
+				story: "Overlay with forceRender enabled, so it renders even when nested dialogs are open.",
 			},
 		},
 	},

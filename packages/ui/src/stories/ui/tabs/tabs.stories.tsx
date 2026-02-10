@@ -25,8 +25,7 @@ This component is built on top of [Base UI Tabs](https://base-ui.com/react/compo
 	argTypes: {
 		// Props
 		orientation: {
-			description:
-				"The component orientation (layout flow direction).",
+			description: "The component orientation (layout flow direction).",
 			table: {
 				type: { summary: '"horizontal" | "vertical"' },
 				defaultValue: { summary: '"horizontal"' },
@@ -36,6 +35,15 @@ This component is built on top of [Base UI Tabs](https://base-ui.com/react/compo
 			options: ["horizontal", "vertical"],
 		},
 		// Base UI Props
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		defaultValue: {
 			description:
 				"The default value. Use when the component is not controlled. When the value is null, no Tab will be active.",
@@ -57,8 +65,7 @@ This component is built on top of [Base UI Tabs](https://base-ui.com/react/compo
 			control: { type: "text" },
 		},
 		onValueChange: {
-			description:
-				"Callback invoked when new value is being set.",
+			description: "Callback invoked when new value is being set.",
 			table: {
 				type: {
 					summary:
@@ -97,25 +104,19 @@ export const Default: Story = {
 			<TabsContent value="overview">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Overview</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						This is the overview tab content.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">This is the overview tab content.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="account">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						This is the account tab content.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">This is the account tab content.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="settings">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Settings</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						This is the settings tab content.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">This is the settings tab content.</p>
 				</div>
 			</TabsContent>
 		</Tabs>
@@ -123,8 +124,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default tabs component with three tabs: Overview, Account, and Settings.",
+				story: "Default tabs component with three tabs: Overview, Account, and Settings.",
 			},
 		},
 	},
@@ -178,8 +178,7 @@ export const Controlled: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Controlled tabs using React state. The value is managed by the component state.",
+				story: "Controlled tabs using React state. The value is managed by the component state.",
 			},
 		},
 	},
@@ -205,25 +204,19 @@ export const WithIcons: Story = {
 			<TabsContent value="overview">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Overview</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Tab with icon and text.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Tab with icon and text.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="account">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Tab with icon and text.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Tab with icon and text.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="settings">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Settings</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Tab with icon and text.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">Tab with icon and text.</p>
 				</div>
 			</TabsContent>
 		</Tabs>
@@ -274,8 +267,7 @@ export const LineVariant: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Line variant tabs with a transparent background and underline indicator.",
+				story: "Line variant tabs with a transparent background and underline indicator.",
 			},
 		},
 	},
@@ -320,8 +312,7 @@ export const Vertical: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Vertical orientation tabs with tabs displayed on the left side.",
+				story: "Vertical orientation tabs with tabs displayed on the left side.",
 			},
 		},
 	},
@@ -348,9 +339,7 @@ export const DisabledTab: Story = {
 			<TabsContent value="account">
 				<div className="mt-4 rounded-lg border p-4">
 					<h3 className="text-sm font-semibold">Account</h3>
-					<p className="mt-2 text-sm text-muted-foreground">
-						This tab is disabled.
-					</p>
+					<p className="mt-2 text-sm text-muted-foreground">This tab is disabled.</p>
 				</div>
 			</TabsContent>
 			<TabsContent value="settings">
@@ -366,8 +355,7 @@ export const DisabledTab: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Tabs with one disabled tab that cannot be selected or activated.",
+				story: "Tabs with one disabled tab that cannot be selected or activated.",
 			},
 		},
 	},

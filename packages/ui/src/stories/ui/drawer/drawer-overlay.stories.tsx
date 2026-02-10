@@ -29,8 +29,7 @@ This component is built on top of [Vaul](https://vaul.emilkowal.ski/).`,
 	argTypes: {
 		// Vaul Props
 		asChild: {
-			description:
-				"When true, merges props with the child element instead of rendering a div.",
+			description: "When true, merges props with the child element instead of rendering a div.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -73,9 +72,7 @@ export const Default: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>
@@ -114,9 +111,7 @@ export const WithCustomStyling: Story = {
 						</DrawerDescription>
 					</DrawerHeader>
 					<div className="p-4">
-						<p className="text-sm text-muted-foreground">
-							Drawer content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Drawer content goes here.</p>
 					</div>
 					<div className="p-4">
 						<DrawerClose asChild>

@@ -1,0 +1,75 @@
+---
+title: Item Group
+description: A container for grouping multiple items together with consistent spacing and layout.
+---
+
+## Usage
+
+<ComponentPreview name="item-group" />
+
+## Import
+
+```tsx
+import {
+  ItemGroup,
+  Item,
+  ItemMedia,
+  ItemContent,
+  ItemTitle,
+  ItemDescription,
+  ItemSeparator,
+  ItemActions,
+} from "@kaotypr/ui/item"
+```
+
+## Examples
+
+### With avatars and actions
+
+<ComponentPreview name="item-group" />
+
+Use `ItemGroup` to wrap a list of `Item` components. Combine with `ItemMedia` (e.g. avatars or icons), `ItemContent`, `ItemTitle`, `ItemDescription`, and optional `ItemActions` or `ItemSeparator` between items.
+
+### With separators
+
+Place `ItemSeparator` between items to add visual dividers. Use `Item` with `size="sm"` or `size="xs"` for denser groups.
+
+```tsx
+<ItemGroup>
+  <Item>
+    <ItemMedia variant="icon">
+      <FileIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>Document.pdf</ItemTitle>
+      <ItemDescription>Last modified 2 hours ago</ItemDescription>
+    </ItemContent>
+  </Item>
+  <ItemSeparator />
+  <Item>
+    <ItemMedia variant="icon">
+      <FolderIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>Projects</ItemTitle>
+      <ItemDescription>12 items</ItemDescription>
+    </ItemContent>
+  </Item>
+</ItemGroup>
+```
+
+## API Reference
+
+`ItemGroup` is a layout wrapper with no external dependency. It renders a `div` with `role="list"` and responsive gap based on child item sizes.
+
+### ItemGroup
+
+The root container for a list of items. Accepts standard `div` props.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | The items to group (typically `Item`, `ItemSeparator`) |
+| `className` | `string` | - | Additional CSS class names |
+| ... | `HTMLAttributes<HTMLDivElement>` | - | Any other `div` props (e.g. `style`, `aria-*`) |
+
+The group applies `gap-4` by default; when it contains items with `data-size=sm` or `data-size=xs`, gap reduces to `gap-2.5` or `gap-2` respectively. See the [Item](/components/item) component for `Item`, `ItemMedia`, `ItemContent`, `ItemTitle`, `ItemDescription`, `ItemActions`, and `ItemSeparator` APIs.

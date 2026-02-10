@@ -326,8 +326,7 @@ export function DataCombobox({
 			<span className="truncate">{selectedOption ? selectedOption.label : placeholder}</span>
 			<div className="flex items-center ml-2 shrink-0 opacity-50">
 				{clearable && value && (
-					// biome-ignore lint/a11y/useSemanticElements: we need to use a div here because the combobox is a native element
-				    <div
+					<div
 						role="button"
 						tabIndex={0}
 						onClick={handleClear}

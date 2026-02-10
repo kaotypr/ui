@@ -28,8 +28,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 	argTypes: {
 		// Props
 		side: {
-			description:
-				"Which side of the screen the sheet slides in from.",
+			description: "Which side of the screen the sheet slides in from.",
 			table: {
 				type: { summary: '"top" | "right" | "bottom" | "left"' },
 				defaultValue: { summary: '"right"' },
@@ -39,8 +38,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			options: ["top", "right", "bottom", "left"],
 		},
 		showCloseButton: {
-			description:
-				"Whether to show the close button in the top-right corner.",
+			description: "Whether to show the close button in the top-right corner.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "true" },
@@ -55,7 +53,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			table: {
 				type: {
 					summary:
-						'boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement | null)',
+						"boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement | null)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -68,7 +66,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			table: {
 				type: {
 					summary:
-						'boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)',
+						"boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Base UI Props",
@@ -109,9 +107,7 @@ export const Default: Story = {
 						</SheetDescription>
 					</SheetHeader>
 					<div className="py-4">
-						<p className="text-sm text-muted-foreground">
-							Sheet content goes here.
-						</p>
+						<p className="text-sm text-muted-foreground">Sheet content goes here.</p>
 					</div>
 					<SheetFooter>
 						<Button variant="outline" onClick={() => setOpen(false)}>
@@ -148,9 +144,7 @@ export const DifferentSides: Story = {
 					<SheetContent side="top">
 						<SheetHeader>
 							<SheetTitle>Top Side</SheetTitle>
-							<SheetDescription>
-								Content slides in from the top.
-							</SheetDescription>
+							<SheetDescription>Content slides in from the top.</SheetDescription>
 						</SheetHeader>
 					</SheetContent>
 				</Sheet>
@@ -163,9 +157,7 @@ export const DifferentSides: Story = {
 						<SheetContent side="left">
 							<SheetHeader>
 								<SheetTitle>Left Side</SheetTitle>
-								<SheetDescription>
-									Content slides in from the left.
-								</SheetDescription>
+								<SheetDescription>Content slides in from the left.</SheetDescription>
 							</SheetHeader>
 						</SheetContent>
 					</Sheet>
@@ -177,9 +169,7 @@ export const DifferentSides: Story = {
 						<SheetContent side="right">
 							<SheetHeader>
 								<SheetTitle>Right Side</SheetTitle>
-								<SheetDescription>
-									Content slides in from the right.
-								</SheetDescription>
+								<SheetDescription>Content slides in from the right.</SheetDescription>
 							</SheetHeader>
 						</SheetContent>
 					</Sheet>
@@ -192,9 +182,7 @@ export const DifferentSides: Story = {
 					<SheetContent side="bottom">
 						<SheetHeader>
 							<SheetTitle>Bottom Side</SheetTitle>
-							<SheetDescription>
-								Content slides in from the bottom.
-							</SheetDescription>
+							<SheetDescription>Content slides in from the bottom.</SheetDescription>
 						</SheetHeader>
 					</SheetContent>
 				</Sheet>
@@ -204,8 +192,7 @@ export const DifferentSides: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates sheet content positioned on different sides of the screen.",
+				story: "Demonstrates sheet content positioned on different sides of the screen.",
 			},
 		},
 	},
@@ -224,8 +211,7 @@ export const WithoutCloseButton: Story = {
 					<SheetHeader>
 						<SheetTitle>Sheet without close button</SheetTitle>
 						<SheetDescription>
-							This sheet content doesn't have a close button in the top-right
-							corner.
+							This sheet content doesn't have a close button in the top-right corner.
 						</SheetDescription>
 					</SheetHeader>
 					<SheetFooter>
@@ -240,8 +226,7 @@ export const WithoutCloseButton: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Sheet content without the default close button in the top-right corner.",
+				story: "Sheet content without the default close button in the top-right corner.",
 			},
 		},
 	},
@@ -262,8 +247,8 @@ export const CustomStyling: Story = {
 							Custom Styled Content
 						</SheetTitle>
 						<SheetDescription className="text-blue-800">
-							This sheet has custom styling with a wider width, colored border,
-							and custom background.
+							This sheet has custom styling with a wider width, colored border, and custom
+							background.
 						</SheetDescription>
 					</SheetHeader>
 				</SheetContent>

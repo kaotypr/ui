@@ -1,0 +1,107 @@
+---
+title: Input OTP
+description: A one-time password input component for entering verification codes, PINs, and OTPs. Accessible, unstyled, and customizable.
+---
+
+## Usage
+
+<ComponentPreview name="input-otp-demo" />
+
+## Import
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from "@kaotypr/ui/input-otp"
+```
+
+## Examples
+
+### With Separator
+
+<ComponentPreview name="input-otp-separator" />
+
+### Four Digits
+
+<ComponentPreview name="input-otp-four-digits" />
+
+### Controlled
+
+<ComponentPreview name="input-otp-controlled" />
+
+### In a Form
+
+<ComponentPreview name="input-otp-form" />
+
+### With Pattern
+
+<ComponentPreview name="input-otp-pattern" />
+
+### Alphanumeric
+
+<ComponentPreview name="input-otp-alphanumeric" />
+
+### Invalid State
+
+<ComponentPreview name="input-otp-invalid" />
+
+### Disabled
+
+<ComponentPreview name="input-otp-disabled" />
+
+## API Reference
+
+This component is built on top of [input-otp](https://input-otp.rodz.dev/).
+
+### InputOTP
+
+The root OTP input component. Renders a single accessible input that distributes its value across slot components.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `maxLength` | `number` | - | The number of slots/digits in the OTP input |
+| `value` | `string` | - | The controlled value of the OTP input |
+| `defaultValue` | `string` | - | The uncontrolled default value |
+| `onChange` | `(newValue: string) => void` | - | Called when the OTP value changes |
+| `onComplete` | `(value: string) => void` | - | Called when all slots are filled |
+| `disabled` | `boolean` | `false` | Whether the input is disabled |
+| `autoFocus` | `boolean` | `false` | Whether to focus the input on mount |
+| `textAlign` | `"left" \| "center" \| "right"` | `"left"` | Text alignment within slots |
+| `inputMode` | `"numeric" \| "text" \| "decimal" \| "tel" \| "search" \| "email" \| "url"` | `"numeric"` | Virtual keyboard type on mobile |
+| `pattern` | `string` | - | Regex pattern to validate input (e.g. `REGEXP_ONLY_DIGITS` from input-otp) |
+| `placeholder` | `string` | - | Placeholder character in empty slots when active |
+| `pasteTransformer` | `(pastedText: string) => string` | - | Transforms pasted text before applying |
+| `pushPasswordManagerStrategy` | `"increase-width" \| "none"` | `"increase-width"` | Strategy for password manager UI |
+| `containerClassName` | `string` | - | CSS class for the root container |
+| `className` | `string` | - | CSS class for the input element |
+
+### InputOTPGroup
+
+A container for grouping OTP slots together. Use multiple groups with separators to format codes like "123-456".
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `...props` | `React.ComponentProps<"div">` | - | Any div props (e.g. `aria-invalid` for error state) |
+
+### InputOTPSlot
+
+An individual slot that displays one character of the OTP. Must be used inside `InputOTP`. Receives character, active state, and caret from context.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `index` | `number` | **Required** | Zero-based index of this slot in the OTP |
+| `className` | `string` | - | Additional CSS class names |
+| `...props` | `React.ComponentProps<"div">` | - | Any div props (e.g. `aria-invalid`) |
+
+### InputOTPSeparator
+
+A visual separator between groups of slots (e.g. a dash). Must be used inside `InputOTP` between `InputOTPGroup` components.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `...props` | `React.ComponentProps<"div">` | - | Any div props |

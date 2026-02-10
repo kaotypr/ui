@@ -25,6 +25,15 @@ This component is built on top of [Base UI Popover](https://base-ui.com/react/co
 		},
 	},
 	argTypes: {
+		render: {
+			description:
+				"Allows you to replace the component's HTML element with a different tag, or compose it with another component. Accepts a `ReactElement` or a function that returns the element to render.",
+			table: {
+				type: { summary: "ReactElement | (props, state) => ReactElement" },
+				category: "Base UI Props",
+			},
+			control: false,
+		},
 		// Styling
 		className: {
 			description: "Additional CSS class names to apply.",
@@ -54,9 +63,7 @@ export const Default: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle {...args}>Popover Title</PopoverTitle>
-						<PopoverDescription>
-							This is the default title styling.
-						</PopoverDescription>
+						<PopoverDescription>This is the default title styling.</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>
 			</Popover>
@@ -83,8 +90,7 @@ export const LongTitle: Story = {
 				<PopoverContent>
 					<PopoverHeader>
 						<PopoverTitle>
-							This is a longer title that demonstrates how the component
-							handles text wrapping
+							This is a longer title that demonstrates how the component handles text wrapping
 						</PopoverTitle>
 						<PopoverDescription>
 							The title will wrap to multiple lines if needed.
@@ -118,8 +124,7 @@ export const CustomStyling: Story = {
 							Custom Styled Title
 						</PopoverTitle>
 						<PopoverDescription>
-							Title with custom styling including larger font size, bold weight,
-							and custom color.
+							Title with custom styling including larger font size, bold weight, and custom color.
 						</PopoverDescription>
 					</PopoverHeader>
 				</PopoverContent>

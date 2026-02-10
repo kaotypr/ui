@@ -129,9 +129,7 @@ export const WithDetailedDescription: Story = {
 export const WithCustomStyling: Story = {
 	render: () => (
 		<Table>
-			<TableCaption className="text-base font-semibold">
-				A list of recent invoices.
-			</TableCaption>
+			<TableCaption className="text-base font-semibold">A list of recent invoices.</TableCaption>
 			<TableHeader>
 				<TableRow>
 					<TableHead>Invoice</TableHead>

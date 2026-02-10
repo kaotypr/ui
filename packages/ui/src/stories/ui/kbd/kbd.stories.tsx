@@ -125,8 +125,7 @@ export const WithKbdGroup: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Keyboard shortcuts displayed using KbdGroup to combine multiple keys.",
+				story: "Keyboard shortcuts displayed using KbdGroup to combine multiple keys.",
 			},
 		},
 	},
@@ -158,9 +157,7 @@ export const InText: Story = {
 export const ComplexShortcut: Story = {
 	render: () => (
 		<div className="flex flex-col gap-2">
-			<div className="text-sm text-muted-foreground">
-				Toggle command palette:
-			</div>
+			<div className="text-sm text-muted-foreground">Toggle command palette:</div>
 			<KbdGroup>
 				<Kbd>Cmd</Kbd>
 				<span>+</span>

@@ -39,8 +39,7 @@ This component is built on top of [Base UI Dialog](https://base-ui.com/react/com
 			},
 		},
 		keepMounted: {
-			description:
-				"Whether to keep the portal mounted in the DOM while the popup is hidden.",
+			description: "Whether to keep the portal mounted in the DOM while the popup is hidden.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -80,8 +79,8 @@ export const Default: Story = {
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
 							<DialogDescription>
-								This dialog uses an explicit portal. The portal moves the popup
-								to a different part of the DOM (typically document.body).
+								This dialog uses an explicit portal. The portal moves the popup to a different part
+								of the DOM (typically document.body).
 							</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
@@ -119,9 +118,9 @@ export const KeepMounted: Story = {
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
 							<DialogDescription>
-								This dialog portal has keepMounted enabled, so it stays mounted
-								in the DOM even when closed. This can be useful for performance
-								when the dialog content is expensive to render.
+								This dialog portal has keepMounted enabled, so it stays mounted in the DOM even when
+								closed. This can be useful for performance when the dialog content is expensive to
+								render.
 							</DialogDescription>
 						</DialogHeader>
 						<DialogFooter>
@@ -151,10 +150,7 @@ export const CustomContainer: Story = {
 
 		return (
 			<div className="space-y-4">
-				<div
-					ref={containerRef}
-					className="border-2 border-dashed border-gray-300 p-4 rounded-lg"
-				>
+				<div ref={containerRef} className="border-2 border-dashed border-gray-300 p-4 rounded-lg">
 					<p className="text-sm text-muted-foreground">
 						Portal container (dialog will render here)
 					</p>
@@ -169,8 +165,7 @@ export const CustomContainer: Story = {
 							<DialogHeader>
 								<DialogTitle>Dialog Title</DialogTitle>
 								<DialogDescription>
-									This dialog portal renders into a custom container instead of
-									document.body.
+									This dialog portal renders into a custom container instead of document.body.
 								</DialogDescription>
 							</DialogHeader>
 							<DialogFooter>
@@ -187,8 +182,7 @@ export const CustomContainer: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Portal that renders into a custom container element instead of document.body.",
+				story: "Portal that renders into a custom container element instead of document.body.",
 			},
 		},
 	},

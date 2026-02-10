@@ -1,0 +1,18 @@
+"use client"
+
+import { Button } from "@kaotypr/ui/button"
+import { ButtonGroup } from "@kaotypr/ui/button-group"
+import { Field, FieldLabel } from "@kaotypr/ui/field"
+import { Input } from "@kaotypr/ui/input"
+
+export function InputButtonGroup() {
+  return (
+    <Field>
+      <FieldLabel htmlFor="input-button-group">Search</FieldLabel>
+      <ButtonGroup>
+        <Input id="input-button-group" placeholder="Type to search..." />
+        <Button variant="outline">Search</Button>
+      </ButtonGroup>
+    </Field>
+  )
+}

@@ -22,8 +22,7 @@ This component is built on top of [Base UI Progress Track](https://base-ui.com/r
 				"CSS class applied to the element, or a function that returns a class based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"string | ((state: Progress.Root.State) => string | undefined)",
+					summary: "string | ((state: Progress.Root.State) => string | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",
@@ -35,8 +34,7 @@ This component is built on top of [Base UI Progress Track](https://base-ui.com/r
 				"CSS properties applied to the element, or a function that returns styles based on the component's state.",
 			table: {
 				type: {
-					summary:
-						"CSSProperties | ((state: Progress.Root.State) => CSSProperties | undefined)",
+					summary: "CSSProperties | ((state: Progress.Root.State) => CSSProperties | undefined)",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Styling",

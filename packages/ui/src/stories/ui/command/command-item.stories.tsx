@@ -47,8 +47,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).`,
 			control: { type: "text" },
 		},
 		keywords: {
-			description:
-				"Keywords to help with filtering. Keywords act as aliases for the item value.",
+			description: "Keywords to help with filtering. Keywords act as aliases for the item value.",
 			table: {
 				type: { summary: "string[]" },
 				defaultValue: { summary: "undefined" },
@@ -205,8 +204,7 @@ export const WithShortcuts: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandItem with keyboard shortcuts displayed on the right.",
+				story: "CommandItem with keyboard shortcuts displayed on the right.",
 			},
 		},
 	},
@@ -287,8 +285,7 @@ export const WithKeywords: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"CommandItem with keywords for improved search matching.",
+				story: "CommandItem with keywords for improved search matching.",
 			},
 		},
 	},

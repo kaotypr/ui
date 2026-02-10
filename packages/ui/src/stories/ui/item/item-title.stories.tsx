@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FileIcon } from "@phosphor-icons/react"
-import {
-	Item,
-	ItemMedia,
-	ItemContent,
-	ItemTitle,
-	ItemDescription,
-} from "~/components/ui/item"
+import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription } from "~/components/ui/item"
 
 const meta = {
 	title: "UI/Item/ItemTitle",

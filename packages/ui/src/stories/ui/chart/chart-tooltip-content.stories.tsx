@@ -192,32 +192,27 @@ export const Default: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					dot={false}
-				/>
-				<Line
-					type="monotone"
-					dataKey="mobile"
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						dot={false}
+					/>
+					<Line
+						type="monotone"
+						dataKey="mobile"
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -236,34 +231,29 @@ export const LineIndicator: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<AreaChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Area
-					type="monotone"
-					dataKey="desktop"
-					fill="var(--color-desktop)"
-					fillOpacity={0.6}
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-				/>
-				<Area
-					type="monotone"
-					dataKey="mobile"
-					fill="var(--color-mobile)"
-					fillOpacity={0.6}
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-				/>
-			</AreaChart>
-		</ChartContainer>
+				<AreaChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Area
+						type="monotone"
+						dataKey="desktop"
+						fill="var(--color-desktop)"
+						fillOpacity={0.6}
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+					/>
+					<Area
+						type="monotone"
+						dataKey="mobile"
+						fill="var(--color-mobile)"
+						fillOpacity={0.6}
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+					/>
+				</AreaChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -282,34 +272,29 @@ export const DashedIndicator: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					strokeDasharray="5 5"
-					dot={false}
-				/>
-				<Line
-					type="monotone"
-					dataKey="mobile"
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-					strokeDasharray="5 5"
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						strokeDasharray="5 5"
+						dot={false}
+					/>
+					<Line
+						type="monotone"
+						dataKey="mobile"
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+						strokeDasharray="5 5"
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -329,20 +314,15 @@ export const HideLabel: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<BarChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-				<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-			</BarChart>
-		</ChartContainer>
+				<BarChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+					<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+				</BarChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -362,32 +342,27 @@ export const HideIndicator: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					dot={false}
-				/>
-				<Line
-					type="monotone"
-					dataKey="mobile"
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						dot={false}
+					/>
+					<Line
+						type="monotone"
+						dataKey="mobile"
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -406,32 +381,29 @@ export const SingleSeries: Story = {
 	render: (args) => (
 		<div className="w-[600px]">
 			<ChartContainer
-			config={{
-				desktop: {
-					label: "Desktop",
-					color: "var(--chart-1)",
-				},
-			} satisfies ChartConfig}
-		>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent {...args} />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				config={
+					{
+						desktop: {
+							label: "Desktop",
+							color: "var(--chart-1)",
+						},
+					} satisfies ChartConfig
+				}
+			>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent {...args} />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {

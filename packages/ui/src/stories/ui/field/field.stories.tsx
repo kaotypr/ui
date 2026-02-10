@@ -68,9 +68,7 @@ export const Default: Story = {
 			<FieldContent>
 				<Input id="email" type="email" placeholder="Enter your email" />
 			</FieldContent>
-			<FieldDescription>
-				We'll never share your email with anyone else.
-			</FieldDescription>
+			<FieldDescription>We'll never share your email with anyone else.</FieldDescription>
 		</Field>
 	),
 	parameters: {
@@ -87,16 +85,9 @@ export const WithError: Story = {
 		<Field {...args} data-invalid="true">
 			<FieldLabel htmlFor="email-error">Email</FieldLabel>
 			<FieldContent>
-				<Input
-					id="email-error"
-					type="email"
-					placeholder="Enter your email"
-					aria-invalid="true"
-				/>
+				<Input id="email-error" type="email" placeholder="Enter your email" aria-invalid="true" />
 			</FieldContent>
-			<FieldDescription>
-				We'll never share your email with anyone else.
-			</FieldDescription>
+			<FieldDescription>We'll never share your email with anyone else.</FieldDescription>
 			<FieldError>Please enter a valid email address.</FieldError>
 		</Field>
 	),
@@ -114,15 +105,9 @@ export const Horizontal: Story = {
 		<Field {...args} orientation="horizontal">
 			<FieldLabel htmlFor="email-horizontal">Email</FieldLabel>
 			<FieldContent>
-				<Input
-					id="email-horizontal"
-					type="email"
-					placeholder="Enter your email"
-				/>
+				<Input id="email-horizontal" type="email" placeholder="Enter your email" />
 			</FieldContent>
-			<FieldDescription>
-				We'll never share your email with anyone else.
-			</FieldDescription>
+			<FieldDescription>We'll never share your email with anyone else.</FieldDescription>
 		</Field>
 	),
 	args: {
@@ -142,15 +127,9 @@ export const Responsive: Story = {
 		<Field {...args} orientation="responsive">
 			<FieldLabel htmlFor="email-responsive">Email</FieldLabel>
 			<FieldContent>
-				<Input
-					id="email-responsive"
-					type="email"
-					placeholder="Enter your email"
-				/>
+				<Input id="email-responsive" type="email" placeholder="Enter your email" />
 			</FieldContent>
-			<FieldDescription>
-				We'll never share your email with anyone else.
-			</FieldDescription>
+			<FieldDescription>We'll never share your email with anyone else.</FieldDescription>
 		</Field>
 	),
 	args: {

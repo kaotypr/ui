@@ -80,12 +80,8 @@ export const Default: Story = {
 					<NavigationMenuTrigger {...args}>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -109,12 +105,8 @@ export const MultipleTriggers: Story = {
 					<NavigationMenuTrigger {...args}>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -122,12 +114,8 @@ export const MultipleTriggers: Story = {
 					<NavigationMenuTrigger {...args}>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/components/button">
-								Button
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/components/input">
-								Input
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+							<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -138,6 +126,73 @@ export const MultipleTriggers: Story = {
 		docs: {
 			description: {
 				story: "Multiple navigation menu triggers in a single menu.",
+			},
+		},
+	},
+}
+
+export const RenderAsCustomElement: Story = {
+	render: () => (
+		<NavigationMenu>
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger render={<div className="cursor-pointer" />} nativeButton={false}>
+						Click this div
+					</NavigationMenuTrigger>
+					<NavigationMenuContent>
+						<div className="grid gap-3 p-4 w-[400px]">
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
+						</div>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a ReactElement to replace the default button element. Set `nativeButton={false}` when the rendered element is not a button.",
+			},
+		},
+	},
+}
+
+export const RenderWithState: Story = {
+	render: () => (
+		<NavigationMenu>
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger
+						render={(props, state) => (
+							<button
+								{...props}
+								className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+									state.open
+										? "bg-accent text-accent-foreground"
+										: "hover:bg-accent/50 hover:text-accent-foreground"
+								}`}
+							>
+								{state.open ? "Menu Open" : "Overview"}
+							</button>
+						)}
+					/>
+					<NavigationMenuContent>
+						<div className="grid gap-3 p-4 w-[400px]">
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
+						</div>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
+	),
+	parameters: {
+		docs: {
+			description: {
+				story:
+					"Use the `render` prop with a function to access component state. The function receives `(props, state)` where state includes: `open` (boolean).",
 			},
 		},
 	},

@@ -1,0 +1,161 @@
+---
+title: Item
+description: A flexible item component for displaying structured content with media, title, description, and actions.
+---
+
+## Usage
+
+<ComponentPreview name="item-demo" />
+
+## Import
+
+```tsx
+import {
+  Item,
+  ItemGroup,
+  ItemMedia,
+  ItemContent,
+  ItemTitle,
+  ItemDescription,
+  ItemActions,
+  ItemHeader,
+  ItemFooter,
+  ItemSeparator,
+} from "@kaotypr/ui/item"
+```
+
+## Examples
+
+### With Icon
+
+<ComponentPreview name="item-icon" />
+
+### With Image
+
+<ComponentPreview name="item-image" />
+
+### With Avatar
+
+<ComponentPreview name="item-avatar" />
+
+### Variants
+
+<ComponentPreview name="item-variant" />
+
+### Sizes
+
+<ComponentPreview name="item-size" />
+
+### With Header and Footer
+
+<ComponentPreview name="item-header" />
+
+### As Link
+
+<ComponentPreview name="item-link" />
+
+### Grouped with Separators
+
+<ComponentPreview name="item-group" />
+
+### In Dropdown
+
+<ComponentPreview name="item-dropdown" />
+
+## API Reference
+
+This component uses [Base UI's useRender](https://base-ui.com/react/utils/use-render) for flexible rendering.
+
+### Item
+
+The root container for a single item. Renders as a `div` by default; use the `render` prop to render as a link or other element.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "outline" \| "muted"` | `"default"` | The visual variant of the item |
+| `size` | `"default" \| "sm" \| "xs"` | `"default"` | The size of the item |
+| `render` | `ReactElement \| (props, state) => ReactElement` | - | Replace the root element (e.g. `<a href="#" />`) or compose with another component |
+| `className` | `string \| (state) => string` | - | CSS class applied to the element |
+| `style` | `CSSProperties \| (state) => CSSProperties` | - | Style applied to the element |
+
+### ItemGroup
+
+A container for grouping multiple items. Provides consistent spacing and layout. Renders as a `div` with `role="list"`.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | The items to group |
+
+### ItemSeparator
+
+A visual separator between items. Uses the [Separator](/components/separator) component with horizontal orientation.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| All Separator props | - | - | Passed through to the underlying Separator |
+
+### ItemMedia
+
+Container for icons or images displayed alongside the item.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "icon" \| "image"` | `"default"` | Visual variant; `icon` sizes SVG, `image` sizes and clips images |
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Icon or image content |
+
+### ItemContent
+
+Container for the main content of the item. Typically holds ItemTitle and ItemDescription.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Content (typically ItemTitle and ItemDescription) |
+
+### ItemTitle
+
+The title or heading of the item. Supports single-line truncation. Can wrap a link for clickable titles.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Title text or link |
+
+### ItemDescription
+
+Additional descriptive text. Supports two-line truncation and can contain links.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Description text |
+
+### ItemActions
+
+Container for action buttons or controls, typically placed at the end of an item.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Action buttons or controls |
+
+### ItemHeader
+
+Header section that spans the full width of the item. Use for titles or content above the main row.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Header content |
+
+### ItemFooter
+
+Footer section that spans the full width of the item. Use for actions or metadata below the main content.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class names |
+| `children` | `ReactNode` | - | Footer content |

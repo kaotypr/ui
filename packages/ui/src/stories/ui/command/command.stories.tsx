@@ -48,8 +48,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
 	argTypes: {
 		// cmdk Props
 		value: {
-			description:
-				"The controlled value of the selected item. Use with onValueChange.",
+			description: "The controlled value of the selected item. Use with onValueChange.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -58,8 +57,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
 			control: { type: "text" },
 		},
 		defaultValue: {
-			description:
-				"The uncontrolled default value of the selected item.",
+			description: "The uncontrolled default value of the selected item.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -68,8 +66,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
 			control: { type: "text" },
 		},
 		onValueChange: {
-			description:
-				"Event handler called when the selected value changes.",
+			description: "Event handler called when the selected value changes.",
 			table: {
 				type: { summary: "(value: string) => void" },
 				defaultValue: { summary: "undefined" },
@@ -82,8 +79,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
 				"Custom filter function that is called to rank each item. Receives (value, search, keywords) and returns a number (0 = filtered out, 1 = included).",
 			table: {
 				type: {
-					summary:
-						"(value: string, search: string, keywords?: string[]) => number",
+					summary: "(value: string, search: string, keywords?: string[]) => number",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Props",
@@ -91,8 +87,7 @@ This component is built on top of [cmdk](https://github.com/pacocoursey/cmdk).
 			control: false,
 		},
 		shouldFilter: {
-			description:
-				"Whether to filter items. Set to false to disable filtering and sorting.",
+			description: "Whether to filter items. Set to false to disable filtering and sorting.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "true" },
@@ -164,8 +159,7 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Default command menu with searchable input and list of items.",
+				story: "Default command menu with searchable input and list of items.",
 			},
 		},
 	},
@@ -224,8 +218,7 @@ export const WithGroups: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Command menu with grouped items and separators between groups.",
+				story: "Command menu with grouped items and separators between groups.",
 			},
 		},
 	},
@@ -272,8 +265,7 @@ export const WithLoop: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Command menu with loop enabled - arrow keys wrap around the list.",
+				story: "Command menu with loop enabled - arrow keys wrap around the list.",
 			},
 		},
 	},
@@ -320,8 +312,7 @@ export const WithoutFiltering: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Command menu with filtering disabled - all items are always shown.",
+				story: "Command menu with filtering disabled - all items are always shown.",
 			},
 		},
 	},

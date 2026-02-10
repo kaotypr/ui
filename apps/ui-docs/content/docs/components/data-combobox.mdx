@@ -1,0 +1,95 @@
+---
+title: Data Combobox
+description: A data-driven combobox with built-in search, grouping, async loading patterns, and optional responsive Drawer behavior.
+---
+
+## Usage
+
+<ComponentPreview name="data-combobox-demo" />
+
+## Import
+
+```tsx
+import { DataCombobox, type DataComboboxOption } from "@kaotypr/ui/data-combobox"
+```
+
+## Examples
+
+### With search
+
+<ComponentPreview name="data-combobox-with-search" />
+
+### With groups
+
+<ComponentPreview name="data-combobox-with-groups" />
+
+### Clearable
+
+<ComponentPreview name="data-combobox-clearable" />
+
+### Async search (external filtering)
+
+<ComponentPreview name="data-combobox-async-search" />
+
+## API Reference
+
+This component is built on top of [Base UI Combobox](https://base-ui.com/react/components/combobox).
+
+### DataComboboxOption
+
+Shape for each option in the `data` array.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | **Required** | Text displayed in the trigger and list |
+| `value` | `string` | **Required** | Unique option value |
+| `disabled` | `boolean` | - | Disables selecting this option |
+| `group` | `string` | - | Group label used to render options under a group heading |
+
+### DataCombobox
+
+A higher-level combobox that accepts array data and supports both internal and external (async) search.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `DataComboboxOption[]` | **Required** | Options to render |
+| `value` | `string` | - | Controlled selected value |
+| `defaultValue` | `string` | - | Uncontrolled initial value |
+| `defaultValueOption` | `DataComboboxOption` | - | Initial option object for rendering the label when the option isn’t in `data` yet (useful for async data) |
+| `onValueChange` | `(value: string, option: DataComboboxOption \| null) => void` | - | Called when selection changes |
+| `searchValue` | `string` | - | Controlled search input value |
+| `onSearch` | `(search: string) => void` | - | Called when search changes. When provided, internal filtering is disabled and `data` is rendered as-is |
+| `debounceTime` | `number` | `0` | Debounce (ms) before calling `onSearch` |
+| `placeholder` | `string` | `"Select option..."` | Placeholder shown when no value is selected |
+| `searchPlaceholder` | `string` | `"Search..."` | Placeholder for the search input |
+| `clearable` | `boolean` | `false` | Shows a clear button when a value is selected |
+| `disabled` | `boolean` | `false` | Disables the control |
+| `loading` | `boolean` | `false` | Shows loading UI. When `data` is empty, shows the empty loading state; otherwise shows a bottom loading indicator |
+| `enableResponsive` | `boolean` | `false` | When true, uses a `Drawer` on mobile viewports instead of a popover |
+| `onLoadMore` | `() => void` | - | Called when the list bottom sentinel becomes visible (infinite scroll) |
+| `hasMore` | `boolean` | `false` | Enables the infinite-scroll sentinel |
+| `renderItem` | `(option: DataComboboxOption, isSelected: boolean) => React.ReactNode` | - | Custom renderer for each option |
+| `emptyMessage` | `React.ReactNode` | `"No results found."` | Content shown when there are no results and not loading |
+| `loadingContent` | `React.ReactNode` | - | Custom loading indicator content |
+| `side` | `"top" \| "bottom"` | `"bottom"` | Preferred side for the popover dropdown |
+| `align` | `"start" \| "center" \| "end"` | `"start"` | Alignment relative to the trigger |
+| `className` | `string` | - | Extra class names for the trigger button |
+| `contentClassName` | `string` | - | Extra class names for the dropdown content |
+| `name` | `string` | - | Name attribute for the trigger button |
+| `id` | `string` | - | ID attribute for the trigger button |
+
+## Missing examples (available in Storybook)
+
+The following variants exist in Storybook but don’t currently have matching docs examples under `apps/ui-docs/src/examples/data-combobox/`:
+
+- Controlled value
+- Default value
+- Loading (empty) / Loading with data
+- Infinite scroll
+- Custom `renderItem`
+- Custom `emptyMessage`
+- Responsive (Drawer on mobile)
+- Disabled / Disabled options
+- Positioning (`side="top"`, `align="end"`)
+- Custom width / styling
+- `defaultValueOption`

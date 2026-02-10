@@ -26,9 +26,7 @@ This component is built on top of [Base UI Navigation Menu](https://base-ui.com/
 - [NavigationMenuItem](?path=/story/ui-navigationmenu-navigationmenuitem--default): An individual navigation menu item.
 - [NavigationMenuTrigger](?path=/story/ui-navigationmenu-navigationmenutrigger--default): Opens the navigation menu popup when hovered or clicked.
 - [NavigationMenuContent](?path=/story/ui-navigationmenu-navigationmenucontent--default): A container for the content of the navigation menu item.
-- [NavigationMenuLink](?path=/story/ui-navigationmenu-navigationmenulink--default): A link in the navigation menu for navigation.
-- [NavigationMenuIndicator](?path=/story/ui-navigationmenu-navigationmenuindicator--default): An icon that indicates that the trigger button opens a menu.
-- [NavigationMenuPositioner](?path=/story/ui-navigationmenu-navigationmenupositioner--default): Positions the navigation menu against the currently active trigger.`,
+- [NavigationMenuLink](?path=/story/ui-navigationmenu-navigationmenulink--default): A link in the navigation menu for navigation.`,
 			},
 		},
 	},
@@ -55,7 +53,8 @@ This component is built on top of [Base UI Navigation Menu](https://base-ui.com/
 			control: { type: "text" },
 		},
 		delay: {
-			description: "How long to wait before opening the navigation menu. Specified in milliseconds.",
+			description:
+				"How long to wait before opening the navigation menu. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "50" },
@@ -64,7 +63,8 @@ This component is built on top of [Base UI Navigation Menu](https://base-ui.com/
 			control: { type: "number" },
 		},
 		closeDelay: {
-			description: "How long to wait before closing the navigation menu. Specified in milliseconds.",
+			description:
+				"How long to wait before closing the navigation menu. Specified in milliseconds.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "50" },
@@ -107,8 +107,7 @@ This component is built on top of [Base UI Navigation Menu](https://base-ui.com/
 			description: "Callback fired when the value changes.",
 			table: {
 				type: {
-					summary:
-						"(value: any, eventDetails: NavigationMenu.Root.ChangeEventDetails) => void",
+					summary: "(value: any, eventDetails: NavigationMenu.Root.ChangeEventDetails) => void",
 				},
 				defaultValue: { summary: "undefined" },
 				category: "Event Handlers",
@@ -160,15 +159,9 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/releases">
-								Releases
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/releases">Releases</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -176,15 +169,9 @@ export const Default: Story = {
 					<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/components/button">
-								Button
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/components/input">
-								Input
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/components/dialog">
-								Dialog
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+							<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
+							<NavigationMenuLink href="/components/dialog">Dialog</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -220,12 +207,8 @@ export const Controlled: Story = {
 						<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 						<NavigationMenuContent>
 							<div className="grid gap-3 p-4 w-[400px]">
-								<NavigationMenuLink href="/docs/quick-start">
-									Quick Start
-								</NavigationMenuLink>
-								<NavigationMenuLink href="/docs/accessibility">
-									Accessibility
-								</NavigationMenuLink>
+								<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+								<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 							</div>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
@@ -233,12 +216,8 @@ export const Controlled: Story = {
 						<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 						<NavigationMenuContent>
 							<div className="grid gap-3 p-4 w-[400px]">
-								<NavigationMenuLink href="/components/button">
-									Button
-								</NavigationMenuLink>
-								<NavigationMenuLink href="/components/input">
-									Input
-								</NavigationMenuLink>
+								<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+								<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
 							</div>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
@@ -267,12 +246,8 @@ export const Vertical: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[300px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -280,12 +255,8 @@ export const Vertical: Story = {
 					<NavigationMenuTrigger>Components</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[300px]">
-							<NavigationMenuLink href="/components/button">
-								Button
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/components/input">
-								Input
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/components/button">Button</NavigationMenuLink>
+							<NavigationMenuLink href="/components/input">Input</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -313,12 +284,8 @@ export const WithCustomDelay: Story = {
 					<NavigationMenuTrigger>Overview</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<div className="grid gap-3 p-4 w-[400px]">
-							<NavigationMenuLink href="/docs/quick-start">
-								Quick Start
-							</NavigationMenuLink>
-							<NavigationMenuLink href="/docs/accessibility">
-								Accessibility
-							</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/quick-start">Quick Start</NavigationMenuLink>
+							<NavigationMenuLink href="/docs/accessibility">Accessibility</NavigationMenuLink>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -328,8 +295,7 @@ export const WithCustomDelay: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Navigation menu with custom delay values for opening and closing animations.",
+				story: "Navigation menu with custom delay values for opening and closing animations.",
 			},
 		},
 	},

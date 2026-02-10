@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import * as React from "react"
-import {
-	HoverCard,
-	HoverCardTrigger,
-	HoverCardContent,
-} from "~/components/ui/hover-card"
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "~/components/ui/hover-card"
 
 const meta = {
 	title: "UI/HoverCard/HoverCardContent",
@@ -34,8 +30,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			options: ["top", "bottom", "left", "right"],
 		},
 		sideOffset: {
-			description:
-				"Distance between the anchor and the popup in pixels.",
+			description: "Distance between the anchor and the popup in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "4" },
@@ -44,8 +39,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			control: { type: "number" },
 		},
 		align: {
-			description:
-				"How to align the popup relative to the specified side.",
+			description: "How to align the popup relative to the specified side.",
 			table: {
 				type: { summary: '"start" | "center" | "end"' },
 				defaultValue: { summary: '"center"' },
@@ -55,8 +49,7 @@ This component is built on top of [Base UI Preview Card](https://base-ui.com/rea
 			options: ["start", "center", "end"],
 		},
 		alignOffset: {
-			description:
-				"Additional offset along the alignment axis in pixels.",
+			description: "Additional offset along the alignment axis in pixels.",
 			table: {
 				type: { summary: "number" },
 				defaultValue: { summary: "4" },
@@ -96,8 +89,7 @@ export const Default: Story = {
 					<div className="space-y-2">
 						<h4 className="text-sm font-semibold">Preview Card</h4>
 						<p className="text-sm text-muted-foreground">
-							A popup that appears when a link is hovered, showing a preview
-							for sighted users.
+							A popup that appears when a link is hovered, showing a preview for sighted users.
 						</p>
 					</div>
 				</HoverCardContent>
@@ -131,9 +123,7 @@ export const DifferentSides: Story = {
 					<HoverCardContent side="top">
 						<div className="space-y-2">
 							<h4 className="text-sm font-semibold">Top Side</h4>
-							<p className="text-sm text-muted-foreground">
-								Content appears above the trigger.
-							</p>
+							<p className="text-sm text-muted-foreground">Content appears above the trigger.</p>
 						</div>
 					</HoverCardContent>
 				</HoverCard>
@@ -181,9 +171,7 @@ export const DifferentSides: Story = {
 					<HoverCardContent side="bottom">
 						<div className="space-y-2">
 							<h4 className="text-sm font-semibold">Bottom Side</h4>
-							<p className="text-sm text-muted-foreground">
-								Content appears below the trigger.
-							</p>
+							<p className="text-sm text-muted-foreground">Content appears below the trigger.</p>
 						</div>
 					</HoverCardContent>
 				</HoverCard>
@@ -193,8 +181,7 @@ export const DifferentSides: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates hover card content positioned on different sides of the trigger.",
+				story: "Demonstrates hover card content positioned on different sides of the trigger.",
 			},
 		},
 	},
@@ -261,8 +248,7 @@ export const CustomAlignment: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Demonstrates different alignment options for the hover card content.",
+				story: "Demonstrates different alignment options for the hover card content.",
 			},
 		},
 	},
@@ -281,12 +267,10 @@ export const CustomStyling: Story = {
 				</HoverCardTrigger>
 				<HoverCardContent className="w-96 border-2 border-blue-500 bg-blue-50 p-6">
 					<div className="space-y-3">
-						<h4 className="text-lg font-bold text-blue-900">
-							Custom Styled Content
-						</h4>
+						<h4 className="text-lg font-bold text-blue-900">Custom Styled Content</h4>
 						<p className="text-sm text-blue-800">
-							This hover card has custom styling with a wider width, colored
-							border, and custom background.
+							This hover card has custom styling with a wider width, colored border, and custom
+							background.
 						</p>
 					</div>
 				</HoverCardContent>

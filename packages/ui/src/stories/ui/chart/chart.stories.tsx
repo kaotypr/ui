@@ -65,7 +65,8 @@ const meta = {
 	},
 	argTypes: {
 		id: {
-			description: "Optional unique identifier for the chart. If not provided, a unique ID will be generated.",
+			description:
+				"Optional unique identifier for the chart. If not provided, a unique ID will be generated.",
 			table: {
 				type: { summary: "string" },
 				defaultValue: { summary: "undefined" },
@@ -96,8 +97,7 @@ const meta = {
 			control: { type: "text" },
 		},
 		children: {
-			description:
-				"The Recharts chart component to render (LineChart, BarChart, AreaChart, etc.).",
+			description: "The Recharts chart component to render (LineChart, BarChart, AreaChart, etc.).",
 			table: {
 				type: { summary: "React.ComponentProps<typeof ResponsiveContainer>['children']" },
 				defaultValue: { summary: "undefined" },
@@ -119,12 +119,7 @@ export const Default: Story = {
 			<ChartContainer config={chartConfig}>
 				<LineChart data={chartData}>
 					<CartesianGrid strokeDasharray="3 3" />
-					<XAxis
-						dataKey="month"
-						tickLine={false}
-						axisLine={false}
-						tickMargin={8}
-					/>
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
 					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
 					<ChartTooltip content={<ChartTooltipContent />} />
 					<ChartLegend content={<ChartLegendContent />} />
@@ -149,7 +144,8 @@ export const Default: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Default line chart example showing desktop and mobile data over time with tooltip and legend.",
+				story:
+					"Default line chart example showing desktop and mobile data over time with tooltip and legend.",
 			},
 		},
 	},
@@ -160,32 +156,27 @@ export const LineChartExample: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					dot={false}
-				/>
-				<Line
-					type="monotone"
-					dataKey="mobile"
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						dot={false}
+					/>
+					<Line
+						type="monotone"
+						dataKey="mobile"
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -202,21 +193,16 @@ export const BarChartExample: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<BarChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent />} />
-				<ChartLegend content={<ChartLegendContent />} />
-				<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-				<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-			</BarChart>
-		</ChartContainer>
+				<BarChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent />} />
+					<ChartLegend content={<ChartLegendContent />} />
+					<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+					<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+				</BarChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -233,35 +219,30 @@ export const AreaChartExample: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<AreaChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent />} />
-				<ChartLegend content={<ChartLegendContent />} />
-				<Area
-					type="monotone"
-					dataKey="desktop"
-					fill="var(--color-desktop)"
-					fillOpacity={0.6}
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-				/>
-				<Area
-					type="monotone"
-					dataKey="mobile"
-					fill="var(--color-mobile)"
-					fillOpacity={0.6}
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-				/>
-			</AreaChart>
-		</ChartContainer>
+				<AreaChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent />} />
+					<ChartLegend content={<ChartLegendContent />} />
+					<Area
+						type="monotone"
+						dataKey="desktop"
+						fill="var(--color-desktop)"
+						fillOpacity={0.6}
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+					/>
+					<Area
+						type="monotone"
+						dataKey="mobile"
+						fill="var(--color-mobile)"
+						fillOpacity={0.6}
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+					/>
+				</AreaChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -278,32 +259,29 @@ export const SingleSeries: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer
-			config={{
-				desktop: {
-					label: "Desktop",
-					color: "var(--chart-1)",
-				},
-			} satisfies ChartConfig}
-		>
-			<LineChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent />} />
-				<Line
-					type="monotone"
-					dataKey="desktop"
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-					dot={false}
-				/>
-			</LineChart>
-		</ChartContainer>
+				config={
+					{
+						desktop: {
+							label: "Desktop",
+							color: "var(--chart-1)",
+						},
+					} satisfies ChartConfig
+				}
+			>
+				<LineChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent />} />
+					<Line
+						type="monotone"
+						dataKey="desktop"
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+						dot={false}
+					/>
+				</LineChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -320,20 +298,15 @@ export const WithoutTooltip: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<BarChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartLegend content={<ChartLegendContent />} />
-				<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-				<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-			</BarChart>
-		</ChartContainer>
+				<BarChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartLegend content={<ChartLegendContent />} />
+					<Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+					<Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+				</BarChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {
@@ -350,34 +323,29 @@ export const WithoutLegend: Story = {
 	render: () => (
 		<div className="w-[600px]">
 			<ChartContainer config={chartConfig}>
-			<AreaChart data={chartData}>
-				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis
-					dataKey="month"
-					tickLine={false}
-					axisLine={false}
-					tickMargin={8}
-				/>
-				<YAxis tickLine={false} axisLine={false} tickMargin={8} />
-				<ChartTooltip content={<ChartTooltipContent />} />
-				<Area
-					type="monotone"
-					dataKey="desktop"
-					fill="var(--color-desktop)"
-					fillOpacity={0.6}
-					stroke="var(--color-desktop)"
-					strokeWidth={2}
-				/>
-				<Area
-					type="monotone"
-					dataKey="mobile"
-					fill="var(--color-mobile)"
-					fillOpacity={0.6}
-					stroke="var(--color-mobile)"
-					strokeWidth={2}
-				/>
-			</AreaChart>
-		</ChartContainer>
+				<AreaChart data={chartData}>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} />
+					<YAxis tickLine={false} axisLine={false} tickMargin={8} />
+					<ChartTooltip content={<ChartTooltipContent />} />
+					<Area
+						type="monotone"
+						dataKey="desktop"
+						fill="var(--color-desktop)"
+						fillOpacity={0.6}
+						stroke="var(--color-desktop)"
+						strokeWidth={2}
+					/>
+					<Area
+						type="monotone"
+						dataKey="mobile"
+						fill="var(--color-mobile)"
+						fillOpacity={0.6}
+						stroke="var(--color-mobile)"
+						strokeWidth={2}
+					/>
+				</AreaChart>
+			</ChartContainer>
 		</div>
 	),
 	parameters: {

@@ -54,8 +54,7 @@ This component is built on top of [Base UI Select Item](https://base-ui.com/reac
 			control: { type: "boolean" },
 		},
 		disabled: {
-			description:
-				"Whether the component should ignore user interaction.",
+			description: "Whether the component should ignore user interaction.",
 			table: {
 				type: { summary: "boolean" },
 				defaultValue: { summary: "false" },
@@ -184,8 +183,7 @@ export const CustomLabel: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story:
-					"Item with custom label for keyboard navigation while displaying different content.",
+				story: "Item with custom label for keyboard navigation while displaying different content.",
 			},
 		},
 	},
