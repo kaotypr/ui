@@ -318,37 +318,39 @@ export function DateRangePicker({
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger>
-				<Button
-					data-slot="date-range-picker"
-					variant="outline"
-					disabled={disabled}
-					className={cn(
-						"w-full justify-start text-left font-normal",
-						!hasValue && "text-muted-foreground",
-						className,
-					)}
-				>
-					<CalendarDotsIcon className="h-4 w-4" />
-					<span className="flex-1 truncate">{displayValue}</span>
-					{clearable && hasValue && (
-						<div
-							role="button"
-							tabIndex={0}
-							onClick={handleClear}
-							onKeyDown={(e) => {
-								if (e.key === "Enter" || e.key === " ") {
-									handleClear(e as unknown as React.MouseEvent)
-								}
-							}}
-							className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
-							aria-label="Clear date range"
-						>
-							<XIcon className="h-4 w-4" />
-						</div>
-					)}
-				</Button>
-			</PopoverTrigger>
+			<PopoverTrigger
+				render={
+					<Button
+						data-slot="date-range-picker"
+						variant="outline"
+						disabled={disabled}
+						className={cn(
+							"w-full justify-start text-left font-normal",
+							!hasValue && "text-muted-foreground",
+							className,
+						)}
+					>
+						<CalendarDotsIcon className="h-4 w-4" />
+						<span className="flex-1 truncate">{displayValue}</span>
+						{clearable && hasValue && (
+							<div
+								role="button"
+								tabIndex={0}
+								onClick={handleClear}
+								onKeyDown={(e) => {
+									if (e.key === "Enter" || e.key === " ") {
+										handleClear(e as unknown as React.MouseEvent)
+									}
+								}}
+								className="cursor-pointer ml-2 shrink-0 opacity-50 hover:opacity-100"
+								aria-label="Clear date range"
+							>
+								<XIcon className="h-4 w-4" />
+							</div>
+						)}
+					</Button>
+				}
+			/>
 			<PopoverContent className={cn("w-auto p-0", contentClassName)} align="start">
 				<Calendar
 					{...calendarProps}
