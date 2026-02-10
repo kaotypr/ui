@@ -1,135 +1,106 @@
-# Turborepo starter
+# @kaotypr/ui
 
-This Turborepo starter is maintained by the Turborepo core team.
+A modern, accessible React UI component library built with React 19, TypeScript, and Tailwind CSS 4. This monorepo is managed with [Turborepo](https://turbo.build/repo) and [pnpm](https://pnpm.io/).
 
-## Using this example
+## Project Structure
 
-Run the following command:
+This project is organized as a monorepo:
 
-```sh
-npx create-turbo@latest
+### Packages
+
+- **`packages/ui` (`@kaotypr/ui`)**: The core UI component library. It includes a set of reusable components, hooks, and utilities. It uses [Storybook](https://storybook.js.org/) for component development and documentation.
+
+### Apps
+
+- **`apps/ui-docs`**: The documentation site built with [Next.js 16](https://nextjs.org/) and [Fumadocs](https://fumadocs.vercel.app/). It serves as the official documentation for the UI library.
+- **`apps/consumer-vite`**: A [Vite](https://vitejs.dev/) application used for testing and consuming the UI library in a real-world scenario.
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (>= 18)
+- [pnpm](https://pnpm.io/) (>= 9)
+
+### Installation
+
+Install dependencies from the root directory:
+
+```bash
+pnpm install
 ```
 
-## What's inside?
+## Development
 
-This Turborepo includes the following packages/apps:
+You can run development servers for different parts of the project using Turborepo.
 
-### Apps and Packages
+### Run Everything
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+To start all applications and the UI library in development mode:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```bash
+pnpm dev
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Run Specific Workspaces
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+- **UI Library (Storybook):**
+  ```bash
+  pnpm --filter=@kaotypr/ui storybook
+  ```
+  Runs Storybook on [http://localhost:6006](http://localhost:6006).
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+- **Documentation Site:**
+  ```bash
+  pnpm --filter=ui-docs dev
+  ```
+  Runs the docs site on [http://localhost:3000](http://localhost:3000).
 
-### Develop
+- **Consumer App:**
+  ```bash
+  pnpm --filter=consumer-vite dev
+  ```
+  Runs the Vite consumer app.
 
-To develop all apps and packages, run the following command:
+## Building
 
-```
-cd my-turborepo
+To build all apps and packages:
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```bash
+pnpm build
 ```
 
-### Remote Caching
+To build a specific workspace:
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+```bash
+pnpm --filter=@kaotypr/ui build
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Quality Control
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### Linting & Formatting
 
+This project uses [Biome](https://biomejs.dev/) for fast linting and formatting.
+
+```bash
+# Lint all packages
+pnpm lint
+
+# Format all packages
+pnpm format
 ```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+### Type Checking
+
+```bash
+pnpm check-types
 ```
 
-## Useful Links
+## Tech Stack
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- **Frameworks:** [React 19](https://react.dev/), [Next.js 16](https://nextjs.org/), [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Monorepo:** [Turborepo](https://turbo.build/)
+- **Package Manager:** [pnpm](https://pnpm.io/)
+- **Documentation:** [Fumadocs](https://fumadocs.vercel.app/), [Storybook](https://storybook.js.org/)
+- **Linting/Formatting:** [Biome](https://biomejs.dev/)
